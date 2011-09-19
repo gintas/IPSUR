@@ -9,8 +9,8 @@ lang="en" xml:lang="en">
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2011-09-18 Sun"/>
 <meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta name="description" content="This chapter is all about data and the descriptive methods we have to understand them."/>
+<meta name="keywords" content="data R descriptive statistics summary"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   html { font-family: Times, serif; font-size: 12pt; }
@@ -144,60 +144,60 @@ lang="en" xml:lang="en">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Data Description</a>
+<li><a href="#sec-1">Data Description</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Types of Data </a>
+<li><a href="#sec-1-1">Types of Data</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1 Quantitative data </a></li>
-<li><a href="#sec-1-1-2">1.1.2 Displaying Quantitative Data </a></li>
-<li><a href="#sec-1-1-3">1.1.3 Qualitative Data, Categorical Data, and Factors </a></li>
-<li><a href="#sec-1-1-4">1.1.4 Displaying Qualitative Data </a></li>
-<li><a href="#sec-1-1-5">1.1.5 Logical Data </a></li>
-<li><a href="#sec-1-1-6">1.1.6 Missing Data </a></li>
-<li><a href="#sec-1-1-7">1.1.7 Other Data Types </a></li>
+<li><a href="#sec-1-1-1">Quantitative data</a></li>
+<li><a href="#sec-1-1-2">Displaying Quantitative Data</a></li>
+<li><a href="#sec-1-1-3">Qualitative Data, Categorical Data, and Factors</a></li>
+<li><a href="#sec-1-1-4">Displaying Qualitative Data</a></li>
+<li><a href="#sec-1-1-5">Logical Data</a></li>
+<li><a href="#sec-1-1-6">Missing Data</a></li>
+<li><a href="#sec-1-1-7">Other Data Types</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2 Features of Data Distributions </a>
+<li><a href="#sec-1-2">Features of Data Distributions</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1 Center </a></li>
-<li><a href="#sec-1-2-2">1.2.2 Spread </a></li>
-<li><a href="#sec-1-2-3">1.2.3 Shape </a></li>
-<li><a href="#sec-1-2-4">1.2.4 Clusters and Gaps </a></li>
-<li><a href="#sec-1-2-5">1.2.5 Extreme Observations and other Unusual Features </a></li>
+<li><a href="#sec-1-2-1">Center</a></li>
+<li><a href="#sec-1-2-2">Spread</a></li>
+<li><a href="#sec-1-2-3">Shape</a></li>
+<li><a href="#sec-1-2-4">Clusters and Gaps</a></li>
+<li><a href="#sec-1-2-5">Extreme Observations and other Unusual Features</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3 Descriptive Statistics </a>
+<li><a href="#sec-1-3">Descriptive Statistics</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1 Frequencies and Relative Frequencies </a></li>
-<li><a href="#sec-1-3-2">1.3.2 Measures of Center </a></li>
-<li><a href="#sec-1-3-3">1.3.3 Order Statistics and the Sample Quantiles </a></li>
-<li><a href="#sec-1-3-4">1.3.4 Measures of Spread </a></li>
-<li><a href="#sec-1-3-5">1.3.5 Measures of Shape </a></li>
+<li><a href="#sec-1-3-1">Frequencies and Relative Frequencies</a></li>
+<li><a href="#sec-1-3-2">Measures of Center</a></li>
+<li><a href="#sec-1-3-3">Order Statistics and the Sample Quantiles</a></li>
+<li><a href="#sec-1-3-4">Measures of Spread</a></li>
+<li><a href="#sec-1-3-5">Measures of Shape</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">1.4 Exploratory Data Analysis </a>
+<li><a href="#sec-1-4">Exploratory Data Analysis</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1 More About Stemplots </a></li>
-<li><a href="#sec-1-4-2">1.4.2 Hinges and the Five Number Summary </a></li>
-<li><a href="#sec-1-4-3">1.4.3 Boxplots </a></li>
-<li><a href="#sec-1-4-4">1.4.4 Outliers </a></li>
-<li><a href="#sec-1-4-5">1.4.5 Standardizing variables </a></li>
+<li><a href="#sec-1-4-1">More About Stemplots</a></li>
+<li><a href="#sec-1-4-2">Hinges and the Five Number Summary</a></li>
+<li><a href="#sec-1-4-3">Boxplots</a></li>
+<li><a href="#sec-1-4-4">Outliers</a></li>
+<li><a href="#sec-1-4-5">Standardizing variables</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5 Multivariate Data and Data Frames </a>
+<li><a href="#sec-1-5">Multivariate Data and Data Frames</a>
 <ul>
-<li><a href="#sec-1-5-1">1.5.1 Bivariate Data </a></li>
-<li><a href="#sec-1-5-2">1.5.2 Multivariate Data </a></li>
+<li><a href="#sec-1-5-1">Bivariate Data</a></li>
+<li><a href="#sec-1-5-2">Multivariate Data</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-6">1.6 Comparing Populations </a>
+<li><a href="#sec-1-6">Comparing Populations</a>
 <ul>
-<li><a href="#sec-1-6-1">1.6.1 Numerically </a></li>
-<li><a href="#sec-1-6-2">1.6.2 Graphically </a></li>
-<li><a href="#sec-1-6-3">1.6.3 Lattice Graphics </a></li>
+<li><a href="#sec-1-6-1">Numerically</a></li>
+<li><a href="#sec-1-6-2">Graphically</a></li>
+<li><a href="#sec-1-6-3">Lattice Graphics</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-7">1.7 Exercises </a></li>
+<li><a href="#sec-1-7">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -205,7 +205,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Data Description &nbsp;&nbsp;&nbsp;<span class="tag"><span class="datadesc">datadesc</span></span></h2>
+<h2 id="sec-1">Data Description</h2>
 <div class="outline-text-2" id="text-1">
 
 
@@ -231,7 +231,7 @@ In this chapter we introduce the different types of data that a statistician is 
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Types of Data </h3>
+<h3 id="sec-1-1">Types of Data</h3>
 <div class="outline-text-3" id="text-1-1">
 
 
@@ -259,7 +259,7 @@ In each subsection we look at some examples of the type in question and introduc
 </div>
 
 <div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Quantitative data </h4>
+<h4 id="sec-1-1-1">Quantitative data</h4>
 <div class="outline-text-4" id="text-1-1-1">
 
 
@@ -352,7 +352,7 @@ The output is telling us that <code>discoveries</code> is a <i>time series</i> (
 </div>
 
 <div id="outline-container-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Displaying Quantitative Data </h4>
+<h4 id="sec-1-1-2">Displaying Quantitative Data</h4>
 <div class="outline-text-4" id="text-1-1-2">
 
 
@@ -593,7 +593,7 @@ Coming soon.
 </div>
 
 <div id="outline-container-1-1-3" class="outline-4">
-<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Qualitative Data, Categorical Data, and Factors </h4>
+<h4 id="sec-1-1-3">Qualitative Data, Categorical Data, and Factors</h4>
 <div class="outline-text-4" id="text-1-1-3">
 
 
@@ -662,7 +662,7 @@ The <code>str</code>\index{str@\texttt{str}} output shows that <code>state.regio
 </div>
 
 <div id="outline-container-1-1-4" class="outline-4">
-<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> Displaying Qualitative Data </h4>
+<h4 id="sec-1-1-4">Displaying Qualitative Data</h4>
 <div class="outline-text-4" id="text-1-1-4">
 
 
@@ -834,7 +834,7 @@ We are not going to do any examples of a pie graph and discourage their use else
 </div>
 
 <div id="outline-container-1-1-5" class="outline-4">
-<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> Logical Data </h4>
+<h4 id="sec-1-1-5">Logical Data</h4>
 <div class="outline-text-4" id="text-1-1-5">
 
 
@@ -880,7 +880,7 @@ We can swap <code>TRUE</code> with <code>FALSE</code> with the exclamation point
 </div>
 
 <div id="outline-container-1-1-6" class="outline-4">
-<h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> Missing Data </h4>
+<h4 id="sec-1-1-6">Missing Data</h4>
 <div class="outline-text-4" id="text-1-1-6">
 
 
@@ -947,7 +947,7 @@ The analogue of <code>is.na</code> for rectangular data sets (or data frames) is
 </div>
 
 <div id="outline-container-1-1-7" class="outline-4">
-<h4 id="sec-1-1-7"><span class="section-number-4">1.1.7</span> Other Data Types </h4>
+<h4 id="sec-1-1-7">Other Data Types</h4>
 <div class="outline-text-4" id="text-1-1-7">
 
 
@@ -957,7 +957,7 @@ The analogue of <code>is.na</code> for rectangular data sets (or data frames) is
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Features of Data Distributions </h3>
+<h3 id="sec-1-2">Features of Data Distributions</h3>
 <div class="outline-text-3" id="text-1-2">
 
 
@@ -968,7 +968,7 @@ Given that the data have been appropriately displayed, the next step is to try t
 </div>
 
 <div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Center </h4>
+<h4 id="sec-1-2-1">Center</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
 
@@ -980,7 +980,7 @@ One of the most basic features of a data set is its center. Loosely speaking, th
 </div>
 
 <div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Spread </h4>
+<h4 id="sec-1-2-2">Spread</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
 
@@ -992,7 +992,7 @@ The spread of a data set is associated with its variability; data sets with a la
 </div>
 
 <div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Shape </h4>
+<h4 id="sec-1-2-3">Shape</h4>
 <div class="outline-text-4" id="text-1-2-3">
 
 
@@ -1016,7 +1016,7 @@ Another component to the shape of a distribution is how ``peaked'' it is. Some d
 </div>
 
 <div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Clusters and Gaps </h4>
+<h4 id="sec-1-2-4">Clusters and Gaps</h4>
 <div class="outline-text-4" id="text-1-2-4">
 
 
@@ -1065,7 +1065,7 @@ There are definitely two clusters of data here; an upper cluster and a lower clu
 </div>
 
 <div id="outline-container-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Extreme Observations and other Unusual Features </h4>
+<h4 id="sec-1-2-5">Extreme Observations and other Unusual Features</h4>
 <div class="outline-text-4" id="text-1-2-5">
 
 
@@ -1090,7 +1090,7 @@ Extreme observations fall far from the rest of the data. Such observations are t
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Descriptive Statistics </h3>
+<h3 id="sec-1-3">Descriptive Statistics</h3>
 <div class="outline-text-3" id="text-1-3">
 
 
@@ -1098,7 +1098,7 @@ Extreme observations fall far from the rest of the data. Such observations are t
 </div>
 
 <div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Frequencies and Relative Frequencies </h4>
+<h4 id="sec-1-3-1">Frequencies and Relative Frequencies</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
 
@@ -1110,7 +1110,7 @@ These are used for categorical data. The idea is that there are a number of diff
 </div>
 
 <div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Measures of Center </h4>
+<h4 id="sec-1-3-2">Measures of Center</h4>
 <div class="outline-text-4" id="text-1-3-2">
 
 
@@ -1174,7 +1174,7 @@ The <i>trimmed mean</i> is a measure designed to address the sensitivity of the 
 </div>
 
 <div id="outline-container-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Order Statistics and the Sample Quantiles </h4>
+<h4 id="sec-1-3-3">Order Statistics and the Sample Quantiles</h4>
 <div class="outline-text-4" id="text-1-3-3">
 
 
@@ -1233,7 +1233,7 @@ In <code>Rcmdr</code>, we can calculate the sample quantiles for a particular va
 </div>
 
 <div id="outline-container-1-3-4" class="outline-4">
-<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> Measures of Spread </h4>
+<h4 id="sec-1-3-4">Measures of Spread</h4>
 <div class="outline-text-4" id="text-1-3-4">
 
 
@@ -1317,7 +1317,7 @@ we can calculate the sample standard deviation with the \textsf{Statistics \(\tr
 </div>
 
 <div id="outline-container-1-3-5" class="outline-4">
-<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> Measures of Shape </h4>
+<h4 id="sec-1-3-5">Measures of Shape</h4>
 <div class="outline-text-4" id="text-1-3-5">
 
 
@@ -1394,7 +1394,7 @@ so that the <code>UKDriverDeaths</code> data appear to be mesokurtic, or at leas
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Exploratory Data Analysis </h3>
+<h3 id="sec-1-4">Exploratory Data Analysis</h3>
 <div class="outline-text-3" id="text-1-4">
 
 
@@ -1405,7 +1405,7 @@ This field was founded (mostly) by John Tukey (1915-2000). Its tools are useful 
 </div>
 
 <div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> More About Stemplots </h4>
+<h4 id="sec-1-4-1">More About Stemplots</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
 
@@ -1511,7 +1511,7 @@ Here is an example of split stems, with two lines per stem. The final digit of e
 </div>
 
 <div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Hinges and the Five Number Summary </h4>
+<h4 id="sec-1-4-2">Hinges and the Five Number Summary</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
 
@@ -1541,7 +1541,7 @@ If the data are stored in a vector <code>x</code>, then you can compute the \(5N
 </div>
 
 <div id="outline-container-1-4-3" class="outline-4">
-<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> Boxplots </h4>
+<h4 id="sec-1-4-3">Boxplots</h4>
 <div class="outline-text-4" id="text-1-4-3">
 
 
@@ -1577,7 +1577,7 @@ Boxplots are also good because one can visually assess multiple features of the 
 </div>
 
 <div id="outline-container-1-4-4" class="outline-4">
-<h4 id="sec-1-4-4"><span class="section-number-4">1.4.4</span> Outliers </h4>
+<h4 id="sec-1-4-4">Outliers</h4>
 <div class="outline-text-4" id="text-1-4-4">
 
 
@@ -1630,7 +1630,7 @@ We may change the <code>coef</code> argument to 3 (it is 1.5 by default) to iden
 </div>
 
 <div id="outline-container-1-4-5" class="outline-4">
-<h4 id="sec-1-4-5"><span class="section-number-4">1.4.5</span> Standardizing variables </h4>
+<h4 id="sec-1-4-5">Standardizing variables</h4>
 <div class="outline-text-4" id="text-1-4-5">
 
 
@@ -1649,7 +1649,7 @@ The <code>scale</code> function will rescale a numeric vector (or data frame) by
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Multivariate Data and Data Frames </h3>
+<h3 id="sec-1-5">Multivariate Data and Data Frames</h3>
 <div class="outline-text-3" id="text-1-5">
 
 
@@ -1727,7 +1727,7 @@ The above is identical to <code>A[ ,1]</code>.
 </div>
 
 <div id="outline-container-1-5-1" class="outline-4">
-<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> Bivariate Data </h4>
+<h4 id="sec-1-5-1">Bivariate Data</h4>
 <div class="outline-text-4" id="text-1-5-1">
 
 
@@ -1747,22 +1747,17 @@ The <b>sample Pearson product-moment correlation coefficient</b>:
 
 
 \[
-r=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\ybar)}{\sqrt{\sum_{i=1}^{n}(x_{i}-\overline{x})}\sqrt{\sum_{i=1}^{n}(y_{i}-\ybar)}}
+r=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sqrt{\sum_{i=1}^{n}(x_{i}-\overline{x})}\sqrt{\sum_{i=1}^{n}(y_{i}-\overline{y})}}
 \]
 
 <ul>
 <li>independent of scale
 </li>
-<li>\(-1&lt;r&lt;1\)
+<li>\(-1&lt; r &lt;1\)
 </li>
 <li>measures <i>strength</i> and <i>direction</i> of linear association
 </li>
 <li>Two-Way Tables. Done with <code>table</code>, or in the \textsf{R} Commander by following \textsf{Statistics \(\triangleright\) Contingency Tables \(\triangleright\)} \textsf{Two-way Tables}. You can also enter and analyze a two-way table.
-</li>
-</ul>
-
-
-
 <ul>
 <li>table
 </li>
@@ -1789,6 +1784,9 @@ r=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\ybar)}{\sqrt{\sum_{i=1}^{n}(x_
 <li>spineplot(gender ~ race, data = RcmdrTestDrive)
 </li>
 <li>Spine plot: plots categorical versus categorical
+</li>
+</ul>
+
 </li>
 </ul>
 
@@ -1822,7 +1820,7 @@ r=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\ybar)}{\sqrt{\sum_{i=1}^{n}(x_
 </div>
 
 <div id="outline-container-1-5-2" class="outline-4">
-<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> Multivariate Data </h4>
+<h4 id="sec-1-5-2">Multivariate Data</h4>
 <div class="outline-text-4" id="text-1-5-2">
 
 
@@ -1853,7 +1851,7 @@ Multivariate Data Display
 </div>
 
 <div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Comparing Populations </h3>
+<h3 id="sec-1-6">Comparing Populations</h3>
 <div class="outline-text-3" id="text-1-6">
 
 
@@ -1876,7 +1874,7 @@ Sometimes we have data from two or more groups (or populations) and we would lik
 </div>
 
 <div id="outline-container-1-6-1" class="outline-4">
-<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> Numerically </h4>
+<h4 id="sec-1-6-1">Numerically</h4>
 <div class="outline-text-4" id="text-1-6-1">
 
 
@@ -1888,7 +1886,7 @@ I am thinking here about the \textsf{Statistics} \textsf{\(\triangleright\)} \te
 </div>
 
 <div id="outline-container-1-6-2" class="outline-4">
-<h4 id="sec-1-6-2"><span class="section-number-4">1.6.2</span> Graphically </h4>
+<h4 id="sec-1-6-2">Graphically</h4>
 <div class="outline-text-4" id="text-1-6-2">
 
 
@@ -2067,7 +2065,7 @@ It is clear that if \(x_{(k)}=y_{(k)}\) for all \(k=1,2,\ldots,n\), then we will
 </div>
 
 <div id="outline-container-1-6-3" class="outline-4">
-<h4 id="sec-1-6-3"><span class="section-number-4">1.6.3</span> Lattice Graphics </h4>
+<h4 id="sec-1-6-3">Lattice Graphics</h4>
 <div class="outline-text-4" id="text-1-6-3">
 
 
@@ -2161,7 +2159,7 @@ bwplot(~weight | feed, data = chickwts)
 </div>
 
 <div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Exercises </h3>
+<h3 id="sec-1-7">Exercises</h3>
 <div class="outline-text-3" id="text-1-7">
 
 

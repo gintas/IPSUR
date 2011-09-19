@@ -9,8 +9,8 @@ lang="en" xml:lang="en">
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2011-09-18 Sun"/>
 <meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta name="description" content="This chapter discusses one response variable regressed on one explanatory variable."/>
+<meta name="keywords" content="simple linear regression statistics R"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   html { font-family: Times, serif; font-size: 12pt; }
@@ -144,48 +144,48 @@ lang="en" xml:lang="en">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Simple Linear Regression</a>
+<li><a href="#sec-1">Simple Linear Regression</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Basic Philosophy </a>
+<li><a href="#sec-1-1">Basic Philosophy</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1 What does it all mean? </a></li>
+<li><a href="#sec-1-1-1">What does it all mean?</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2 Estimation </a>
+<li><a href="#sec-1-2">Estimation</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1 Point Estimates of the Parameters </a></li>
-<li><a href="#sec-1-2-2">1.2.2 Point Estimates of the Regression Line </a></li>
-<li><a href="#sec-1-2-3">1.2.3 Mean Square Error and Standard Error </a></li>
-<li><a href="#sec-1-2-4">1.2.4 Interval Estimates of the Parameters </a></li>
-<li><a href="#sec-1-2-5">1.2.5 Interval Estimates of the Regression Line </a></li>
-<li><a href="#sec-1-2-6">1.2.6 Graphing the Confidence and Prediction Bands </a></li>
+<li><a href="#sec-1-2-1">Point Estimates of the Parameters</a></li>
+<li><a href="#sec-1-2-2">Point Estimates of the Regression Line</a></li>
+<li><a href="#sec-1-2-3">Mean Square Error and Standard Error</a></li>
+<li><a href="#sec-1-2-4">Interval Estimates of the Parameters</a></li>
+<li><a href="#sec-1-2-5">Interval Estimates of the Regression Line</a></li>
+<li><a href="#sec-1-2-6">Graphing the Confidence and Prediction Bands</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3 Model Utility and Inference </a>
+<li><a href="#sec-1-3">Model Utility and Inference</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1 Hypothesis Tests for the Parameters </a></li>
-<li><a href="#sec-1-3-2">1.3.2 Simple Coefficient of Determination </a></li>
-<li><a href="#sec-1-3-3">1.3.3 Overall <i>F</i> statistic </a></li>
+<li><a href="#sec-1-3-1">Hypothesis Tests for the Parameters</a></li>
+<li><a href="#sec-1-3-2">Simple Coefficient of Determination</a></li>
+<li><a href="#sec-1-3-3">Overall <i>F</i> statistic</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">1.4 Residual Analysis </a>
+<li><a href="#sec-1-4">Residual Analysis</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1 Normality Assumption </a></li>
-<li><a href="#sec-1-4-2">1.4.2 Constant Variance Assumption </a></li>
-<li><a href="#sec-1-4-3">1.4.3 Independence Assumption </a></li>
-<li><a href="#sec-1-4-4">1.4.4 Remedial Measures </a></li>
+<li><a href="#sec-1-4-1">Normality Assumption</a></li>
+<li><a href="#sec-1-4-2">Constant Variance Assumption</a></li>
+<li><a href="#sec-1-4-3">Independence Assumption</a></li>
+<li><a href="#sec-1-4-4">Remedial Measures</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5 Other Diagnostic Tools </a>
+<li><a href="#sec-1-5">Other Diagnostic Tools</a>
 <ul>
-<li><a href="#sec-1-5-1">1.5.1 Outliers </a></li>
-<li><a href="#sec-1-5-2">1.5.2 Leverage </a></li>
-<li><a href="#sec-1-5-3">1.5.3 Standardized and Studentized Deleted Residuals </a></li>
-<li><a href="#sec-1-5-4">1.5.4 Influential Observations </a></li>
-<li><a href="#sec-1-5-5">1.5.5 All Influence Measures Simultaneously </a></li>
+<li><a href="#sec-1-5-1">Outliers</a></li>
+<li><a href="#sec-1-5-2">Leverage</a></li>
+<li><a href="#sec-1-5-3">Standardized and Studentized Deleted Residuals</a></li>
+<li><a href="#sec-1-5-4">Influential Observations</a></li>
+<li><a href="#sec-1-5-5">All Influence Measures Simultaneously</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-6">1.6 Exercises </a></li>
+<li><a href="#sec-1-6">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -193,7 +193,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Simple Linear Regression &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slr">slr</span></span></h2>
+<h2 id="sec-1">Simple Linear Regression</h2>
 <div class="outline-text-2" id="text-1">
 
 <p>\label{cha:simple-linear-regression}
@@ -217,7 +217,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Basic Philosophy </h3>
+<h3 id="sec-1-1">Basic Philosophy</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <p>\label{sec:Basic-Philosophy}
@@ -293,7 +293,7 @@ We assume both the normality of the errors \(\epsilon\) and the linearity of the
 </div>
 
 <div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> What does it all mean? </h4>
+<h4 id="sec-1-1-1">What does it all mean?</h4>
 <div class="outline-text-4" id="text-1-1-1">
 
 <p>See Figure <a href="#fig-philosophy">philosophy</a>. Shown in the figure is a solid line, the regression line\index{regression line} \(\mu\), which in this display has slope 0.5 and <i>y</i>-intercept 2.5, that is, \( \mu(x) = 2.5 + 0.5x \). The intuition is that for each given value of \(x\), we observe a random value of \(Y\) which is normally distributed with a mean equal to the height of the regression line at that \(x\) value. Normal densities are superimposed on the plot to drive this point home; in principle, the densities stand outside of the page, perpendicular to the plane of the paper. The figure shows three such values of \(x\), namely, \( x = 1 \), \( x = 2.5 \), and \( x = 4 \). Not only do we assume that the observations at the three locations are independent, but we also assume that their distributions have the same spread. In mathematical terms this means that the normal densities all along the line have identical standard deviations &ndash; there is no ``fanning out'' or ``scrunching in'' of the normal densities as \(x\) increases
@@ -374,7 +374,7 @@ There is a pronounced upward trend to the data points, and the pattern looks app
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Estimation </h3>
+<h3 id="sec-1-2">Estimation</h3>
 <div class="outline-text-3" id="text-1-2">
 
 <p>\label{sec:SLR-Estimation}
@@ -383,7 +383,7 @@ There is a pronounced upward trend to the data points, and the pattern looks app
 </div>
 
 <div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Point Estimates of the Parameters </h4>
+<h4 id="sec-1-2-1">Point Estimates of the Parameters</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
 <p>\label{sub:point-estimate-mle-slr}
@@ -535,7 +535,7 @@ Using the regression line for the <code>cars</code> data:
 </div>
 
 <div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Point Estimates of the Regression Line </h4>
+<h4 id="sec-1-2-2">Point Estimates of the Regression Line</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
 <p>\label{sub:slr-point-est-regline}
@@ -628,7 +628,7 @@ Note that there were no observed cars that traveled 6 mph or 21 mph. Also note t
 </div>
 
 <div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Mean Square Error and Standard Error </h4>
+<h4 id="sec-1-2-3">Mean Square Error and Standard Error</h4>
 <div class="outline-text-4" id="text-1-2-3">
 
 
@@ -698,7 +698,7 @@ carsumry$sigma
 </div>
 
 <div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Interval Estimates of the Parameters </h4>
+<h4 id="sec-1-2-4">Interval Estimates of the Parameters</h4>
 <div class="outline-text-4" id="text-1-2-4">
 
 <p>\label{sub:slr-interval-est-params}
@@ -811,7 +811,7 @@ With 95% confidence, the random interval \( [  3.097,  4.768 ] \) covers the par
 </div>
 
 <div id="outline-container-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Interval Estimates of the Regression Line </h4>
+<h4 id="sec-1-2-5">Interval Estimates of the Regression Line</h4>
 <div class="outline-text-4" id="text-1-2-5">
 
 <p>\label{sub:slr-interval-est-regline}
@@ -926,7 +926,7 @@ Using the <code>cars</code> data,
 </div>
 
 <div id="outline-container-1-2-6" class="outline-4">
-<h4 id="sec-1-2-6"><span class="section-number-4">1.2.6</span> Graphing the Confidence and Prediction Bands </h4>
+<h4 id="sec-1-2-6">Graphing the Confidence and Prediction Bands</h4>
 <div class="outline-text-4" id="text-1-2-6">
 
 
@@ -965,7 +965,7 @@ Notice that the bands curve outward from the regression line as the \(x\) values
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Model Utility and Inference </h3>
+<h3 id="sec-1-3">Model Utility and Inference</h3>
 <div class="outline-text-3" id="text-1-3">
 
 <p>\label{sec:Model-Utility-SLR}
@@ -974,7 +974,7 @@ Notice that the bands curve outward from the regression line as the \(x\) values
 </div>
 
 <div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Hypothesis Tests for the Parameters </h4>
+<h4 id="sec-1-3-1">Hypothesis Tests for the Parameters</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
 <p>\label{sub:slr-hypoth-test-params}
@@ -1040,7 +1040,7 @@ In the <code>Coefficients</code> section we find the \(t\) statistics and the \(
 </div>
 
 <div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Simple Coefficient of Determination </h4>
+<h4 id="sec-1-3-2">Simple Coefficient of Determination</h4>
 <div class="outline-text-4" id="text-1-3-2">
 
 
@@ -1155,7 +1155,7 @@ We choose the principal square root because the slope of the regression line is 
 </div>
 
 <div id="outline-container-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Overall <i>F</i> statistic </h4>
+<h4 id="sec-1-3-3">Overall <i>F</i> statistic</h4>
 <div class="outline-text-4" id="text-1-3-3">
 
 <p>\label{sub:slr-overall-F-statistic}
@@ -1221,7 +1221,7 @@ Note that the value of the \(F\) statistic is the same as the Student's \(t\) st
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Residual Analysis </h3>
+<h3 id="sec-1-4">Residual Analysis</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <p>\label{sec:Residual-Analysis-SLR}
@@ -1236,7 +1236,7 @@ In every case, we will begin by looking at residual plots &ndash; that is, scatt
 </div>
 
 <div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Normality Assumption </h4>
+<h4 id="sec-1-4-1">Normality Assumption</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
 <p>\label{sub:Normality-Assumption}
@@ -1307,7 +1307,7 @@ For these data we would reject the assumption of normality of the residuals at t
 </div>
 
 <div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Constant Variance Assumption </h4>
+<h4 id="sec-1-4-2">Constant Variance Assumption</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
 <p>\label{sub:Constant-Variance-Assumption}
@@ -1383,7 +1383,7 @@ For these data we would not reject the null hypothesis at the \(\alpha=0.05\) le
 </div>
 
 <div id="outline-container-1-4-3" class="outline-4">
-<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> Independence Assumption </h4>
+<h4 id="sec-1-4-3">Independence Assumption</h4>
 <div class="outline-text-4" id="text-1-4-3">
 
 <p>\label{sub:Independence-Assumption}
@@ -1451,7 +1451,7 @@ In this case we do not reject the null hypothesis at the \(\alpha=0.05\) signifi
 </div>
 
 <div id="outline-container-1-4-4" class="outline-4">
-<h4 id="sec-1-4-4"><span class="section-number-4">1.4.4</span> Remedial Measures </h4>
+<h4 id="sec-1-4-4">Remedial Measures</h4>
 <div class="outline-text-4" id="text-1-4-4">
 
 
@@ -1495,7 +1495,7 @@ We often find problems with our model that suggest that at least one of the thre
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Other Diagnostic Tools </h3>
+<h3 id="sec-1-5">Other Diagnostic Tools</h3>
 <div class="outline-text-3" id="text-1-5">
 
 <p>\label{sec:Other-Diagnostic-Tools-SLR}
@@ -1516,7 +1516,7 @@ We will discuss outliers first because the notation builds sequentially in that 
 </div>
 
 <div id="outline-container-1-5-1" class="outline-4">
-<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> Outliers </h4>
+<h4 id="sec-1-5-1">Outliers</h4>
 <div class="outline-text-4" id="text-1-5-1">
 
 <p>There are three ways that an observation \((x_{i},y_{i})\) might be identified as an  outlier: it can have an \(x_{i}\) value which falls far from the other  \(x\) values, it can have a \(y_{i}\) value which falls far from the other \(y\) values, or it can have both its \(x_{i}\) and \(y_{i}\) values falling far from the other \(x\) and \(y\) values.
@@ -1525,7 +1525,7 @@ We will discuss outliers first because the notation builds sequentially in that 
 </div>
 
 <div id="outline-container-1-5-2" class="outline-4">
-<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> Leverage </h4>
+<h4 id="sec-1-5-2">Leverage</h4>
 <div class="outline-text-4" id="text-1-5-2">
 
 <p>Leverage statistics are designed to identify observations which have \(x\) values that are far away from the rest of the data. In the simple linear regression model the leverage of \(x_{i}\) is denoted by \(h_{ii}\) and defined by 
@@ -1553,7 +1553,7 @@ A rule of thumb is to consider leverage values to be large if they are more than
 </div>
 
 <div id="outline-container-1-5-3" class="outline-4">
-<h4 id="sec-1-5-3"><span class="section-number-4">1.5.3</span> Standardized and Studentized Deleted Residuals </h4>
+<h4 id="sec-1-5-3">Standardized and Studentized Deleted Residuals</h4>
 <div class="outline-text-4" id="text-1-5-3">
 
 
@@ -1672,7 +1672,7 @@ Here we see that observations 1, 2, and 50 have leverages bigger than double the
 </div>
 
 <div id="outline-container-1-5-4" class="outline-4">
-<h4 id="sec-1-5-4"><span class="section-number-4">1.5.4</span> Influential Observations </h4>
+<h4 id="sec-1-5-4">Influential Observations</h4>
 <div class="outline-text-4" id="text-1-5-4">
 
 
@@ -1814,7 +1814,7 @@ We see that with this data set there are no observations with extreme Cook's dis
 </div>
 
 <div id="outline-container-1-5-5" class="outline-4">
-<h4 id="sec-1-5-5"><span class="section-number-4">1.5.5</span> All Influence Measures Simultaneously </h4>
+<h4 id="sec-1-5-5">All Influence Measures Simultaneously</h4>
 <div class="outline-text-4" id="text-1-5-5">
 
 
@@ -1884,7 +1884,7 @@ The graph with the identified points is omitted (but the plain plot is shown in 
 </div>
 
 <div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Exercises </h3>
+<h3 id="sec-1-6">Exercises</h3>
 <div class="outline-text-3" id="text-1-6">
 
 

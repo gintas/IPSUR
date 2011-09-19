@@ -9,8 +9,8 @@ lang="en" xml:lang="en">
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2011-09-18 Sun"/>
 <meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta name="description" content="This chapter deals with point and interval estimation in the one and two parameter setting."/>
+<meta name="keywords" content="point interval estimation confidence unbiased"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   html { font-family: Times, serif; font-size: 12pt; }
@@ -144,17 +144,17 @@ lang="en" xml:lang="en">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Estimation</a>
+<li><a href="#sec-1">Estimation</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Point Estimation </a></li>
-<li><a href="#sec-1-2">1.2 Confidence Intervals for Means </a></li>
-<li><a href="#sec-1-3">1.3 Confidence Intervals for Differences of Means </a></li>
-<li><a href="#sec-1-4">1.4 Confidence Intervals for Proportions </a></li>
-<li><a href="#sec-1-5">1.5 Confidence Intervals for Variances </a></li>
-<li><a href="#sec-1-6">1.6 Fitting Distributions </a></li>
-<li><a href="#sec-1-7">1.7 Sample Size and Margin of Error </a></li>
-<li><a href="#sec-1-8">1.8 Other Topics </a></li>
-<li><a href="#sec-1-9">1.9 Exercises </a></li>
+<li><a href="#sec-1-1">Point Estimation</a></li>
+<li><a href="#sec-1-2">Confidence Intervals for Means</a></li>
+<li><a href="#sec-1-3">Confidence Intervals for Differences of Means</a></li>
+<li><a href="#sec-1-4">Confidence Intervals for Proportions</a></li>
+<li><a href="#sec-1-5">Confidence Intervals for Variances</a></li>
+<li><a href="#sec-1-6">Fitting Distributions</a></li>
+<li><a href="#sec-1-7">Sample Size and Margin of Error</a></li>
+<li><a href="#sec-1-8">Other Topics</a></li>
+<li><a href="#sec-1-9">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -162,7 +162,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Estimation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="estimate">estimate</span></span></h2>
+<h2 id="sec-1">Estimation</h2>
 <div class="outline-text-2" id="text-1">
 
 <p>\label{cha:Estimation}
@@ -198,7 +198,7 @@ We find an estimator with the methods of Section <a href="#sec-Point-Estimation-
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Point Estimation </h3>
+<h3 id="sec-1-1">Point Estimation</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <p>\label{sec:Point-Estimation-1}
@@ -223,18 +223,18 @@ Now let \(F\) denote the (unknown) total number of fish in the pond. We know tha
 <p>
 Looking back to Section <a href="#sec-other-discrete-distributions">other-discrete-distributions</a>, we see that the random variable \(X\) has a \(\mathsf{hyper}(\mathtt{m}=M,\,\mathtt{n}=F-M,\,\mathtt{k}=K)\) distribution. Therefore, for an observed value \(X=x\) the probability would be
 \[
-\P(X=x)=\frac{{M \choose x}{F-M \choose K-x}}{{F \choose K}}.
+\Pr(X=x)=\frac{{M \choose x}{F-M \choose K-x}}{{F \choose K}}.
 \]
-First we notice that \(F\) must be at least 7. Could \(F\) be equal to seven? If \(F=7\) then all of the fish would have been tagged on the first run, and there would be no untagged fish in the pond, thus, \(\P(\mbox{3 successes in 4 trials})=0\). 
+First we notice that \(F\) must be at least 7. Could \(F\) be equal to seven? If \(F=7\) then all of the fish would have been tagged on the first run, and there would be no untagged fish in the pond, thus, \(\Pr(\mbox{3 successes in 4 trials})=0\). 
 What about \(F=8\); what would be the probability of observing \(X=3\) tagged fish?
 \[
-\P(\mbox{3 successes in 4 trials})=\frac{{7 \choose 3}{1 \choose 1}}{{8 \choose 4}}=\frac{35}{70}=0.5.
+\Pr(\mbox{3 successes in 4 trials})=\frac{{7 \choose 3}{1 \choose 1}}{{8 \choose 4}}=\frac{35}{70}=0.5.
 \]
 Similarly, if \(F=9\) then the probability of observing \(X=3\) tagged fish would be
 \[
-\P(\mbox{3 successes in 4 trials})=\frac{{7 \choose 3}{2 \choose 1}}{{9 \choose 4}}=\frac{70}{126}\approx0.556.
+\Pr(\mbox{3 successes in 4 trials})=\frac{{7 \choose 3}{2 \choose 1}}{{9 \choose 4}}=\frac{70}{126}\approx0.556.
 \]
-We can see already that the observed data \(X=3\) is more likely when \(F=9\) than it is when \(F=8\). And here lies the genius of Sir Ronald Aylmer Fisher: he asks, ``What is the value of \(F\) which has the highest likelihood?'' In other words, for all of the different possible values of \(F\), which one makes the above probability the biggest? We can answer this question with a plot of \(\P(X=x)\) versus \(F\). See Figure <a href="#fig-capture-recapture">capture-recapture</a>.
+We can see already that the observed data \(X=3\) is more likely when \(F=9\) than it is when \(F=8\). And here lies the genius of Sir Ronald Aylmer Fisher: he asks, ``What is the value of \(F\) which has the highest likelihood?'' In other words, for all of the different possible values of \(F\), which one makes the above probability the biggest? We can answer this question with a plot of \(\Pr(X=x)\) versus \(F\). See Figure <a href="#fig-capture-recapture">capture-recapture</a>.
 </p>
 
 
@@ -268,13 +268,13 @@ X_{i}=
 \]
 Since we are returning the fish to the pond once caught, we may think of this as a sampling scheme with replacement where the proportion of bass \(p\) does not change. Given that we allow the fish sufficient time to ``mix'' once returned, it is not completely unreasonable to model our fishing experiment as a sequence of Bernoulli trials, so that the \(X_{i}\)'s would be IID \(\mathsf{binom(\mathtt{size}}=1,\,\mathtt{prob}=p)\). Under those assumptions we would have
 \begin{eqnarray*}
-\P(X_{1}=x_{1},\, X_{2}=x_{2},\,\ldots,\, X_{n}=x_{n}) & = & \P(X_{1}=x_{1})\,\P(X_{2}=x_{2})\,\cdots\P(X_{n}=x_{n}),\\
+\Pr(X_{1}=x_{1},\, X_{2}=x_{2},\,\ldots,\, X_{n}=x_{n}) & = & \Pr(X_{1}=x_{1})\,\Pr(X_{2}=x_{2})\,\cdots\Pr(X_{n}=x_{n}),\\
  & = & p^{x_{1}}(1-p)^{x_{1}}\, p^{x_{2}}(1-p)^{x_{2}}\cdots\, p^{x_{n}}(1-p)^{x_{n}},\\
  & = & p^{\sum x_{i}}(1-p)^{n-\sum x_{i}}.
 \end{eqnarray*}
 That is, 
 \[
-\P(X_{1}=x_{1},\, X_{2}=x_{2},\,\ldots,\, X_{n}=x_{n})=p^{\sum x_{i}}(1-p)^{n-\sum x_{i}}.
+\Pr(X_{1}=x_{1},\, X_{2}=x_{2},\,\ldots,\, X_{n}=x_{n})=p^{\sum x_{i}}(1-p)^{n-\sum x_{i}}.
 \]
 This last quantity is a function of \(p\), called the <i>likelihood function</i> \(L(p)\):
 \[
@@ -455,6 +455,8 @@ optimize(L, interval = c(0,1), x = x, maximum = <span style="color: #228b22;">TR
 
 
 <pre class="example">
+X11cairo 
+       2
  $maximum
 [1] 0.4062458
 
@@ -487,6 +489,8 @@ optimize(minuslogL, interval = c(0,1), x = x)
 
 
 <pre class="example">
+[1] 0.406
+[1] 0
  $minimum
 [1] 0.4062525
 
@@ -571,7 +575,7 @@ There is functionality in the <code>distrTest</code> package \cite{Ruckdescheldi
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Confidence Intervals for Means </h3>
+<h3 id="sec-1-2">Confidence Intervals for Means</h3>
 <div class="outline-text-3" id="text-1-2">
 
 <p>\label{sec:Confidence-Intervals-for-Means}
@@ -583,7 +587,7 @@ We are given \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) that are an \(SRS(n)\) fr
 \end{equation}
 For a big probability \(1-\alpha\), for instance, 95%, we can calculate the quantile \(z_{\alpha/2}\). Then
 \begin{equation}
-\P\left(-z_{\alpha/2}\leq\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}\leq z_{\alpha/2}\right)=1-\alpha.
+\Pr\left(-z_{\alpha/2}\leq\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}\leq z_{\alpha/2}\right)=1-\alpha.
 \end{equation}
 But now consider the following string of equivalent inequalities:
 \[
@@ -600,7 +604,7 @@ But now consider the following string of equivalent inequalities:
 \]
 That is, 
 \begin{equation}
-\P\left(\overline{X}-z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\leq\mu\leq\overline{X}+z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)=1-\alpha.
+\Pr\left(\overline{X}-z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\leq\mu\leq\overline{X}+z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)=1-\alpha.
 \end{equation}
 
 <div class="defn">
@@ -687,7 +691,9 @@ with(PlantGrowth, stem.leaf(weight))
 
 
 
-<pre class="example">1 | 2: represents 1.2
+<pre class="example">X11cairo 
+       2
+1 | 2: represents 1.2
  leaf unit: 0.1
             n: 30
    1     f | 5
@@ -824,7 +830,7 @@ All of the above intervals for \(\mu\) were two-sided, but there are also one-si
 \end{equation}
 and satisfy
 \begin{equation}
-\P\left(\overline{X}-z_{\alpha}\frac{\sigma}{\sqrt{n}}\leq\mu\right)=1-\alpha\quad\mbox{and}\quad\P\left(\overline{X}+z_{\alpha}\frac{\sigma}{\sqrt{n}}\geq\mu\right)=1-\alpha.
+\Pr\left(\overline{X}-z_{\alpha}\frac{\sigma}{\sqrt{n}}\leq\mu\right)=1-\alpha\quad\mbox{and}\quad\Pr\left(\overline{X}+z_{\alpha}\frac{\sigma}{\sqrt{n}}\geq\mu\right)=1-\alpha.
 \end{equation}
 </div>
 </p>
@@ -877,7 +883,7 @@ plot(temp, <span style="color: #8b2252;">"Conf"</span>)
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Confidence Intervals for Differences of Means </h3>
+<h3 id="sec-1-3">Confidence Intervals for Differences of Means</h3>
 <div class="outline-text-3" id="text-1-3">
 
 <p>\label{sec:Conf-Interv-for-Diff-Means}
@@ -958,7 +964,7 @@ There is not any specific functionality to handle the \(z\)-interval for small s
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Confidence Intervals for Proportions </h3>
+<h3 id="sec-1-4">Confidence Intervals for Proportions</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <p>\label{sec:Confidence-Intervals-Proportions}
@@ -1081,7 +1087,7 @@ prop.test(rbind(tab), conf.level = 0.95, correct = <span style="color: #228b22;"
 
 
 
-<pre class="example">
+<pre class="example"> 
 	1-sample proportions test without continuity
 	correction
 
@@ -1108,7 +1114,7 @@ B <span style="color: #008b8b;">&lt;-</span> with(A, untable(A, Freq))
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Confidence Intervals for Variances </h3>
+<h3 id="sec-1-5">Confidence Intervals for Variances</h3>
 <div class="outline-text-3" id="text-1-5">
 
 <p>\label{sec:Confidence-Intervals-for-Variances}
@@ -1125,7 +1131,7 @@ I am thinking about <code>sigma.test</code> in the <code>TeachingDemos</code> pa
 </div>
 
 <div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Fitting Distributions </h3>
+<h3 id="sec-1-6">Fitting Distributions</h3>
 <div class="outline-text-3" id="text-1-6">
 
 <p>\label{sec:Fitting-Distributions}
@@ -1140,7 +1146,7 @@ I am thinking about <code>fitdistr</code> from the <code>MASS</code> package \ci
 </div>
 
 <div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Sample Size and Margin of Error </h3>
+<h3 id="sec-1-7">Sample Size and Margin of Error</h3>
 <div class="outline-text-3" id="text-1-7">
 
 <p>\label{sec:Sample-Size-and-MOE}
@@ -1226,7 +1232,7 @@ I am thinking about <code>power.t.test</code>, <code>power.prop.test</code>, <co
 </div>
 
 <div id="outline-container-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Other Topics </h3>
+<h3 id="sec-1-8">Other Topics</h3>
 <div class="outline-text-3" id="text-1-8">
 
 <p>\label{sec:Other-Topics}
@@ -1240,7 +1246,7 @@ Mention <code>mle</code> from the <code>stats4</code> package.
 </div>
 
 <div id="outline-container-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Exercises </h3>
+<h3 id="sec-1-9">Exercises</h3>
 <div class="outline-text-3" id="text-1-9">
 
 

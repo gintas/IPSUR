@@ -9,8 +9,8 @@ lang="en" xml:lang="en">
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2011-09-18 Sun"/>
 <meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta name="description" content="This chapter introduces resampling methods in the context of estimation and hypothesis testing."/>
+<meta name="keywords" content="resampling bootstrap permutation testing"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   html { font-family: Times, serif; font-size: 12pt; }
@@ -125,6 +125,11 @@ lang="en" xml:lang="en">
 </script>
 </head>
 <body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html   "> UP </a>
+ |
+ <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
+</div>
 
 <div id="preamble">
 
@@ -134,26 +139,27 @@ lang="en" xml:lang="en">
 <h1 class="title">Resampling Methods</h1>
 
 
+
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Resampling Methods</a>
+<li><a href="#sec-1">Resampling Methods</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Introduction </a></li>
-<li><a href="#sec-1-2">1.2 Bootstrap Standard Errors </a></li>
-<li><a href="#sec-1-3">1.3 Bootstrap Confidence Intervals </a>
+<li><a href="#sec-1-1">Introduction</a></li>
+<li><a href="#sec-1-2">Bootstrap Standard Errors</a></li>
+<li><a href="#sec-1-3">Bootstrap Confidence Intervals</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1 Percentile Confidence Intervals </a></li>
-<li><a href="#sec-1-3-2">1.3.2 Student's \(t\) intervals (``normal intervals'') </a></li>
+<li><a href="#sec-1-3-1">Percentile Confidence Intervals</a></li>
+<li><a href="#sec-1-3-2">Student's \(t\) intervals (``normal intervals'')</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">1.4 Resampling in Hypothesis Tests </a>
+<li><a href="#sec-1-4">Resampling in Hypothesis Tests</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1 Comparison with the Two Sample <i>t</i> test </a></li>
+<li><a href="#sec-1-4-1">Comparison with the Two Sample <i>t</i> test</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5 Exercises </a></li>
+<li><a href="#sec-1-5">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +167,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Resampling Methods &nbsp;&nbsp;&nbsp;<span class="tag"><span class="resamp">resamp</span></span></h2>
+<h2 id="sec-1">Resampling Methods</h2>
 <div class="outline-text-2" id="text-1">
 
 <p>\label{cha:resampling-methods}
@@ -187,7 +193,7 @@ I have seen <i>Statistical Computing with \textsf{R}</i> by Rizzo \cite{Rizzo200
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Introduction </h3>
+<h3 id="sec-1-1">Introduction</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <p>\label{sec:Introduction-Resampling}
@@ -246,7 +252,7 @@ The above discussion leads us to the following general procedure to approximate 
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Bootstrap Standard Errors </h3>
+<h3 id="sec-1-2">Bootstrap Standard Errors</h3>
 <div class="outline-text-3" id="text-1-2">
 
 <p>\label{sec:Bootstrap-Standard-Errors}
@@ -308,6 +314,14 @@ mean(xbarstar) - mean(srs)
 </pre>
 
 
+<pre class="example">
+X11cairo 
+       2
+[1] 3.186918
+[1] 3.187536
+[1] -0.0006177411
+</pre>
+
 
 
 <p>
@@ -322,6 +336,10 @@ Now back to our original problem, we would like to estimate the standard error o
 <pre class="src src-R">sd(xbarstar)
 </pre>
 
+
+<pre class="example">
+[1] 0.2476841
+</pre>
 
 
 <p>
@@ -351,7 +369,7 @@ sd(medstar)
 
 
 <pre class="example">
-[1] 26.19355
+[1] 26.91169
 </pre>
 
 
@@ -389,6 +407,14 @@ mean(medstar) - median(rivers)
 </pre>
 
 
+<pre class="example">
+X11cairo 
+       2
+[1] 425
+[1] 427.318
+[1] 2.318
+</pre>
+
 
 
 <p>
@@ -415,6 +441,20 @@ boot(data = srs, statistic = mean_fun, R = 1000)
 
 
 
+<pre class="example"> 
+ORDINARY NONPARAMETRIC BOOTSTRAP
+
+
+Call:
+boot(data = srs, statistic = mean_fun, R = 1000)
+
+
+Bootstrap Statistics :
+    original      bias    std. error
+t1* 3.187536 0.003688615   0.2613759
+</pre>
+
+
 <p>
 For the standard error of the median (Example <a href="#exa-Bootstrap-se-median">Bootstrap-se-median</a>):
 </p>
@@ -425,6 +465,20 @@ For the standard error of the median (Example <a href="#exa-Bootstrap-se-median"
 boot(data = rivers, statistic = median_fun, R = 1000)
 </pre>
 
+
+
+<pre class="example">
+ORDINARY NONPARAMETRIC BOOTSTRAP
+
+
+Call:
+boot(data = rivers, statistic = median_fun, R = 1000)
+
+
+Bootstrap Statistics :
+    original  bias    std. error
+t1*      425   2.589    25.78218
+</pre>
 
 
 <p>
@@ -454,7 +508,7 @@ Some things to keep in mind about the bootstrap:
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Bootstrap Confidence Intervals </h3>
+<h3 id="sec-1-3">Bootstrap Confidence Intervals</h3>
 <div class="outline-text-3" id="text-1-3">
 
 <p>\label{sec:Bootstrap-Confidence-Intervals}
@@ -463,7 +517,7 @@ Some things to keep in mind about the bootstrap:
 </div>
 
 <div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Percentile Confidence Intervals </h4>
+<h4 id="sec-1-3-1">Percentile Confidence Intervals</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
 
@@ -492,10 +546,10 @@ quantile(thetast, c(0.025, 0.975))
 
 
 <pre class="example">
-[1] 14.7755
+[1] 14.761
 [1] 15
  2.5% 97.5% 
-   12    18 
+   12    18
 </pre>
 
 
@@ -514,7 +568,7 @@ boot.ci(med_boot, type = c(<span style="color: #8b2252;">"perc"</span>, <span st
 
 
 
-<pre class="example">BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
+<pre class="example"> BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
 Based on 2000 bootstrap replicates
 
 CALL : 
@@ -522,7 +576,7 @@ boot.ci(boot.out = med_boot, type = c("perc", "norm", "bca"))
 
 Intervals : 
 Level      Normal             Percentile            BCa          
-95%   (11.95, 18.55 )   (12.00, 18.00 )   (11.00, 18.00 )  
+95%   (12.27, 18.28 )   (12.00, 18.00 )   (11.00, 18.00 )  
 Calculations and Intervals on Original Scale
 </pre>
 
@@ -533,7 +587,7 @@ Calculations and Intervals on Original Scale
 </div>
 
 <div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Student's \(t\) intervals (``normal intervals'') </h4>
+<h4 id="sec-1-3-2">Student's \(t\) intervals (``normal intervals'')</h4>
 <div class="outline-text-4" id="text-1-3-2">
 
 
@@ -593,7 +647,7 @@ We have seen two methods for bootstrapping confidence intervals for a statistic.
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Resampling in Hypothesis Tests </h3>
+<h3 id="sec-1-4">Resampling in Hypothesis Tests</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <p>\label{sec:Resampling-in-Hypothesis}
@@ -669,8 +723,7 @@ oneway_test(len ~ supp, data = ToothGrowth)
 
 data:  len by supp (OJ, VC) 
 Z = 1.8734, p-value = 0.06102
-alternative hypothesis: true mu is not equal to 0 
-
+alternative hypothesis: true mu is not equal to 0
 </pre>
 
 
@@ -678,7 +731,7 @@ alternative hypothesis: true mu is not equal to 0
 </div>
 
 <div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Comparison with the Two Sample <i>t</i> test </h4>
+<h4 id="sec-1-4-1">Comparison with the Two Sample <i>t</i> test</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
 
@@ -704,17 +757,14 @@ alternative hypothesis: true difference in means is greater than 0
  0.4708204       Inf 
 sample estimates:
 mean in group OJ mean in group VC 
-        20.66333         16.96333 
-
+        20.66333         16.96333
 </pre>
 
 
 
 
 <p>
-The \(p\)-value for the \(t\)-test was \( 
- \), while the permutation test \(p\)-value was \( 
- \). Note that there is an underlying normality assumption for the \(t\)-test, which isn't present in the permutation test. If the normality assumption may be questionable, then the permutation test would be more reasonable. We see what can happen when using a test in a situation where the assumptions are not met: smaller \(p\)-values. In situations where the normality assumptions are not met, for example, small sample scenarios, the permutation test is to be preferred. In particular, if accuracy is very important then we should use the permutation test. 
+The \(p\)-value for the \(t\)-test was \(  0.03 \), while the permutation test \(p\)-value was \(  0.061 \). Note that there is an underlying normality assumption for the \(t\)-test, which isn't present in the permutation test. If the normality assumption may be questionable, then the permutation test would be more reasonable. We see what can happen when using a test in a situation where the assumptions are not met: smaller \(p\)-values. In situations where the normality assumptions are not met, for example, small sample scenarios, the permutation test is to be preferred. In particular, if accuracy is very important then we should use the permutation test. 
 </p>
 <p>
 <div class="rem">
@@ -754,7 +804,7 @@ Here are some things about permutation tests to keep in mind.
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Exercises </h3>
+<h3 id="sec-1-5">Exercises</h3>
 <div class="outline-text-3" id="text-1-5">
 
 </div>

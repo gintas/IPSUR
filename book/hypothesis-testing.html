@@ -9,8 +9,8 @@ lang="en" xml:lang="en">
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2011-09-18 Sun"/>
 <meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta name="description" content="This chapter discusses hypothesis testing in the Neyman-Pearson tradition."/>
+<meta name="keywords" content="hypothesis testing statistics one two sample"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   html { font-family: Times, serif; font-size: 12pt; }
@@ -144,34 +144,34 @@ lang="en" xml:lang="en">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Hypothesis Testing</a>
+<li><a href="#sec-1">Hypothesis Testing</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Introduction </a>
+<li><a href="#sec-1-1">Introduction</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1 Terminology </a></li>
+<li><a href="#sec-1-1-1">Terminology</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2 One Sample Tests for Means and Variances </a>
+<li><a href="#sec-1-2">One Sample Tests for Means and Variances</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1 For Means </a></li>
-<li><a href="#sec-1-2-2">1.2.2 Tests for a Variance </a></li>
+<li><a href="#sec-1-2-1">For Means</a></li>
+<li><a href="#sec-1-2-2">Tests for a Variance</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3 Two-Sample Tests for Means and Variances </a>
+<li><a href="#sec-1-3">Two-Sample Tests for Means and Variances</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1 Independent Samples </a></li>
-<li><a href="#sec-1-3-2">1.3.2 Paired Samples </a></li>
+<li><a href="#sec-1-3-1">Independent Samples</a></li>
+<li><a href="#sec-1-3-2">Paired Samples</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">1.4 Other Hypothesis Tests </a>
+<li><a href="#sec-1-4">Other Hypothesis Tests</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1 Kolmogorov-Smirnov Goodness-of-Fit Test\label{sub:Kolmogorov-Smirnov-Goodness-of-Fit-Test} </a></li>
-<li><a href="#sec-1-4-2">1.4.2 Shapiro-Wilk Normality Test </a></li>
+<li><a href="#sec-1-4-1">Kolmogorov-Smirnov Goodness-of-Fit Test\label{sub:Kolmogorov-Smirnov-Goodness-of-Fit-Test}</a></li>
+<li><a href="#sec-1-4-2">Shapiro-Wilk Normality Test</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5 Analysis of Variance </a></li>
-<li><a href="#sec-1-6">1.6 Sample Size and Power </a></li>
-<li><a href="#sec-1-7">1.7 Exercises </a></li>
+<li><a href="#sec-1-5">Analysis of Variance</a></li>
+<li><a href="#sec-1-6">Sample Size and Power</a></li>
+<li><a href="#sec-1-7">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -179,7 +179,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Hypothesis Testing &nbsp;&nbsp;&nbsp;<span class="tag"><span class="hypoth">hypoth</span></span></h2>
+<h2 id="sec-1">Hypothesis Testing</h2>
 <div class="outline-text-2" id="text-1">
 
 <p>\label{cha:Hypothesis-Testing}
@@ -201,7 +201,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Introduction </h3>
+<h3 id="sec-1-1">Introduction</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <p>\label{sec:Introduction-Hypothesis}
@@ -319,7 +319,7 @@ If the confidence interval is
 </div>
 
 <div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Terminology </h4>
+<h4 id="sec-1-1-1">Terminology</h4>
 <div class="outline-text-4" id="text-1-1-1">
 
 
@@ -353,7 +353,7 @@ Every time we make a decision it is possible to be wrong, and there are two poss
 Type I Errors are usually considered worse
 and we design our statistical procedures to control the probability of making such a mistake. We define the
 \begin{equation}
-\mbox{significance level of the test}=\P(\mbox{Type I Error})=\alpha.
+\mbox{significance level of the test}=\Pr(\mbox{Type I Error})=\alpha.
 \end{equation}
 We want \(\alpha\) to be small which conventionally means, say, \(\alpha=0.05\), \(\alpha=0.01\), or \(\alpha=0.005\) (but could mean anything, in principle).
 </p><ul>
@@ -575,7 +575,7 @@ Once your unsummarized data is a column, then you can use the menu \textsf{Stati
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> One Sample Tests for Means and Variances </h3>
+<h3 id="sec-1-2">One Sample Tests for Means and Variances</h3>
 <div class="outline-text-3" id="text-1-2">
 
 <p>\label{sec:One-Sample-Tests}
@@ -584,7 +584,7 @@ Once your unsummarized data is a column, then you can use the menu \textsf{Stati
 </div>
 
 <div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> For Means </h4>
+<h4 id="sec-1-2-1">For Means</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
 
@@ -698,7 +698,7 @@ Your data should be in a single numeric column (a variable) of the Active Data S
 </div>
 
 <div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Tests for a Variance </h4>
+<h4 id="sec-1-2-2">Tests for a Variance</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
 
@@ -752,7 +752,7 @@ var of women$height
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Two-Sample Tests for Means and Variances </h3>
+<h3 id="sec-1-3">Two-Sample Tests for Means and Variances</h3>
 <div class="outline-text-3" id="text-1-3">
 
 <p>\label{sec:Two-Sample-Tests-for-Means}
@@ -776,7 +776,7 @@ T=\frac{\overline{X}-\overline{Y}}{S_{p}\sqrt{\frac{1}{n}+\frac{1}{m}}}=\frac{\o
 </div>
 
 <div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Independent Samples </h4>
+<h4 id="sec-1-3-1">Independent Samples</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
 
@@ -824,7 +824,7 @@ For a nonparametric alternative to the two-sample \(F\) test see Chapter <a href
 </div>
 
 <div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Paired Samples </h4>
+<h4 id="sec-1-3-2">Paired Samples</h4>
 <div class="outline-text-4" id="text-1-3-2">
 
 
@@ -857,7 +857,7 @@ mean of the differences
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Other Hypothesis Tests </h3>
+<h3 id="sec-1-4">Other Hypothesis Tests</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <p>\label{sec:Other-Hypothesis-Tests}
@@ -866,7 +866,7 @@ mean of the differences
 </div>
 
 <div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Kolmogorov-Smirnov Goodness-of-Fit Test\label{sub:Kolmogorov-Smirnov-Goodness-of-Fit-Test} </h4>
+<h4 id="sec-1-4-1">Kolmogorov-Smirnov Goodness-of-Fit Test\label{sub:Kolmogorov-Smirnov-Goodness-of-Fit-Test}</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
 
@@ -893,7 +893,7 @@ alternative hypothesis: two-sided
 </div>
 
 <div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Shapiro-Wilk Normality Test </h4>
+<h4 id="sec-1-4-2">Shapiro-Wilk Normality Test</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
 <p>\label{sub:Shapiro-Wilk-Normality-Test}
@@ -921,7 +921,7 @@ W = 0.9636, p-value = 0.7545
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Analysis of Variance </h3>
+<h3 id="sec-1-5">Analysis of Variance</h3>
 <div class="outline-text-3" id="text-1-5">
 
 <p>\label{sec:Analysis-of-Variance}
@@ -1004,7 +1004,7 @@ and
 
 
 <pre class="example">
-Analysis of Variance Table
+ Analysis of Variance Table
 
 Response: weight
           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
@@ -1057,7 +1057,7 @@ par(old.omd)
 </div>
 
 <div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Sample Size and Power </h3>
+<h3 id="sec-1-6">Sample Size and Power</h3>
 <div class="outline-text-3" id="text-1-6">
 
 <p>\label{sec:Sample-Size-and-Power}
@@ -1065,7 +1065,7 @@ par(old.omd)
 <p>
 The power function of a test for a parameter \(\theta\) is
 \[
-\beta(\theta)=\P_{\theta}(\mbox{Reject }H_{0}),\quad-\infty<\theta<\infty.
+\beta(\theta)=\Pr_{\theta}(\mbox{Reject }H_{0}),\quad-\infty<\theta<\infty.
 \]
 Here are some properties of power functions:
 </p><ol>
@@ -1104,7 +1104,7 @@ power.examp()
 </div>
 
 <div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Exercises </h3>
+<h3 id="sec-1-7">Exercises</h3>
 <div class="outline-text-3" id="text-1-7">
 
 

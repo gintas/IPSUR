@@ -9,8 +9,8 @@ lang="en" xml:lang="en">
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2011-09-18 Sun"/>
 <meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta name="description" content="This chapter discusses regression of one response variable on multiple explanatory variables."/>
+<meta name="keywords" content="multiple linear regression R statistics"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   html { font-family: Times, serif; font-size: 12pt; }
@@ -144,51 +144,51 @@ lang="en" xml:lang="en">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Multiple Linear Regression</a>
+<li><a href="#sec-1">Multiple Linear Regression</a>
 <ul>
-<li><a href="#sec-1-1">1.1 The Multiple Linear Regression Model </a>
+<li><a href="#sec-1-1">The Multiple Linear Regression Model</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1 What does it mean? </a></li>
+<li><a href="#sec-1-1-1">What does it mean?</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2 Estimation and Prediction </a>
+<li><a href="#sec-1-2">Estimation and Prediction</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1 Parameter estimates </a></li>
-<li><a href="#sec-1-2-2">1.2.2 Point Estimates of the Regression Surface </a></li>
-<li><a href="#sec-1-2-3">1.2.3 Mean Square Error and Standard Error </a></li>
-<li><a href="#sec-1-2-4">1.2.4 Interval Estimates of the Parameters </a></li>
-<li><a href="#sec-1-2-5">1.2.5 Confidence and Prediction Intervals </a></li>
+<li><a href="#sec-1-2-1">Parameter estimates</a></li>
+<li><a href="#sec-1-2-2">Point Estimates of the Regression Surface</a></li>
+<li><a href="#sec-1-2-3">Mean Square Error and Standard Error</a></li>
+<li><a href="#sec-1-2-4">Interval Estimates of the Parameters</a></li>
+<li><a href="#sec-1-2-5">Confidence and Prediction Intervals</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3 Model Utility and Inference </a>
+<li><a href="#sec-1-3">Model Utility and Inference</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1 Multiple Coefficient of Determination </a></li>
-<li><a href="#sec-1-3-2">1.3.2 Overall <i>F</i>-Test </a></li>
-<li><a href="#sec-1-3-3">1.3.3 Student's <i>t</i> Tests </a></li>
+<li><a href="#sec-1-3-1">Multiple Coefficient of Determination</a></li>
+<li><a href="#sec-1-3-2">Overall <i>F</i>-Test</a></li>
+<li><a href="#sec-1-3-3">Student's <i>t</i> Tests</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">1.4 Polynomial Regression </a>
+<li><a href="#sec-1-4">Polynomial Regression</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1 Quadratic Regression Model </a></li>
+<li><a href="#sec-1-4-1">Quadratic Regression Model</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5 Interaction </a></li>
-<li><a href="#sec-1-6">1.6 Qualitative Explanatory Variables </a>
+<li><a href="#sec-1-5">Interaction</a></li>
+<li><a href="#sec-1-6">Qualitative Explanatory Variables</a>
 <ul>
-<li><a href="#sec-1-6-1">1.6.1 Graphing the Regression Lines </a></li>
+<li><a href="#sec-1-6-1">Graphing the Regression Lines</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-7">1.7 Partial <i>F</i> Statistic </a></li>
-<li><a href="#sec-1-8">1.8 Residual Analysis and Diagnostic Tools </a></li>
-<li><a href="#sec-1-9">1.9 Additional Topics </a>
+<li><a href="#sec-1-7">Partial <i>F</i> Statistic</a></li>
+<li><a href="#sec-1-8">Residual Analysis and Diagnostic Tools</a></li>
+<li><a href="#sec-1-9">Additional Topics</a>
 <ul>
-<li><a href="#sec-1-9-1">1.9.1 Nonlinear Regression </a></li>
-<li><a href="#sec-1-9-2">1.9.2 Real Nonlinear Regression </a></li>
-<li><a href="#sec-1-9-3">1.9.3 Multicollinearity </a></li>
-<li><a href="#sec-1-9-4">1.9.4 Akaike's Information Criterion </a></li>
+<li><a href="#sec-1-9-1">Nonlinear Regression</a></li>
+<li><a href="#sec-1-9-2">Real Nonlinear Regression</a></li>
+<li><a href="#sec-1-9-3">Multicollinearity</a></li>
+<li><a href="#sec-1-9-4">Akaike's Information Criterion</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-10">1.10 Chapter Exercises </a></li>
+<li><a href="#sec-1-10">Chapter Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -196,7 +196,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Multiple Linear Regression &nbsp;&nbsp;&nbsp;<span class="tag"><span class="mlr">mlr</span></span></h2>
+<h2 id="sec-1">Multiple Linear Regression</h2>
 <div class="outline-text-2" id="text-1">
 
 <p>\label{cha:multiple-linear-regression}
@@ -232,7 +232,7 @@ Most of the results are stated without proof or with only a cursory justificatio
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> The Multiple Linear Regression Model </h3>
+<h3 id="sec-1-1">The Multiple Linear Regression Model</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <p>\label{sec:The-MLR-Model}
@@ -341,7 +341,7 @@ in which case the quantity \(\mu(x_{1},x_{2})=\beta_{0}+\beta_{1}x_{1}+\beta_{2}
 </div>
 
 <div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> What does it mean? </h4>
+<h4 id="sec-1-1-1">What does it mean?</h4>
 <div class="outline-text-4" id="text-1-1-1">
 
 
@@ -388,7 +388,7 @@ Looking at the graph we see that the data points fall close to a plane in three 
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Estimation and Prediction </h3>
+<h3 id="sec-1-2">Estimation and Prediction</h3>
 <div class="outline-text-3" id="text-1-2">
 
 <p>\label{sec:Estimation-and-Prediction-MLR}
@@ -397,7 +397,7 @@ Looking at the graph we see that the data points fall close to a plane in three 
 </div>
 
 <div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Parameter estimates </h4>
+<h4 id="sec-1-2-1">Parameter estimates</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
 <p>\label{sub:mlr-parameter-estimates}
@@ -500,7 +500,7 @@ We could see the entire model matrix \(\mathbf{X}\) with the <code>model.matrix<
 </div>
 
 <div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Point Estimates of the Regression Surface </h4>
+<h4 id="sec-1-2-2">Point Estimates of the Regression Surface</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
 <p>\label{sub:mlr-point-est-regsurface}
@@ -652,7 +652,7 @@ Using the <code>trees</code> data,
 </div>
 
 <div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Mean Square Error and Standard Error </h4>
+<h4 id="sec-1-2-3">Mean Square Error and Standard Error</h4>
 <div class="outline-text-4" id="text-1-2-3">
 
 <p>\label{sub:mlr-mse-se}
@@ -725,7 +725,7 @@ For the <code>trees</code> data we find \(s\approx  3.882 \).
 </div>
 
 <div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Interval Estimates of the Parameters </h4>
+<h4 id="sec-1-2-4">Interval Estimates of the Parameters</h4>
 <div class="outline-text-4" id="text-1-2-4">
 
 <p>\label{sub:mlr-interval-est-params}
@@ -787,7 +787,7 @@ For example, using the calculations above we say that for the regression model <
 </div>
 
 <div id="outline-container-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Confidence and Prediction Intervals </h4>
+<h4 id="sec-1-2-5">Confidence and Prediction Intervals</h4>
 <div class="outline-text-4" id="text-1-2-5">
 
 
@@ -898,7 +898,7 @@ Using the <code>trees</code> data,
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Model Utility and Inference </h3>
+<h3 id="sec-1-3">Model Utility and Inference</h3>
 <div class="outline-text-3" id="text-1-3">
 
 <p>\label{sec:Model-Utility-and-MLR}
@@ -907,7 +907,7 @@ Using the <code>trees</code> data,
 </div>
 
 <div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Multiple Coefficient of Determination </h4>
+<h4 id="sec-1-3-1">Multiple Coefficient of Determination</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
 
@@ -985,7 +985,7 @@ High values of \(R^{2}\) and \( \overline{R}^2 \) such as these indicate that th
 </div>
 
 <div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Overall <i>F</i>-Test </h4>
+<h4 id="sec-1-3-2">Overall <i>F</i>-Test</h4>
 <div class="outline-text-4" id="text-1-3-2">
 
 <p>\label{sub:mlr-Overall-F-Test}
@@ -1026,7 +1026,7 @@ For the <code>trees</code> data, we see that \( F =  254.972337410669 \) with a 
 </div>
 
 <div id="outline-container-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Student's <i>t</i> Tests </h4>
+<h4 id="sec-1-3-3">Student's <i>t</i> Tests</h4>
 <div class="outline-text-4" id="text-1-3-3">
 
 <p>\label{sub:mlr-Student's-t-Tests}
@@ -1095,7 +1095,7 @@ We see from the <i>p-values</i> that there is a significant linear relationship 
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Polynomial Regression </h3>
+<h3 id="sec-1-4">Polynomial Regression</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <p>\label{sec:Polynomial-Regression}
@@ -1104,7 +1104,7 @@ We see from the <i>p-values</i> that there is a significant linear relationship 
 </div>
 
 <div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Quadratic Regression Model </h4>
+<h4 id="sec-1-4-1">Quadratic Regression Model</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
 
@@ -1285,7 +1285,7 @@ In Example <a href="#exa-mlr-trees-poly-no-rescale">mlr-trees-poly-no-rescale</a
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Interaction </h3>
+<h3 id="sec-1-5">Interaction</h3>
 <div class="outline-text-3" id="text-1-5">
 
 <p>\label{sec:Interaction}
@@ -1423,7 +1423,7 @@ These examples can be generalized to more than two independent variables, say th
 </div>
 
 <div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Qualitative Explanatory Variables </h3>
+<h3 id="sec-1-6">Qualitative Explanatory Variables</h3>
 <div class="outline-text-3" id="text-1-6">
 
 <p>\label{sec:Qualitative-Explanatory-Variables}
@@ -1561,7 +1561,7 @@ The level <code>bar1</code> is represented by \(\mathtt{foobar2}=\cdots=\mathtt{
 </div>
 
 <div id="outline-container-1-6-1" class="outline-4">
-<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> Graphing the Regression Lines </h4>
+<h4 id="sec-1-6-1">Graphing the Regression Lines</h4>
 <div class="outline-text-4" id="text-1-6-1">
 
 
@@ -1594,7 +1594,7 @@ There are other &ndash; shorter &ndash; ways to plot regression lines by groups,
 </div>
 
 <div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Partial <i>F</i> Statistic </h3>
+<h3 id="sec-1-7">Partial <i>F</i> Statistic</h3>
 <div class="outline-text-3" id="text-1-7">
 
 <p>\label{sec:Partial-F-Statistic}
@@ -1746,7 +1746,7 @@ In this case, the improvement to the reduced model that is attributable to <code
 </div>
 
 <div id="outline-container-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Residual Analysis and Diagnostic Tools </h3>
+<h3 id="sec-1-8">Residual Analysis and Diagnostic Tools</h3>
 <div class="outline-text-3" id="text-1-8">
 
 <p>\label{sec:Residual-Analysis-MLR}
@@ -1790,7 +1790,7 @@ We encountered many, many diagnostic measures for simple linear regression in Se
 </div>
 
 <div id="outline-container-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Additional Topics </h3>
+<h3 id="sec-1-9">Additional Topics</h3>
 <div class="outline-text-3" id="text-1-9">
 
 <p>\label{sec:Additional-Topics-MLR}
@@ -1799,7 +1799,7 @@ We encountered many, many diagnostic measures for simple linear regression in Se
 </div>
 
 <div id="outline-container-1-9-1" class="outline-4">
-<h4 id="sec-1-9-1"><span class="section-number-4">1.9.1</span> Nonlinear Regression </h4>
+<h4 id="sec-1-9-1">Nonlinear Regression</h4>
 <div class="outline-text-4" id="text-1-9-1">
 
 
@@ -1901,7 +1901,7 @@ The predictions and intervals are slightly different from those calculated earli
 </div>
 
 <div id="outline-container-1-9-2" class="outline-4">
-<h4 id="sec-1-9-2"><span class="section-number-4">1.9.2</span> Real Nonlinear Regression </h4>
+<h4 id="sec-1-9-2">Real Nonlinear Regression</h4>
 <div class="outline-text-4" id="text-1-9-2">
 
 
@@ -1957,7 +1957,7 @@ Achieved convergence tolerance: 6.554e-08
 </div>
 
 <div id="outline-container-1-9-3" class="outline-4">
-<h4 id="sec-1-9-3"><span class="section-number-4">1.9.3</span> Multicollinearity </h4>
+<h4 id="sec-1-9-3">Multicollinearity</h4>
 <div class="outline-text-4" id="text-1-9-3">
 
 <p>\label{sub:Multicollinearity}
@@ -1997,7 +1997,7 @@ We decided to omit a thorough discussion of multicollinearity because we are not
 </div>
 
 <div id="outline-container-1-9-4" class="outline-4">
-<h4 id="sec-1-9-4"><span class="section-number-4">1.9.4</span> Akaike's Information Criterion </h4>
+<h4 id="sec-1-9-4">Akaike's Information Criterion</h4>
 <div class="outline-text-4" id="text-1-9-4">
 
 
@@ -2015,7 +2015,7 @@ AIC=-2\ln L+2(p+1)
 </div>
 
 <div id="outline-container-1-10" class="outline-3">
-<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Chapter Exercises </h3>
+<h3 id="sec-1-10">Chapter Exercises</h3>
 <div class="outline-text-3" id="text-1-10">
 
 

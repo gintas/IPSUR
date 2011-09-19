@@ -9,8 +9,8 @@ lang="en" xml:lang="en">
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2011-09-18 Sun"/>
 <meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta name="description" content="This chapter deals with two (or more) random variables, discrete and continuous."/>
+<meta name="keywords" content="multivariate distribution R probability statistics"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   html { font-family: Times, serif; font-size: 12pt; }
@@ -144,31 +144,31 @@ lang="en" xml:lang="en">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Multivariate Distributions</a>
+<li><a href="#sec-1">Multivariate Distributions</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Joint and Marginal Probability Distributions </a></li>
-<li><a href="#sec-1-2">1.2 Joint and Marginal Expectation </a>
+<li><a href="#sec-1-1">Joint and Marginal Probability Distributions</a></li>
+<li><a href="#sec-1-2">Joint and Marginal Expectation</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1 Covariance and Correlation </a></li>
+<li><a href="#sec-1-2-1">Covariance and Correlation</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3 Conditional Distributions </a>
+<li><a href="#sec-1-3">Conditional Distributions</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1 Bayesian Connection </a></li>
+<li><a href="#sec-1-3-1">Bayesian Connection</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">1.4 Independent Random Variables </a>
+<li><a href="#sec-1-4">Independent Random Variables</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1 Independent Random Variables </a></li>
-<li><a href="#sec-1-4-2">1.4.2 Combining Independent Random Variables </a></li>
+<li><a href="#sec-1-4-1">Independent Random Variables</a></li>
+<li><a href="#sec-1-4-2">Combining Independent Random Variables</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5 Exchangeable Random Variables </a></li>
-<li><a href="#sec-1-6">1.6 The Bivariate Normal Distribution </a></li>
-<li><a href="#sec-1-7">1.7 Bivariate Transformations of Random Variables </a></li>
-<li><a href="#sec-1-8">1.8 Remarks for the Multivariate Case </a></li>
-<li><a href="#sec-1-9">1.9 The Multinomial Distribution </a></li>
-<li><a href="#sec-1-10">1.10 Exercises </a></li>
+<li><a href="#sec-1-5">Exchangeable Random Variables</a></li>
+<li><a href="#sec-1-6">The Bivariate Normal Distribution</a></li>
+<li><a href="#sec-1-7">Bivariate Transformations of Random Variables</a></li>
+<li><a href="#sec-1-8">Remarks for the Multivariate Case</a></li>
+<li><a href="#sec-1-9">The Multinomial Distribution</a></li>
+<li><a href="#sec-1-10">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -176,7 +176,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Multivariate Distributions &nbsp;&nbsp;&nbsp;<span class="tag"><span class="multdist">multdist</span></span></h2>
+<h2 id="sec-1">Multivariate Distributions</h2>
 <div class="outline-text-2" id="text-1">
 
 <p>\label{cha:Multivariable-Distributions}
@@ -216,7 +216,7 @@ The interested reader who would like to learn more about any of the below mentio
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Joint and Marginal Probability Distributions </h3>
+<h3 id="sec-1-1">Joint and Marginal Probability Distributions</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <p>\label{sec:Joint-Probability-Distributions}
@@ -224,7 +224,7 @@ The interested reader who would like to learn more about any of the below mentio
 <p>
 Consider two discrete random variables \(X\) and \(Y\) with PMFs \(f_{X}\) and \(f_{Y}\) that are supported on the sample spaces \(S_{X}\) and \(S_{Y}\), respectively. Let \(S_{X,Y}\) denote the set of all possible observed <i>pairs</i> \((x,y)\), called the <i>joint support set</i> of \(X\) and \(Y\). Then the <i>joint probability mass function</i> of \(X\) and \(Y\) is the function \(f_{X,Y}\) defined by
 \begin{equation}
-f_{X,Y}(x,y)=\P(X=x,\, Y=y),\quad\mbox{for }(x,y)\in S_{X,Y}.\label{eq:joint-pmf}
+f_{X,Y}(x,y)=\Pr(X=x,\, Y=y),\quad\mbox{for }(x,y)\in S_{X,Y}.\label{eq:joint-pmf}
 \end{equation}
 Every joint PMF satisfies
 \begin{equation}
@@ -239,8 +239,8 @@ It is customary to extend the function \(f_{X,Y}\) to be defined on all of \(\ma
 <p>
 In the context of this chapter, the PMFs \(f_{X}\) and \(f_{Y}\) are called the <i>marginal PMFs</i> of \(X\) and \(Y\), respectively. If we are given only the joint PMF then we may recover each of the marginal PMFs by using the Theorem of Total Probability (see Equation<a href="#eq-theorem-total-probability">theorem-total-probability</a>): observe
 \begin{eqnarray}
-f_{X}(x) & = & \P(X=x),\\
- & = & \sum_{y\in S_{Y}}\P(X=x,\, Y=y),\\
+f_{X}(x) & = & \Pr(X=x),\\
+ & = & \sum_{y\in S_{Y}}\Pr(X=x,\, Y=y),\\
  & = & \sum_{y\in S_{Y}}f_{X,Y}(x,y).
 \end{eqnarray}
 By interchanging the roles of \(X\) and \(Y\) it is clear that 
@@ -252,7 +252,7 @@ Given the joint PMF we may recover the marginal PMFs, but the converse is not tr
 <p>
 Associated with the joint PMF is the <i>joint cumulative distribution function</i> \(F_{X,Y}\) defined by
 \[
-F_{X,Y}(x,y)=\P(X\leq x,\, Y\leq y),\quad\mbox{for }(x,y)\in\mathbb{R}^{2}.
+F_{X,Y}(x,y)=\Pr(X\leq x,\, Y\leq y),\quad\mbox{for }(x,y)\in\mathbb{R}^{2}.
 \]
 The bivariate joint CDF is not quite as tractable as the univariate CDFs, but in principle we could calculate it by adding up quantities of the form in Equation <a href="#eq-joint-pmf">joint-pmf</a>. The joint CDF is typically not used in practice due to its inconvenient form; one can usually get by with the joint PMF alone.
 </p>
@@ -289,7 +289,7 @@ V & = & \mbox{the sum of the two rolls.}
 We see that the support of \(U\) is \(S_{U}= \{ 1,2,\ldots,6 \} \) and the support of \(V\) is \(S_{V}= \{ 2,3,\ldots,12 \} \). We may represent the sample space with a matrix, and for each entry in the matrix we may calculate the value that \(U\) assumes. The result is in the left half of Table <a href="#tab-max-and-sum-two-dice">max-and-sum-two-dice</a>. 
 </p>
 <p>
-We can use the table to calculate the marginal PMF of \(U\), because from Example <a href="#exa-Toss-a-six-sided-die-twice">Toss-a-six-sided-die-twice</a> we know that each entry in the matrix has probability \(1/36\) associated with it. For instance, there is only one outcome in the matrix with \(U=1\), namely, the top left corner. This single entry has probability \(1/36\), therefore, it must be that \(f_{U}(1)=\P(U=1)=1/36\). Similarly we see that there are three entries in the matrix with \(U=2\), thus \(f_{U}(2)=3/36\). Continuing in this fashion we will find the marginal distribution of \(U\) may be written
+We can use the table to calculate the marginal PMF of \(U\), because from Example <a href="#exa-Toss-a-six-sided-die-twice">Toss-a-six-sided-die-twice</a> we know that each entry in the matrix has probability \(1/36\) associated with it. For instance, there is only one outcome in the matrix with \(U=1\), namely, the top left corner. This single entry has probability \(1/36\), therefore, it must be that \(f_{U}(1)=\Pr(U=1)=1/36\). Similarly we see that there are three entries in the matrix with \(U=2\), thus \(f_{U}(2)=3/36\). Continuing in this fashion we will find the marginal distribution of \(U\) may be written
 \begin{equation}
 f_{U}(u)=\frac{2u-1}{36},\quad u=1,\,2,\ldots,6.
 \end{equation}
@@ -321,7 +321,7 @@ and
 \end{equation}
 In the continuous case there is not such a simple interpretation for the joint PDF; however, we do have one for the joint CDF, namely,
 \[
-F_{X,Y}(x,y)=\P(X\leq x,\, Y\leq y)=\int_{-\infty}^{x}\int_{-\infty}^{y}f_{X,Y}(u,v)\,\mathrm{d} v\,\mathrm{d} u,
+F_{X,Y}(x,y)=\Pr(X\leq x,\, Y\leq y)=\int_{-\infty}^{x}\int_{-\infty}^{y}f_{X,Y}(u,v)\,\mathrm{d} v\,\mathrm{d} u,
 \]
 for \((x,y)\in\mathbb{R}^{2}\). If \(X\) and \(Y\) have the joint PDF \(f_{X,Y}\), then the marginal density of \(X\) may be recovered by
 \begin{equation}
@@ -497,7 +497,7 @@ You should check that the answers that we have obtained exactly match the same (
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Joint and Marginal Expectation </h3>
+<h3 id="sec-1-2">Joint and Marginal Expectation</h3>
 <div class="outline-text-3" id="text-1-2">
 
 <p>\label{sec:Joint-and-Marginal-Expectation}
@@ -516,7 +516,7 @@ or in the discrete case,
 </div>
 
 <div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Covariance and Correlation </h4>
+<h4 id="sec-1-2-1">Covariance and Correlation</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
 
@@ -630,7 +630,7 @@ To do the continuous case we could use the computer algebra utilities of <code>Y
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Conditional Distributions </h3>
+<h3 id="sec-1-3">Conditional Distributions</h3>
 <div class="outline-text-3" id="text-1-3">
 
 <p>\label{sec:Conditional-Distributions}
@@ -654,7 +654,7 @@ Let the joint PDF of \(X\) and \(Y\) be given by
 </div>
 
 <div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Bayesian Connection </h4>
+<h4 id="sec-1-3-1">Bayesian Connection</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
 
@@ -669,7 +669,7 @@ Our initial beliefs about \(\theta\) are represented by a probability distributi
 Compare the above expression to Equation <a href="#eq-bayes-rule">bayes-rule</a>.
 </p>
 <p>
-Suppose the parameter \(\theta\) is the \(\P(\mbox{Heads})\) for a biased coin. It could be any value from 0 to 1. Perhaps we have some prior information about this coin, for example, maybe we have seen this coin before and we have reason to believe that it shows Heads less than half of the time. Suppose that we represent our beliefs about \(\theta\) with a \(\mathsf{beta}(\mathtt{shape1}=1,\,\mathtt{shape2}=3)\) prior distribution, that is, we assume 
+Suppose the parameter \(\theta\) is the \(\Pr(\mbox{Heads})\) for a biased coin. It could be any value from 0 to 1. Perhaps we have some prior information about this coin, for example, maybe we have seen this coin before and we have reason to believe that it shows Heads less than half of the time. Suppose that we represent our beliefs about \(\theta\) with a \(\mathsf{beta}(\mathtt{shape1}=1,\,\mathtt{shape2}=3)\) prior distribution, that is, we assume 
 \[
 \theta\sim\pi(\theta)=3(1-\theta)^{2},\quad0<\theta<1.
 \]
@@ -709,7 +709,7 @@ where the constant of proportionality is \(\int\pi(u)\, f(x_{1},x_{2},\ldots,x_{
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Independent Random Variables </h3>
+<h3 id="sec-1-4">Independent Random Variables</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <p>\label{sec:Independent-Random-Variables}
@@ -718,7 +718,7 @@ where the constant of proportionality is \(\int\pi(u)\, f(x_{1},x_{2},\ldots,x_{
 </div>
 
 <div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Independent Random Variables </h4>
+<h4 id="sec-1-4-1">Independent Random Variables</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
 <p>\label{sub:Independent-Random-Variables}
@@ -726,11 +726,11 @@ where the constant of proportionality is \(\int\pi(u)\, f(x_{1},x_{2},\ldots,x_{
 <p>
 We recall from Chapter <a href="#cha-Probability">Probability</a> that the events \(A\) and \(B\) are said to be independent when
 \begin{equation}
-\P(A\cap B)=\P(A)\P(B).
+\Pr(A\cap B)=\Pr(A)\Pr(B).
 \end{equation}
 If it happens that
 \begin{equation}
-\P(X=x,Y=y)=\P(X=x)\P(Y=y),\quad\mbox{for every }x\in S_{X},\ y\in S_{Y},
+\Pr(X=x,Y=y)=\Pr(X=x)\Pr(Y=y),\quad\mbox{for every }x\in S_{X},\ y\in S_{Y},
 \end{equation}
 then we say that \(X\) and \(Y\) are <i>independent random variables</i>. Otherwise, we say that \(X\) and \(Y\) are <i>dependent</i>. Using the PMF notation from above, we see that independent discrete random variables satisfy
 \begin{equation}
@@ -813,7 +813,7 @@ If \(X\) and \(Y\) are independent, then \(u(X)\) and \(v(Y)\) are independent f
 </div>
 
 <div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Combining Independent Random Variables </h4>
+<h4 id="sec-1-4-2">Combining Independent Random Variables</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
 <p>\label{sub:Combining-Independent-Random}
@@ -884,7 +884,7 @@ But notice that the expression in the parentheses is exactly \(\left(a_{1}\mu_{1
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Exchangeable Random Variables </h3>
+<h3 id="sec-1-5">Exchangeable Random Variables</h3>
 <div class="outline-text-3" id="text-1-5">
 
 <p>\label{sec:Exchangeable-Random-Variables}
@@ -932,7 +932,7 @@ Exchangeability thus contains IID as a special case.
 </div>
 
 <div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> The Bivariate Normal Distribution </h3>
+<h3 id="sec-1-6">The Bivariate Normal Distribution</h3>
 <div class="outline-text-3" id="text-1-6">
 
 <p>\label{sec:The-Bivariate-Normal}
@@ -1063,7 +1063,7 @@ persp(x, y, z, theta = -30, phi = 30, ticktype = <span style="color: #8b2252;">"
 </div>
 
 <div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Bivariate Transformations of Random Variables </h3>
+<h3 id="sec-1-7">Bivariate Transformations of Random Variables</h3>
 <div class="outline-text-3" id="text-1-7">
 
 <p>\label{sec:Transformations-Multivariate}
@@ -1152,7 +1152,7 @@ There are not yet any examples of Yacas in this book, but there are online mater
 </div>
 
 <div id="outline-container-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Remarks for the Multivariate Case </h3>
+<h3 id="sec-1-8">Remarks for the Multivariate Case</h3>
 <div class="outline-text-3" id="text-1-8">
 
 <p>\label{sec:Remarks-for-the-Multivariate}
@@ -1168,7 +1168,7 @@ and
 \end{equation}
 or even shorter: \(\int f_{\mathbf{X}}(\mathbf{x})\,\mathrm{d}\mathbf{x}=1\). The joint CDF \(F_{\mathbf{X}}\) is defined by 
 \begin{equation}
-F_{\mathbf{X}}(\mathbf{x})=\P(X_{1}\leq x_{1},\, X_{2}\leq x_{2},\ldots,\, X_{n}\leq x_{n}),
+F_{\mathbf{X}}(\mathbf{x})=\Pr(X_{1}\leq x_{1},\, X_{2}\leq x_{2},\ldots,\, X_{n}\leq x_{n}),
 \end{equation}
 for \(\mathbf{x}\in\mathbb{R}^{n}\). The expectation of a function \(g(\mathbf{X})\) is defined just as we would imagine:
 \begin{equation}
@@ -1236,16 +1236,16 @@ Bruno de Finetti was a strong proponent of the subjective approach to probabilit
 <div class="thm">
 <b>De Finetti's Theorem.</b> Let \(X_{1}\), \(X_{2}\), &hellip; be a sequence of \(\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=p)\) random variables such that \((X_{1},\ldots,X_{k})\) are exchangeable for every \(k\). Then there exists a random variable \(\Theta\) with support \([0,1]\) and PDF \(f_{\Theta}(\theta)\) such that
 \begin{equation}
-\P(X_{1}=x_{1},\ldots,\, X_{k}=x_{k})=\int_{0}^{1}\theta^{\sum x_{i}}(1-\theta)^{k-\sum x_{i}}\, f_{\Theta}(\theta)\,\mathrm{d}\theta,\label{eq:definetti-binary}
+\Pr(X_{1}=x_{1},\ldots,\, X_{k}=x_{k})=\int_{0}^{1}\theta^{\sum x_{i}}(1-\theta)^{k-\sum x_{i}}\, f_{\Theta}(\theta)\,\mathrm{d}\theta,\label{eq:definetti-binary}
 \end{equation}
 for all \(x_{i}=0,\,1\), \(i=1,\,2,\ldots,k\).
 </div>
 </p>
 <p>
-To get a handle on the intuitive content de Finetti's theorem, imagine that we have a <i>bunch</i> of coins in our pocket with each having its own unique value of \(\theta=\P(\mbox{Heads})\). We reach into our pocket and select a coin at random according to some probability &ndash; say, \(f_{\Theta}(\theta)\). We take the randomly selected coin and flip it \(k\) times. 
+To get a handle on the intuitive content de Finetti's theorem, imagine that we have a <i>bunch</i> of coins in our pocket with each having its own unique value of \(\theta=\Pr(\mbox{Heads})\). We reach into our pocket and select a coin at random according to some probability &ndash; say, \(f_{\Theta}(\theta)\). We take the randomly selected coin and flip it \(k\) times. 
 </p>
 <p>
-Think carefully: the conditional probability of observing a sequence  \(X_{1}=x_{1},\ldots,\, X_{k}=x_{k}\), given a specific coin \(\theta\) would just be \(\theta^{\sum x_{i}}(1-\theta)^{k-\sum x_{i}}\), because the coin flips are an independent sequence of Bernoulli trials. But the coin is random, so the Theorem of Total Probability says we can get the <i>unconditional</i> probability \(\P(X_{1}=x_{1},\ldots,\, X_{k}=x_{k})\) by adding up terms that look like
+Think carefully: the conditional probability of observing a sequence  \(X_{1}=x_{1},\ldots,\, X_{k}=x_{k}\), given a specific coin \(\theta\) would just be \(\theta^{\sum x_{i}}(1-\theta)^{k-\sum x_{i}}\), because the coin flips are an independent sequence of Bernoulli trials. But the coin is random, so the Theorem of Total Probability says we can get the <i>unconditional</i> probability \(\Pr(X_{1}=x_{1},\ldots,\, X_{k}=x_{k})\) by adding up terms that look like
 \begin{equation}
 \theta^{\sum x_{i}}(1-\theta)^{k-\sum x_{i}}\, f_{\Theta}(\theta),
 \end{equation}
@@ -1295,7 +1295,7 @@ and the last expression is the MGF of an \(\mathsf{mvnorm}(\mathtt{mean}=\mathbf
 </div>
 
 <div id="outline-container-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> The Multinomial Distribution </h3>
+<h3 id="sec-1-9">The Multinomial Distribution</h3>
 <div class="outline-text-3" id="text-1-9">
 
 <p>\label{sec:Multinomial}
@@ -1422,7 +1422,7 @@ print(cloud(probs ~ X1 + X2, data = S, type = c(<span style="color: #8b2252;">"p
 </div>
 
 <div id="outline-container-1-10" class="outline-3">
-<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Exercises </h3>
+<h3 id="sec-1-10">Exercises</h3>
 <div class="outline-text-3" id="text-1-10">
 
 

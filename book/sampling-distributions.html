@@ -9,8 +9,8 @@ lang="en" xml:lang="en">
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2011-09-18 Sun"/>
 <meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta name="description" content="This chapter is the bridge from multivariate distributions to estimation."/>
+<meta name="keywords" content="sampling distribution statistics R probability"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   html { font-family: Times, serif; font-size: 12pt; }
@@ -144,35 +144,35 @@ lang="en" xml:lang="en">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Sampling Distributions</a>
+<li><a href="#sec-1">Sampling Distributions</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Simple Random Samples </a>
+<li><a href="#sec-1-1">Simple Random Samples</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1 Simple Random Samples </a></li>
+<li><a href="#sec-1-1-1">Simple Random Samples</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2 Sampling from a Normal Distribution </a>
+<li><a href="#sec-1-2">Sampling from a Normal Distribution</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1 The Distribution of the Sample Mean </a></li>
-<li><a href="#sec-1-2-2">1.2.2 The Distribution of the Sample Variance </a></li>
-<li><a href="#sec-1-2-3">1.2.3 The Distribution of Student's \(T\) Statistic </a></li>
+<li><a href="#sec-1-2-1">The Distribution of the Sample Mean</a></li>
+<li><a href="#sec-1-2-2">The Distribution of the Sample Variance</a></li>
+<li><a href="#sec-1-2-3">The Distribution of Student's \(T\) Statistic</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3 The Central Limit Theorem </a></li>
-<li><a href="#sec-1-4">1.4 Sampling Distributions of Two-Sample Statistics </a>
+<li><a href="#sec-1-3">The Central Limit Theorem</a></li>
+<li><a href="#sec-1-4">Sampling Distributions of Two-Sample Statistics</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1 Difference of Independent Sample Means </a></li>
-<li><a href="#sec-1-4-2">1.4.2 Difference of Independent Sample Proportions </a></li>
-<li><a href="#sec-1-4-3">1.4.3 Ratio of Independent Sample Variances </a></li>
+<li><a href="#sec-1-4-1">Difference of Independent Sample Means</a></li>
+<li><a href="#sec-1-4-2">Difference of Independent Sample Proportions</a></li>
+<li><a href="#sec-1-4-3">Ratio of Independent Sample Variances</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5 Simulated Sampling Distributions </a>
+<li><a href="#sec-1-5">Simulated Sampling Distributions</a>
 <ul>
-<li><a href="#sec-1-5-1">1.5.1 The Interquartile Range </a></li>
-<li><a href="#sec-1-5-2">1.5.2 The Median Absolute Deviation </a></li>
+<li><a href="#sec-1-5-1">The Interquartile Range</a></li>
+<li><a href="#sec-1-5-2">The Median Absolute Deviation</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-6">1.6 Exercises </a></li>
+<li><a href="#sec-1-6">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -180,7 +180,7 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Sampling Distributions &nbsp;&nbsp;&nbsp;<span class="tag"><span class="sampdist">sampdist</span></span></h2>
+<h2 id="sec-1">Sampling Distributions</h2>
 <div class="outline-text-2" id="text-1">
 
 <p>\label{cha:Sampling-Distributions}
@@ -222,7 +222,7 @@ With the CLT in hand, we then investigate the sampling distributions of several 
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Simple Random Samples </h3>
+<h3 id="sec-1-1">Simple Random Samples</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <p>\label{sec:simple-random-samples}
@@ -231,7 +231,7 @@ With the CLT in hand, we then investigate the sampling distributions of several 
 </div>
 
 <div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Simple Random Samples </h4>
+<h4 id="sec-1-1-1">Simple Random Samples</h4>
 <div class="outline-text-4" id="text-1-1-1">
 
 <p>\label{sub:simple-random-samples}
@@ -285,7 +285,7 @@ The last step is to recognize that each term in last product above is exactly \(
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Sampling from a Normal Distribution </h3>
+<h3 id="sec-1-2">Sampling from a Normal Distribution</h3>
 <div class="outline-text-3" id="text-1-2">
 
 <p>\label{sec:sampling-from-normal-dist}
@@ -294,7 +294,7 @@ The last step is to recognize that each term in last product above is exactly \(
 </div>
 
 <div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> The Distribution of the Sample Mean </h4>
+<h4 id="sec-1-2-1">The Distribution of the Sample Mean</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
 <p>\label{sub:samp-mean-dist-of}
@@ -325,7 +325,7 @@ and we recognize this last quantity as the MGF of a \(\mathsf{norm}(\mathtt{mean
 </div>
 
 <div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> The Distribution of the Sample Variance </h4>
+<h4 id="sec-1-2-2">The Distribution of the Sample Variance</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
 <p>\label{sub:Samp-Var-Dist}
@@ -363,7 +363,7 @@ The proof is beyond the scope of the present book, but the theorem is simply too
 </div>
 
 <div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> The Distribution of Student's \(T\) Statistic </h4>
+<h4 id="sec-1-2-3">The Distribution of Student's \(T\) Statistic</h4>
 <div class="outline-text-4" id="text-1-2-3">
 
 <p>\label{sub:Student's-t-Distribution}
@@ -469,7 +469,7 @@ There are a few things to note about the \(\mathtt{t}(\mathtt{df}=r)\) distribut
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> The Central Limit Theorem </h3>
+<h3 id="sec-1-3">The Central Limit Theorem</h3>
 <div class="outline-text-3" id="text-1-3">
 
 <p>\label{sec:Central-Limit-Theorem}
@@ -543,7 +543,7 @@ The three separate <code>clt1</code>, <code>clt2</code>, and <code>clt3</code> f
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Sampling Distributions of Two-Sample Statistics </h3>
+<h3 id="sec-1-4">Sampling Distributions of Two-Sample Statistics</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <p>\label{sec:Samp-Dist-Two-Samp}
@@ -555,7 +555,7 @@ There are often two populations under consideration, and it sometimes of interes
 </div>
 
 <div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Difference of Independent Sample Means </h4>
+<h4 id="sec-1-4-1">Difference of Independent Sample Means</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
 
@@ -590,7 +590,7 @@ has a \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) sampling distribution, 
 </div>
 
 <div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Difference of Independent Sample Proportions </h4>
+<h4 id="sec-1-4-2">Difference of Independent Sample Proportions</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
 
@@ -622,7 +622,7 @@ The expressions for the mean and standard deviation follow immediately from Prop
 </div>
 
 <div id="outline-container-1-4-3" class="outline-4">
-<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> Ratio of Independent Sample Variances </h4>
+<h4 id="sec-1-4-3">Ratio of Independent Sample Variances</h4>
 <div class="outline-text-4" id="text-1-4-3">
 
 
@@ -663,7 +663,7 @@ has an \(\mathsf{f}(\mathtt{df1}=n_{1}-1,\,\mathtt{df2}=n_{2}-1)\) sampling dist
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Simulated Sampling Distributions </h3>
+<h3 id="sec-1-5">Simulated Sampling Distributions</h3>
 <div class="outline-text-3" id="text-1-5">
 
 <p>\label{sec:Simulated-Sampling-Distributions}
@@ -678,7 +678,7 @@ As it turns out, we do not need to know the exact analytical form of the samplin
 </div>
 
 <div id="outline-container-1-5-1" class="outline-4">
-<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> The Interquartile Range </h4>
+<h4 id="sec-1-5-1">The Interquartile Range</h4>
 <div class="outline-text-4" id="text-1-5-1">
 
 
@@ -742,7 +742,7 @@ Now let's take a look at a plot of the simulated values
 </div>
 
 <div id="outline-container-1-5-2" class="outline-4">
-<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> The Median Absolute Deviation </h4>
+<h4 id="sec-1-5-2">The Median Absolute Deviation</h4>
 <div class="outline-text-4" id="text-1-5-2">
 
 
@@ -812,7 +812,7 @@ Now let's take a look at a plot of the simulated values
 </div>
 
 <div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Exercises </h3>
+<h3 id="sec-1-6">Exercises</h3>
 <div class="outline-text-3" id="text-1-6">
 
 
@@ -828,9 +828,9 @@ Suppose that we observe a random sample \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n}
 </li>
 <li>What is the distribution of \(\overline{X}\)? (approximately)
 </li>
-<li>Find \(\P(a&lt; \overline{X} \leq b)\)
+<li>Find \(\Pr(a&lt; \overline{X} \leq b)\)
 </li>
-<li>Find \(\P(\overline{X} &gt; c)\).
+<li>Find \(\Pr(\overline{X} &gt; c)\).
 </li>
 </ol>
 
@@ -851,7 +851,7 @@ Let \(X_{1}\),&hellip;, \(X_{25}\) be a random sample from a \(\mathsf{norm}(\ma
 <li>How is \(\overline{X}\) distributed? 
    \(\mathsf{norm}(\mathtt{mean}=37,\,\mathtt{sd}=45/\sqrt{25})\) 
 </li>
-<li>Find \(\P(\overline{X} &gt; 43.1)\).
+<li>Find \(\Pr(\overline{X} &gt; 43.1)\).
 </li>
 </ol>
 
