@@ -1,0 +1,59 @@
+body {
+    padding: 25px 100px 25px 100px;
+}
+
+body, p, li {
+    font-size: 1.05em;
+}
+
+img {
+    border: 0px;
+}
+
+.title {
+    text-align: left;
+    font-family: sans-serif;
+    color: black;
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+}
+
+
+h2 {
+    font-family: sans-serif;
+    font-size: 95%;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+}
+
+h3 {
+    font-family: sans-serif;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: blue
+}
+
+a:visited {
+    text-decoration: none;
+    color: #336666
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #003333
+}
+
+
+#postamble {
+    margin-top: 50px;
+    border-top: 1px solid #DDD;
+}
+
+#postamble p {
+    font-family: monospace;
+    font-size: 0.85em;
+    margin: 0px;
+}
