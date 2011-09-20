@@ -199,8 +199,7 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Multiple Linear Regression</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>\label{cha:multiple-linear-regression}
-</p>
+
 <p>
 We know a lot about simple linear regression models, and a next step is to study multiple regression models that have more than one independent (explanatory) variable. In the discussion that follows we will assume that we have \(p\) explanatory variables, where \(p&gt;1\).
 </p>
@@ -235,8 +234,7 @@ Most of the results are stated without proof or with only a cursory justificatio
 <h3 id="sec-1-1">The Multiple Linear Regression Model</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>\label{sec:The-MLR-Model}
-</p>
+
 <p>
 The first thing to do is get some better notation. We will write 
 \begin{equation}
@@ -391,8 +389,7 @@ Looking at the graph we see that the data points fall close to a plane in three 
 <h3 id="sec-1-2">Estimation and Prediction</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>\label{sec:Estimation-and-Prediction-MLR}
-</p>
+
 
 </div>
 
@@ -400,8 +397,7 @@ Looking at the graph we see that the data points fall close to a plane in three 
 <h4 id="sec-1-2-1">Parameter estimates</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
-<p>\label{sub:mlr-parameter-estimates}
-</p>
+
 <p>
 We will proceed exactly like we did in Section <a href="#sec-SLR-Estimation">SLR-Estimation</a>. We know
 \begin{equation}
@@ -503,8 +499,7 @@ We could see the entire model matrix \(\mathbf{X}\) with the <code>model.matrix<
 <h4 id="sec-1-2-2">Point Estimates of the Regression Surface</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
-<p>\label{sub:mlr-point-est-regsurface}
-</p>
+
 <p>
 The parameter estimates \(\mathbf{b}\) make it easy to find the fitted values\index{fitted values}, \(\hat{\mathbf{Y}}\). We write them individually as \(\hat{Y}_{i}\), \(i=1,2,\ldots,n\), and recall that they are defined by
 \begin{eqnarray}
@@ -655,8 +650,7 @@ Using the <code>trees</code> data,
 <h4 id="sec-1-2-3">Mean Square Error and Standard Error</h4>
 <div class="outline-text-4" id="text-1-2-3">
 
-<p>\label{sub:mlr-mse-se}
-</p>
+
 <p>
 The residuals are given by
 \begin{equation}
@@ -728,8 +722,7 @@ For the <code>trees</code> data we find \(s\approx  3.882 \).
 <h4 id="sec-1-2-4">Interval Estimates of the Parameters</h4>
 <div class="outline-text-4" id="text-1-2-4">
 
-<p>\label{sub:mlr-interval-est-params}
-</p>
+
 <p>
 We showed in Section <a href="#sub-mlr-parameter-estimates">mlr-parameter-estimates</a> that \(\mathbf{b}=\left(\mathbf{X}^{\mathrm{T}}\mathbf{X}\right)^{-1}\mathbf{X}^{\mathrm{T}}\mathbf{Y}\), which is really just a big matrix &ndash; namely \(\left(\mathbf{X}^{\mathrm{T}}\mathbf{X}\right)^{-1}\mathbf{X}^{\mathrm{T}}\) &ndash; multiplied by \(\mathbf{Y}\). It stands to reason that the sampling distribution of \(\mathbf{b}\) would be intimately related to the distribution of \(\mathbf{Y}\), which we assumed to be
 \begin{equation}
@@ -901,8 +894,7 @@ Using the <code>trees</code> data,
 <h3 id="sec-1-3">Model Utility and Inference</h3>
 <div class="outline-text-3" id="text-1-3">
 
-<p>\label{sec:Model-Utility-and-MLR}
-</p>
+
 
 </div>
 
@@ -988,12 +980,11 @@ High values of \(R^{2}\) and \( \overline{R}^2 \) such as these indicate that th
 <h4 id="sec-1-3-2">Overall <i>F</i>-Test</h4>
 <div class="outline-text-4" id="text-1-3-2">
 
-<p>\label{sub:mlr-Overall-F-Test}
-</p>
+
 <p>
 Another way to assess the model's utility is to to test the hypothesis
 \[
-H_{0}:\beta_{1}=\beta_{2}=\cdots=\beta_{p}=0\mbox{ versus }H_{1}:\mbox{ at least one \ensuremath{\beta_{i}\neq0}}.
+H_{0}:\beta_{1}=\beta_{2}=\cdots=\beta_{p}=0\mbox{ versus }H_{1}:\mbox{ at least one $\beta_{i}\neq0$}.
 \]
 The idea is that if all \(\beta_{i}\)'s were zero, then the explanatory variables \(X_{1},\ldots,X_{p}\) would be worthless predictors for the response variable \(Y\). We can test the above hypothesis with the overall \(F\) statistic, which in MLR is defined by
 \begin{equation}
@@ -1029,8 +1020,7 @@ For the <code>trees</code> data, we see that \( F =  254.972337410669 \) with a 
 <h4 id="sec-1-3-3">Student's <i>t</i> Tests</h4>
 <div class="outline-text-4" id="text-1-3-3">
 
-<p>\label{sub:mlr-Student's-t-Tests}
-</p>
+
 <p>
 We know that
 \begin{equation}
@@ -1098,8 +1088,7 @@ We see from the <i>p-values</i> that there is a significant linear relationship 
 <h3 id="sec-1-4">Polynomial Regression</h3>
 <div class="outline-text-3" id="text-1-4">
 
-<p>\label{sec:Polynomial-Regression}
-</p>
+
 
 </div>
 
@@ -1288,8 +1277,7 @@ In Example <a href="#exa-mlr-trees-poly-no-rescale">mlr-trees-poly-no-rescale</a
 <h3 id="sec-1-5">Interaction</h3>
 <div class="outline-text-3" id="text-1-5">
 
-<p>\label{sec:Interaction}
-</p>
+
 <p>
 In our model for tree volume there have been two independent variables: <code>Girth</code> and <code>Height</code>. We may suspect that the independent variables are related, that is, values of one variable may tend to influence values of the other. It may be desirable to include an additional term in our model to try and capture the dependence between the variables. Interaction terms are formed by multiplying one (or more) explanatory variable(s) by another. 
 </p>
@@ -1426,8 +1414,7 @@ These examples can be generalized to more than two independent variables, say th
 <h3 id="sec-1-6">Qualitative Explanatory Variables</h3>
 <div class="outline-text-3" id="text-1-6">
 
-<p>\label{sec:Qualitative-Explanatory-Variables}
-</p>
+
 <p>
 We have so far been concerned with numerical independent variables taking values in a subset of real numbers. In this section, we extend our treatment to include the case in which one of the explanatory variables is qualitative, that is, a <i>factor</i>. Qualitative variables take values in a set of <i>levels</i>, which may or may not be ordered. See Section <a href="#sub-Qualitative-Data">Qualitative-Data</a>.
 </p>
@@ -1597,8 +1584,7 @@ There are other &ndash; shorter &ndash; ways to plot regression lines by groups,
 <h3 id="sec-1-7">Partial <i>F</i> Statistic</h3>
 <div class="outline-text-3" id="text-1-7">
 
-<p>\label{sec:Partial-F-Statistic}
-</p>
+
 <p>
 We saw in Section <a href="#sub-mlr-Overall-F-Test">mlr-Overall-F-Test</a> how to test \(H_{0}:\beta_{0}=\beta_{1}=\cdots=\beta_{p}=0\) with the overall \(F\) statistic and we saw in Section <a href="#sub-mlr-Student-s-t-Tests">mlr-Student's-t-Tests</a> how to test \(H_{0}:\beta_{i}=0\) that a particular coefficient \(\beta_{i}\) is zero. Sometimes, however, we would like to test whether a certain part of the model is significant. Consider the regression model
 \begin{equation}
@@ -1610,7 +1596,7 @@ H_{0}:\beta_{j+1}=\beta_{j+2}=\cdots=\beta_{p}=0
 \end{equation}
 versus the alternative 
 \begin{equation}
-H_{1}:\mbox{at least one of \ensuremath{\beta_{j+1},\ \beta_{j+2},\ ,\ldots,\beta_{p}\neq0}}.
+H_{1}:\mbox{at least one of $\beta_{j+1},\ \beta_{j+2},\ ,\ldots,\beta_{p}\neq0$}.
 \end{equation}
 
 The interpretation of \(H_{0}\) is that none of the variables \(x_{j+1}\), &hellip;,\(x_{p}\) is significantly related to \(Y\) and the interpretation of \(H_{1}\) is that at least one of \(x_{j+1}\), &hellip;,\(x_{p}\) is significantly related to \(Y\). In essence, for this hypothesis test there are two competing models under consideration:
@@ -1633,9 +1619,7 @@ It can be shown when the regression assumptions hold under \(H_{0}\) that the pa
 <p>
 The key ingredient above is that the two competing models are <i>nested</i> in the sense that the reduced model is entirely contained within the complete model. The way to test whether the improvement is significant is to compute <code>lm</code> objects both for the complete model and the reduced model then compare the answers with the <code>anova</code> function.
 </p>
-<p>
-\label{exa:mlr-trees-poly-no-rescale}
-</p>
+
 <p>
 For the <code>trees</code> data, let us fit a polynomial regression model and for the sake of argument we will ignore our own good advice and fail to rescale the explanatory variables. 
 </p>
@@ -1749,8 +1733,7 @@ In this case, the improvement to the reduced model that is attributable to <code
 <h3 id="sec-1-8">Residual Analysis and Diagnostic Tools</h3>
 <div class="outline-text-3" id="text-1-8">
 
-<p>\label{sec:Residual-Analysis-MLR}
-</p>
+
 <p>
 We encountered many, many diagnostic measures for simple linear regression in Sections <a href="#sec-Residual-Analysis-SLR">Residual-Analysis-SLR</a> and <a href="#sec-Other-Diagnostic-Tools-SLR">Other-Diagnostic-Tools-SLR</a>. All of these are valid in multiple linear regression, too, but there are some slight changes that we need to make for the multivariate case. We list these below, and apply them to the trees example.  
 </p>
@@ -1793,8 +1776,7 @@ We encountered many, many diagnostic measures for simple linear regression in Se
 <h3 id="sec-1-9">Additional Topics</h3>
 <div class="outline-text-3" id="text-1-9">
 
-<p>\label{sec:Additional-Topics-MLR}
-</p>
+
 
 </div>
 
@@ -1960,8 +1942,7 @@ Achieved convergence tolerance: 6.546e-08
 <h4 id="sec-1-9-3">Multicollinearity</h4>
 <div class="outline-text-4" id="text-1-9-3">
 
-<p>\label{sub:Multicollinearity}
-</p>
+
 <p>
 A multiple regression model exhibits <i>multicollinearity</i> when two or more of the explanatory variables are substantially correlated with each other. We can measure multicollinearity by having one of the explanatory play the role of ``dependent variable'' and regress it on the remaining explanatory variables. The the \(R^{2}\) of the resulting model is near one, then we say that the model is multicollinear or shows multicollinearity.
 </p>
@@ -2022,7 +2003,6 @@ AIC=-2\ln L+2(p+1)
 
 <p>
 <div class="xca">
-\label{xca:anova-equality}
 Use Equations <a href="#eq-mlr-sse-matrix">mlr-sse-matrix</a>, <a href="#eq-mlr-ssto-matrix">mlr-ssto-matrix</a>, and <a href="#eq-mlr-ssr-matrix">mlr-ssr-matrix</a> to prove the Anova Equality:
 \[
 SSTO=SSE+SSR.

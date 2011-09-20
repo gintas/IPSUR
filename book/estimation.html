@@ -165,8 +165,7 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Estimation</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>\label{cha:Estimation}
-</p>
+
 <p>
 We will discuss two branches of estimation procedures: point estimation and interval estimation. We briefly discuss point estimation first and then spend the rest of the chapter on interval estimation.
 </p>
@@ -201,13 +200,11 @@ We find an estimator with the methods of Section <a href="#sec-Point-Estimation-
 <h3 id="sec-1-1">Point Estimation</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>\label{sec:Point-Estimation-1}
-</p>
+
 <p>
 The following example is how I was introduced to maximum likelihood.
 </p>
 <p>
-\label{exa:how-many-fish}
 Suppose we have a small pond in our backyard, and in the pond there live some fish. We would like to know how many fish live in the pond. How can we estimate this? One procedure developed by researchers is the capture-recapture method. Here is how it works.
 </p>
 <p>
@@ -251,7 +248,6 @@ We can see already that the observed data \(X=3\) is more likely when \(F=9\) th
 </div>
 
 <p>
-\label{exa:bass-bluegill}
 In the last example we were only concerned with how many fish were in the pond, but now, we will ask a different question. Suppose it is known that there are only two species of fish in the pond: smallmouth bass (<i>Micropterus dolomieu</i>) and bluegill (<i>Lepomis macrochirus</i>); perhaps we built the pond some years ago and stocked it with only these two species. We would like to estimate the proportion of fish in the pond which are bass.
 </p>
 <p>
@@ -398,11 +394,9 @@ Let \(s(X_{1},X_{2},\ldots,X_{n})\) be a statistic which estimates \(\theta\). I
 then the statistic \(s(X_{1},X_{2},\ldots,X_{n})\) is said to be an <i>unbiased estimator</i> of \(\theta\). Otherwise, it is <i>biased</i>.
 </div>
 </p>
+
 <p>
-\label{exa:normal-MLE-both}
-</p>
-<p>
-Let \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n}\) be an \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution. It can be shown (in Exercise <a href="#xca-norm-mu-sig-MLE">norm-mu-sig-MLE</a>) that if \(\mbox{\ensuremath{\theta}}=(\mu,\sigma^{2})\) then the MLE of \(\theta\) is
+Let \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n}\) be an \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution. It can be shown (in Exercise <a href="#xca-norm-mu-sig-MLE">norm-mu-sig-MLE</a>) that if \(\mbox{$\theta$}=(\mu,\sigma^{2})\) then the MLE of \(\theta\) is
 \begin{equation}
 \hat{\theta}=(\hat{\mu},\hat{\sigma}^{2}),
 \end{equation}
@@ -578,8 +572,7 @@ There is functionality in the <code>distrTest</code> package \cite{Ruckdescheldi
 <h3 id="sec-1-2">Confidence Intervals for Means</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>\label{sec:Confidence-Intervals-for-Means}
-</p>
+
 <p>
 We are given \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) that are an \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution, where \(\mu\) is unknown. We know that we may estimate \(\mu\) with \(\overline{X}\), and we have seen that this estimator is the MLE. But how good is our estimate? We know that 
 \begin{equation} 
@@ -675,7 +668,6 @@ For a fixed sample size \(n\),
 </p>
 
 <p>
-\label{exa:plant-one-samp-z-int}
 <b>Results from an Experiment on Plant Growth.</b> The <code>PlantGrowth</code> data frame gives the results of an experiment to measure plant yield (as measured by the weight of the plant). We would like to a 95% confidence interval for the mean weight of the plants. Suppose that we know from prior research that the true population standard deviation of the plant weights is \(0.7\) g.
 </p>
 <p>
@@ -886,8 +878,7 @@ plot(temp, <span style="color: #8b2252;">"Conf"</span>)
 <h3 id="sec-1-3">Confidence Intervals for Differences of Means</h3>
 <div class="outline-text-3" id="text-1-3">
 
-<p>\label{sec:Conf-Interv-for-Diff-Means}
-</p>
+
 <p>
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be a \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu_{X},\,\mathtt{sd}=\sigma_{X})\) distribution and let \(Y_{1}\), \(Y_{2}\), &hellip;, \(Y_{m}\) be a \(SRS(m)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu_{Y},\,\mathtt{sd}=\sigma_{Y})\) distribution. Further, assume that the \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) sample is independent of the \(Y_{1}\), \(Y_{2}\), &hellip;, \(Y_{m}\) sample.
 </p>
@@ -967,8 +958,7 @@ There is not any specific functionality to handle the \(z\)-interval for small s
 <h3 id="sec-1-4">Confidence Intervals for Proportions</h3>
 <div class="outline-text-3" id="text-1-4">
 
-<p>\label{sec:Confidence-Intervals-Proportions}
-</p>
+
 <p>
 We would like to know \(p\) which is the ``proportion of successes''. For instance, \(p\) could be:
 </p><ul>
@@ -1117,8 +1107,7 @@ B <span style="color: #008b8b;">&lt;-</span> with(A, untable(A, Freq))
 <h3 id="sec-1-5">Confidence Intervals for Variances</h3>
 <div class="outline-text-3" id="text-1-5">
 
-<p>\label{sec:Confidence-Intervals-for-Variances}
-</p>
+
 <p>
 I am thinking one and two sample problems here.
 </p>
@@ -1134,8 +1123,7 @@ I am thinking about <code>sigma.test</code> in the <code>TeachingDemos</code> pa
 <h3 id="sec-1-6">Fitting Distributions</h3>
 <div class="outline-text-3" id="text-1-6">
 
-<p>\label{sec:Fitting-Distributions}
-</p>
+
 
 
 <p>
@@ -1149,8 +1137,7 @@ I am thinking about <code>fitdistr</code> from the <code>MASS</code> package \ci
 <h3 id="sec-1-7">Sample Size and Margin of Error</h3>
 <div class="outline-text-3" id="text-1-7">
 
-<p>\label{sec:Sample-Size-and-MOE}
-</p>
+
 <p>
 Sections <a href="#sec-Confidence-Intervals-for-Means">Confidence-Intervals-for-Means</a> through <a href="#sec-Confidence-Intervals-for-Variances">Confidence-Intervals-for-Variances</a> all began the same way: we were given the sample size \(n\) and the confidence coefficient \(1-\alpha\), and our task was to find a margin of error \(E\) so that 
 \[
@@ -1235,8 +1222,7 @@ I am thinking about <code>power.t.test</code>, <code>power.prop.test</code>, <co
 <h3 id="sec-1-8">Other Topics</h3>
 <div class="outline-text-3" id="text-1-8">
 
-<p>\label{sec:Other-Topics}
-</p>
+
 <p>
 Mention <code>mle</code> from the <code>stats4</code> package.
 </p>
@@ -1253,12 +1239,10 @@ Mention <code>mle</code> from the <code>stats4</code> package.
 <p>
 <div class="xca">
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be an \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution. Find a two-dimensional MLE for \(\theta=(\mu,\sigma)\).
-\label{xca:norm-mu-sig-MLE}
 </div>
 </p>
 <p>
 <div class="xca">
-\label{xca:CI-quad-form}
 Find the upper and lower limits for the confidence interval procedure by finding the roots of \(f\) defined by 
 \[
 f(p)=\left(Y/n-p\right)^{2}-z_{\alpha/2}^{2}\frac{p(1-p)}{n}.

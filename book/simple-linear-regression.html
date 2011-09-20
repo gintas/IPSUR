@@ -196,8 +196,7 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Simple Linear Regression</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>\label{cha:simple-linear-regression}
-</p>
+
 
 <ul>
 <li>basic philosophy of SLR and the regression assumptions
@@ -220,8 +219,7 @@ lang="en" xml:lang="en">
 <h3 id="sec-1-1">Basic Philosophy</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>\label{sec:Basic-Philosophy}
-</p>
+
 <p>
 Here we have two variables \(X\) and \(Y\). For our purposes, \(X\) is not random (so we will write \(x\)), but \(Y\) is random. We believe that \(Y\) depends in <i>some</i> way on \(x\). Some typical examples of \( (x,Y) \) pairs are
 </p>
@@ -313,7 +311,6 @@ We assume both the normality of the errors \(\epsilon\) and the linearity of the
 
 
 <p>
-\label{exa:Speed-and-Stopping}
 <b>Speed and stopping distance of cars.</b> We will use the data frame \texttt{cars}\index{Data sets!cars@\texttt{cars}} from the <code>datasets</code> package. It has two variables: <code>speed</code> and <code>dist</code>. We can take a look at some of the values in the data frame: 
 </p>
 
@@ -377,8 +374,7 @@ There is a pronounced upward trend to the data points, and the pattern looks app
 <h3 id="sec-1-2">Estimation</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>\label{sec:SLR-Estimation}
-</p>
+
 
 </div>
 
@@ -386,8 +382,7 @@ There is a pronounced upward trend to the data points, and the pattern looks app
 <h4 id="sec-1-2-1">Point Estimates of the Parameters</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
-<p>\label{sub:point-estimate-mle-slr}
-</p>
+
 <p>
 Where is \( \mu(x) \)? In essence, we would like to ``fit'' a line to the points. But how do we determine a ``good'' line? Is there a <i>best</i> line? We will use maximum likelihood\index{maximum likelihood} to find it. We know:
 \begin{equation}
@@ -511,9 +506,7 @@ It is good practice to visually inspect the data with the regression line added 
 <p>
 To calculate points on the regression line we may simply plug the desired \(x\) value(s) into \( \hat{\mu} \), either by hand, or with the <code>predict</code> function. The inputs to <code>predict</code> are the fitted linear model object, <code>cars.lm</code>, and the desired \(x\) value(s) represented by a data frame. See the example below.
 </p>
-<p>
-\label{exa:regline-cars-interpret}
-</p>
+
 <p>
 Using the regression line for the <code>cars</code> data:
 </p>
@@ -538,8 +531,7 @@ Using the regression line for the <code>cars</code> data:
 <h4 id="sec-1-2-2">Point Estimates of the Regression Line</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
-<p>\label{sub:slr-point-est-regline}
-</p>
+
 <p>
 We said at the beginning of the chapter that our goal was to estimate \( \mu = \E Y \), and the arguments in Section <a href="#sub-point-estimate-mle-slr">point-estimate-mle-slr</a> showed how to obtain an estimate \( \hat{\mu} \) of \( \mu \) when the regression assumptions hold. Now we will reap the benefits of our work in more ways than we previously disclosed. Given a particular value \(x_{0}\), there are two values we would like to estimate:
 </p><ol>
@@ -552,7 +544,6 @@ We said at the beginning of the chapter that our goal was to estimate \( \mu = \
 <p>The first is a number, \(\mu(x_{0})\), and the second is a random variable, \(Y(x_{0})\), but our point estimate is the same for both: \(\hat{\mu}(x_{0})\).
 </p>
 <p>
-\label{exa:regline-cars-pe-8mph}
 We may use the regression line to obtain a point estimate of the mean stopping distance for a car traveling 8 mph: \( \hat{\mu}(15) = b_{0} + (8) (b_{1}) \approx  -17.58 + (8) (  3.93 ) \approx 13.88 \). We would also use 13.88 as a point estimate for the stopping distance of a future car traveling 8 mph. 
 </p>
 <p>
@@ -701,8 +692,7 @@ carsumry$sigma
 <h4 id="sec-1-2-4">Interval Estimates of the Parameters</h4>
 <div class="outline-text-4" id="text-1-2-4">
 
-<p>\label{sub:slr-interval-est-params}
-</p>
+
 <p>
 We discussed general interval estimation in Chapter <a href="#cha-Estimation">Estimation</a>. There we found that we could use what we know about the sampling distribution of certain statistics to construct confidence intervals for the parameter being estimated. We will continue in that vein, and to get started we will determine the sampling distributions of the parameter estimates, \(b_{1}\) and \(b_{0}\).
 </p>
@@ -814,8 +804,7 @@ With 95% confidence, the random interval \( [  3.097,  4.768 ] \) covers the par
 <h4 id="sec-1-2-5">Interval Estimates of the Regression Line</h4>
 <div class="outline-text-4" id="text-1-2-5">
 
-<p>\label{sub:slr-interval-est-regline}
-</p>
+
 <p>
 We have seen how to estimate the coefficients of regression line with both point estimates and confidence intervals. We even saw how to estimate a value \(\hat{\mu}(x)\) on the regression line for a given value of \(x\), such as \(x=15\). 
 </p>
@@ -968,8 +957,7 @@ Notice that the bands curve outward from the regression line as the \(x\) values
 <h3 id="sec-1-3">Model Utility and Inference</h3>
 <div class="outline-text-3" id="text-1-3">
 
-<p>\label{sec:Model-Utility-SLR}
-</p>
+
 
 </div>
 
@@ -977,8 +965,7 @@ Notice that the bands curve outward from the regression line as the \(x\) values
 <h4 id="sec-1-3-1">Hypothesis Tests for the Parameters</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
-<p>\label{sub:slr-hypoth-test-params}
-</p>
+
 <p>
 Much of the attention of SLR is directed toward \(\beta_{1}\) because when \( \beta_{1}\neq 0 \) the mean value of \(Y\) increases (or decreases) as \(x\) increases. It is really boring when \(\beta_{1}=0\), because in that case the mean value of \(Y\) remains the same, regardless of the value of \(x\) (when the regression assumptions hold, of course). It is thus very important to decide whether or not \( \beta_{1} = 0 \). We address the question with a statistical test of the null hypothesis \(H_{0}:\beta_{1}=0\) versus the alternative hypothesis \(H_{1}:\beta_{1}\neq0\), and to do that we need to know the sampling distribution of \(b_{1}\) when the null hypothesis is true.
 </p>
@@ -1158,8 +1145,7 @@ We choose the principal square root because the slope of the regression line is 
 <h4 id="sec-1-3-3">Overall <i>F</i> statistic</h4>
 <div class="outline-text-4" id="text-1-3-3">
 
-<p>\label{sub:slr-overall-F-statistic}
-</p>
+
 <p>
 There is another way to test the significance of the linear regression model. In SLR, the new way also tests the hypothesis \(H_{0}:\beta_{1}=0\) versus \(H_{1}:\beta_{1}\neq0\), but it is done with a new test statistic called the <i>overall F statistic</i>. It is defined by
 </p>
@@ -1224,8 +1210,7 @@ Note that the value of the \(F\) statistic is the same as the Student's \(t\) st
 <h3 id="sec-1-4">Residual Analysis</h3>
 <div class="outline-text-3" id="text-1-4">
 
-<p>\label{sec:Residual-Analysis-SLR}
-</p>
+
 <p>
 We know from our model that \(Y=\mu(x)+\epsilon\), or in other words, \(\epsilon=Y-\mu(x)\). Further, we know that \(\epsilon\sim\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=\sigma)\). We may estimate \(\epsilon_{i}\) with the <i>residual</i> \(E_{i}=Y_{i}-\hat{Y_{i}}\), where \(\hat{Y_{i}}=\hat{\mu}(x_{i})\). If the regression assumptions hold, then the residuals should be normally distributed. We check this in Section <a href="#sub-Normality-Assumption">Normality-Assumption</a>. Further, the residuals should have mean zero with constant variance \(\sigma^{2}\), and we check this in Section <a href="#sub-Constant-Variance-Assumption">Constant-Variance-Assumption</a>. Last, the residuals should be independent, and we check this in Section <a href="#sub-Independence-Assumption">Independence-Assumption</a>.
 </p>
@@ -1239,8 +1224,7 @@ In every case, we will begin by looking at residual plots &ndash; that is, scatt
 <h4 id="sec-1-4-1">Normality Assumption</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
-<p>\label{sub:Normality-Assumption}
-</p>
+
 <p>
 We can assess the normality of the residuals with graphical methods and hypothesis tests. To check graphically whether the residuals are normally distributed we may look at histograms or <i>q-q</i> plots. We first examine a histogram in Figure <a href="#fig-Normal-q-q-plot-cars">Normal-q-q-plot-cars</a>. There we see that the distribution of the residuals appears to be mound shaped, for the most part. We can plot the order statistics of the sample versus quantiles from a \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) distribution with the command <code>plot(cars.lm, which = 2)</code>, and the results are in Figure <a href="#fig-Normal-q-q-plot-cars">Normal-q-q-plot-cars</a>. If the assumption of normality were true, then we would expect points randomly scattered about the dotted straight line displayed in the figure. In this case, we see a slight departure from normality in that the dots show systematic clustering on one side or the other of the line. The points on the upper end of the plot also appear begin to stray from the line. We would say there is some evidence that the residuals are not perfectly normal. 
 </p>
@@ -1310,12 +1294,11 @@ For these data we would reject the assumption of normality of the residuals at t
 <h4 id="sec-1-4-2">Constant Variance Assumption</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
-<p>\label{sub:Constant-Variance-Assumption}
-</p>
+
 <p>
 We will again go to residual plots to try and determine if the spread of the residuals is changing over time (or index). However, it is unfortunately not that easy because the residuals do not have constant variance! In fact, it can be shown that the variance of the residual \(E_{i}\) is 
 \begin{equation}
-\mbox{Var\ensuremath{(E_{i})}}=\sigma^{2}(1-h_{ii}),\quad i=1,2,\ldots,n,
+\mbox{Var$(E_{i})$}=\sigma^{2}(1-h_{ii}),\quad i=1,2,\ldots,n,
 \end{equation}
 where \(h_{ii}\) is a quantity called the <i>leverage</i> which is defined below. Consequently, in order to check the constant variance assumption we must standardize the residuals before plotting. We estimate the standard error of \(E_{i}\) with \(s_{E_{i}}=s\sqrt{(1-h_{ii})}\) and define the <i>standardized residuals</i> \(R_{i}\), \(i=1,2,\ldots,n\), by 
 \begin{equation} 
@@ -1386,8 +1369,7 @@ For these data we would not reject the null hypothesis at the \(\alpha=0.05\) le
 <h4 id="sec-1-4-3">Independence Assumption</h4>
 <div class="outline-text-4" id="text-1-4-3">
 
-<p>\label{sub:Independence-Assumption}
-</p>
+
 <p>
 One of the strongest of the regression assumptions is the one regarding independence. Departures from the independence assumption are often exhibited by correlation (or autocorrelation, literally, self-correlation) present in the residuals. There can be positive or negative correlation.
 </p>
@@ -1498,8 +1480,7 @@ We often find problems with our model that suggest that at least one of the thre
 <h3 id="sec-1-5">Other Diagnostic Tools</h3>
 <div class="outline-text-3" id="text-1-5">
 
-<p>\label{sec:Other-Diagnostic-Tools-SLR}
-</p>
+
 <p>
 There are two types of observations with which we must be especially careful:
 </p><dl>
@@ -1567,7 +1548,7 @@ Values of \(|R_{i}| &gt; 2\) are extreme and suggest that the observation has an
 <p>
 Now delete the \(i^{\mathrm{th}}\) case and fit the regression function to the remaining \(n - 1\) cases, producing a fitted value \(\hat{Y}_{(i)}\) with <i>deleted residual</i> \(D_{i}=Y_{i}-\hat{Y}_{(i)}\). It is shown in later classes that 
 \begin{equation}
-\mbox{Var\ensuremath{(D_{i})}}=\frac{S_{(i)}^{2}}{1-h_{ii}},\quad i=1,2,\ldots,n,
+\mbox{Var $(D_{i})$}=\frac{S_{(i)}^{2}}{1-h_{ii}},\quad i=1,2,\ldots,n,
 \end{equation}
 so that the <i>studentized deleted residuals</i> \(t_{i}\) defined by
 \begin{equation}
@@ -1899,7 +1880,6 @@ show that
 </p>
 <p>
 <div class="xca">
-\label{xca:find-mles-SLR}
 Solve the following system of equations for \(\beta_{1}\) and \(\beta_{0}\) to find the MLEs for slope and intercept in the simple linear regression model.
 \begin{eqnarray*}
 n\beta_{0}+\beta_{1}\sum_{i=1}^{n}x_{i} & = & \sum_{i=1}^{n}y_{i}\\
@@ -1909,7 +1889,6 @@ n\beta_{0}+\beta_{1}\sum_{i=1}^{n}x_{i} & = & \sum_{i=1}^{n}y_{i}\\
 </p>
 <p>
 <div class="xca">
-\label{xca:show-alternate-slope-formula}
 Show that the formula given in Equation <a href="#eq-sample-correlation-formula">sample-correlation-formula</a> is equivalent to
 \[
 \hat{\beta}_{1} = \frac{\sum_{i=1}^{n}x_{i}y_{i}-\left.\left(\sum_{i=1}^{n}x_{i}\right)\left(\sum_{i=1}^{n}y_{i}\right)\right\slash n}{\sum_{i=1}^{n}x_{i}^{2}-\left.\left(\sum_{i=1}^{n}x_{i}\right)^{2}\right\slash n}.

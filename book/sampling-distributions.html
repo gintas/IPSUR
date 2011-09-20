@@ -183,8 +183,7 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Sampling Distributions</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>\label{cha:Sampling-Distributions}
-</p>
+
 <p>
 This is an important chapter; it is the bridge from probability and descriptive statistics that we studied in Chapters <a href="#cha-Describing-Data-Distributions">Describing-Data-Distributions</a> through <a href="#cha-Multivariable-Distributions">Multivariable-Distributions</a> to inferential statistics which forms the latter part of this book.
 </p>
@@ -225,8 +224,7 @@ With the CLT in hand, we then investigate the sampling distributions of several 
 <h3 id="sec-1-1">Simple Random Samples</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>\label{sec:simple-random-samples}
-</p>
+
 
 </div>
 
@@ -234,8 +232,7 @@ With the CLT in hand, we then investigate the sampling distributions of several 
 <h4 id="sec-1-1-1">Simple Random Samples</h4>
 <div class="outline-text-4" id="text-1-1-1">
 
-<p>\label{sub:simple-random-samples}
-</p>
+
 <p>
 <div class="defn">
 If \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) are independent with \(X_{i}\sim f\) for \(i=1,2,\ldots,n\), then we say that \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) are <i>independent and identically distributed</i> (IID) from the population \(f\) or alternatively we say that \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) are a <i>simple random sample of size</i> \(n\), denoted \(SRS(n)\), from the population \(f\). 
@@ -243,7 +240,6 @@ If \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) are independent with \(X_{i}\sim f\
 </p>
 <p>
 <div class="prop">
-\label{pro:mean-sd-xbar}
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be a \(SRS(n)\) from a population distribution with mean \(\mu\) and finite standard deviation \(\sigma\). Then the mean and standard deviation of \(\overline{X}\) are given by the formulas \(\mu_{\overline{X}}=\mu\) and \(\sigma_{\overline{X}}=\sigma/\sqrt{n}\).
 </div>
 </p>
@@ -257,7 +253,6 @@ The next fact will be useful to us when it comes time to prove the Central Limit
 </p>
 <p>
 <div class="prop">
-\label{pro:mgf-xbar}
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be a \(SRS(n)\) from a population distribution with MGF \(M(t)\). Then the MGF of \(\overline{X}\) is given by
 \begin{equation}
 M_{\overline{X}}(t)=\left[M\left(\frac{t}{n}\right)\right]^{n}.
@@ -288,8 +283,7 @@ The last step is to recognize that each term in last product above is exactly \(
 <h3 id="sec-1-2">Sampling from a Normal Distribution</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>\label{sec:sampling-from-normal-dist}
-</p>
+
 
 </div>
 
@@ -297,8 +291,7 @@ The last step is to recognize that each term in last product above is exactly \(
 <h4 id="sec-1-2-1">The Distribution of the Sample Mean</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
-<p>\label{sub:samp-mean-dist-of}
-</p>
+
 <p>
 <div class="prop">
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be a \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution. Then the sample mean \(\overline{X}\) has a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma/\sqrt{n})\) sampling distribution.
@@ -328,11 +321,9 @@ and we recognize this last quantity as the MGF of a \(\mathsf{norm}(\mathtt{mean
 <h4 id="sec-1-2-2">The Distribution of the Sample Variance</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
-<p>\label{sub:Samp-Var-Dist}
-</p>
+
 <p>
 <div class="thm">
-\label{thm:Xbar-andS}
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be a \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution, and let
 \begin{equation}
 \overline{X}=\sum_{i=1}^{n}X_{i}\quad\mbox{and}\quad S^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^{2}.
@@ -366,8 +357,7 @@ The proof is beyond the scope of the present book, but the theorem is simply too
 <h4 id="sec-1-2-3">The Distribution of Student's \(T\) Statistic</h4>
 <div class="outline-text-4" id="text-1-2-3">
 
-<p>\label{sub:Student's-t-Distribution}
-</p>
+
 <p>
 <div class="prop">
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be a \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution. Then the quantity 
@@ -472,8 +462,7 @@ There are a few things to note about the \(\mathtt{t}(\mathtt{df}=r)\) distribut
 <h3 id="sec-1-3">The Central Limit Theorem</h3>
 <div class="outline-text-3" id="text-1-3">
 
-<p>\label{sec:Central-Limit-Theorem}
-</p>
+
 <p>
 In this section we study the distribution of the sample mean when the underlying distribution is <i>not</i> normal. We saw in Section <a href="#sec-sampling-from-normal-dist">sampling-from-normal-dist</a> that when \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n}\) is a \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution then \(\overline{X}\sim\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma/\sqrt{n})\). In other words, we may say (owing to Fact <a href="#fac-lin-trans-norm-is-norm">lin-trans-norm-is-norm</a>) when the underlying population is normal that the sampling distribution of \(Z\) defined by
 \begin{equation}
@@ -486,7 +475,6 @@ However, there are many populations that are <i>not</i> normal &hellip; and the 
 </p>
 <p>
 <div class="thm">
-\label{thm:central-limit-thrm}
 <b>The Central Limit Theorem.</b> Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be a \(SRS(n)\) from a population distribution with mean \(\mu\) and finite standard deviation \(\sigma\). Then the sampling distribution of 
 \begin{equation}
 Z=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
@@ -546,8 +534,7 @@ The three separate <code>clt1</code>, <code>clt2</code>, and <code>clt3</code> f
 <h3 id="sec-1-4">Sampling Distributions of Two-Sample Statistics</h3>
 <div class="outline-text-3" id="text-1-4">
 
-<p>\label{sec:Samp-Dist-Two-Samp}
-</p>
+
 <p>
 There are often two populations under consideration, and it sometimes of interest to compare properties between groups. To do so we take independent samples from each population and calculate respective sample statistics for comparison. In some simple cases the sampling distribution of the comparison is known and easy to derive; such cases are the subject of the present section.
 </p>
@@ -666,8 +653,7 @@ has an \(\mathsf{f}(\mathtt{df1}=n_{1}-1,\,\mathtt{df2}=n_{2}-1)\) sampling dist
 <h3 id="sec-1-5">Simulated Sampling Distributions</h3>
 <div class="outline-text-3" id="text-1-5">
 
-<p>\label{sec:Simulated-Sampling-Distributions}
-</p>
+
 <p>
 Some comparisons are meaningful, but their sampling distribution is not quite so tidy to describe analytically. What do we do then?
 </p>
@@ -840,7 +826,6 @@ Suppose that we observe a random sample \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n}
 </p>
 <p>
 <div class="xca">
-\label{xca:clt123}
 In this exercise we will investigate how the shape of the population distribution affects the time until the distribution of \(\overline{X}\) is acceptably normal.
 </div>
 </p>

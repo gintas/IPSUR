@@ -170,8 +170,7 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Resampling Methods</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>\label{cha:resampling-methods}
-</p>
+
 <p>
 Computers have changed the face of statistics. Their quick computational speed and flawless accuracy, coupled with large data sets acquired by the researcher, make them indispensable for many modern analyses. In particular, resampling methods (due in large part to Bradley Efron) have gained prominence in the modern statistician's repertoire. We first look at a classical problem to get some insight why. 
 </p>
@@ -196,8 +195,7 @@ I have seen <i>Statistical Computing with \textsf{R}</i> by Rizzo \cite{Rizzo200
 <h3 id="sec-1-1">Introduction</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>\label{sec:Introduction-Resampling}
-</p>
+
 <dl>
 <dt>Classical question</dt><dd>Given a population of interest, how may we effectively learn some of its salient features, <i>e.g.</i>, the population's mean? One way is through representative random sampling. Given a random sample, we summarize the information contained therein by calculating a reasonable statistic, <i>e.g.</i>, the sample mean. Given a value of a statistic, how do we know whether that value is significantly different from that which was expected? We don't; we look at the <i>sampling distribution</i> of the statistic, and we try to make probabilistic assertions based on a confidence level or other consideration. For example, we may find ourselves saying things like, "With 95% confidence, the true population mean is greater than zero".
 
@@ -255,14 +253,11 @@ The above discussion leads us to the following general procedure to approximate 
 <h3 id="sec-1-2">Bootstrap Standard Errors</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>\label{sec:Bootstrap-Standard-Errors}
-</p>
+
 <p>
 Since the bootstrap distribution gives us information about a statistic's sampling distribution, we can use the bootstrap distribution to estimate properties of the statistic. We will illustrate the bootstrap procedure in the special case that the statistic \(S\) is a standard error. 
 </p>
-<p>
-\label{exa:Bootstrap-se-mean}
-</p>
+
 <p>
 <b>Standard error of the mean.</b>  In this example we illustrate the bootstrap by estimating the standard error of the sample meanand we will do it in the special case that the underlying population is \(\mathsf{norm}(\mathtt{mean}=3,\,\mathtt{sd}=1)\).  
 </p>
@@ -353,9 +348,7 @@ What would happen if we take more resamples? Instead of 1000 resamples, we could
 We only took an original sample of size \(n=25\), and resampling more and more would never generate more information about the population than was already there. In this sense, the statistician is limited by the information contained in the original sample. 
 </div>
 </p>
-<p>
-\label{exa:Bootstrap-se-median}
-</p>
+
 <p>
 <b>Standard error of the median.</b> We look at one where we do not know the answer ahead of time. This example uses the <code>rivers</code>\index{Data sets!rivers@\texttt{rivers}} data set. Recall the stemplot on page \vpageref{ite:stemplot-rivers} that we made for these data which shows them to be markedly right-skewed, so a natural estimate of center would be the sample median. Unfortunately, its sampling distribution falls out of our reach. We use the bootstrap to help us with this problem, and the modifications to the last example are trivial.
 </p>
@@ -511,8 +504,7 @@ Some things to keep in mind about the bootstrap:
 <h3 id="sec-1-3">Bootstrap Confidence Intervals</h3>
 <div class="outline-text-3" id="text-1-3">
 
-<p>\label{sec:Bootstrap-Confidence-Intervals}
-</p>
+
 
 </div>
 
@@ -528,9 +520,7 @@ As a first try, we want to obtain a 95% confidence interval for a parameter. Typ
 This is incredibly easy to accomplish with the bootstrap. We need only to take a bunch of bootstrap resamples, order them, and choose the \(\alpha/2\)th and \((1-\alpha)\)th percentiles. There is a function <code>boot.ci</code>\index{boot.ci@\texttt{boot.ci}} in \textsf{R} already created to do just this. Note that in order  to use the function <code>boot.ci</code> we must first run the <code>boot</code> function and save the output in a variable, for example, <code>data.boot</code>. We then plug <code>data.boot</code> into the function <code>boot.ci</code>.
 </p>
 
-<p>
-\label{exa:percentile-interval-median-first}
-</p>
+
 <p>
 <b>Percentile interval for the expected value of the median.</b> We will try the naive approach where we generate the resamples and calculate the percentile interval by hand.
 </p>
@@ -650,8 +640,7 @@ We have seen two methods for bootstrapping confidence intervals for a statistic.
 <h3 id="sec-1-4">Resampling in Hypothesis Tests</h3>
 <div class="outline-text-3" id="text-1-4">
 
-<p>\label{sec:Resampling-in-Hypothesis}
-</p>
+
 <p>
 The classical two-sample problem can be stated as follows: given two groups of interest, we would like to know whether these two groups are significantly different from one another or whether the groups are reasonably similar. The standard way to decide is to 
 </p><ol>

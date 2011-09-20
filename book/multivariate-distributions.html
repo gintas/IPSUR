@@ -179,8 +179,7 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Multivariate Distributions</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>\label{cha:Multivariable-Distributions}
-</p>
+
 <p>
 We have built up quite a catalogue of distributions, discrete and continuous. They were all univariate, however, meaning that we only considered one random variable at a time. We can imagine nevertheless many random variables associated with a single person: their height, their weight, their wrist circumference (all continuous), or their eye/hair color, shoe size, whether they are right handed, left handed, or ambidextrous (all categorical), and we can even surmise reasonable probability distributions to associate with each of these variables.
 </p>
@@ -219,8 +218,7 @@ The interested reader who would like to learn more about any of the below mentio
 <h3 id="sec-1-1">Joint and Marginal Probability Distributions</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>\label{sec:Joint-Probability-Distributions}
-</p>
+
 <p>
 Consider two discrete random variables \(X\) and \(Y\) with PMFs \(f_{X}\) and \(f_{Y}\) that are supported on the sample spaces \(S_{X}\) and \(S_{Y}\), respectively. Let \(S_{X,Y}\) denote the set of all possible observed <i>pairs</i> \((x,y)\), called the <i>joint support set</i> of \(X\) and \(Y\). Then the <i>joint probability mass function</i> of \(X\) and \(Y\) is the function \(f_{X,Y}\) defined by
 \begin{equation}
@@ -259,9 +257,7 @@ The bivariate joint CDF is not quite as tractable as the univariate CDFs, but in
 <p>
 We now introduce some examples of bivariate discrete distributions. The first we have seen before, and the second is based on the first.
 </p>
-<p>
-\label{exa:toss-two-dice-joint-pmf}
-</p>
+
 <p>
 Roll a fair die twice. Let \(X\) be the face shown on the first roll, and let \(Y\) be the face shown on the second roll. We have already seen this example in Chapter <a href="#cha-Probability">Probability</a>, Example <a href="#exa-Toss-a-six-sided-die-twice">Toss-a-six-sided-die-twice</a>. For this example, it suffices to define
 \[
@@ -277,9 +273,7 @@ and the same computation with the letters switched works for \(Y\).
 In the previous example, and in many other ones, the joint support can be written as a product set of the support of \(X\) ``times'' the support of \(Y\), that is, it may be represented as a cartesian product set, or rectangle, \(S_{X,Y}=S_{X}\times S_{Y}\), where \(S_{X} \times S_{Y}= \{ (x,y):\ x\in S_{X},\, y\in S_{Y} \} \). As we shall see presently in Section <a href="#sec-Independent-Random-Variables">Independent-Random-Variables</a>, this form is a necessary condition for \(X\) and \(Y\) to be <i>independent</i> (or alternatively <i>exchangeable</i> when \(S_{X}=S_{Y}\)). But please note that in general it is not required for \(S_{X,Y}\) to be of rectangle form. We next investigate just such an example.
 </p>
 
-<p>
-\label{exa:max-sum-two-dice}
-</p>
+
 <p>
 Let the random experiment again be to roll a fair die twice, except now let us define the random variables \(U\) and \(V\) by
 \begin{eqnarray*}
@@ -333,9 +327,7 @@ f_{Y}(y)=\int_{S_{X}}f_{X,Y}(x,y)\,\mathrm{d} x,\quad y\in S_{Y}.
 \end{equation}
 
 
-\label{exa:joint-pdf}
-</p>
-<p>
+
 Let the joint PDF of \((X,Y)\) be given by
 \[
 f_{X,Y}(x,y)=\frac{6}{5}\left(x+y^{2}\right),\quad0<x<1,\ 0<y<1.
@@ -500,8 +492,7 @@ You should check that the answers that we have obtained exactly match the same (
 <h3 id="sec-1-2">Joint and Marginal Expectation</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>\label{sec:Joint-and-Marginal-Expectation}
-</p>
+
 <p>
 Given a function \(g\) with arguments \((x,y)\) we would like to know the long-run average behavior of \(g(X,Y)\) and how to mathematically calculate it. Expectation in this context is computed in the pedestrian way. We simply integrate (sum) with respect to the joint probability density (mass) function.
 \begin{equation}
@@ -553,9 +544,7 @@ The correlation is usually denoted by \(\rho_{X,Y}\) or simply \(\rho\) if the r
 </ol>
 
 
-<p>
-\label{exa:max-sum-dice-covariance}
-</p>
+
 <p>
 We will compute the covariance for the discrete distribution in Example <a href="#exa-max-sum-two-dice">max-sum-two-dice</a>. The expected value of \(U\) is
 \[
@@ -633,8 +622,7 @@ To do the continuous case we could use the computer algebra utilities of <code>Y
 <h3 id="sec-1-3">Conditional Distributions</h3>
 <div class="outline-text-3" id="text-1-3">
 
-<p>\label{sec:Conditional-Distributions}
-</p>
+
 <p>
 If \(x\in S_{X}\) is such that \(f_{X}(x)&gt;0\), then we define the <i>conditional density</i> of \(Y|\, X=x\), denoted \(f_{Y|x}\), by 
 \begin{equation}
@@ -712,8 +700,7 @@ where the constant of proportionality is \(\int\pi(u)\, f(x_{1},x_{2},\ldots,x_{
 <h3 id="sec-1-4">Independent Random Variables</h3>
 <div class="outline-text-3" id="text-1-4">
 
-<p>\label{sec:Independent-Random-Variables}
-</p>
+
 
 </div>
 
@@ -721,8 +708,7 @@ where the constant of proportionality is \(\int\pi(u)\, f(x_{1},x_{2},\ldots,x_{
 <h4 id="sec-1-4-1">Independent Random Variables</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
-<p>\label{sub:Independent-Random-Variables}
-</p>
+
 <p>
 We recall from Chapter <a href="#cha-Probability">Probability</a> that the events \(A\) and \(B\) are said to be independent when
 \begin{equation}
@@ -761,7 +747,6 @@ Independent random variables are very useful to the mathematician. They have man
 </p>
 <p>
 <div class="prop">
-\label{pro:indep-implies-prodexpect}
 If \(X\) and \(Y\) are independent, then for any functions \(u\) and \(v\), 
 \begin{equation}
 \E\left(u(X)v(Y)\right)=\left(\E u(X)\right)\left(\E v(Y)\right).
@@ -795,7 +780,6 @@ When \(X\) and \(Y\) are independent then \(\E XY=\E X\,\E Y\). And when the cov
 </p>
 <p>
 <div class="rem">
-\label{rem:cov0-not-imply-indep}
 Unfortunately, the converse of Corollary <a href="#cor-indep-implies-uncorr">indep-implies-uncorr</a> is not true. That is, there are many random variables which are dependent yet their covariance and correlation is zero. For more details, see Casella and Berger \cite{Casella2002}.
 </div>
 </p>
@@ -804,7 +788,6 @@ Proposition <a href="#pro-indep-implies-prodexpect">indep-implies-prodexpect</a>
 </p>
 <p>
 <div class="fact">
-\label{fac:indep-then-function-indep}
 If \(X\) and \(Y\) are independent, then \(u(X)\) and \(v(Y)\) are independent for any functions \(u\) and \(v\).
 </div>
 </p>
@@ -816,8 +799,7 @@ If \(X\) and \(Y\) are independent, then \(u(X)\) and \(v(Y)\) are independent f
 <h4 id="sec-1-4-2">Combining Independent Random Variables</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
-<p>\label{sub:Combining-Independent-Random}
-</p>
+
 <p>
 Another important corollary of Proposition <a href="#pro-indep-implies-prodexpect">indep-implies-prodexpect</a> will allow us to find the distribution of sums of random variables. 
 </p>
@@ -853,7 +835,6 @@ Even when we cannot use the MGF trick to identify the exact distribution of a li
 </p>
 <p>
 <div class="prop">
-\label{pro:mean-sd-lin-comb-two}
 Let \(X_{1}\) and \(X_{2}\) be independent with respective population means \(\mu_{1}\) and \(\mu_{2}\) and population standard deviations \(\sigma_{1}\) and \(\sigma_{2}\). For given constants \(a_{1}\) and \(a_{2}\), define \(Y=a_{1}X_{1}+a_{2}X_{2}\). Then the mean and standard deviation of \(Y\) are given by the formulas
 \begin{equation}
 \mu_{Y}=a_{1}\mu_{1}+a_{2}\mu_{2},\quad\sigma_{Y}=\left(a_{1}^{2}\sigma_{1}^{2}+a_{2}^{2}\sigma_{2}^{2}\right)^{1/2}.
@@ -887,8 +868,7 @@ But notice that the expression in the parentheses is exactly \(\left(a_{1}\mu_{1
 <h3 id="sec-1-5">Exchangeable Random Variables</h3>
 <div class="outline-text-3" id="text-1-5">
 
-<p>\label{sec:Exchangeable-Random-Variables}
-</p>
+
 <p>
 Two random variables \(X\) and \(Y\) are said to be <i>exchangeable</i> if their joint CDF is a symmetric function of its arguments:
 \begin{equation}
@@ -907,7 +887,6 @@ f_{X,Y}(x,y)=(1+\alpha)\lambda^{2}\mathrm{e}^{-\lambda(x+y)}+\alpha(2\lambda)^{2
 It is straightforward and tedious to check that \(\iint f=1\). We may see immediately that \(f_{X,Y}(x,y)=f_{X,Y}(y,x)\) for all \((x,y)\), which confirms that \(X\) and \(Y\) are exchangeable. Here, \(\alpha\) is said to be an association parameter. This particular example is one from the Farlie-Gumbel-Morgenstern family of distributions; see \cite{Kotz2000}.
 </p>
 <p>
-\label{exa:binom-exchangeable}
 Suppose \(X\) and \(Y\) are IID \(\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\). Then their joint PMF is
 \begin{eqnarray*}
 f_{X,Y}(x,y) & = & f_{X}(x)f_{Y}(y)\\
@@ -935,8 +914,7 @@ Exchangeability thus contains IID as a special case.
 <h3 id="sec-1-6">The Bivariate Normal Distribution</h3>
 <div class="outline-text-3" id="text-1-6">
 
-<p>\label{sec:The-Bivariate-Normal}
-</p>
+
 <p>
 The bivariate normal PDF is given by the unwieldy formula
 \begin{multline}
@@ -991,7 +969,6 @@ From this we immediately get that \(\E X=\mu_{X}\) and \(\mbox{Var}(X)=\sigma_{X
 </p>
 <p>
 <div class="prop">
-\label{pro:mvnorm-cond-dist}
 The conditional distribution of \(Y|\, X=x\) is \(\mathsf{norm}(\mathtt{mean}=\mu_{Y|x},\,\mathtt{sd}=\sigma_{Y|x})\), where
 \begin{equation}
 \mu_{Y|x}=\mu_{Y}+\rho\frac{\sigma_{Y}}{\sigma_{X}}\left(x-\mu_{X}\right),\mbox{ and }\sigma_{Y|x}=\sigma_{Y}\sqrt{1-\rho^{2}}.
@@ -1066,8 +1043,7 @@ persp(x, y, z, theta = -30, phi = 30, ticktype = <span style="color: #8b2252;">"
 <h3 id="sec-1-7">Bivariate Transformations of Random Variables</h3>
 <div class="outline-text-3" id="text-1-7">
 
-<p>\label{sec:Transformations-Multivariate}
-</p>
+
 <p>
 We studied in Section <a href="#sec-Functions-of-Continuous">Functions-of-Continuous</a> how to find the PDF of \(Y=g(X)\) given the PDF of \(X\). But now we have two random variables \(X\) and Y, with joint PDF \(f_{X,Y}\), and we would like to consider the joint PDF of two new random variables
 \begin{equation}
@@ -1138,9 +1114,7 @@ f_{U,V}(u,v)=\frac{1}{2\pi}\exp\left\{ -\frac{1}{2}\left[\left(-3u+2v\right)^{2}
 It may not be obvious, but Equation <a href="#eq-biv-norm-hidden">biv-norm-hidden</a> is the PDF of a \(\mathsf{mvnorm}\) distribution. For a more general result see Theorem <a href="#thm-mvnorm-dist-matrix-prod">mvnorm-dist-matrix-prod</a>.
 </div>
 </p>
-<p>
-\label{sub:bivariate-transf-R}
-</p>
+
 <p>
 It is possible to do the computations above in \textsf{R} with the <code>Ryacas</code> package. The package is an interface to the open-source computer algebra system, ``Yacas''. The user installs Yacas, then employs <code>Ryacas</code> to submit commands to Yacas, after which the output is displayed in the \textsf{R} console.
 </p>
@@ -1155,8 +1129,7 @@ There are not yet any examples of Yacas in this book, but there are online mater
 <h3 id="sec-1-8">Remarks for the Multivariate Case</h3>
 <div class="outline-text-3" id="text-1-8">
 
-<p>\label{sec:Remarks-for-the-Multivariate}
-</p>
+
 <p>
 There is nothing spooky about \(n\geq3\) random variables. We just have a whole bunch of them: \(X_{1}\), \(X_{2}\),&hellip;, \(X_{n}\), which we can shorten to \(\mathbf{X}=(X_{1},X_{2},\ldots,X_{n})^{\mathrm{T}}\) to make the formulas prettier (now may be a good time to check out Appendix <a href="#sec-Linear-Algebra">Linear-Algebra</a>). For \(\mathbf{X}\) supported on the set \(S_{\mathbf{X}}\), the joint PDF \(f_{\mathbf{X}}\) (if it exists) satisfies
 \begin{equation}
@@ -1196,7 +1169,6 @@ for any reordering \(\mathbf{x^{\ast}}\) of the elements of \(\mathbf{x}=(x_{1},
 </p>
 <p>
 <div class="prop">
-\label{pro:mean-sd-lin-comb}
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be independent with respective population means \(\mu_{1}\), \(\mu_{2}\), &hellip;, \(\mu_{n}\) and standard deviations \(\sigma_{1}\), \(\sigma_{2}\), &hellip;, \(\sigma_{n}\). For given constants \(a_{1}\), \(a_{2}\), &hellip;,\(a_{n}\) define \(Y=\sum_{i=1}^{n}a_{i}X_{i}\). Then the mean and standard deviation of \(Y\) are given by the formulas
 \begin{equation}
 \mu_{Y}=\sum_{i=1}^{n}a_{i}\mu_{i},\quad\sigma_{Y}=\left(\sum_{i=1}^{n}a_{i}^{2}\sigma_{i}^{2}\right)^{1/2}.
@@ -1270,7 +1242,6 @@ We will need the following in Chapter <a href="#cha-multiple-linear-regression">
 </p>
 <p>
 <div class="thm">
-\label{thm:mvnorm-dist-matrix-prod}
 If \(\mathbf{X}\sim\mathsf{mvnorm}(\mathtt{mean}=\upmu,\,\mathtt{sigma}=\Sigma)\) and \(\mathbf{A}\) is any matrix, then the random vector \(\mathbf{Y}=\mathbf{AX}\)
 is distributed
 \begin{equation}
@@ -1298,8 +1269,7 @@ and the last expression is the MGF of an \(\mathsf{mvnorm}(\mathtt{mean}=\mathbf
 <h3 id="sec-1-9">The Multinomial Distribution</h3>
 <div class="outline-text-3" id="text-1-9">
 
-<p>\label{sec:Multinomial}
-</p>
+
 <p>
 We sample \(n\) times, with replacement, from an urn that contains balls of \(k\) different types. Let \(X_{1}\) denote the number of balls in our sample of type 1, let \(X_{2}\) denote the number of balls of type 2, &hellip;, and let \(X_{k}\) denote the number of balls of type \(k\). Suppose the urn has proportion \(p_{1}\) of balls of type 1, proportion \(p_{2}\) of balls of type 2, &hellip;, and proportion \(p_{k}\) of balls of type \(k\). Then the joint PMF of \((X_{1},\ldots,X_{k})\) is
 \begin{eqnarray}
@@ -1434,13 +1404,11 @@ Prove that \( \mbox{Cov}(X,Y)=\E(XY)-(\E X)(\E Y). \) \label{xca:Prove-cov-short
 </p>
 <p>
 <div class="xca">
-\label{xca:sum-indep-chisq}
 Suppose \(X\sim\mathsf{chisq}(\mathtt{df}=p_{1})\) and \(Y\sim\mathsf{chisq}(\mathtt{df}=p_{2})\) are independent. Find the distribution of \(X+Y\) (you may want to refer to Equation <a href="#eq-mgf-chisq">mgf-chisq</a>).
 </div>
 </p>
 <p>
 <div class="xca">
-\label{xca:diff-indep-norm}
 Show that when \(X\) and \(Y\) are independent the MGF of \(X-Y\) is \(M_{X}(t)M_{Y}(-t)\). Use this to find the distribution of \(X-Y\) when \(X\sim\mathsf{norm}(\mathtt{mean}=\mu_{1},\,\mathtt{sd}=\sigma_{1})\) and \(Y\sim\mathsf{norm}(\mathtt{mean}=\mu_{2},\,\mathtt{sd}=\sigma_{2})\)  are independent. 
 </div>
 </p></div>

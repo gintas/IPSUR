@@ -184,8 +184,7 @@ lang="en" xml:lang="en">
 <h2 id="sec-1">Discrete Distributions</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>\label{cha:Discrete-Distributions}
-</p>
+
 <p>
 In this chapter we introduce discrete random variables, those who take values in a finite or countably infinite support set. We discuss probability mass functions and some special expectations, namely, the mean, variance and standard deviation. Some of the more important discrete distributions are explored in detail, and the more general concept of expectation is defined, which paves the way for moment generating functions. 
 </p>
@@ -218,8 +217,7 @@ There are some comments on simulation, and we mention transformations of random 
 <h3 id="sec-1-1">Discrete Random Variables</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>\label{sec:discrete-random-variables}
-</p>
+
 
 </div>
 
@@ -227,8 +225,7 @@ There are some comments on simulation, and we mention transformations of random 
 <h4 id="sec-1-1-1">Probability Mass Functions</h4>
 <div class="outline-text-4" id="text-1-1-1">
 
-<p>\label{sub:probability-mass-functions}
-</p>
+
 <p>
 Discrete random variables are characterized by their supports which take the form
 \begin{equation}
@@ -249,9 +246,7 @@ Since values of the PMF represent probabilities, we know from Chapter <a href="#
 </ol>
 
 
-<p>
-\label{exa:Toss-a-coin}
-</p>
+
 <p>
 Toss a coin 3 times. The sample space would be
 \[
@@ -282,8 +277,7 @@ What is the PMF of \(X\)? Notice that \(X\) is zero exactly when the outcome \(T
 <h4 id="sec-1-1-2">Mean, Variance, and Standard Deviation</h4>
 <div class="outline-text-4" id="text-1-1-2">
 
-<p>\label{sub:mean-variance-sd}
-</p>
+
 <p>
 There are numbers associated with PMFs. One important example is the mean \(\mu\), also known as \(\E X\) (which we will discuss later):
 \begin{equation}
@@ -296,7 +290,6 @@ provided the (potentially infinite) series \(\sum|x|f_{X}(x)\) is convergent. An
 which can be computed (see Exercise <a href="#xca-variance-shortcut">variance-shortcut</a>) with the alternate formula \(\sigma^{2}=\sum x{}^{2}f_{X}(x)-\mu^{2}\). Directly defined from the variance is the standard deviation \(\sigma=\sqrt{\sigma^{2}}\).
 </p>
 <p> 
-\label{exa:disc-pmf-mean}
 We will calculate the mean of \(X\) in Example <a href="#exa-Toss-a-coin">Toss-a-coin</a>.
 \[
 \mu=\sum_{x=0}^{3}xf_{X}(x)=0\cdot\frac{1}{8}+1\cdot\frac{3}{8}+2\cdot\frac{3}{8}+3\cdot\frac{1}{8}=3.5.
@@ -325,9 +318,7 @@ We know that all PMFs satisfy certain properties, and a similar statement may be
 
 <p>We say that \(X\) has the distribution \(F_{X}\) and we write \(X\sim F_{X}\). In an abuse of notation we will also write \(X\sim f_{X}\) and for the named distributions the PMF or CDF will be identified by the family name instead of the defining formula.
 </p>
-<p>
-\label{sub:disc-rv-how-r}
-</p>
+
 <p>
 The mean and variance of a discrete random variable is easy to compute at the console. Let's return to Example <a href="#exa-disc-pmf-mean">disc-pmf-mean</a>. We will start by defining a vector <code>x</code> containing the support of \(X\), and a vector <code>f</code> to contain the values of \(f_{X}\) at the respective outcomes in <code>x</code>:
 </p>
@@ -428,8 +419,7 @@ E(X); var(X); sd(X)
 <h3 id="sec-1-2">The Discrete Uniform Distribution</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>\label{sec:disc-uniform-dist}
-</p>
+
 <p>
 We have seen the basic building blocks of discrete distributions and we now study particular models that statisticians often encounter in the field. Perhaps the most fundamental of all is the <i>discrete uniform</i> distribution.
 </p>
@@ -498,15 +488,14 @@ The default name for the variable is <code>disunif.sim1</code>.
 <h3 id="sec-1-3">The Binomial Distribution</h3>
 <div class="outline-text-3" id="text-1-3">
 
-<p>\label{sec:binom-dist}
-</p>
+
 <p>
 The binomial distribution is based on a <i>Bernoulli trial</i>, which is a random experiment in which there are only two possible outcomes: success (\(S\)) and failure (\(F\)). We conduct the Bernoulli trial and let 
 \begin{equation}
 X=
 \begin{cases}
-1 & \mbox{if the outcome is \ensuremath{S}},\\
-0 & \mbox{if the outcome is \ensuremath{F}}.
+1 & \mbox{if the outcome is $S$},\\
+0 & \mbox{if the outcome is $F$}.
 \end{cases}
 \end{equation}
 If the probability of success is \(p\) then the probability of failure must be \(1-p=q\) and the PMF of \(X\) is
@@ -522,8 +511,7 @@ It is easy to calculate \(\mu=\E X=p\) and \(\E X^{2}=p\) so that \(\sigma^{2}=p
 <h4 id="sec-1-3-1">The Binomial Model</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
-<p>\label{sub:The-Binomial-Model}
-</p>
+
 <p>
 The Binomial model has three defining properties:
 </p><ul>
@@ -610,7 +598,6 @@ diff(pbinom(c(6,9), size = 12, prob = 1/6))  <span style="color: #b22222;"># </s
 
 
 <p>
-\label{exa:toss-coin-3-withR}
 Toss a coin three times and let \(X\) be the number of Heads observed. We know from before that \(X\sim\mathsf{binom}(\mathtt{size}=3,\,\mathtt{prob}=1/2)\) which implies the following PMF:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
@@ -720,8 +707,7 @@ Random variables defined via the <code>distr</code> package may be <i>plotted</i
 <h3 id="sec-1-4">Expectation and Moment Generating Functions</h3>
 <div class="outline-text-3" id="text-1-4">
 
-<p>\label{sec:expectation-and-mgfs}
-</p>
+
 
 </div>
 
@@ -729,8 +715,7 @@ Random variables defined via the <code>distr</code> package may be <i>plotted</i
 <h4 id="sec-1-4-1">The Expectation Operator</h4>
 <div class="outline-text-4" id="text-1-4-1">
 
-<p>\label{sub:expectation-operator}
-</p>
+
 <p>
 We next generalize some of the concepts from Section <a href="#sub-mean-variance-sd">mean-variance-sd</a>. There we saw that every
 PMF has two important numbers associated with it:
@@ -760,7 +745,6 @@ Let us take the analogy further. If we expect \(g(X)\) to be close to \(\E g(X)\
 </p>
 <p>
 <div class="prop">
-\label{pro:expectation-properties}
 For any functions \(g\) and \(h\), any random variable \(X\), and any constant \(c\): 
 </p><ol>
 <li>\(\E\: c=c\),
@@ -790,8 +774,7 @@ Go directly from the definition. For example,
 <h4 id="sec-1-4-2">Moment Generating Functions</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
-<p>\label{sub:MGFs}
-</p>
+
 <p>
 <div class="defn">
 Given a random variable \(X\), its <i>moment generating function</i> (abbreviated MGF) is defined by the formula
@@ -812,7 +795,7 @@ We will calculate the MGF for the two distributions introduced above.
 Find the MGF for \(X\sim\mathsf{disunif}(m)\). 
 Since \(f(x)=1/m\), the MGF takes the form
 \[
-M(t)=\sum_{x=1}^{m}\mathrm{e}^{tx}\frac{1}{m}=\frac{1}{m}(\mathrm{e}^{t}+\mathrm{e}^{2t}+\cdots+\mathrm{e}^{mt}),\quad\mbox{for any \ensuremath{t}.}
+M(t)=\sum_{x=1}^{m}\mathrm{e}^{tx}\frac{1}{m}=\frac{1}{m}(\mathrm{e}^{t}+\mathrm{e}^{2t}+\cdots+\mathrm{e}^{mt}),\quad\mbox{for any \(t\).}
 \]
 
 
@@ -823,7 +806,7 @@ Find the MGF for \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\).
 \begin{alignat*}{1}
 M_{X}(t)= & \sum_{x=0}^{n}\mathrm{e}^{tx}\,{n \choose x}\, p^{x}(1-p)^{n-x},\\
 = & \sum_{x=0}^{n}{n \choose x}\,(p\mathrm{e}^{t})^{x}q^{n-x},\\
-= & (p\mathrm{e}^{t}+q)^{n},\quad\mbox{for any \ensuremath{t}.}
+= & (p\mathrm{e}^{t}+q)^{n},\quad\mbox{for any $t$.}
 \end{alignat*}
 
 
@@ -833,7 +816,6 @@ We will discuss three applications of moment generating functions in this book. 
 </p>
 <p>
 <div class="thm">
-\label{thm:mgf-unique}
 The moment generating function, if it exists in a neighborhood of zero, determines a probability distribution <i>uniquely</i>. 
 </div>
 </p>
@@ -873,7 +855,7 @@ M'(0)=\sum_{x\in S}x\mathrm{e}^{0}f(x)=\sum_{x\in S}xf(x)=\mu=\E X.
 Similarly, \(M''(t)=\sum x^{2}\mathrm{e}^{tx}f(x)\) so that \(M''(0)=\E X^{2}\). And in general, we can see
 that
 \begin{equation}
-M_{X}^{(r)}(0)=\E X^{r}=\mbox{\ensuremath{r^{\mathrm{th}}} moment of \ensuremath{X} about the origin.}
+M_{X}^{(r)}(0)=\E X^{r}=\mbox{$r^{\mathrm{th}$} moment of $X$ about the origin.}
 \end{equation}
 
 These are also known as <i>raw moments</i> and are sometimes denoted \(\mu_{r}'\). In addition to these are the so called <i>central moments</i> \(\mu_{r}\) defined by
@@ -881,7 +863,7 @@ These are also known as <i>raw moments</i> and are sometimes denoted \(\mu_{r}'\
 \mu_{r}=\E(X-\mu)^{r},\quad r=1,2,\ldots
 \end{equation}
 
-Let \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\mbox{ with \ensuremath{M(t)=(q+p\mathrm{e}^{t})^{n}}}\).
+Let \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\mbox{ with $M(t)=(q+p\mathrm{e}^{t})^{n}$}\).
 </p>
 <p>
 We calculated the mean and variance of a binomial random variable in Section <a href="#sec-binom-dist">binom-dist</a> by means of the binomial series. But look how quickly we find the mean and variance with the moment generating function.
@@ -907,11 +889,11 @@ See how much easier that was?
 <div class="rem">
 We learned in this section that \(M^{(r)}(0)=\E X^{r}\). We remember from Calculus II that certain functions \(f\) can be represented by a Taylor series expansion about a point \(a\), which takes the form
 \begin{equation}
-f(x)=\sum_{r=0}^{\infty}\frac{f^{(r)}(a)}{r!}(x-a)^{r},\quad\mbox{for all \ensuremath{|x-a|<R},}
+f(x)=\sum_{r=0}^{\infty}\frac{f^{(r)}(a)}{r!}(x-a)^{r},\quad\mbox{for all $|x-a|<R$,}
 \end{equation}
 where \(R\) is called the <i>radius of convergence</i> of the series (see Appendix <a href="#sec-Sequences-and-Series">Sequences-and-Series</a>). We combine the two to say that if an MGF exists for all \(t\) in the interval \((-\epsilon,\epsilon)\), then we can write
 \begin{equation}
-M_{X}(t)=\sum_{r=0}^{\infty}\frac{\E X^{r}}{r!}t^{r},\quad\mbox{for all \ensuremath{|t|<\epsilon}.}
+M_{X}(t)=\sum_{r=0}^{\infty}\frac{\E X^{r}}{r!}t^{r},\quad\mbox{for all $|t|<\epsilon$.}
 \end{equation}
 </div>
 </p>
@@ -969,8 +951,7 @@ There are even methods for <code>IQR</code>, <code>mad</code>, <code>skewness</c
 <h3 id="sec-1-5">The Empirical Distribution</h3>
 <div class="outline-text-3" id="text-1-5">
 
-<p>\label{sec:empirical-distribution}
-</p>
+
 <p>
 Do an experiment \(n\) times and observe \(n\) values \(x_{1}\), \(x_{2}\), &hellip;, \(x_{n}\) of a random variable \(X\). For simplicity in most of the discussion that follows it will be convenient to imagine that the observed values are distinct, but the remarks are valid even when the observed values are repeated. 
 </p>
@@ -1090,8 +1071,7 @@ As we hinted above, the empirical distribution is significant more because of ho
 <h3 id="sec-1-6">Other Discrete Distributions</h3>
 <div class="outline-text-3" id="text-1-6">
 
-<p>\label{sec:other-discrete-distributions}
-</p>
+
 <p>
 The binomial and discrete uniform distributions are popular, and rightly so; they are simple and form the foundation for many other more complicated distributions. But the particular uniform and binomial models only apply to a limited range of problems. In this section we introduce situations for which we need more than what the uniform and binomial offer.
 </p>
@@ -1102,11 +1082,8 @@ The binomial and discrete uniform distributions are popular, and rightly so; the
 <h4 id="sec-1-6-1">Dependent Bernoulli Trials</h4>
 <div class="outline-text-4" id="text-1-6-1">
 
-<p>\label{sec:non-bernoulli-trials}
-</p>
-<p>
-\label{sub:hypergeometric-dist}
-</p>
+
+
 <p>
 Consider an urn with 7 white balls and 5 black balls. Let our random experiment be to randomly select 4 balls, without replacement, from the urn. Then the probability of observing 3 white balls (and thus 1 black ball) would be
 \begin{equation}
@@ -1263,9 +1240,7 @@ Generate \(100,000\) observations of the random variable \(X\).
 
 
 
-<p>
-\label{sub:Sampling-With-and}
-</p>
+
 <p>
 Suppose that we have a large urn with, say, \(M\) white balls and \(N\) black balls. We take a sample of size \(n\) from the urn, and let \(X\) count the number of white balls in the sample. If we sample
 </p><dl>
@@ -1302,14 +1277,11 @@ is called a <i>finite population correction</i>. For a fixed sample size \(n\), 
 <h4 id="sec-1-6-2">Waiting Time Distributions</h4>
 <div class="outline-text-4" id="text-1-6-2">
 
-<p>\label{sec:Waiting-Time-Distributions}
-</p>
+
 <p>
 Another important class of problems is associated with the amount of time it takes for a specified event of interest to occur. For example, we could flip a coin repeatedly until we observe Heads. We could toss a piece of paper repeatedly until we make it in the trash can.
 </p>
-<p>
-\label{sub:The-Geometric-Distribution}
-</p>
+
 <p>
 Suppose that we conduct Bernoulli trials repeatedly, noting the successes and failures. Let \(X\) be the number of failures before a success. If \(\Pr(S)=p\) then \(X\) has PMF
 \begin{equation}
@@ -1355,9 +1327,7 @@ f_{Y}(y)=p(1-p)^{y-1},\quad y=1,2,3,\ldots
 When they say ``geometric distribution'', this is what they mean. It is not hard to see that the two definitions are related. In fact, if \(X\) denotes our geometric and \(Y\) theirs, then \(Y=X+1\). Consequently, they have \(\mu_{Y}=\mu_{X}+1\) and \(\sigma_{Y}^{2}=\sigma_{X}^{2}\).
 </div>
 </p>
-<p>
-\label{sub:The-Negative-Binomial}
-</p>
+
 <p>
 We may generalize the problem and consider the case where we wait for <i>more</i> than one success. Suppose that we conduct Bernoulli trials repeatedly, noting the respective successes and failures. Let \(X\) count the number of failures before \(r\) successes. If \(\Pr(S)=p\) then \(X\) has PMF
 \begin{equation}
@@ -1369,8 +1339,8 @@ We say that \(X\) has a <i>Negative Binomial distribution</i> and write \(X\sim\
 <p>
 As usual it should be clear that \(f_{X}(x)\geq 0\) and the fact that \(\sum f_{X}(x)=1\) follows from a generalization of the geometric series by means of a Maclaurin's series expansion:
 \begin{alignat}{1}
-\frac{1}{1-t}= & \sum_{k=0}^{\infty}t^{k},\quad\mbox{for \ensuremath{-1<t<1}},\mbox{ and}\\
-\frac{1}{(1-t)^{r}}= & \sum_{k=0}^{\infty}{r+k-1 \choose r-1}\, t^{k},\quad\mbox{for \ensuremath{-1<t<1}}.
+\frac{1}{1-t}= & \sum_{k=0}^{\infty}t^{k},\quad\mbox{for $-1<t<1$},\mbox{ and}\\
+\frac{1}{(1-t)^{r}}= & \sum_{k=0}^{\infty}{r+k-1 \choose r-1}\, t^{k},\quad\mbox{for $-1<t<1$}.
 \end{alignat}
 Therefore
 \begin{equation}
@@ -1403,16 +1373,16 @@ Let us next compute the MGF of \(X\sim\mathsf{nbinom}(\mathtt{size}=r,\,\mathtt{
 \begin{alignat*}{1}
 M_{X}(t)= & \sum_{x=0}^{\infty}\mathrm{e}^{tx}\ {r+x-1 \choose r-1}p^{r}q^{x}\\
 = & p^{r}\sum_{x=0}^{\infty}{r+x-1 \choose r-1}[q\mathrm{e}^{t}]^{x}\\
-= & p^{r}(1-qe^{t})^{-r},\quad\mbox{provided \ensuremath{|q\mathrm{e}^{t}|<1,}}
+= & p^{r}(1-qe^{t})^{-r},\quad\mbox{provided $|q\mathrm{e}^{t}|<1$,}
 \end{alignat*}
 and so
 \begin{equation}
-M_{X}(t)=\left(\frac{p}{1-q\mathrm{e}^{t}}\right)^{r},\quad\mbox{for \ensuremath{q\mathrm{e}^{t}<1}}.
+M_{X}(t)=\left(\frac{p}{1-q\mathrm{e}^{t}}\right)^{r},\quad\mbox{for $q\mathrm{e}^{t}<1$}.
 \end{equation}
 We see that \(q\mathrm{e}^{t}&lt;1\) when \(t&lt;-\ln(1-p)\).
 </p>
 <p>
-Let \(X\sim\mathsf{nbinom}(\mathtt{size}=r,\mathtt{prob}=p)\mbox{ with \ensuremath{M(t)=p^{r}(1-q\mathrm{e}^{t})^{-r}}}\). We proclaimed above the values of the mean and variance. Now we are equipped with the tools to find these directly.
+Let \(X\sim\mathsf{nbinom}(\mathtt{size}=r,\mathtt{prob}=p)\mbox{ with $M(t)=p^{r}(1-q\mathrm{e}^{t})^{-r}$}\). We proclaimed above the values of the mean and variance. Now we are equipped with the tools to find these directly.
 \begin{alignat*}{1}
 M'(t)= & p^{r}(-r)(1-q\mathrm{e}^{t})^{-r-1}(-q\mathrm{e}^{t}),\\
 = & rq\mathrm{e}^{t}p^{r}(1-q\mathrm{e}^{t})^{-r-1},\\
@@ -1451,11 +1421,8 @@ It is again not hard to see that if \(X\) denotes our Negative Binomial and \(Y\
 <h4 id="sec-1-6-3">Arrival Processes</h4>
 <div class="outline-text-4" id="text-1-6-3">
 
-<p>\label{sec:Arrival-Processes}
-</p>
-<p>
-\label{sub:The-Poisson-Distribution}
-</p>
+
+
 <p>
 This is a distribution associated with ``rare events'', for reasons which will become clear in a moment. The events might be:
 </p><ul>
@@ -1491,7 +1458,6 @@ Divide \([0,1]\) into subintervals of length \(1/n\). A <i>Poisson process</i>\i
 
 <p>
 <div class="rem">
-\label{rem:poisson-process}
 </p>
 <p>
 If \(X\) counts the number of events in the interval \([0,t]\) and \(\lambda\) is the average number that occur in unit time, then \(X\sim\mathsf{pois}(\mathtt{lambda}=\lambda t)\), that is,
@@ -1532,8 +1498,7 @@ Suppose the car wash above is in operation from 8AM to 6PM, and we let \(Y\) be 
 <h3 id="sec-1-7">Functions of Discrete Random Variables</h3>
 <div class="outline-text-3" id="text-1-7">
 
-<p>\label{sec:functions-discrete-rvs}
-</p>
+
 <p>
 We have built a large catalogue of discrete distributions, but the tools of this section will give us the ability to consider infinitely many more. Given a random variable \(X\) and a given function \(h\), we may consider \(Y=h(X)\). Since the values of \(X\) are determined by chance, so are the values of \(Y\). The question is, what is the PMF of the random variable \(Y\)? The answer, of course, depends on \(h\). In the case that \(h\) is one-to-one (see Appendix <a href="#sec-Differential-and-Integral">Differential-and-Integral</a>), the solution can be found by simple substitution.
 </p>
@@ -1814,19 +1779,16 @@ For the following situations, decide what the distribution of \(X\) should be. I
 </p>
 <p>
 <div class="xca">
-\label{xca:variance-shortcut}
 Show that \(\E(X-\mu)^{2}=\E X^{2}-\mu^{2}\). <i>Hint</i>: expand the quantity \((X-\mu)^{2}\) and distribute the expectation over the resulting terms.
 </div>
 </p>
 <p>
 <div class="xca">
-\label{xca:binom-factorial-expectation}
 If \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\) show that \(\E X(X-1)=n(n-1)p^{2}\).
 </div>
 </p>
 <p>
 <div class="xca">
-\label{xca:hyper-mean-variance}
 Calculate the mean and variance of the hypergeometric distribution. Show that 
 \begin{equation}
 \mu=K\frac{M}{M+N},\quad\sigma^{2}=K\frac{MN}{(M+N)^{2}}\frac{M+N-K}{M+N-1}.
