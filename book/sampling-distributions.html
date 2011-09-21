@@ -1,183 +1,12 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>Sampling Distributions</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-09-21 00:47:20 EDT"/>
-<meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content="This chapter is the bridge from multivariate distributions to estimation."/>
-<meta name="keywords" content="sampling distribution statistics R probability"/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet" href="css/styles.css" type="text/css"/>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-<!--/*--><![CDATA[/*><!--*/
-    MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
-        displayAlign: "center",
-        displayIndent: "2em",
+---
+layout: chapter
+title: Sampling Distributions
+previous: multivariate-distributions.html
+next: estimation.html
+description: This chapter is the bridge from multivariate distributions to estimation.
+keywords: sampling distribution statistics R probability
+---
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
-             }
-        }
-    });
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html   "> UP </a>
- |
- <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
-<div id="content">
-<h1 class="title">Sampling Distributions</h1>
-
-
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Sampling Distributions</a>
-<ul>
-<li><a href="#sec-1-1">Simple Random Samples</a>
-<ul>
-<li><a href="#sec-1-1-1">Simple Random Samples</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-2">Sampling from a Normal Distribution</a>
-<ul>
-<li><a href="#sec-1-2-1">The Distribution of the Sample Mean</a></li>
-<li><a href="#sec-1-2-2">The Distribution of the Sample Variance</a></li>
-<li><a href="#sec-1-2-3">The Distribution of Student's \(T\) Statistic</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-3">The Central Limit Theorem</a></li>
-<li><a href="#sec-1-4">Sampling Distributions of Two-Sample Statistics</a>
-<ul>
-<li><a href="#sec-1-4-1">Difference of Independent Sample Means</a></li>
-<li><a href="#sec-1-4-2">Difference of Independent Sample Proportions</a></li>
-<li><a href="#sec-1-4-3">Ratio of Independent Sample Variances</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-5">Simulated Sampling Distributions</a>
-<ul>
-<li><a href="#sec-1-5-1">The Interquartile Range</a></li>
-<li><a href="#sec-1-5-2">The Median Absolute Deviation</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-6">Exercises</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Sampling Distributions</h2>
@@ -263,13 +92,13 @@ M_{\overline{X}}(t)=\left[M\left(\frac{t}{n}\right)\right]^{n}.
 <div class="proof">
 Go from the definition:
 \begin{eqnarray*}
-M_{\overline{X}}(t) & = & \E\,\mathrm{e}^{t\overline{X}},\\
- & = & \E\,\mathrm{e}^{t(X_{1}+\cdots+X_{n})/n},\\
- & = & \E\,\mathrm{e}^{tX_{1}/n}\mathrm{e}^{tX_{2}/n}\cdots\mathrm{e}^{tX_{n}/n}.
+M_{\overline{X}}(t) & = & \mathbb{E}\,\mathrm{e}^{t\overline{X}},\\
+ & = & \mathbb{E}\,\mathrm{e}^{t(X_{1}+\cdots+X_{n})/n},\\
+ & = & \mathbb{E}\,\mathrm{e}^{tX_{1}/n}\mathrm{e}^{tX_{2}/n}\cdots\mathrm{e}^{tX_{n}/n}.
 \end{eqnarray*}
 And because \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) are independent, Proposition <a href="#pro-indep-implies-prodexpect">indep-implies-prodexpect</a> allows us to distribute the expectation among each term in the product, which is
 \[
-\E\mathrm{e}^{tX_{1}/n}\,\E\mathrm{e}^{tX_{2}/n}\cdots\E\mathrm{e}^{tX_{n}/n}.
+\mathbb{E}\mathrm{e}^{tX_{1}/n}\,\mathbb{E}\mathrm{e}^{tX_{2}/n}\cdots\mathbb{E}\mathrm{e}^{tX_{n}/n}.
 \]
 The last step is to recognize that each term in last product above is exactly \(M(t/n)\).
 </div>
@@ -392,7 +221,7 @@ This distribution was first published by W. S. Gosset (1900) under the pseudonym
 \begin{equation}
 f_{X}(x)=\frac{\Gamma[(r+1)/2]}{\sqrt{r\pi}\ \Gamma(r/2)}\left(1+\frac{x^{2}}{r}\right)^{-(r+1)/2},\quad-\infty<x<\infty.
 \end{equation}
-Any random variable \(X\) with the preceding PDF is said to have Student's \(t\) distribution with \(r\) <i>degrees of freedom</i>, and we write \(X\sim\mathsf{t}(\mathtt{df}=r)\). The shape of the PDF is similar to the normal, but the tails are considerably heavier. See Figure <a href="#fig-Student-s-t-dist-vary-df">Student's-t-dist-vary-df</a>. As with the normal distribution, there are four functions in \textsf{R} associated with the \(t\) distribution, namely <code>dt</code>, <code>pt</code>,=qt=, and <code>rt</code>, which compute the PDF, CDF, quantile function, and generate random variates, respectively.
+Any random variable \(X\) with the preceding PDF is said to have Student's \(t\) distribution with \(r\) <i>degrees of freedom</i>, and we write \(X\sim\mathsf{t}(\mathtt{df}=r)\). The shape of the PDF is similar to the normal, but the tails are considerably heavier. See Figure <a href="#fig-Student-s-t-dist-vary-df">Student's-t-dist-vary-df</a>. As with the normal distribution, there are four functions in \(\mathsf{R}\) associated with the \(t\) distribution, namely <code>dt</code>, <code>pt</code>,=qt=, and <code>rt</code>, which compute the PDF, CDF, quantile function, and generate random variates, respectively.
 </p>
 
 <p>
@@ -658,7 +487,7 @@ has an \(\mathsf{f}(\mathtt{df1}=n_{1}-1,\,\mathtt{df2}=n_{2}-1)\) sampling dist
 Some comparisons are meaningful, but their sampling distribution is not quite so tidy to describe analytically. What do we do then?
 </p>
 <p>
-As it turns out, we do not need to know the exact analytical form of the sampling distribution; sometimes it is enough to approximate it with a simulated distribution. In this section we will show you how. Note that \textsf{R} is particularly well suited to compute simulated sampling distributions, much more so than, say, SPSS or SAS.
+As it turns out, we do not need to know the exact analytical form of the sampling distribution; sometimes it is enough to approximate it with a simulated distribution. In this section we will show you how. Note that \(\mathsf{R}\) is particularly well suited to compute simulated sampling distributions, much more so than, say, SPSS or SAS.
 </p>
 
 </div>
@@ -845,14 +674,3 @@ Let \(X_{1}\),&hellip;, \(X_{25}\) be a random sample from a \(\mathsf{norm}(\ma
 </p></div>
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2011-09-21 00:47:20 EDT</p>
-<p class="author">Author: G. Jay Kerns</p>
-<p class="creator">Org version 7.7 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
-</div>
-</body>
-</html>

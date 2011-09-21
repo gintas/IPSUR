@@ -1,282 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>Appendix</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-09-21 01:10:37 EDT"/>
-<meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content="An appendix to IPSUR, mathematical stuff, references, and index."/>
-<meta name="keywords" content=""/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet" href="css/styles.css" type="text/css"/>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-<!--/*--><![CDATA[/*><!--*/
-    MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
-        displayAlign: "center",
-        displayIndent: "2em",
-
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
-             }
-        }
-    });
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html   "> UP </a>
- |
- <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
-<div id="content">
-<h1 class="title">Appendix</h1>
+---
+layout: chapter
+title: Appendix
+previous: time-series.html
+next: index.html
+description: An appendix to IPSUR, mathematical stuff, references, and index.
+keywords: IPSUR appendix
+---
 
 
 
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">The Appendix</a></li>
-<li><a href="#sec-2">\textsf{R} Session Information</a></li>
-<li><a href="#sec-3">GNU Free Documentation License</a>
-<ul>
-<li><a href="#sec-3-1">0. PREAMBLE</a></li>
-<li><a href="#sec-3-2">1. APPLICABILITY AND DEFINITIONS</a></li>
-<li><a href="#sec-3-3">2. VERBATIM COPYING</a></li>
-<li><a href="#sec-3-4">3. COPYING IN QUANTITY</a></li>
-<li><a href="#sec-3-5">4. MODIFICATIONS</a></li>
-<li><a href="#sec-3-6">5. COMBINING DOCUMENTS</a></li>
-<li><a href="#sec-3-7">6. COLLECTIONS OF DOCUMENTS</a></li>
-<li><a href="#sec-3-8">7. AGGREGATION WITH INDEPENDENT WORKS</a></li>
-<li><a href="#sec-3-9">8. TRANSLATION</a></li>
-<li><a href="#sec-3-10">9. TERMINATION</a></li>
-<li><a href="#sec-3-11">10. FUTURE REVISIONS OF THIS LICENSE</a></li>
-<li><a href="#sec-3-12">11. RELICENSING</a></li>
-<li><a href="#sec-3-13">ADDENDUM: How to use this License for your documents</a></li>
-</ul>
-</li>
-<li><a href="#sec-4">History</a></li>
-<li><a href="#sec-5">Data</a>
-<ul>
-<li><a href="#sec-5-1">Data Structures</a>
-<ul>
-<li><a href="#sec-5-1-1">Vectors</a></li>
-<li><a href="#sec-5-1-2">Matrices and Arrays</a></li>
-<li><a href="#sec-5-1-3">Data Frames</a></li>
-<li><a href="#sec-5-1-4">Lists</a></li>
-<li><a href="#sec-5-1-5">Tables</a></li>
-<li><a href="#sec-5-1-6">More about Tables</a></li>
-</ul>
-</li>
-<li><a href="#sec-5-2">Importing Data</a>
-<ul>
-<li><a href="#sec-5-2-1">Data in Packages</a></li>
-<li><a href="#sec-5-2-2">Text Files</a></li>
-<li><a href="#sec-5-2-3">Other Software Files</a></li>
-<li><a href="#sec-5-2-4">Importing a Data Frame</a></li>
-</ul>
-</li>
-<li><a href="#sec-5-3">Creating New Data Sets</a></li>
-<li><a href="#sec-5-4">Editing Data</a>
-<ul>
-<li><a href="#sec-5-4-1">Editing Data Values</a></li>
-<li><a href="#sec-5-4-2">Inserting Rows and Columns</a></li>
-<li><a href="#sec-5-4-3">Deleting Rows and Columns</a></li>
-<li><a href="#sec-5-4-4">Sorting Data</a></li>
-</ul>
-</li>
-<li><a href="#sec-5-5">Exporting Data</a></li>
-<li><a href="#sec-5-6">Reshaping Data</a></li>
-</ul>
-</li>
-<li><a href="#sec-6">Mathematical Machinery</a>
-<ul>
-<li><a href="#sec-6-1">Set Algebra</a>
-<ul>
-<li><a href="#sec-6-1-1">Set Union, Intersection, and Difference</a></li>
-<li><a href="#sec-6-1-2">Identities and Properties</a></li>
-</ul>
-</li>
-<li><a href="#sec-6-2">Differential and Integral Calculus</a>
-<ul>
-<li><a href="#sec-6-2-1">Limits and Continuity</a></li>
-<li><a href="#sec-6-2-2">Differentiation</a></li>
-<li><a href="#sec-6-2-3">Optimization</a></li>
-<li><a href="#sec-6-2-4">Integration</a></li>
-</ul>
-</li>
-<li><a href="#sec-6-3">Sequences and Series</a>
-<ul>
-<li><a href="#sec-6-3-1">Finite Series</a></li>
-<li><a href="#sec-6-3-2">Infinite Series</a></li>
-<li><a href="#sec-6-3-3">Rules for Series</a></li>
-<li><a href="#sec-6-3-4">Taylor Series</a></li>
-</ul>
-</li>
-<li><a href="#sec-6-4">The Gamma Function</a></li>
-<li><a href="#sec-6-5">Linear Algebra</a>
-<ul>
-<li><a href="#sec-6-5-1">Matrices</a></li>
-<li><a href="#sec-6-5-2">Determinants</a></li>
-<li><a href="#sec-6-5-3">Positive (Semi)Definite</a></li>
-</ul>
-</li>
-<li><a href="#sec-6-6">Multivariable Calculus</a>
-<ul>
-<li><a href="#sec-6-6-1">Partial Derivatives</a></li>
-<li><a href="#sec-6-6-2">Optimization</a></li>
-<li><a href="#sec-6-6-3">Double and Multiple Integrals</a></li>
-<li><a href="#sec-6-6-4">Bivariate and Multivariate Change of Variables</a></li>
-</ul></li>
-</ul>
-</li>
-<li><a href="#sec-7">Writing Reports with \textsf{R}</a>
-<ul>
-<li><a href="#sec-7-1">What to Write</a>
-<ul>
-<li><a href="#sec-7-1-1">Basic Outline for a Statistical Report</a></li>
-</ul>
-</li>
-<li><a href="#sec-7-2">How to Write It with R</a>
-<ul>
-<li><a href="#sec-7-2-1">Microsoft\(\circledR\) Word</a></li>
-<li><a href="#sec-7-2-2">OpenOffice.org and \texttt{odfWeave}</a></li>
-<li><a href="#sec-7-2-3">Sweave and \protect\LaTeX{}</a></li>
-<li><a href="#sec-7-2-4">Sweave and \protect\LyX{}</a></li>
-</ul>
-</li>
-<li><a href="#sec-7-3">Formatting Tables</a></li>
-<li><a href="#sec-7-4">Other Formats</a></li>
-</ul>
-</li>
-<li><a href="#sec-8">Instructions for Instructors</a>
-<ul>
-<li><a href="#sec-8-1">Generating This Document</a></li>
-<li><a href="#sec-8-2">How to Use This Document</a></li>
-<li><a href="#sec-8-3">Ancillary Materials</a></li>
-<li><a href="#sec-8-4">Modifying This Document</a></li>
-</ul>
-</li>
-<li><a href="#sec-9"><code>RcmdrTestDrive</code> Story</a>
-<ul>
-<li><a href="#sec-9-1">Case File: ALU-179 ``Murder Madness in Toon Town”</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">The Appendix</h2>
 <div class="outline-text-2" id="text-1">
+
 
 
 
@@ -286,12 +23,12 @@ lang="en" xml:lang="en">
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">\textsf{R} Session Information</h2>
+<h2 id="sec-2">\(\mathsf{R}\) Session Information</h2>
 <div class="outline-text-2" id="text-2">
 
 
 <p>
-If you ever write the \textsf{R} help mailing list with a question, then you should include your session information in the email; it makes the reader's job easier and is requested by the Posting Guide. Here is how to do that, and below is what the output looks like.
+If you ever write the \(\mathsf{R}\) help mailing list with a question, then you should include your session information in the email; it makes the reader's job easier and is requested by the Posting Guide. Here is how to do that, and below is what the output looks like.
 </p>
 
 
@@ -302,15 +39,15 @@ If you ever write the \textsf{R} help mailing list with a question, then you sho
 
 
 <pre class="example"> R version 2.13.1 (2011-07-08)
-Platform: i686-pc-linux-gnu (32-bit)
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=C              LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+ [1] LC_CTYPE=en_US.utf8       LC_NUMERIC=C             
+ [3] LC_TIME=en_US.utf8        LC_COLLATE=en_US.utf8    
+ [5] LC_MONETARY=C             LC_MESSAGES=en_US.utf8   
+ [7] LC_PAPER=en_US.utf8       LC_NAME=C                
+ [9] LC_ADDRESS=C              LC_TELEPHONE=C           
+[11] LC_MEASUREMENT=en_US.utf8 LC_IDENTIFICATION=C      
 
 attached base packages:
  [1] grid      stats4    splines   tcltk     stats    
@@ -321,9 +58,9 @@ other attached packages:
  [1] TeachingDemos_2.7       scatterplot3d_0.3-33   
  [3] RcmdrPlugin.IPSUR_0.1-7 Rcmdr_1.7-0            
  [5] car_2.0-11              nnet_7.3-1             
- [7] MASS_7.3-13             qcc_2.0.1              
+ [7] MASS_7.3-14             qcc_2.0.1              
  [9] prob_0.9-2              lmtest_0.9-28          
-[11] zoo_1.7-4               Hmisc_3.8-3            
+[11] zoo_1.7-3               Hmisc_3.8-3            
 [13] HH_2.1-32               leaps_2.9              
 [15] multcomp_1.2-7          lattice_0.19-33        
 [17] ggplot2_0.8.9           proto_0.3-9.2          
@@ -333,8 +70,8 @@ other attached packages:
 [25] distr_2.3.2             SweaveListingUtils_0.5 
 [27] sfsmisc_1.0-16          startupmsg_0.7.1       
 [29] diagram_1.5.2           shape_1.3.4            
-[31] combinat_0.0-8          coin_1.0-19            
-[33] modeltools_0.2-18       mvtnorm_0.9-9991       
+[31] combinat_0.0-8          coin_1.0-18            
+[33] modeltools_0.2-17       mvtnorm_0.9-9991       
 [35] survival_2.36-9         boot_1.3-2             
 [37] aplpack_1.2.3           actuar_1.1-2           
 
@@ -690,7 +427,7 @@ If your document contains nontrivial examples of program code, we recommend rele
 <colgroup><col class="left" /><col class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Title:</td><td class="left">Introduction to Probability and Statistics Using \textsf{R}, Second Edition</td></tr>
+<tr><td class="left">Title:</td><td class="left">Introduction to Probability and Statistics Using \(\mathsf{R}\), Second Edition</td></tr>
 <tr><td class="left">Year:</td><td class="left">2011</td></tr>
 <tr><td class="left">Authors:</td><td class="left">G. Jay Kerns</td></tr>
 <tr><td class="left">Publisher:</td><td class="left">G. Jay Kerns</td></tr>
@@ -704,7 +441,7 @@ If your document contains nontrivial examples of program code, we recommend rele
 <colgroup><col class="left" /><col class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Title:</td><td class="left">Introduction to Probability and Statistics Using \textsf{R}, First Edition</td></tr>
+<tr><td class="left">Title:</td><td class="left">Introduction to Probability and Statistics Using \(\mathsf{R}\), First Edition</td></tr>
 <tr><td class="left">Year:</td><td class="left">2010</td></tr>
 <tr><td class="left">Authors:</td><td class="left">G. Jay Kerns</td></tr>
 <tr><td class="left">Publisher:</td><td class="left">G. Jay Kerns</td></tr>
@@ -742,7 +479,7 @@ This appendix is a reference of sorts regarding some of the data structures a st
 
 
 <p>
-See the ``Vectors and Assignment'' section of <i>An Introduction to</i> \textsf{R}. A vector is an ordered sequence of elements, such as numbers, characters, or logical values, and there may be <code>NA</code>'s present. We usually make vectors with the assignment operator <code>&lt;-</code>.
+See the ``Vectors and Assignment'' section of <i>An Introduction to</i> \(\mathsf{R}\). A vector is an ordered sequence of elements, such as numbers, characters, or logical values, and there may be <code>NA</code>'s present. We usually make vectors with the assignment operator <code>&lt;-</code>.
 </p>
 
 
@@ -776,7 +513,7 @@ In the example all elements were coerced to <i>character</i> mode. We can test w
 
 
 <p>
-See the ``Arrays and Matrices'' section of <i>An Introduction to</i> \textsf{R}. Loosely speaking, a matrix is a vector that has been reshaped into rectangular form, and an array is a multidimensional matrix. Strictly speaking, it is the other way around: an array is a data vector with a dimension attribute (<code>dim</code>), and a matrix is the special case of an array with only two dimensions. We can construct a matrix with the <code>matrix</code> function. 
+See the ``Arrays and Matrices'' section of <i>An Introduction to</i> \(\mathsf{R}\). Loosely speaking, a matrix is a vector that has been reshaped into rectangular form, and an array is a multidimensional matrix. Strictly speaking, it is the other way around: an array is a data vector with a dimension attribute (<code>dim</code>), and a matrix is the special case of an array with only two dimensions. We can construct a matrix with the <code>matrix</code> function. 
 </p>
 
 
@@ -930,7 +667,7 @@ We can test with <code>is.array</code> and may coerce with <code>as.array</code>
 
 
 <p>
-A data frame is a rectangular array of information with a special status in \textsf{R}. It is used as the fundamental data structure by many of the modeling functions. It is like a matrix in that all of the columns must be the same length, but it is more general than a matrix in that columns are allowed to have different modes.
+A data frame is a rectangular array of information with a special status in \(\mathsf{R}\). It is used as the fundamental data structure by many of the modeling functions. It is like a matrix in that all of the columns must be the same length, but it is more general than a matrix in that columns are allowed to have different modes.
 </p>
 
 
@@ -992,7 +729,7 @@ Basic command is <code>data.frame</code>. You can test with <code>is.data.frame<
 <h4 id="sec-5-1-5">Tables</h4>
 <div class="outline-text-4" id="text-5-1-5">
 
-<p>The word ``table'' has a special meaning in \textsf{R}. More precisely, a contingency table is an object of class <code>table</code> which is an array.
+<p>The word ``table'' has a special meaning in \(\mathsf{R}\). More precisely, a contingency table is an object of class <code>table</code> which is an array.
 </p>
 <p>
 Suppose you have a contingency table and would like to do descriptive or inferential statistics on it. The default form of the table is usually inconvenient to use unless we are working with a function specially tailored for tables. Here is how to transform your data to a more manageable form, namely, the raw data used to make the table.
@@ -1162,10 +899,10 @@ poured milk tea
 
 
 <p>
-Statistics is the study of data, so the statistician's first step is usually to obtain data from somewhere or another and read them into \textsf{R}. In this section we describe some of the most common sources of data and how to get data from those sources into a running \textsf{R} session.
+Statistics is the study of data, so the statistician's first step is usually to obtain data from somewhere or another and read them into \(\mathsf{R}\). In this section we describe some of the most common sources of data and how to get data from those sources into a running \(\mathsf{R}\) session.
 </p>
 <p>
-For more information please refer to the \textsf{R} <i>Data Import/Export Manual</i>, \cite{rstatenv} and <i>An Introduction to</i> \textsf{R}, \cite{Venables2010}.
+For more information please refer to the \(\mathsf{R}\) <i>Data Import/Export Manual</i>, \cite{rstatenv} and <i>An Introduction to</i> \(\mathsf{R}\), \cite{Venables2010}.
 </p>
 
 </div>
@@ -1176,7 +913,7 @@ For more information please refer to the \textsf{R} <i>Data Import/Export Manual
 
 
 <p>
-There are many data sets stored in the <code>datasets</code> package of base \textsf{R}. To see a list of them all issue the command <code>data(package = "datasets")</code>. The output is omitted here because the list is so long. The names of the data sets are listed in the left column. Any data set in that list is already on the search path by default, which means that a user can use it immediately without any additional work. 
+There are many data sets stored in the <code>datasets</code> package of base \(\mathsf{R}\). To see a list of them all issue the command <code>data(package = "datasets")</code>. The output is omitted here because the list is so long. The names of the data sets are listed in the left column. Any data set in that list is already on the search path by default, which means that a user can use it immediately without any additional work. 
 </p>
 <p>
 There are many other data sets available in the thousands of contributed packages. To see the data sets available in those packages that are currently loaded into memory issue the single command <code>data()</code>. If you would like to see all of the data sets that are available in all packages that are installed on your computer (but not necessarily loaded), issue the command 
@@ -1202,7 +939,7 @@ To load the data set <code>foo</code> in the contributed package <code>bar</code
 <h4 id="sec-5-2-2">Text Files</h4>
 <div class="outline-text-4" id="text-5-2-2">
 
-<p>Many sources of data are simple text files. The entries in the file are separated by delimeters such as TABS (tab-delimeted), commas (comma separated values, or <code>.csv</code>, for short) or even just white space (no special name). A lot of data on the Internet are stored with text files, and even if they are not, a person can copy-paste information from a web page to a text file, save it on the computer, and read it into \textsf{R}. 
+<p>Many sources of data are simple text files. The entries in the file are separated by delimeters such as TABS (tab-delimeted), commas (comma separated values, or <code>.csv</code>, for short) or even just white space (no special name). A lot of data on the Internet are stored with text files, and even if they are not, a person can copy-paste information from a web page to a text file, save it on the computer, and read it into \(\mathsf{R}\). 
 </p>
 </div>
 
@@ -1212,7 +949,7 @@ To load the data set <code>foo</code> in the contributed package <code>bar</code
 <h4 id="sec-5-2-3">Other Software Files</h4>
 <div class="outline-text-4" id="text-5-2-3">
 
-<p>Often the data set of interest is stored in some other, proprietary, format by third-party software such as Minitab, SAS, or SPSS. The <code>foreign</code> package supports import/conversion from many of these formats. Please note, however, that data sets from other software sometimes have properties with no direct analogue in \textsf{R}. In those cases the conversion process may lose some information which will need to be reentered manually from within \textsf{R}. See the <i>Data Import/Export Manual</i>.
+<p>Often the data set of interest is stored in some other, proprietary, format by third-party software such as Minitab, SAS, or SPSS. The <code>foreign</code> package supports import/conversion from many of these formats. Please note, however, that data sets from other software sometimes have properties with no direct analogue in \(\mathsf{R}\). In those cases the conversion process may lose some information which will need to be reentered manually from within \(\mathsf{R}\). See the <i>Data Import/Export Manual</i>.
 </p>
 <p>
 As an example, suppose the data are stored in the SPSS file <code>foo.sav</code> which the user has copied to the working directory; it can be imported with the commands
@@ -1226,7 +963,7 @@ read.spss(<span style="color: #8b2252;">"foo.sav"</span>)
 
 
 <p>
-See <code>?read.spss</code> for the available options to customize the file import. Note that the \textsf{R} Commander will import many of the common file types with a menu driven interface.
+See <code>?read.spss</code> for the available options to customize the file import. Note that the \(\mathsf{R}\) Commander will import many of the common file types with a menu driven interface.
 </p>
 </div>
 
@@ -1251,7 +988,7 @@ The basic command is <code>read.table</code>.
 
 <p>Using <code>c</code>
 Using <code>scan</code>
-Using the \textsf{R} Commander.
+Using the \(\mathsf{R}\) Commander.
 </p>
 </div>
 
@@ -1460,7 +1197,7 @@ Given subsets \(A\) and \(B\), we may manipulate them in an algebraic fashion. T
 <colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">Name</th><th scope="col" class="left">Denoted</th><th scope="col" class="left">Defined by elements</th><th scope="col" class="left">\textsf{R} syntax</th></tr>
+<tr><th scope="col" class="left">Name</th><th scope="col" class="left">Denoted</th><th scope="col" class="left">Defined by elements</th><th scope="col" class="left">\(\mathsf{R}\) syntax</th></tr>
 </thead>
 <tbody>
 <tr><td class="left">Union</td><td class="left">\(A\cup B\)</td><td class="left">in \(A\) or \(B\) or both</td><td class="left"><code>union(A, B)</code></td></tr>
@@ -2110,12 +1847,12 @@ A multivariate change of variables is defined in an analogous way: the one-to-on
 </div>
 
 <div id="outline-container-7" class="outline-2">
-<h2 id="sec-7">Writing Reports with \textsf{R}</h2>
+<h2 id="sec-7">Writing Reports with \(\mathsf{R}\)</h2>
 <div class="outline-text-2" id="text-7">
 
 
 <p>
-Perhaps the most important part of a statistician's job once the analysis is complete is to communicate the results to others. This is usually done with some type of report that is delivered to the client, manager, or administrator. Other situations that call for reports include term papers, final projects, thesis work, <i>etc</i>. This chapter is designed to pass along some tips about writing reports once the work is completed with \textsf{R}.
+Perhaps the most important part of a statistician's job once the analysis is complete is to communicate the results to others. This is usually done with some type of report that is delivered to the client, manager, or administrator. Other situations that call for reports include term papers, final projects, thesis work, <i>etc</i>. This chapter is designed to pass along some tips about writing reports once the work is completed with \(\mathsf{R}\).
 </p>
 
 
@@ -2222,8 +1959,8 @@ Perhaps the most important part of a statistician's job once the analysis is com
 <h3 id="sec-7-2">How to Write It with R</h3>
 <div class="outline-text-3" id="text-7-2">
 
-<p>Once the decision has been made what to write, the next task is to typeset the information to be shared. To do this the author will need to select software to use to write the documents. There are many options available, and choosing one over another is sometimes a matter of taste. But not all software were created equal, and \textsf{R} plays better with some applications than it does with others. 
-In short, \textsf{R} does great with \LaTeX{} and there are many resources available to make writing a document with \textsf{R} and \LaTeX{} easier. But \LaTeX{} is not for the beginner, and there are other word processors which may be acceptable depending on the circumstances.
+<p>Once the decision has been made what to write, the next task is to typeset the information to be shared. To do this the author will need to select software to use to write the documents. There are many options available, and choosing one over another is sometimes a matter of taste. But not all software were created equal, and \(\mathsf{R}\) plays better with some applications than it does with others. 
+In short, \(\mathsf{R}\) does great with \LaTeX{} and there are many resources available to make writing a document with \(\mathsf{R}\) and \LaTeX{} easier. But \LaTeX{} is not for the beginner, and there are other word processors which may be acceptable depending on the circumstances.
 </p>
 
 
@@ -2236,28 +1973,28 @@ In short, \textsf{R} does great with \LaTeX{} and there are many resources avail
 <p>It is a fact of life that Microsoft\(\circledR\) Windows is currently the most prevalent desktop operating system on the planet. Those who own Windows also typically own some version of Microsoft Office, thus Microsoft Word is the default word processor for many, many people.  
 </p>
 <p>
-The standard way to write an \textsf{R} report with Microsoft\(\circledR\) Word is to generate material with \textsf{R} and then copy-paste the material at selected places in a Word document. An advantage to this approach is that Word is nicely designed to make it easy to copy-and-paste from \textsf{RGui} to the Word document.
+The standard way to write an \(\mathsf{R}\) report with Microsoft\(\circledR\) Word is to generate material with \(\mathsf{R}\) and then copy-paste the material at selected places in a Word document. An advantage to this approach is that Word is nicely designed to make it easy to copy-and-paste from <code>RGui</code> to the Word document.
 </p>
 <p>
-A disadvantage to this approach is that the R input/output needs to be edited manually by the author to make it readable for others. Another disadvantage is that the approach does not work on all operating systems (not on Linux, in particular). Yet another disadvantage is that Microsoft\(\circledR\) Word is proprietary, and as a result, \textsf{R} does not communicate with Microsoft\(\circledR\) Word as well as it does with other software as we shall soon see.
+A disadvantage to this approach is that the R input/output needs to be edited manually by the author to make it readable for others. Another disadvantage is that the approach does not work on all operating systems (not on Linux, in particular). Yet another disadvantage is that Microsoft\(\circledR\) Word is proprietary, and as a result, \(\mathsf{R}\) does not communicate with Microsoft\(\circledR\) Word as well as it does with other software as we shall soon see.
 </p>
 <p>
 Nevertheless, if you are going to write a report with Word there are some steps that you can take to make the report more amenable to the reader. 
 </p>
 <ol>
-<li>Copy and paste graphs into the document. You can do this by right clicking on the graph and selecting \textsf{Copy as bitmap,} or \textsf{Copy as metafile}, or one of the other options. Then move the cursor to the document where you want the picture, right-click, and select \textsf{Paste}.
+<li>Copy and paste graphs into the document. You can do this by right clicking on the graph and selecting <code>Copy as bitmap</code>, or <code>Copy as metafile</code>, or one of the other options. Then move the cursor to the document where you want the picture, right-click, and select <code>Paste</code>.
 </li>
 <li>Resize (most) pictures so that they take up no more than 1/2 page. You may want to put graphs side by side; do this by inserting a table and placing the graphs inside the cells.
 </li>
-<li>Copy selected \textsf{R} input and output to the Word document. All code should be separated from the rest of the writing, except when specifically mentioning a function or object in a sentence.
+<li>Copy selected \(\mathsf{R}\) input and output to the Word document. All code should be separated from the rest of the writing, except when specifically mentioning a function or object in a sentence.
 </li>
-<li>The font of \textsf{R} input/output should be Courier New, or some other monowidth font (not Times New Roman or Calibri); the default font size of <code>12</code> is usually too big for \textsf{R} code and should be reduced to, for example, <code>10pt</code>.
+<li>The font of \(\mathsf{R}\) input/output should be Courier New, or some other monowidth font (not Times New Roman or Calibri); the default font size of <code>12</code> is usually too big for \(\mathsf{R}\) code and should be reduced to, for example, <code>10pt</code>.
 </li>
 </ol>
 
 
 <p>
-It is also possible to communicate with \textsf{R} through OpenOffice.org, which can export to the proprietary (<code>.doc</code>) format.
+It is also possible to communicate with \(\mathsf{R}\) through OpenOffice.org, which can export to the proprietary (<code>.doc</code>) format.
 </p>
 
 </div>
@@ -2271,10 +2008,10 @@ It is also possible to communicate with \textsf{R} through OpenOffice.org, which
 <p>OpenOffice.org (OO.o) is an open source desktop productivity suite which mirrors Microsoft\(\circledR\) Office. It is especially nice because it works on all operating systems. OO.o can read most document formats, and in particular, it will read <code>.doc</code> files. The standard OO.o file extension for documents is <code>.odt</code>, which stands for ``open document text''.
 </p>
 <p>
-The <code>odfWeave</code>  package \cite{odfweave} provides a way to generate an <code>.odt</code> file with \textsf{R} input and output code formatted correctly and inserted in the correct places, without any additional work. In this way, one does not need to worry about all of the trouble of typesetting \textsf{R} output. Another advantage of <code>odfWeave</code> is that it allows you to generate the report dynamically; if the data underlying the report change or are updated, then a few clicks (or commands) will generate a brand new report.
+The <code>odfWeave</code>  package \cite{odfweave} provides a way to generate an <code>.odt</code> file with \(\mathsf{R}\) input and output code formatted correctly and inserted in the correct places, without any additional work. In this way, one does not need to worry about all of the trouble of typesetting \(\mathsf{R}\) output. Another advantage of <code>odfWeave</code> is that it allows you to generate the report dynamically; if the data underlying the report change or are updated, then a few clicks (or commands) will generate a brand new report.
 </p>
 <p>
-One disadvantage is that the source <code>.odt</code>  file is not easy to read, because it is difficult to visually distinguish the noweb parts (where the \textsf{R} code is) from the non-noweb parts. This can be fixed by manually changing the font of the noweb sections to, for instance, Courier font, size <code>10pt</code>. But it is extra work. It would be nice if a program would discriminate between the two different sections and automatically typeset the respective parts in their correct fonts. This is one of the advantages to \LyX{}.
+One disadvantage is that the source <code>.odt</code>  file is not easy to read, because it is difficult to visually distinguish the noweb parts (where the \(\mathsf{R}\) code is) from the non-noweb parts. This can be fixed by manually changing the font of the noweb sections to, for instance, Courier font, size <code>10pt</code>. But it is extra work. It would be nice if a program would discriminate between the two different sections and automatically typeset the respective parts in their correct fonts. This is one of the advantages to \LyX{}.
 </p>
 <p>
 Another advantage of OO.o is that even after you have generated the outfile, it is fully editable just like any other <code>.odt</code> document. If there are errors or formatting problems, they can be fixed at any time.
@@ -2285,14 +2022,14 @@ Here are the basic steps to typeset a statistical report with OO.o.
 <ol>
 <li>Write your report as an <code>.odt</code> document in OO.o just as you would any other document. Call this document <code>infile.odt</code>, and make sure that it is saved in your working directory. 
 </li>
-<li>At the places you would like to insert \textsf{R} code in the document, write the code chunks in the following format:
+<li>At the places you would like to insert \(\mathsf{R}\) code in the document, write the code chunks in the following format:
    \texttt{&lt;\textcompwordmark{}&lt;&gt;\textcompwordmark{}&gt;=}~<br/>
    \texttt{x &lt;- rnorm(10)}~<br/>
    \texttt{mean(x)}~<br/>
    \texttt{@}
    or write whatever code you want between the symbols \texttt{&lt;\textcompwordmark{}&lt;&gt;\textcompwordmark{}&gt;=} and \texttt{@}.
 </li>
-<li>Open \textsf{R} and type the following:
+<li>Open \(\mathsf{R}\) and type the following:
 </li>
 </ol>
 
@@ -2304,13 +2041,13 @@ Here are the basic steps to typeset a statistical report with OO.o.
 </pre>
 
 <ol>
-<li>The compiled (<code>.odt</code>) file, complete with all of the \textsf{R} output automatically inserted in the correct places, will now be the file <code>outfile.odt</code> located in the working directory. Open <code>outfile.odt</code>, examine it, modify it, and repeat if desired. 
+<li>The compiled (<code>.odt</code>) file, complete with all of the \(\mathsf{R}\) output automatically inserted in the correct places, will now be the file <code>outfile.odt</code> located in the working directory. Open <code>outfile.odt</code>, examine it, modify it, and repeat if desired. 
 </li>
 </ol>
 
 
 <p>
-There are all sorts of extra things that you can do. For example, the \textsf{R} commands can be suppressed with the tag \texttt{&lt;\textcompwordmark{}&lt;echo = FALSE&gt;\textcompwordmark{}&gt;=}, and the \textsf{R} output may be hidden with \texttt{&lt;\textcompwordmark{}&lt;results = hide&gt;\textcompwordmark{}&gt;=}. See the <code>odfWeave</code> package documentation for details.
+There are all sorts of extra things that you can do. For example, the \(\mathsf{R}\) commands can be suppressed with the tag \texttt{&lt;\textcompwordmark{}&lt;echo = FALSE&gt;\textcompwordmark{}&gt;=}, and the \(\mathsf{R}\) output may be hidden with \texttt{&lt;\textcompwordmark{}&lt;results = hide&gt;\textcompwordmark{}&gt;=}. See the <code>odfWeave</code> package documentation for details.
 </p>
 </div>
 
@@ -2354,7 +2091,7 @@ dev.copy2eps, also dev.copy2pdf
 <p>This approach is nice because it works for all operating  systems. It gives you everything from the last section and makes it easier to use \LaTeX{}. That being said, it is better to know \LaTeX{} already when migrating to \LyX{}, because you understand all of the machinery going on under the hood.
 </p>
 <p>
-Program Listings and the \textsf{R} language
+Program Listings and the \(\mathsf{R}\) language
 <a href="http://gregor.gorjanc.googlepages.com/lyx-sweave">http://gregor.gorjanc.googlepages.com/lyx-sweave</a>
 </p>
 
@@ -2432,7 +2169,7 @@ have been written.}
 Probably this <i>book</i> could more accurately be described as <i>software</i>. The reason is that the document is one big random variable, one observation realized out of millions. It is electronically distributed under the GNU FDL, and ``free'' in both senses: speech and beer.  
 </p>
 <p>
-There are four components to \IPSUR: the Document, the Program used to generate it, the \textsf{R} package that holds the Program, and the Ancillaries that accompany it.
+There are four components to \IPSUR: the Document, the Program used to generate it, the \(\mathsf{R}\) package that holds the Program, and the Ancillaries that accompany it.
 </p>
 <p>
 The majority of the data and exercises have been designed to be randomly generated. Different realizations of this book will have different graphs and exercises throughout. The advantage of this approach is that a teacher, say, can generate a unique version to be used in his/her class. Students can do the exercises and the teacher will have the answers to all of the problems in their own, unique solutions manual. Students may download a different solutions manual online somewhere else, but none of the answers will match the teacher's copy. 
@@ -2442,7 +2179,7 @@ Then next semester, the teacher can generate a <i>new</i> book and the problems 
 </p>
 <p>
 The book that you are reading was created with a random seed which was set at the beginning. The original seed is 42. You can choose your own seed, and generate a new book with brand new data for the text and exercises, complete with updated manuals. A method I recommend for finding a seed is to look down at your watch at this very moment and record the 6 digit hour, minute, and second (say, 9:52:59am): choose that for a seed
-This method already provides for over 43,000 books, without taking military time into account. An alternative would be to go to \textsf{R} and type 
+This method already provides for over 43,000 books, without taking military time into account. An alternative would be to go to \(\mathsf{R}\) and type 
 </p>
 
 
@@ -2450,7 +2187,7 @@ This method already provides for over 43,000 books, without taking military time
 0.217012941138819
 </p>
 <p>
-Now choose \(  2170129411388188.0 \)as your secret seed&hellip; write it down in a safe place and do not share it with anyone. Next generate the book with your seed using \LyX{}-Sweave or Sweave-\LaTeX{}. You may wish to also generate Student and Instructor Solution Manuals. Guidance regarding this is given below in the How to Use This Document section.
+Now choose \(  2170129411388188 \)as your secret seed&hellip; write it down in a safe place and do not share it with anyone. Next generate the book with your seed using \LyX{}-Sweave or Sweave-\LaTeX{}. You may wish to also generate Student and Instructor Solution Manuals. Guidance regarding this is given below in the How to Use This Document section.
 </p>
 
 </div>
@@ -2461,11 +2198,11 @@ Now choose \(  2170129411388188.0 \)as your secret seed&hellip; write it down in
 
 
 <p>
-You will need three (3) things to generate this document for yourself, in addition to a current \textsf{R} distribution which at the time of this writing is \texttt{  R version 2.13.1 (2011-07-08) } :
+You will need three (3) things to generate this document for yourself, in addition to a current \(\mathsf{R}\) distribution which at the time of this writing is \texttt{  R version 2.13.1 (2011-07-08) } :
 </p><ol>
 <li>a LaTeX distribution,
 </li>
-<li>Sweave (which comes with \textsf{R} automatically), and 
+<li>Sweave (which comes with \(\mathsf{R}\) automatically), and 
 </li>
 <li>\LyX (optional, but recommended).
 </li>
@@ -2478,9 +2215,9 @@ We will discuss each of these in turn.
 <dl>
 <dt>LaTeX:</dt><dd>The distribution used by the present author was \TeX{} Live (\url{<a href="http://www.tug.org/texlive/">http://www.tug.org/texlive/</a>}). There are plenty of other perfectly suitable LaTeX distributions depending on your operating system, one such alternative being <a href="http://miktex.org/">MikTeX</a> for Microsoft Windows. 
 </dd>
-<dt>Sweave:</dt><dd>If you have \textsf{R} installed, then the required Sweave files are already on your system&hellip; somewhere. The only problems that you may have are likely associated with making sure that your LaTeX distribution knows where to find the <code>Sweave.sty</code> file. See the Sweave Homepage (\url{<a href="http://www.statistik.lmu.de/~leisch/Sweave/">http://www.statistik.lmu.de/~leisch/Sweave/</a>}) for guidance on how to get it working on your particular operating system.
+<dt>Sweave:</dt><dd>If you have \(\mathsf{R}\) installed, then the required Sweave files are already on your system&hellip; somewhere. The only problems that you may have are likely associated with making sure that your LaTeX distribution knows where to find the <code>Sweave.sty</code> file. See the Sweave Homepage (\url{<a href="http://www.statistik.lmu.de/~leisch/Sweave/">http://www.statistik.lmu.de/~leisch/Sweave/</a>}) for guidance on how to get it working on your particular operating system.
 </dd>
-<dt>LyX:</dt><dd>Strictly speaking, LyX is not needed to generate this document. But this document was written stem to stern with LyX, taking full advantage of all of the bells and whistles that LyX has to offer over plain \LaTeX{} editors. And it's free. See the LyX homepage (\url{<a href="http://www.lyx.org/">http://www.lyx.org/</a>}) for additional information. If you decide to give LyX a try, then you will need to complete some extra steps to coordinate Sweave and LyX with each other. Luckily, Gregor Gorjanc has a website and an \textsf{R} News article \cite{Gorjanc2008} to help you do exactly that. See the LyX-Sweave homepage (\url{http://gregor.gorjanc.googlepages.com/lyx-sweave}) for details.
+<dt>LyX:</dt><dd>Strictly speaking, LyX is not needed to generate this document. But this document was written stem to stern with LyX, taking full advantage of all of the bells and whistles that LyX has to offer over plain \LaTeX{} editors. And it's free. See the LyX homepage (\url{<a href="http://www.lyx.org/">http://www.lyx.org/</a>}) for additional information. If you decide to give LyX a try, then you will need to complete some extra steps to coordinate Sweave and LyX with each other. Luckily, Gregor Gorjanc has a website and an \(\mathsf{R}\) News article \cite{Gorjanc2008} to help you do exactly that. See the LyX-Sweave homepage (\url{http://gregor.gorjanc.googlepages.com/lyx-sweave}) for details.
 </dd>
 </dl>
 
@@ -2507,17 +2244,17 @@ If you plan for \IPSUR\ to serve as the primary text for your course, then it wo
 <ol>
 <li>Randomly select a secret ``seed'' of integers and replace my seed of 42 with your own seed. 
 </li>
-<li>Make sure that the \textsf{\textbf{maintext}} branch is turned \textsf{ON} and also make sure that both the \textsf{\textbf{solutions}} branch and the \textsf{\textbf{answers}} branch are turned \textsf{OFF}. Use \LyX{} or your \LaTeX{} editor with Sweave to generate your unique PDF copy of the book and distribute this copy to your students. (See the \LyX{} User's Guide to learn more about branches; the ones referenced above can be found under \textsf{Document \(\triangleright\) Settings \(\triangleright\) Branches}.)
+<li>Make sure that the <code>maintext</code> branch is turned <code>ON</code> and also make sure that both the <code>solutions</code> branch and the <code>answers</code> branch are turned <code>OFF</code>. Use LyX or your LaTeX editor with Sweave to generate your unique PDF copy of the book and distribute this copy to your students. (See the LyX User's Guide to learn more about branches; the ones referenced above can be found under <code>Document</code> \(\triangleright\) <code>Settings</code> \(\triangleright\) <code>Branches</code>.)
 </li>
-<li>Turn the \textsf{\textbf{maintext}} branch \textsf{OFF} and the \textsf{\textbf{solutions}} branch \textsf{ON}. Generate a ``Student Solutions Manual'' which has complete solutions to selected exercises and distribute the PDF to the students. 
+<li>Turn the <code>maintext</code> branch <code>OFF</code> and the <code>solutions</code> branch <code>ON</code>. Generate a ``Student Solutions Manual'' which has complete solutions to selected exercises and distribute the PDF to the students. 
 </li>
-<li>Leave the \textsf{\textbf{solutions}} branch \textsf{ON} and also turn the \textsf{\textbf{answers}} branch \textsf{ON} and generate an ``Instructor Solutions and Answers Manual'' with full solutions to some of the exercises and just answers to the remaining exercises. Do NOT distribute this to the students &ndash; unless of course you want them to have the answers to all of the problems.  
+<li>Leave the <code>solutions</code> branch <code>ON</code> and also turn the <code>answers</code> branch <code>ON</code> and generate an ``Instructor Solutions and Answers Manual'' with full solutions to some of the exercises and just answers to the remaining exercises. Do NOT distribute this to the students &ndash; unless of course you want them to have the answers to all of the problems.  
 </li>
 </ol>
 
 
 <p>
-To make it easier for those people who do not want to use \LyX{} (or for whatever reason cannot get it working), I have included three (3) Sweave files corresponding to the main text, student solutions, and instructor answers, that are included in the \IPSUR\ source package in the \texttt{/tex} subdirectory. In principle it is possible to change the seed and generate the three parts separately with only Sweave and \LaTeX{}. This method is not recommended by me, but is perhaps desirable for some people.
+To make it easier for those people who do not want to use LyX (or for whatever reason cannot get it working), I have included three (3) Sweave files corresponding to the main text, student solutions, and instructor answers, that are included in the \IPSUR\ source package in the <code>/tex</code> subdirectory. In principle it is possible to change the seed and generate the three parts separately with only Sweave and LaTeX. This method is not recommended by me, but is perhaps desirable for some people.
 </p>
 <ul>
 <li>You can copy-paste selected exercises from the text, put them together, and you have a quiz. Since the numbers are randomly generated you do not need to worry about different semesters. And you will have answer keys already for all of your QUIZZES and EXAMS, too. 
@@ -2566,7 +2303,7 @@ Some individuals will argue that the nature of a statistics textbook like this o
 
 
 <p>
-The goal of <code>RcmdrTestDrive</code> was to have a data set sufficiently rich in the types of data represented such that a person could load it into the \textsf{R} Commander and be able to explore all of <code>Rcmdr</code>'s menu options at once. I decided early-on that an efficient way to do this would be to generate the data set randomly, and later add to the list of variables as more <code>Rcmdr</code> menu options became available. Generating the data was easy, but generating a story that related all of the respective variables proved to be less so.
+The goal of <code>RcmdrTestDrive</code> was to have a data set sufficiently rich in the types of data represented such that a person could load it into the \(\mathsf{R}\) Commander and be able to explore all of <code>Rcmdr</code>'s menu options at once. I decided early-on that an efficient way to do this would be to generate the data set randomly, and later add to the list of variables as more <code>Rcmdr</code> menu options became available. Generating the data was easy, but generating a story that related all of the respective variables proved to be less so.
 </p>
 <p>
 In the Summer of 2006 I gave a version of the raw data and variable names to my STAT 3743 Probability and Statistics class and invited each of them to write a short story linking all of the variables together in a coherent narrative. No further direction was given. 
@@ -2653,7 +2390,7 @@ Once our two heroes returned to the beautiful Acme-Looney University, and once D
 “Maybe, but I would bet my money on somebody was trying to quiet these faculty before they made a big ruckus about the secret money-laundering of Old Man Acme. You know, most people think that is how the University receives most of its funds, through the mob families out of Chicago. And I would be willing to bet that these faculty figured out the connection and were ready to tell the Looney Police.” Dr. Fudd-Einstein spoke lower, fearing that somebody would overhear their conversation.  
 </p>
 <p>
-Dr. Fudd-Einstein then pressed \textsf{Enter} on the keyboard and waited for the results. The massive computer roared to life&hellip; and when I say roared, I mean it literally <i>roared</i>. All the hidden bells, whistles, and alarm clocks in its secret compartments came out and created such a loud racket that classes across the university had to come to a stand-still until it finished computing. 
+Dr. Fudd-Einstein then pressed <code>Enter</code> on the keyboard and waited for the results. The massive computer roared to life&hellip; and when I say roared, I mean it literally <i>roared</i>. All the hidden bells, whistles, and alarm clocks in its secret compartments came out and created such a loud racket that classes across the university had to come to a stand-still until it finished computing. 
 </p>
 <p>
 Once it was completed, the computer listed 4 names:
@@ -2676,7 +2413,7 @@ Dr. Fudd-Einstein and Professor Bird looked on in silence. They could not believ
 “There seems to be a mistake. Perhaps something is off,” Professor Bird asked, still unable to believe the results.
 </p>
 <p>
-“Not possible; the Acme Computer takes into account every kind of connection available. It considers affiliations to groups, and affiliations those groups have to other groups. It checks the FBI, CIA, British intelligence, NAACP, AARP, NSA, JAG, TWA, EPA, FDA, USWA, \textsf{R}, MAPLE, SPSS, SAS, and Ben &amp; Jerry’s files to identify possible links, creating the most powerful computer in the world&hellip; with a tweak of Toon fanaticism,” Dr. Fudd-Einstein proclaimed, being a proud co-founder of the Acme Computer Technology.
+“Not possible; the Acme Computer takes into account every kind of connection available. It considers affiliations to groups, and affiliations those groups have to other groups. It checks the FBI, CIA, British intelligence, NAACP, AARP, NSA, JAG, TWA, EPA, FDA, USWA, \(\mathsf{R}\), MAPLE, SPSS, SAS, and Ben &amp; Jerry’s files to identify possible links, creating the most powerful computer in the world&hellip; with a tweak of Toon fanaticism,” Dr. Fudd-Einstein proclaimed, being a proud co-founder of the Acme Computer Technology.
 </p>
 <p>
 “Wait a minute, Ben &amp; Jerry? What would eating ice cream have to do with anything?” Professor Bird inquired.
@@ -2725,7 +2462,7 @@ Dr. Fudd-Einstein and Professor Bird looked on in silence. They could not believ
  \) seem to match our stats. But how can that be?”
 </p>
 <p>
-It was at this moment that our two heroes were shot from behind and fell over the computer, dead. The killer hit \textsf{Delete} on the computer and walked out slowly (considering they had arthritis) and cackling loudly in the now quiet computer lab.  
+It was at this moment that our two heroes were shot from behind and fell over the computer, dead. The killer hit <code>Delete</code> on the computer and walked out slowly (considering they had arthritis) and cackling loudly in the now quiet computer lab.  
 </p>
 <p>
 And so, I guess my question to you the reader is, did Granny murder \( 
@@ -2750,14 +2487,3 @@ Detective Pyork E. Pig
 </div>
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2011-09-21 01:10:37 EDT</p>
-<p class="author">Author: G. Jay Kerns</p>
-<p class="creator">Org version 7.7 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
-</div>
-</body>
-</html>

@@ -1,170 +1,12 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>Resampling Methods</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-09-21 00:48:01 EDT"/>
-<meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content="This chapter introduces resampling methods in the context of estimation and hypothesis testing."/>
-<meta name="keywords" content="resampling bootstrap permutation testing"/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet" href="css/styles.css" type="text/css"/>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-<!--/*--><![CDATA[/*><!--*/
-    MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
-        displayAlign: "center",
-        displayIndent: "2em",
+---
+layout: chapter
+title: Resampling Methods
+previous: nonparametric-statistics.html
+next: time-series.html
+description: This chapter introduces resampling methods in the context of estimation and hypothesis testing.
+keywords: resampling bootstrap permutation testing
+---
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
-             }
-        }
-    });
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html   "> UP </a>
- |
- <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
-<div id="content">
-<h1 class="title">Resampling Methods</h1>
-
-
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Resampling Methods</a>
-<ul>
-<li><a href="#sec-1-1">Introduction</a></li>
-<li><a href="#sec-1-2">Bootstrap Standard Errors</a></li>
-<li><a href="#sec-1-3">Bootstrap Confidence Intervals</a>
-<ul>
-<li><a href="#sec-1-3-1">Percentile Confidence Intervals</a></li>
-<li><a href="#sec-1-3-2">Student's \(t\) intervals (``normal intervals'')</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-4">Resampling in Hypothesis Tests</a>
-<ul>
-<li><a href="#sec-1-4-1">Comparison with the Two Sample <i>t</i> test</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-5">Exercises</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Resampling Methods</h2>
@@ -175,7 +17,7 @@ lang="en" xml:lang="en">
 Computers have changed the face of statistics. Their quick computational speed and flawless accuracy, coupled with large data sets acquired by the researcher, make them indispensable for many modern analyses. In particular, resampling methods (due in large part to Bradley Efron) have gained prominence in the modern statistician's repertoire. We first look at a classical problem to get some insight why. 
 </p>
 <p>
-I have seen <i>Statistical Computing with \textsf{R}</i> by Rizzo \cite{Rizzo2008} and I recommend it to those looking for a more advanced treatment with additional topics. I believe that <i>Monte Carlo Statistical Methods</i> by Robert and Casella \cite{Robert2004} has a new edition that integrates \textsf{R} into the narrative.
+I have seen <i>Statistical Computing with \(\mathsf{R}\)</i> by Rizzo \cite{Rizzo2008} and I recommend it to those looking for a more advanced treatment with additional topics. I believe that <i>Monte Carlo Statistical Methods</i> by Robert and Casella \cite{Robert2004} has a new edition that integrates \(\mathsf{R}\) into the narrative.
 </p>
 
 <ul>
@@ -411,7 +253,7 @@ X11cairo
 
 
 <p>
-<b>The boot package in R</b>. It turns out that there are many bootstrap procedures and commands already built into base \textsf{R}, in the <code>boot</code> package. Further, inside the <code>boot</code> package there is even a function called <code>boot</code>\index{boot@\texttt{boot}}. The basic syntax is of the form:
+<b>The boot package in R</b>. It turns out that there are many bootstrap procedures and commands already built into base \(\mathsf{R}\), in the <code>boot</code> package. Further, inside the <code>boot</code> package there is even a function called <code>boot</code>\index{boot@\texttt{boot}}. The basic syntax is of the form:
 </p>
 <pre class="example">
  boot(data, statistic, R)
@@ -419,7 +261,7 @@ X11cairo
 
 
 <p>
- Here, <code>data</code> is a vector (or matrix) containing the data to be resampled, <code>statistic</code> is a defined function, <i>of two arguments</i>, that tells which statistic should be computed, and the parameter <code>R</code> specifies how many resamples should be taken.
+ Here, <code>data</code> is a vector (or matrix) containing the data to be resampled, <code>statistic</code> is a defined function, <i>of two arguments</i>, that tells which statistic should be computed, and the parameter \(\mathsf{R}\) specifies how many resamples should be taken.
 </p>
 <p>
 For the standard error of the mean (Example <a href="#exa-Bootstrap-se-mean">Bootstrap-se-mean</a>):
@@ -517,7 +359,7 @@ Some things to keep in mind about the bootstrap:
 As a first try, we want to obtain a 95% confidence interval for a parameter. Typically the statistic we use to estimate the parameter is centered at (or at least close by) the parameter; in such cases a 95% confidence interval for the parameter is nothing more than a 95% confidence interval for the statistic. And to find a 95% confidence interval for the statistic we need only go to its sampling distribution to find an interval that contains 95% of the area. (The most popular choice is the equal-tailed interval with 2.5% in each tail.)
 </p>
 <p>
-This is incredibly easy to accomplish with the bootstrap. We need only to take a bunch of bootstrap resamples, order them, and choose the \(\alpha/2\)th and \((1-\alpha)\)th percentiles. There is a function <code>boot.ci</code>\index{boot.ci@\texttt{boot.ci}} in \textsf{R} already created to do just this. Note that in order  to use the function <code>boot.ci</code> we must first run the <code>boot</code> function and save the output in a variable, for example, <code>data.boot</code>. We then plug <code>data.boot</code> into the function <code>boot.ci</code>.
+This is incredibly easy to accomplish with the bootstrap. We need only to take a bunch of bootstrap resamples, order them, and choose the \(\alpha/2\)th and \((1-\alpha)\)th percentiles. There is a function <code>boot.ci</code>\index{boot.ci@\texttt{boot.ci}} in \(\mathsf{R}\) already created to do just this. Note that in order  to use the function <code>boot.ci</code> we must first run the <code>boot</code> function and save the output in a variable, for example, <code>data.boot</code>. We then plug <code>data.boot</code> into the function <code>boot.ci</code>.
 </p>
 
 
@@ -590,7 +432,7 @@ where \(\mathsf{t}_{\alpha/2}(\mathtt{df}=n-1)\) is the appropriate critical val
 \begin{equation}
 \mbox{statistic}\pm\mathsf{t}_{\alpha/2}(\mathtt{df}=n-1)*\mathrm{SE}(\mbox{statistic})
 \end{equation}
- will have approximately \(100(1-\alpha)\%\) confidence of containing \(\E(\mathrm{statistic})\). 
+ will have approximately \(100(1-\alpha)\%\) confidence of containing \(\mathbb{E}(\mathrm{statistic})\). 
 </p>
 <p>
 We will use the t-interval method to find the bootstrap CI for the median. We have looked at the bootstrap distribution; it appears to be symmetric and approximately mound shaped. Further, we may check that the bias is approximately 40, which on the scale of these data is practically negligible. Thus, we may consider looking at the \(t\)-intervals. Note that, since our sample is so large, instead of \(t\)-intervals we will essentially be using \(z\)-intervals. 
@@ -799,14 +641,3 @@ Here are some things about permutation tests to keep in mind.
 </div>
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2011-09-21 00:48:01 EDT</p>
-<p class="author">Author: G. Jay Kerns</p>
-<p class="creator">Org version 7.7 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
-</div>
-</body>
-</html>

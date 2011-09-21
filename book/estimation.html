@@ -1,165 +1,12 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>Estimation</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-09-21 01:01:32 EDT"/>
-<meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content="This chapter deals with point and interval estimation in the one and two parameter setting."/>
-<meta name="keywords" content="point interval estimation confidence unbiased"/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet" href="css/styles.css" type="text/css"/>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-<!--/*--><![CDATA[/*><!--*/
-    MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
-        displayAlign: "center",
-        displayIndent: "2em",
+---
+layout: chapter
+title: Estimation
+previous: sampling-distributions.html
+next: hypothesis-testing.html
+description: This chapter deals with point and interval estimation in the one and two parameter setting.
+keywords:  point interval estimation confidence unbiased
+---
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
-             }
-        }
-    });
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html   "> UP </a>
- |
- <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
-<div id="content">
-<h1 class="title">Estimation</h1>
-
-
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Estimation</a>
-<ul>
-<li><a href="#sec-1-1">Point Estimation</a></li>
-<li><a href="#sec-1-2">Confidence Intervals for Means</a></li>
-<li><a href="#sec-1-3">Confidence Intervals for Differences of Means</a></li>
-<li><a href="#sec-1-4">Confidence Intervals for Proportions</a></li>
-<li><a href="#sec-1-5">Confidence Intervals for Variances</a></li>
-<li><a href="#sec-1-6">Fitting Distributions</a></li>
-<li><a href="#sec-1-7">Sample Size and Margin of Error</a></li>
-<li><a href="#sec-1-8">Other Topics</a></li>
-<li><a href="#sec-1-9">Exercises</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Estimation</h2>
@@ -378,18 +225,18 @@ Some comments about maximum likelihood estimators:
 <p>
 Notice, in Example <a href="#exa-bass-bluegill">bass-bluegill</a> we had \(X_{i}\) IID \(\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=p)\), and we saw that the MLE was \(\hat{p}=\overline{X}\). But further
 \begin{eqnarray*}
-\E\overline{X} & = & \E\frac{X_{1}+X_{2}+\cdots+X_{n}}{n},\\
- & = & \frac{1}{n}\left(\E X_{1}+\E X_{2}+\cdots+\E X_{n}\right),\\
+\mathbb{E}\overline{X} & = & \mathbb{E}\frac{X_{1}+X_{2}+\cdots+X_{n}}{n},\\
+ & = & \frac{1}{n}\left(\mathbb{E} X_{1}+\mathbb{E} X_{2}+\cdots+\mathbb{E} X_{n}\right),\\
  & = & \frac{1}{n}\left(np\right),\\
  & = & p,
 \end{eqnarray*}
-which is exactly the same as the parameter which we estimated. More concisely, \(\E\hat{p}=p\), that is, on the average, the estimator is exactly right.
+which is exactly the same as the parameter which we estimated. More concisely, \(\mathbb{E}\hat{p}=p\), that is, on the average, the estimator is exactly right.
 </p>
 <p>
 <div class="defn">
 Let \(s(X_{1},X_{2},\ldots,X_{n})\) be a statistic which estimates \(\theta\). If 
 \[
-\E s(X_{1},X_{2},\ldots,X_{n})=\theta,
+\mathbb{E} s(X_{1},X_{2},\ldots,X_{n})=\theta,
 \]
 then the statistic \(s(X_{1},X_{2},\ldots,X_{n})\) is said to be an <i>unbiased estimator</i> of \(\theta\). Otherwise, it is <i>biased</i>.
 </div>
@@ -406,9 +253,9 @@ where \(\hat{\mu}=\overline{X}\) and
 \end{equation}
 We of course know from <a href="#pro-mean-sd-xbar">mean-sd-xbar</a> that \(\hat{\mu}\) is unbiased. What about \(\hat{\sigma^{2}}\)? Let us check: 
 \begin{eqnarray*}
-\E\,\hat{\sigma^{2}} & = & \E\,\frac{n-1}{n}S^{2}\\
- & = & \E\left(\frac{\sigma^{2}}{n}\frac{(n-1)S^{2}}{\sigma^{2}}\right)\\
- & = & \frac{\sigma^{2}}{n}\E\ \mathsf{chisq}(\mathtt{df}=n-1)\\
+\mathbb{E}\,\hat{\sigma^{2}} & = & \mathbb{E}\,\frac{n-1}{n}S^{2}\\
+ & = & \mathbb{E}\left(\frac{\sigma^{2}}{n}\frac{(n-1)S^{2}}{\sigma^{2}}\right)\\
+ & = & \frac{\sigma^{2}}{n}\mathbb{E}\ \mathsf{chisq}(\mathtt{df}=n-1)\\
  & = & \frac{\sigma^{2}}{n}(n-1),
 \end{eqnarray*}
 from which we may conclude two things:
@@ -427,7 +274,7 @@ One of the most common questions in an introductory statistics class is, ``Why d
 
 
 <p>
-\textsf{R} can be used to find maximum likelihood estimators in a lot of diverse settings. We will discuss only the most basic here and will leave the rest to more sophisticated texts.
+\(\mathsf{R}\) can be used to find maximum likelihood estimators in a lot of diverse settings. We will discuss only the most basic here and will leave the rest to more sophisticated texts.
 </p>
 <p>
 For one parameter estimation problems we may use the <code>optimize</code> function to find MLEs. The arguments are the function to be maximized (the likelihood function), the range over which the optimization is to take place, and optionally any other arguments to be passed to the likelihood if needed.
@@ -465,12 +312,12 @@ $objective
 Note that the <code>optimize</code> function by default minimizes the function <code>L</code>, so we have to set <code>maximum = TRUE</code> to get an MLE. The returned value of <code>$maximum</code> gives an approximate value of the MLE to be \(  0.406 \) and <code>objective</code> gives <code>L</code> evaluated at the MLE which is approximately \(  0 \).
 </p>
 <p>
-We previously remarked that it is usually more numerically convenient to maximize the log-likelihood (or minimize the negative log-likelihood), and we can just as easily do this with \textsf{R}. We just need to calculate the log-likelihood beforehand which (for this example) is
+We previously remarked that it is usually more numerically convenient to maximize the log-likelihood (or minimize the negative log-likelihood), and we can just as easily do this with \(\mathsf{R}\). We just need to calculate the log-likelihood beforehand which (for this example) is
 \[
 -l(p)=-\sum x_{i}\ln\, p-\left(n-\sum x_{i}\right)\ln(1-p).
 \]
 
-It is done in \textsf{R} with
+It is done in \(\mathsf{R}\) with
 </p>
 
 
@@ -972,9 +819,9 @@ We would like to know \(p\) which is the ``proportion of successes''. For instan
 
 
 <p>
-We are given an \(SRS(n)\) \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) distributed \(\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=p)\). Recall from Section <a href="#sec-binom-dist">binom-dist</a> that the common mean of these variables is \(\E X=p\) and the variance is \(\E(X-p)^{2}=p(1-p)\). If we let \(Y=\sum X_{i}\), then from Section <a href="#sec-binom-dist">binom-dist</a> we know that \(Y\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\) and that 
+We are given an \(SRS(n)\) \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) distributed \(\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=p)\). Recall from Section <a href="#sec-binom-dist">binom-dist</a> that the common mean of these variables is \(\mathbb{E} X=p\) and the variance is \(\mathbb{E}(X-p)^{2}=p(1-p)\). If we let \(Y=\sum X_{i}\), then from Section <a href="#sec-binom-dist">binom-dist</a> we know that \(Y\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\) and that 
 \[
-\overline{X}=\frac{Y}{n}\mbox{ has }\E\overline{X}=p\mbox{ and }\mathrm{Var}(\overline{X})=\frac{p(1-p)}{n}.
+\overline{X}=\frac{Y}{n}\mbox{ has }\mathbb{E}\overline{X}=p\mbox{ and }\mathrm{Var}(\overline{X})=\frac{p(1-p)}{n}.
 \]
 Thus if \(n\) is large (here is the CLT) then an approximate \(100(1-\alpha)\%\) confidence interval for \(p\) would be given by
 \begin{equation}
@@ -1113,7 +960,7 @@ I am thinking one and two sample problems here.
 </p>
 
 <p>
-I am thinking about <code>sigma.test</code> in the <code>TeachingDemos</code> package and <code>var.test</code> in base \textsf{R} here.
+I am thinking about <code>sigma.test</code> in the <code>TeachingDemos</code> package and <code>var.test</code> in base \(\mathsf{R}\) here.
 </p>
 </div>
 
@@ -1252,14 +1099,3 @@ You are going to need the quadratic formula.
 </p></div>
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2011-09-21 01:01:32 EDT</p>
-<p class="author">Author: G. Jay Kerns</p>
-<p class="creator">Org version 7.7 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
-</div>
-</body>
-</html>

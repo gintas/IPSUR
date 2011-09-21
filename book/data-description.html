@@ -1,208 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>Data Description</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-09-21 01:07:50 EDT"/>
-<meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content="This chapter is all about data and the descriptive methods we have to understand them."/>
-<meta name="keywords" content="data R descriptive statistics summary"/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet" href="css/styles.css" type="text/css"/>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-<!--/*--><![CDATA[/*><!--*/
-    MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
-        displayAlign: "center",
-        displayIndent: "2em",
+---
+layout: chapter
+title: Data Description
+previous: introduction-R.html
+next: probability.html
+description: This chapter is all about data and the descriptive methods we have to understand them.
+keywords: data R descriptive statistics summary
+---
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
-             }
-        }
-    });
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html   "> UP </a>
- |
- <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
-<div id="content">
-<h1 class="title">Data Description</h1>
-
-
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Data Description</a>
-<ul>
-<li><a href="#sec-1-1">Types of Data</a>
-<ul>
-<li><a href="#sec-1-1-1">Quantitative data</a></li>
-<li><a href="#sec-1-1-2">Displaying Quantitative Data</a></li>
-<li><a href="#sec-1-1-3">Qualitative Data, Categorical Data, and Factors</a></li>
-<li><a href="#sec-1-1-4">Displaying Qualitative Data</a></li>
-<li><a href="#sec-1-1-5">Logical Data</a></li>
-<li><a href="#sec-1-1-6">Missing Data</a></li>
-<li><a href="#sec-1-1-7">Other Data Types</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-2">Features of Data Distributions</a>
-<ul>
-<li><a href="#sec-1-2-1">Center</a></li>
-<li><a href="#sec-1-2-2">Spread</a></li>
-<li><a href="#sec-1-2-3">Shape</a></li>
-<li><a href="#sec-1-2-4">Clusters and Gaps</a></li>
-<li><a href="#sec-1-2-5">Extreme Observations and other Unusual Features</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-3">Descriptive Statistics</a>
-<ul>
-<li><a href="#sec-1-3-1">Frequencies and Relative Frequencies</a></li>
-<li><a href="#sec-1-3-2">Measures of Center</a></li>
-<li><a href="#sec-1-3-3">Order Statistics and the Sample Quantiles</a></li>
-<li><a href="#sec-1-3-4">Measures of Spread</a></li>
-<li><a href="#sec-1-3-5">Measures of Shape</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-4">Exploratory Data Analysis</a>
-<ul>
-<li><a href="#sec-1-4-1">More About Stemplots</a></li>
-<li><a href="#sec-1-4-2">Hinges and the Five Number Summary</a></li>
-<li><a href="#sec-1-4-3">Boxplots</a></li>
-<li><a href="#sec-1-4-4">Outliers</a></li>
-<li><a href="#sec-1-4-5">Standardizing variables</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-5">Multivariate Data and Data Frames</a>
-<ul>
-<li><a href="#sec-1-5-1">Bivariate Data</a></li>
-<li><a href="#sec-1-5-2">Multivariate Data</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-6">Comparing Populations</a>
-<ul>
-<li><a href="#sec-1-6-1">Numerically</a></li>
-<li><a href="#sec-1-6-2">Graphically</a></li>
-<li><a href="#sec-1-6-3">Lattice Graphics</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-7">Exercises</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Data Description</h2>
@@ -311,7 +115,7 @@ The output shows that <code>precip</code> is a numeric vector which has been <i>
 </p>
 
 <p>
-<b>Lengths of Major North American Rivers.</b> The U.S. Geological Survey recorded the lengths (in miles) of several rivers in North America. They are stored in the vector <code>rivers</code>\index{Data sets!rivers@\texttt{rivers}} in the <code>datasets</code> package (which ships with base \textsf{R}). See <code>?rivers</code>. Let us take a look at the data with the <code>str</code>\index{str@\texttt{str}} function.
+<b>Lengths of Major North American Rivers.</b> The U.S. Geological Survey recorded the lengths (in miles) of several rivers in North America. They are stored in the vector <code>rivers</code>\index{Data sets!rivers@\texttt{rivers}} in the <code>datasets</code> package (which ships with base \(\mathsf{R}\)). See <code>?rivers</code>. Let us take a look at the data with the <code>str</code>\index{str@\texttt{str}} function.
 </p>
 
 
@@ -361,7 +165,7 @@ One of the first things to do when confronted by quantitative data (or any data,
 </p>
 
 <p>
-These can be used for discrete or continuous data, and usually look best when the data set is not too large. Along the horizontal axis is a numerical scale above which the data values are plotted. We can do it in \textsf{R} with a call to the <code>stripchart</code>\index{stripchart@\texttt{stripchart}} function. There are three available methods.
+These can be used for discrete or continuous data, and usually look best when the data set is not too large. Along the horizontal axis is a numerical scale above which the data values are plotted. We can do it in \(\mathsf{R}\) with a call to the <code>stripchart</code>\index{stripchart@\texttt{stripchart}} function. There are three available methods.
 </p>
 <dl>
 <dt>overplot</dt><dd>plots ties covering each other. This method is good to display only the distinct values assumed by the data set.
@@ -418,7 +222,7 @@ These are one of the most common summary displays, and they are often misidentif
 <b>Annual Precipitation in US Cities.</b> We are going to take another look at the <code>precip</code>\index{Data sets!precip@\texttt{precip}} data that we investigated earlier. The strip chart in Figure <a href="#fig-Various-stripchart-methods">Various-stripchart-methods,</a> suggested a loosely balanced distribution; let us now look to see what a histogram says. 
 </p>
 <p>
-There are many ways to plot histograms in \textsf{R}, and one of the easiest is with the <code>hist</code>\index{hist@\texttt{hist}} function. The following code produces the plots in Figure <a href="#fig-histograms">histograms</a>.
+There are many ways to plot histograms in \(\mathsf{R}\), and one of the easiest is with the <code>hist</code>\index{hist@\texttt{hist}} function. The following code produces the plots in Figure <a href="#fig-histograms">histograms</a>.
 </p>
 
 
@@ -501,7 +305,7 @@ The rightmost graph in Figure <a href="#fig-histograms-bins">histograms-bins</a>
 Stemplots have two basic parts: <i>stems</i> and <i>leaves</i>. The final digit of the data values is taken to be a <i>leaf</i>, and the leading digit(s) is (are) taken to be <i>stems</i>. We draw a vertical line, and to the left of the line we list the stems. To the right of the line, we list the leaves beside their corresponding stem. There will typically be several leaves for each stem, in which case the leaves accumulate to the right. It is sometimes necessary to round the data values, especially for larger data sets.
 </p>
 <p>
-<code>UKDriverDeaths</code>\index{Data sets!UKDriverDeaths@\texttt{UKDriverDeaths}} is a time series that contains the total car drivers killed or seriously injured in Great Britain monthly from Jan 1969 to Dec 1984. See <code>?UKDriverDeaths</code>. Compulsory seat belt use was introduced on January 31, 1983. We construct a stem and leaf diagram in \textsf{R} with the <code>stem.leaf</code>\index{stem.leaf@\texttt{stem.leaf}} function from the <code>aplpack</code>\index{R packages@\textsf{R} packages!aplpack@\texttt{aplpack}} package\cite{aplpack}.
+<code>UKDriverDeaths</code>\index{Data sets!UKDriverDeaths@\texttt{UKDriverDeaths}} is a time series that contains the total car drivers killed or seriously injured in Great Britain monthly from Jan 1969 to Dec 1984. See <code>?UKDriverDeaths</code>. Compulsory seat belt use was introduced on January 31, 1983. We construct a stem and leaf diagram in \(\mathsf{R}\) with the <code>stem.leaf</code>\index{stem.leaf@\texttt{stem.leaf}} function from the <code>aplpack</code>\index{R packages@\textsf{R} packages!aplpack@\texttt{aplpack}} package\cite{aplpack}.
 </p>
 
 
@@ -613,7 +417,7 @@ Factors may be of two types: <i>nominal</i>\index{nominal data} and <i>ordinal</
 In contrast, ordinal factors have some sort of ordered structure to the underlying factor levels. For instance, socioeconomic status would be an ordinal categorical variable because the levels correspond to ranks associated with income, education, and occupation. Another example of ordinal categorical data would be class rank.
 </p>
 <p>
-Factors have special status in \textsf{R}. They are represented internally by numbers, but even when they are written numerically their values do not convey any numeric meaning or obey any mathematical rules (that is, Stage III cancer is not Stage I cancer + Stage II cancer).
+Factors have special status in \(\mathsf{R}\). They are represented internally by numbers, but even when they are written numerically their values do not convey any numeric meaning or obey any mathematical rules (that is, Stage III cancer is not Stage I cancer + Stage II cancer).
 </p>
 <p>
 The <code>state.abb</code>\index{Data sets!state.abb@\texttt{state.abb}}
@@ -668,7 +472,7 @@ The <code>str</code>\index{str@\texttt{str}} output shows that <code>state.regio
 
 
 <p>
-One of the best ways to summarize qualitative data is with a table of the data values. We may count frequencies with the <code>table</code> function or list proportions with the <code>prop.table</code>\index{prop.table@\texttt{prop.table}} function (whose input is a frequency table). In the \textsf{R} Commander you can do it with \textsf{Statistics} \textsf{\(\triangleright\)} \textsf{Frequency Distribution}&hellip; Alternatively, to look at tables for all factors in the <code>Active data set</code>\index{Active data set@\texttt{Active data set}} you can do \textsf{Statistics} \textsf{\(\triangleright\)} \textsf{Summaries} \textsf{\(\triangleright\)} \textsf{Active Dataset}.
+One of the best ways to summarize qualitative data is with a table of the data values. We may count frequencies with the <code>table</code> function or list proportions with the <code>prop.table</code>\index{prop.table@\texttt{prop.table}} function (whose input is a frequency table). In the \(\mathsf{R}\) Commander you can do it with <code>Statistics</code> \(\triangleright\) <code>Frequency Distribution...</code> Alternatively, to look at tables for all factors in the <code>Active data set</code>\index{Active data set@\texttt{Active data set}} you can do <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Active Dataset</code>.
 </p>
 
 
@@ -824,7 +628,7 @@ See Figure <a href="#fig-dot-charts">dot-charts</a>. Compare it to Figure <a hre
 
 
 <p>
-These can be done with \textsf{R} and the \textsf{R} Commander, but they fallen out of favor in recent years because researchers have determined that while the human eye is good at judging linear measures, it is notoriously bad at judging relative areas (such as those displayed by a pie graph). Pie charts are consequently a very bad way of displaying information. A bar chart or dot chart is a preferable way of displaying qualitative data. See <code>?pie</code>\index{pie@\texttt{pie}} for more information.
+These can be done with \(\mathsf{R}\) and the \(\mathsf{R}\) Commander, but they fallen out of favor in recent years because researchers have determined that while the human eye is good at judging linear measures, it is notoriously bad at judging relative areas (such as those displayed by a pie graph). Pie charts are consequently a very bad way of displaying information. A bar chart or dot chart is a preferable way of displaying qualitative data. See <code>?pie</code>\index{pie@\texttt{pie}} for more information.
 </p>
 <p>
 We are not going to do any examples of a pie graph and discourage their use elsewhere. 
@@ -839,7 +643,7 @@ We are not going to do any examples of a pie graph and discourage their use else
 
 
 <p>
-There is another type of information recognized by \textsf{R} which does not fall into the above categories. The value is either <code>TRUE</code> or <code>FALSE</code> (note that equivalently you can use <code>1 = TRUE</code>, <code>0 = FALSE</code>). Here is an example of a logical vector:
+There is another type of information recognized by \(\mathsf{R}\) which does not fall into the above categories. The value is either <code>TRUE</code> or <code>FALSE</code> (note that equivalently you can use <code>1 = TRUE</code>, <code>0 = FALSE</code>). Here is an example of a logical vector:
 </p>
 
 
@@ -858,7 +662,7 @@ X11cairo
 
 
 <p>
-Many functions in \textsf{R} have options that the user may or may not want to activate in the function call. For example, the <code>stem.leaf</code> function has the <code>depths</code> argument which is <code>TRUE</code> by default. We saw in Section <a href="#sub-Quantitative-Data">Quantitative-Data</a> how to turn the option off, simply enter <code>stem.leaf(x, depths = FALSE)</code> and they will not be shown on the display.
+Many functions in \(\mathsf{R}\) have options that the user may or may not want to activate in the function call. For example, the <code>stem.leaf</code> function has the <code>depths</code> argument which is <code>TRUE</code> by default. We saw in Section <a href="#sub-Quantitative-Data">Quantitative-Data</a> how to turn the option off, simply enter <code>stem.leaf(x, depths = FALSE)</code> and they will not be shown on the display.
 </p>
 <p>
 We can swap <code>TRUE</code> with <code>FALSE</code> with the exclamation point <code>!</code>.
@@ -885,7 +689,7 @@ We can swap <code>TRUE</code> with <code>FALSE</code> with the exclamation point
 
 
 <p>
-Missing data are a persistent and prevalent problem in many statistical analyses, especially those associated with the social sciences. \textsf{R} reserves the special symbol <code>NA</code> to representing missing data.
+Missing data are a persistent and prevalent problem in many statistical analyses, especially those associated with the social sciences. \(\mathsf{R}\) reserves the special symbol <code>NA</code> to representing missing data.
 </p>
 <p>
 Ordinary arithmetic with <code>NA</code> values give <code>NA</code>'s (addition, subtraction, <i>etc</i>.) and applying a function to a vector that has an <code>NA</code> in it will usually give an <code>NA</code>.
@@ -1186,7 +990,7 @@ x_{(1)}\leq x_{(2)}\leq x_{(3)}\leq\cdots\leq x_{(n)}
 and the resulting values are called the <i>order statistics</i>. The \(k^{\mathrm{th}}\) entry in the list, \(x_{(k)}\), is the \(k^{\mathrm{th}}\) order statistic, and approximately \(100(k/n)\)% of the observations fall below \(x_{(k)}\). The order statistics give an indication of the shape of the data distribution, in the sense that a person can look at the order statistics and have an idea about where the data are concentrated, and where they are sparse.
 </p>
 <p>
-The <i>sample quantiles</i> are related to the order statistics. Unfortunately, there is not a universally accepted definition of them. Indeed, \textsf{R} is equipped to calculate quantiles using nine distinct definitions! We will describe the default method (<code>type = 7</code>), but the interested reader can see the details for the other methods with <code>?quantile</code>.
+The <i>sample quantiles</i> are related to the order statistics. Unfortunately, there is not a universally accepted definition of them. Indeed, \(\mathsf{R}\) is equipped to calculate quantiles using nine distinct definitions! We will describe the default method (<code>type = 7</code>), but the interested reader can see the details for the other methods with <code>?quantile</code>.
 </p>
 <p>
 Suppose the data set has \(n\) observations. Find the sample quantile of order \(p\) (\(0&lt;p&lt;1\)), denoted \(\tilde{q}_{p}\) , as follows: 
@@ -1223,10 +1027,10 @@ We can calculate the sample quantiles of any order \(p\) where \(0&lt;p&lt;1\) f
 </p>
 
 <p>
-we can find the order statistics of a variable in the <code>Active data set</code> by doing \textsf{Data \(\triangleright\) Manage variables in Active data set &hellip; \(\triangleright\) Compute new variable}&hellip;. In the \textsf{Expression to compute} dialog simply type <code>sort(varname)</code>, where <code>varname</code> is the variable that it is desired to sort.
+we can find the order statistics of a variable in the <code>Active data set</code> by doing <code>Data</code> \(\triangleright\) <code>Manage variables in Active data set...</code> \(\triangleright\) <code>Compute new variable...</code> In the <code>Expression to compute</code> dialog simply type <code>sort(varname)</code>, where <code>varname</code> is the variable that it is desired to sort.
 </p>
 <p>
-In <code>Rcmdr</code>, we can calculate the sample quantiles for a particular variable with the sequence \textsf{Statistics \(\triangleright\) Summaries \(\triangleright\) Numerical Summaries}&hellip; We can automatically calculate the quartiles for all variables in the <code>Active data set</code> with the sequence \textsf{Statistics \(\triangleright\) Summaries \(\triangleright\) Active Dataset}.
+In <code>Rcmdr</code>, we can calculate the sample quantiles for a particular variable with the sequence <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Numerical Summaries...</code> We can automatically calculate the quartiles for all variables in the <code>Active data set</code> with the sequence <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Active Dataset</code>.
 </p>
 </div>
 
@@ -1288,7 +1092,7 @@ A measure even more robust than the \(IQR\) is the <i>median absolute deviation<
 \begin{equation}
 MAD\propto\mbox{median}(|x_{1}-\tilde{x}|,\ |x_{2}-\tilde{x}|,\ldots,|x_{n}-\tilde{x}|).
 \end{equation}
-That is, the \(MAD=c\cdot\mbox{median}(|x_{1}-\tilde{x}|,\ |x_{2}-\tilde{x}|,\ldots,|x_{n}-\tilde{x}|)\), where \(c\) is a constant chosen so that the \(MAD\) has nice properties. The value of \(c\) in \textsf{R} is by default \(c=1.4286\). This value is chosen to ensure that the estimator of \(\sigma\) is correct, on the average, under suitable sampling assumptions (see Section <a href="#sec-Point-Estimation-1">Point-Estimation-1</a>).
+That is, the \(MAD=c\cdot\mbox{median}(|x_{1}-\tilde{x}|,\ |x_{2}-\tilde{x}|,\ldots,|x_{n}-\tilde{x}|)\), where \(c\) is a constant chosen so that the \(MAD\) has nice properties. The value of \(c\) in \(\mathsf{R}\) is by default \(c=1.4286\). This value is chosen to ensure that the estimator of \(\sigma\) is correct, on the average, under suitable sampling assumptions (see Section <a href="#sec-Point-Estimation-1">Point-Estimation-1</a>).
 </p><ul>
 <li>Good: stable, very robust, even more so than the \(IQR\).
 </li>
@@ -1310,7 +1114,7 @@ However, once we are looking at the three numbers it is important to understand 
 we may compute the sample range with <code>range(x)</code> and the sample variance with <code>var(x)</code>, where <code>x</code> is a numeric vector. The sample standard deviation is <code>sqrt(var(x))</code> or just <code>sd(x)</code>. The \(IQR\) is <code>IQR(x)</code> and the median absolute deviation is <code>mad(x)</code>.
 </p>
 <p>
-we can calculate the sample standard deviation with the \textsf{Statistics \(\triangleright\) Summaries \(\triangleright\) Numerical Summaries}&hellip; combination. \textsf{R} Commander does not calculate the \(IQR\) or \(MAD\) in any of the menu selections, by default.
+we can calculate the sample standard deviation with the <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Numerical Summaries...</code> combination. \(\mathsf{R}\) Commander does not calculate the \(IQR\) or \(MAD\) in any of the menu selections, by default.
 </p>
 </div>
 
@@ -1427,7 +1231,7 @@ There are many bells and whistles associated with stemplots, and the <code>stem.
 
 
 <p>
-The basic command is <code>stem(x)</code> or a more sophisticated version written by Peter Wolf called <code>stem.leaf(x)</code> in the \textsf{R} Commander. We will describe <code>stem.leaf</code> since that is the one used by \textsf{R} Commander.
+The basic command is <code>stem(x)</code> or a more sophisticated version written by Peter Wolf called <code>stem.leaf(x)</code> in the \(\mathsf{R}\) Commander. We will describe <code>stem.leaf</code> since that is the one used by \(\mathsf{R}\) Commander.
 </p>
 
 <p>
@@ -1582,10 +1386,10 @@ Boxplots are also good because one can visually assess multiple features of the 
 
 
 <p>
-A <i>potential outlier</i> is any observation that falls beyond 1.5 times the width of the box on either side, that is, any observation less than \(h_{L}-1.5(h_{U}-h_{L})\) or greater than \(h_{U}+1.5(h_{U}-h_{L})\). A <i>suspected outlier</i> is any observation that falls beyond 3 times the width of the box on either side. In \textsf{R}, both potential and suspected outliers (if present) are denoted by open circles; there is no distinction between the two. 
+A <i>potential outlier</i> is any observation that falls beyond 1.5 times the width of the box on either side, that is, any observation less than \(h_{L}-1.5(h_{U}-h_{L})\) or greater than \(h_{U}+1.5(h_{U}-h_{L})\). A <i>suspected outlier</i> is any observation that falls beyond 3 times the width of the box on either side. In \(\mathsf{R}\), both potential and suspected outliers (if present) are denoted by open circles; there is no distinction between the two. 
 </p>
 <p>
-When potential outliers are present, the whiskers of the boxplot are then shortened to extend to the most extreme observation that is not a potential outlier. If an outlier is displayed in a boxplot, the index of the observation may be identified in a subsequent plot in <code>Rcmdr</code> by clicking the \textsf{Identify outliers with mouse} option in the \textsf{Boxplot} dialog.
+When potential outliers are present, the whiskers of the boxplot are then shortened to extend to the most extreme observation that is not a potential outlier. If an outlier is displayed in a boxplot, the index of the observation may be identified in a subsequent plot in <code>Rcmdr</code> by clicking the <code>Identify outliers with mouse</code> option in the <code>Boxplot</code> dialog.
 </p>
 <p>
 What do we do about outliers? They merit further investigation. The primary goal is to determine why the observation is outlying, if possible. If the observation is a typographical error, then it should be corrected before continuing. If the observation is from a subject that does not belong to the population of interest, then perhaps the datum should be removed. Otherwise, perhaps the value is hinting at some hidden structure to the data.
@@ -1660,7 +1464,7 @@ We have had experience with vectors of data, which are long lists of numbers. Ty
 However, statistical studies often involve experiments where there are two (or more) measurements associated with each subject. We display the measured information in a rectangular array in which each row corresponds to a subject, and the columns contain the measurements for each respective variable. For instance, if one were to measure the height and weight and hair color of each of 11 persons in a research study, the information could be represented with a rectangular array. There would be 11 rows. Each row would have the person's height in the first column and hair color in the second column.
 </p>
 <p>
-The corresponding objects in \textsf{R} are called <i>data frames</i>, and they can be constructed with the <code>data.frame</code> function. Each row is an observation, and each column is a variable.
+The corresponding objects in \(\mathsf{R}\) are called <i>data frames</i>, and they can be constructed with the <code>data.frame</code> function. Each row is an observation, and each column is a variable.
 </p>
 <p>
 Suppose we have two vectors <code>x</code> and <code>y</code> and we want to make a data frame out of them.
@@ -1757,7 +1561,7 @@ r=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sqrt{\sum_{i=1}
 </li>
 <li>measures <i>strength</i> and <i>direction</i> of linear association
 </li>
-<li>Two-Way Tables. Done with <code>table</code>, or in the \textsf{R} Commander by following \textsf{Statistics \(\triangleright\) Contingency Tables \(\triangleright\)} \textsf{Two-way Tables}. You can also enter and analyze a two-way table.
+<li>Two-Way Tables. Done with <code>table</code>, or in the \(\mathsf{R}\) Commander by following <code>Statistics</code> \(\triangleright\) <code>Contingency Tables</code> \(\triangleright\)} <code>Two-way Tables</code>. You can also enter and analyze a two-way table.
 <ul>
 <li>table
 </li>
@@ -1832,7 +1636,7 @@ Multivariate Data Display
 </li>
 </ul>
 
-<p>or in \textsf{R} Commander by following \textsf{Statistics} \textsf{\(\triangleright\)} \textsf{Contingency Tables} \textsf{\(\triangleright\)} \textsf{Multi-way Tables}.
+<p>or in \(\mathsf{R}\) Commander by following <code>Statistics</code> \(\triangleright\) <code>Contingency Tables</code> \(\triangleright\) <code>Multi-way Tables</code>.
 </p><ul>
 <li>Scatterplot matrix. used for displaying pairwise scatterplots simultaneously. Again, look for linear association and correlation.
 </li>
@@ -1879,7 +1683,7 @@ Sometimes we have data from two or more groups (or populations) and we would lik
 
 
 <p>
-I am thinking here about the \textsf{Statistics} \textsf{\(\triangleright\)} \textsf{Numerical Summaries} \textsf{\(\triangleright\) Summarize by groups} option or the \textsf{Statistics} \textsf{\(\triangleright\)} \textsf{Summaries} \textsf{\(\triangleright\)Table of Statistics} option. 
+I am thinking here about the <code>Statistics</code> \(\triangleright\) <code>Numerical Summaries</code> \(\triangleright\) <code>Summarize by groups</code> option or the <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Table of Statistics</code> option. 
 </p>
 </div>
 
@@ -2164,7 +1968,7 @@ bwplot(~weight | feed, data = chickwts)
 
 
 <p>
-Open \textsf{R} and issue the following commands at the command line to get started. Note that you need to have the <code>RcmdrPlugin.IPSUR</code> package installed, and for some exercises you need the <code>e1071</code> package.
+Open \(\mathsf{R}\) and issue the following commands at the command line to get started. Note that you need to have the <code>RcmdrPlugin.IPSUR</code> package installed, and for some exercises you need the <code>e1071</code> package.
 </p>
 
 
@@ -2177,7 +1981,7 @@ names(RcmdrTestDrive)
 
 
 <p>
-To load the data in the \textsf{R} Commander (<code>Rcmdr</code>), click the \textsf{Data Set} button, and select <code>RcmdrTestDrive</code> as the active data set. To learn more about the data set and where it comes from, type <code>?RcmdrTestDrive</code> at the command line.
+To load the data in the \(\mathsf{R}\) Commander (<code>Rcmdr</code>), click the <code>Data Set</code> button, and select <code>RcmdrTestDrive</code> as the active data set. To learn more about the data set and where it comes from, type <code>?RcmdrTestDrive</code> at the command line.
 </p>
 <p>
 <div class="xca">
@@ -2186,21 +1990,18 @@ To load the data in the \textsf{R} Commander (<code>Rcmdr</code>), click the \te
 Perform a summary of all variables in <code>RcmdrTestDrive</code>. You can do this with the command <code>summary(RcmdrTestDrive)</code>.
 </p>
 <p>
-Alternatively, you can do this in the <code>Rcmdr</code> with the sequence \textsf{Statistics} \textsf{\(\triangleright\) Summaries} \textsf{\(\triangleright\) Active Data Set}. Report the values of the summary statistics for each variable.
-</p>
-<p>
+Alternatively, you can do this in the <code>Rcmdr</code> with the sequence <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Active Data Set</code>. Report the values of the summary statistics for each variable.
 </div>
 </p>
 <p>
 <div class="xca">
-Make a table of the <code>race</code> variable. Do this with \textsf{Statistics} \textsf{\(\triangleright\) Summaries} \textsf{\(\triangleright\) IPSUR - Frequency Distributions}&hellip;
-</p>
-<ol>
+Make a table of the <code>race</code> variable. Do this with <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Frequency Distributions - IPSUR...</code>
+</p><ol>
 <li>Which ethnicity has the highest frequency?
 </li>
 <li>Which ethnicity has the lowest frequency?
 </li>
-<li>Include a bar graph of <code>race</code>. Do this with \textsf{Graphs} \textsf{\(\triangleright\)} \textsf{IPSUR - Bar Graph}&hellip;
+<li>Include a bar graph of <code>race</code>. Do this with <code>Graphs</code> \(\triangleright\) <code>IPSUR - Bar Graph...</code>
 </li>
 </ol>
 
@@ -2210,7 +2011,7 @@ Make a table of the <code>race</code> variable. Do this with \textsf{Statistics}
 </p>
 <p>
 <div class="xca">
-Calculate the average <code>salary</code> by the factor <code>gender</code>. Do this with \textsf{Statistics} \textsf{\(\triangleright\) Summaries} \textsf{\(\triangleright\) Table of Statistics}&hellip; 
+Calculate the average <code>salary</code> by the factor <code>gender</code>. Do this with <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Table of Statistics...</code> 
 </p><ol>
 <li>Which <code>gender</code> has the highest mean <code>salary</code>? 
 </li>
@@ -2221,10 +2022,10 @@ Calculate the average <code>salary</code> by the factor <code>gender</code>. Do 
 <li>Make boxplots of <code>salary</code> by <code>gender</code> with the following method:
 <blockquote>
 
-<p>On the <code>Rcmdr</code>, click \textsf{Graphs} \textsf{\(\triangleright\)} \textsf{IPSUR - Boxplot}&hellip;
-In the \textsf{Variable} box, select <code>salary</code>.
-Click the \textsf{Plot by groups}&hellip; box and select <code>gender</code>. Click \textsf{OK}.
-Click \textsf{OK} to graph the boxplot.
+<p>On the <code>Rcmdr</code>, click <code>Graphs</code> \(\triangleright\) <code>IPSUR - Boxplot...</code>
+In the <code>Variable</code> box, select <code>salary</code>.
+Click the <code>Plot by groups...</code> box and select <code>gender</code>. Click <code>OK</code>.
+Click <code>OK</code> to graph the boxplot.
 </p>
 </blockquote>
 
@@ -2252,7 +2053,7 @@ For this problem we will study the variable <code>reduction</code>.
 </li>
 <li>Compare your answers (3) and (5). Are they the same? If not, are they close?
 </li>
-<li>Make a boxplot of <code>reduction</code>, and include the boxplot in your report. You can do this with the <code>boxplot</code> function, or in <code>Rcmdr</code> with \textsf{Graphs} \textsf{\(\triangleright\)} \textsf{IPSUR - Boxplot}&hellip;
+<li>Make a boxplot of <code>reduction</code>, and include the boxplot in your report. You can do this with the <code>boxplot</code> function, or in <code>Rcmdr</code> with <code>Graphs</code> \(\triangleright\) <code>IPSUR - Boxplot...</code>
 </li>
 <li>Are there any potential/suspected outliers? If so, list their values. <i>Hint:</i> use your answer to (a).
 </li>
@@ -2302,14 +2103,3 @@ Describe the following data sets just as if you were communicating with an alien
 </p></div>
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2011-09-21 01:07:50 EDT</p>
-<p class="author">Author: G. Jay Kerns</p>
-<p class="creator">Org version 7.7 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
-</div>
-</body>
-</html>

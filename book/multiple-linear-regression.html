@@ -1,199 +1,12 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>Multiple Linear Regression</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-09-21 00:59:43 EDT"/>
-<meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content="This chapter discusses regression of one response variable on multiple explanatory variables."/>
-<meta name="keywords" content="multiple linear regression R statistics"/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet" href="css/styles.css" type="text/css"/>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-<!--/*--><![CDATA[/*><!--*/
-    MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
-        displayAlign: "center",
-        displayIndent: "2em",
+---
+layout: chapter
+title: Multiple Linear Regression
+previous: simple-linear-regression.html
+next: categorical-data-analysis.html
+description: This chapter discusses regression of one response variable on multiple explanatory variables.
+keywords: multiple linear regression R statistics
+---
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
-             }
-        }
-    });
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html   "> UP </a>
- |
- <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
-<div id="content">
-<h1 class="title">Multiple Linear Regression</h1>
-
-
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Multiple Linear Regression</a>
-<ul>
-<li><a href="#sec-1-1">The Multiple Linear Regression Model</a>
-<ul>
-<li><a href="#sec-1-1-1">What does it mean?</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-2">Estimation and Prediction</a>
-<ul>
-<li><a href="#sec-1-2-1">Parameter estimates</a></li>
-<li><a href="#sec-1-2-2">Point Estimates of the Regression Surface</a></li>
-<li><a href="#sec-1-2-3">Mean Square Error and Standard Error</a></li>
-<li><a href="#sec-1-2-4">Interval Estimates of the Parameters</a></li>
-<li><a href="#sec-1-2-5">Confidence and Prediction Intervals</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-3">Model Utility and Inference</a>
-<ul>
-<li><a href="#sec-1-3-1">Multiple Coefficient of Determination</a></li>
-<li><a href="#sec-1-3-2">Overall <i>F</i>-Test</a></li>
-<li><a href="#sec-1-3-3">Student's <i>t</i> Tests</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-4">Polynomial Regression</a>
-<ul>
-<li><a href="#sec-1-4-1">Quadratic Regression Model</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-5">Interaction</a></li>
-<li><a href="#sec-1-6">Qualitative Explanatory Variables</a>
-<ul>
-<li><a href="#sec-1-6-1">Graphing the Regression Lines</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-7">Partial <i>F</i> Statistic</a></li>
-<li><a href="#sec-1-8">Residual Analysis and Diagnostic Tools</a></li>
-<li><a href="#sec-1-9">Additional Topics</a>
-<ul>
-<li><a href="#sec-1-9-1">Nonlinear Regression</a></li>
-<li><a href="#sec-1-9-2">Real Nonlinear Regression</a></li>
-<li><a href="#sec-1-9-3">Multicollinearity</a></li>
-<li><a href="#sec-1-9-4">Akaike's Information Criterion</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-10">Chapter Exercises</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Multiple Linear Regression</h2>
@@ -351,7 +164,7 @@ The interpretation is simple. The intercept \(\beta_{0}\) represents the mean <c
 In simple linear regression, we had one independent variable and our linear regression surface was 1D, simply a line. In multiple regression there are many independent variables and so our linear regression surface will be many-D&hellip; in general, a hyperplane. But when there are only two explanatory variables the hyperplane is just an ordinary plane and we can look at it with a 3D scatterplot. 
 </p>
 <p>
-One way to do this is with the \textsf{R} Commander in the <code>Rcmdr</code> package \cite{Foxrcmdr}. It has a 3D scatterplot option under the \textsf{Graphs} menu. It is especially great because the resulting graph is dynamic; it can be moved around with the mouse, zoomed, <i>etc</i>. But that particular display does not translate well to a printed book.
+One way to do this is with the \(\mathsf{R}\) Commander in the <code>Rcmdr</code> package \cite{Foxrcmdr}. It has a 3D scatterplot option under the <code>Graphs</code> menu. It is especially great because the resulting graph is dynamic; it can be moved around with the mouse, zoomed, <i>etc</i>. But that particular display does not translate well to a printed book.
 </p>
 <p>
 Another way to do it is with the <code>scatterplot3d</code> function in the <code>scatterplot3d</code> package. The code follows, and the result is shown in Figure <a href="#fig-3D-scatterplot-trees">3D-scatterplot-trees</a>.
@@ -580,7 +393,7 @@ The fitted values are stored inside <code>trees.lm</code> and may be accessed wi
 The syntax for general prediction does not change much from simple linear regression. The computations are done with the <code>predict</code> function as described below. 
 </p>
 <p>
-The only difference from SLR is in the way we tell \textsf{R} the values of the explanatory variables for which we want predictions. In SLR we had only one independent variable but in MLR we have many (for the <code>trees</code> data we have two). We will store values for the independent variables in the data frame <code>new</code>, which has two columns (one for each independent variable) and three rows (we shall make predictions at three different locations).
+The only difference from SLR is in the way we tell \(\mathsf{R}\) the values of the explanatory variables for which we want predictions. In SLR we had only one independent variable but in MLR we have many (for the <code>trees</code> data we have two). We will store values for the independent variables in the data frame <code>new</code>, which has two columns (one for each independent variable) and three rows (we shall make predictions at three different locations).
 </p>
 
 
@@ -734,7 +547,7 @@ Now recall Theorem <a href="#thm-mvnorm-dist-matrix-prod">mvnorm-dist-matrix-pro
 \end{equation}
 since
 \begin{equation}
-\E\mathbf{b}=\left(\mathbf{X}^{\mathrm{T}}\mathbf{X}\right)^{-1}\mathbf{X}^{\mathrm{T}}(\mathbf{X}\upbeta)=\upbeta,
+\mathbb{E}\mathbf{b}=\left(\mathbf{X}^{\mathrm{T}}\mathbf{X}\right)^{-1}\mathbf{X}^{\mathrm{T}}(\mathbf{X}\upbeta)=\upbeta,
 \end{equation}
 and
 \begin{equation}
@@ -1133,11 +946,11 @@ The regression assumptions are the same. Almost everything indeed is the same. I
 </p>
 
 <p>
-There are multiple ways to fit a quadratic model to the variables <code>Volume</code> and <code>Girth</code> using \textsf{R}.
+There are multiple ways to fit a quadratic model to the variables <code>Volume</code> and <code>Girth</code> using \(\mathsf{R}\).
 </p><ol>
 <li>One way would be to square the values for <code>Girth</code> and save them in a vector <code>Girthsq</code>. Next, fit the linear model <code>Volume ~ Girth + Girthsq</code>. 
 </li>
-<li>A second way would be to use the <i>insulate</i> function in \textsf{R}, denoted by <code>I</code>:
+<li>A second way would be to use the <i>insulate</i> function in \(\mathsf{R}\), denoted by <code>I</code>:
 <pre class="example">
 Volume ~ Girth + I(Girth^2)
 </pre>
@@ -1145,7 +958,7 @@ Volume ~ Girth + I(Girth^2)
 </li>
 </ol>
 
-<p>The second method is shorter than the first but the end result is the same. And once we calculate and store the fitted model (in, say, <code>treesquad.lm</code>) all of the previous comments regarding \textsf{R} apply.  
+<p>The second method is shorter than the first but the end result is the same. And once we calculate and store the fitted model (in, say, <code>treesquad.lm</code>) all of the previous comments regarding \(\mathsf{R}\) apply.  
 </p><ol>
 <li>A third and ``right'' way to do it is with orthogonal polynomials:
 <pre class="example">
@@ -1316,7 +1129,7 @@ There are several ways to introduce an interaction term into the model.
 </p><ol>
 <li>Make a new variable <code>prod &lt;- Girth * Height</code>, then include <code>prod</code> in the model formula <code>Volume ~ Girth + Height + prod</code>. This method is perhaps the most transparent, but it also reserves memory space unnecessarily.
 </li>
-<li>Once can construct an interaction term directly in \textsf{R} with a colon ``=:=''. For this example, the model formula would look like 
+<li>Construct an interaction term directly in \(\mathsf{R}\) with a colon <code>:</code>. For this example, the model formula would look like 
 <pre class="example">
 Volume ~ Girth + Height + Girth:Height 
 </pre>
@@ -1429,7 +1242,7 @@ We will leave the <code>Girth</code> variable alone, but we will replace the var
 \end{cases}
 \end{equation}
 
-We can construct <code>Tall</code> very quickly in \textsf{R} with the <code>cut</code> function:
+We can construct <code>Tall</code> very quickly in \(\mathsf{R}\) with the <code>cut</code> function:
 </p>
 
 
@@ -1527,13 +1340,13 @@ From the output we see that all parameter estimates are statistically significan
 </p>
 <p>
 <div class="rem">
-We were somewhat disingenuous when we defined the dummy variable <code>Tallyes</code> because, in truth, \textsf{R} defines <code>Tallyes</code> automatically without input from the user
-Indeed, the author fit the model beforehand and wrote the discussion afterward with the knowledge of what \textsf{R} would do so that the output the reader saw would match what (s)he had previously read. The way that \textsf{R} handles factors internally is part of a much larger topic concerning <i>contrasts</i>, which falls outside the scope of this book. The interested reader should see Neter et al \cite{Neter1996} or Fox \cite{Fox1997} for more. 
+We were somewhat disingenuous when we defined the dummy variable <code>Tallyes</code> because, in truth, \(\mathsf{R}\) defines <code>Tallyes</code> automatically without input from the user
+Indeed, the author fit the model beforehand and wrote the discussion afterward with the knowledge of what \(\mathsf{R}\) would do so that the output the reader saw would match what (s)he had previously read. The way that \(\mathsf{R}\) handles factors internally is part of a much larger topic concerning <i>contrasts</i>, which falls outside the scope of this book. The interested reader should see Neter et al \cite{Neter1996} or Fox \cite{Fox1997} for more. 
 </div>
 </p>
 <p>
 <div class="rem">
-In general, if an explanatory variable <code>foo</code> is qualitative with \(n\) levels <code>bar1</code>, <code>bar2</code>, &hellip;, <code>barn</code> then \textsf{R} will by default automatically define \(n-1\) indicator variables in the following way:
+In general, if an explanatory variable <code>foo</code> is qualitative with \(n\) levels <code>bar1</code>, <code>bar2</code>, &hellip;, <code>barn</code> then \(\mathsf{R}\) will by default automatically define \(n-1\) indicator variables in the following way:
 \begin{eqnarray*}
 \mathtt{foobar2} & = & \begin{cases}
 1, & \mbox{if }\mathtt{foo}=\mathtt{"bar2"},\\
@@ -1541,7 +1354,7 @@ In general, if an explanatory variable <code>foo</code> is qualitative with \(n\
 1, & \mbox{if }\mathtt{foo}=\mathtt{"barn"},\\
 0, & \mbox{otherwise.}\end{cases}
 \end{eqnarray*}
-The level <code>bar1</code> is represented by \(\mathtt{foobar2}=\cdots=\mathtt{foobarn}=0\). We just need to make sure that <code>foo</code> is stored as a factor and \textsf{R} will take care of the rest. 
+The level <code>bar1</code> is represented by \(\mathtt{foobar2}=\cdots=\mathtt{foobarn}=0\). We just need to make sure that <code>foo</code> is stored as a factor and \(\mathsf{R}\) will take care of the rest. 
 </div>
 </p>
 
@@ -1573,7 +1386,7 @@ We can see a plot of the two regression lines with the following mouthful of cod
 It may look intimidating but there is reason to the madness. First we <code>split</code> the <code>trees</code> data into two pieces, with groups determined by the <code>Tall</code> variable. Next we add the \texttt{Fit}ted values to each piece via <code>predict</code>. Then we set up a <code>plot</code> for the variables <code>Volume</code> versus <code>Girth</code>, but we do not plot anything yet (<code>type = n</code>) because we want to use different symbols for the two groups. Next we add <code>points</code> to the plot for the <code>Tall = yes</code> trees and use an open circle for a plot character (<code>pch = 1</code>), followed by <code>points</code> for the <code>Tall = no</code> trees with a triangle character (<code>pch = 2</code>). Finally, we add regression <code>lines</code> to the plot, one for each group.
 </p>
 <p>
-There are other &ndash; shorter &ndash; ways to plot regression lines by groups, namely the <code>scatterplot</code> function in the <code>car</code> \cite{car} package and the <code>xyplot</code> function in the <code>lattice</code> package. We elected to introduce the reader to the above approach since many advanced plots in \textsf{R} are done in a similar, consecutive fashion.
+There are other &ndash; shorter &ndash; ways to plot regression lines by groups, namely the <code>scatterplot</code> function in the <code>car</code> \cite{car} package and the <code>xyplot</code> function in the <code>lattice</code> package. We elected to introduce the reader to the above approach since many advanced plots in \(\mathsf{R}\) are done in a similar, consecutive fashion.
 </p>
 </div>
 </div>
@@ -1930,7 +1743,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Residual standard error: 1.865 on 197 degrees of freedom
 
 Number of iterations to convergence: 3 
-Achieved convergence tolerance: 6.546e-08
+Achieved convergence tolerance: 6.554e-08
 </pre>
 
 
@@ -2011,14 +1824,3 @@ SSTO=SSE+SSR.
 </p></div>
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2011-09-21 00:59:43 EDT</p>
-<p class="author">Author: G. Jay Kerns</p>
-<p class="creator">Org version 7.7 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
-</div>
-</body>
-</html>

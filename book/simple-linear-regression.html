@@ -1,196 +1,12 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>Simple Linear Regression</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-09-21 00:46:47 EDT"/>
-<meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content="This chapter discusses one response variable regressed on one explanatory variable."/>
-<meta name="keywords" content="simple linear regression statistics R"/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet" href="css/styles.css" type="text/css"/>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-<!--/*--><![CDATA[/*><!--*/
-    MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
-        displayAlign: "center",
-        displayIndent: "2em",
+---
+layout: chapter
+title: Simple Linear Regression
+previous: hypothesis-testing.html
+next: multiple-linear-regression.html
+description: This chapter discusses one response variable regressed on one explanatory variable.
+keywords: simple linear regression statistics R
+---
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
-             }
-        }
-    });
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html   "> UP </a>
- |
- <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
-<div id="content">
-<h1 class="title">Simple Linear Regression</h1>
-
-
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Simple Linear Regression</a>
-<ul>
-<li><a href="#sec-1-1">Basic Philosophy</a>
-<ul>
-<li><a href="#sec-1-1-1">What does it all mean?</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-2">Estimation</a>
-<ul>
-<li><a href="#sec-1-2-1">Point Estimates of the Parameters</a></li>
-<li><a href="#sec-1-2-2">Point Estimates of the Regression Line</a></li>
-<li><a href="#sec-1-2-3">Mean Square Error and Standard Error</a></li>
-<li><a href="#sec-1-2-4">Interval Estimates of the Parameters</a></li>
-<li><a href="#sec-1-2-5">Interval Estimates of the Regression Line</a></li>
-<li><a href="#sec-1-2-6">Graphing the Confidence and Prediction Bands</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-3">Model Utility and Inference</a>
-<ul>
-<li><a href="#sec-1-3-1">Hypothesis Tests for the Parameters</a></li>
-<li><a href="#sec-1-3-2">Simple Coefficient of Determination</a></li>
-<li><a href="#sec-1-3-3">Overall <i>F</i> statistic</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-4">Residual Analysis</a>
-<ul>
-<li><a href="#sec-1-4-1">Normality Assumption</a></li>
-<li><a href="#sec-1-4-2">Constant Variance Assumption</a></li>
-<li><a href="#sec-1-4-3">Independence Assumption</a></li>
-<li><a href="#sec-1-4-4">Remedial Measures</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-5">Other Diagnostic Tools</a>
-<ul>
-<li><a href="#sec-1-5-1">Outliers</a></li>
-<li><a href="#sec-1-5-2">Leverage</a></li>
-<li><a href="#sec-1-5-3">Standardized and Studentized Deleted Residuals</a></li>
-<li><a href="#sec-1-5-4">Influential Observations</a></li>
-<li><a href="#sec-1-5-5">All Influence Measures Simultaneously</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-6">Exercises</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Simple Linear Regression</h2>
@@ -235,9 +51,9 @@ Here we have two variables \(X\) and \(Y\). For our purposes, \(X\) is not rando
 
 <p>
 Given information about the relationship between \(x\) and \(Y\), we would like to <i>predict</i> future values of \(Y\) for particular values of \(x\). This turns out to be a difficult problem \!\!
-, so instead we first tackle an easier problem: we estimate \( \E Y \). How can we accomplish this? Well, we know that \(Y\) depends somehow on \(x\), so it stands to reason that
+, so instead we first tackle an easier problem: we estimate \( \mathbb{E} Y \). How can we accomplish this? Well, we know that \(Y\) depends somehow on \(x\), so it stands to reason that
 \begin{equation}
-\E Y = \mu(x),\ \mbox{a function of }x.
+\mathbb{E} Y = \mu(x),\ \mbox{a function of }x.
 \end{equation}
 
 But we should be able to say more than that. To focus our efforts we impose some structure on the functional form of \(\mu\). For instance, 
@@ -452,7 +268,7 @@ where \(r\), \( s_{y} \), and \( s_{x} \) are the sample correlation coefficient
 
 
 <p>
-Here we go. \textsf{R} will calculate the linear regression line with the <code>lm</code> function. We will store the result in an object which we will call <code>cars.lm</code>. Here is how it works:
+Here we go. \(\mathsf{R}\) will calculate the linear regression line with the <code>lm</code> function. We will store the result in an object which we will call <code>cars.lm</code>. Here is how it works:
 </p>
 
 
@@ -462,7 +278,7 @@ Here we go. \textsf{R} will calculate the linear regression line with the <code>
 
 
 <p>
-The first part of the input to the <code>lm</code> function, <code>dist ~ speed</code>, is a <i>model formula</i>, read as ``\texttt{dist} is described (or modeled) by \texttt{speed}''. The <code>data = cars</code> argument tells \textsf{R} where to look for the variables quoted in the model formula. The output object <code>cars.lm</code> contains a multitude of information. Let's first take a look at the coefficients of the fitted regression line, which are extracted by the <code>coef</code> function (alternatively, we could just type <code>cars.lm</code> to see the same thing):
+The first part of the input to the <code>lm</code> function, <code>dist ~ speed</code>, is a <i>model formula</i>, read as ``\texttt{dist} is described (or modeled) by \texttt{speed}''. The <code>data = cars</code> argument tells \(\mathsf{R}\) where to look for the variables quoted in the model formula. The output object <code>cars.lm</code> contains a multitude of information. Let's first take a look at the coefficients of the fitted regression line, which are extracted by the <code>coef</code> function (alternatively, we could just type <code>cars.lm</code> to see the same thing):
 </p>
 
 
@@ -533,7 +349,7 @@ Using the regression line for the <code>cars</code> data:
 
 
 <p>
-We said at the beginning of the chapter that our goal was to estimate \( \mu = \E Y \), and the arguments in Section <a href="#sub-point-estimate-mle-slr">point-estimate-mle-slr</a> showed how to obtain an estimate \( \hat{\mu} \) of \( \mu \) when the regression assumptions hold. Now we will reap the benefits of our work in more ways than we previously disclosed. Given a particular value \(x_{0}\), there are two values we would like to estimate:
+We said at the beginning of the chapter that our goal was to estimate \( \mu = \mathbb{E} Y \), and the arguments in Section <a href="#sub-point-estimate-mle-slr">point-estimate-mle-slr</a> showed how to obtain an estimate \( \hat{\mu} \) of \( \mu \) when the regression assumptions hold. Now we will reap the benefits of our work in more ways than we previously disclosed. Given a particular value \(x_{0}\), there are two values we would like to estimate:
 </p><ol>
 <li>the mean value of \(Y\) at \(x_{0}\), and
 </li>
@@ -666,7 +482,7 @@ The residuals for the model may be obtained with the <code>residuals</code> func
 In the last section, we calculated the fitted value for \(x=8\) and found it to be approximately \( \hat{\mu}(8)\approx  13.88 \). Now, it turns out that there was only one recorded observation at \(x = 8\), and we have seen this value in the output of <code>head(cars)</code> in Example <a href="#exa-Speed-and-Stopping">Speed-and-Stopping</a>; it was \(\mathtt{dist} = 16\) ft for a car with \( \mathtt{speed} = 8 \) mph. Therefore, the residual should be \(E = Y - \hat{Y}\) which is \(E \approx 16 -  13.88 \). Now take a look at the last entry of <code>residuals(cars.lm)</code>, above. It is not a coincidence.
 </p>
 <p>
-The estimate \(S\) for \(\sigma\) is called the <code>Residual standard error</code> and for the <code>cars</code> data is shown a few lines up on the <code>summary(cars.lm)</code> output (see How to do it with \textsf{R} in Section <a href="#sub-slr-interval-est-params">slr-interval-est-params</a>). We may read it from there to be \( S\approx  15.38 \), or we can access it directly from the <code>summary</code> object.
+The estimate \(S\) for \(\sigma\) is called the <code>Residual standard error</code> and for the <code>cars</code> data is shown a few lines up on the <code>summary(cars.lm)</code> output (see How to do it with \(\mathsf{R}\) in Section <a href="#sub-slr-interval-est-params">slr-interval-est-params</a>). We may read it from there to be \( S\approx  15.38 \), or we can access it directly from the <code>summary</code> object.
 </p>
 
 
@@ -840,10 +656,10 @@ We notice that the prediction interval in Equation <a href="#eq-SLR-pred-int-for
 
 
 <p>
-Confidence and prediction intervals are calculated in \textsf{R} with the <code>predict</code>\index{predict@\texttt{predict}} function, which we encountered in Section <a href="#sub-slr-point-est-regline">slr-point-est-regline</a>. There we neglected to take advantage of its additional <code>interval</code> argument. The general syntax follows. 
+Confidence and prediction intervals are calculated in \(\mathsf{R}\) with the <code>predict</code>\index{predict@\texttt{predict}} function, which we encountered in Section <a href="#sub-slr-point-est-regline">slr-point-est-regline</a>. There we neglected to take advantage of its additional <code>interval</code> argument. The general syntax follows. 
 </p>
 <p>
-We will find confidence and prediction intervals for the stopping distance of a car travelling 5, 6, and 21 mph (note from the graph that there are no collected data for these speeds). We have computed <code>cars.lm</code> earlier, and we will use this for input to the <code>predict</code> function. Also, we need to tell \textsf{R} the values of \(x_{0}\) at which we want the predictions made, and store the \(x_{0}\) values in a data frame whose variable is labeled with the correct name. <i>This is important</i>. 
+We will find confidence and prediction intervals for the stopping distance of a car travelling 5, 6, and 21 mph (note from the graph that there are no collected data for these speeds). We have computed <code>cars.lm</code> earlier, and we will use this for input to the <code>predict</code> function. Also, we need to tell \(\mathsf{R}\) the values of \(x_{0}\) at which we want the predictions made, and store the \(x_{0}\) values in a data frame whose variable is labeled with the correct name. <i>This is important</i>. 
 </p>
 
 
@@ -853,7 +669,7 @@ We will find confidence and prediction intervals for the stopping distance of a 
 
 
 <p>
-Next we instruct \textsf{R} to calculate the intervals. Confidence intervals are given by 
+Next we instruct \(\mathsf{R}\) to calculate the intervals. Confidence intervals are given by 
 </p>
 
 
@@ -1075,7 +891,7 @@ Related to the simple coefficient of determination is the sample correlation coe
 
 
 <p>
-The primary method to display partitioned sums of squared errors is with an <i>ANOVA table</i>. The command in \textsf{R} to produce such a table is <code>anova</code>. The input to <code>anova</code> is the result of an <code>lm</code> call which for the <code>cars</code> data is <code>cars.lm</code>.
+The primary method to display partitioned sums of squared errors is with an <i>ANOVA table</i>. The command in \(\mathsf{R}\) to produce such a table is <code>anova</code>. The input to <code>anova</code> is the result of an <code>lm</code> call which for the <code>cars</code> data is <code>cars.lm</code>.
 </p>
 
 
@@ -1263,7 +1079,7 @@ versus
 \[
 H_{1}:\mbox{ the residuals are not normally distributed.}
 \]
-The results from \textsf{R} are
+The results from \(\mathsf{R}\) are
 </p>
 
 
@@ -1333,12 +1149,12 @@ We will use the Breusch-Pagan test to decide whether the variance of the residua
 W_{i} = E_{i}^{2} - \frac{SSE}{n}, \quad i=1,2,\ldots,n.
 \end{equation}
 
-By default the same explanatory variables are used in the new model which produces fitted values \(\hat{W}_{i}\), \(i=1,2,\ldots,n\). The Breusch-Pagan test statistic in \textsf{R} is then calculated with 
+By default the same explanatory variables are used in the new model which produces fitted values \(\hat{W}_{i}\), \(i=1,2,\ldots,n\). The Breusch-Pagan test statistic in \(\mathsf{R}\) is then calculated with 
 \begin{equation}
 BP=n\sum_{i=1}^{n}\hat{W}_{i}^{2}\div\sum_{i=1}^{n}W_{i}^{2}.
 \end{equation}
 We reject the null hypothesis if \(BP\) is too large, which happens when the explained variation i the new model is large relative to the unexplained variation in the original model.
-We do it in \textsf{R} with the <code>bptest</code> function from the <code>lmtest</code> package \cite{Zeileislmtest}. 
+We do it in \(\mathsf{R}\) with the <code>bptest</code> function from the <code>lmtest</code> package \cite{Zeileislmtest}. 
 </p>
 
 
@@ -1403,7 +1219,7 @@ We may statistically test whether there is evidence of autocorrelation in the re
 \begin{equation}
 D=\frac{\sum_{i=2}^{n}(E_{i}-E_{i-1})^{2}}{\sum_{j=1}^{n}E_{j}^{2}}.
 \end{equation}
-Exact critical values are difficult to obtain, but \textsf{R} will calculate the <i>p-value</i> to great accuracy. It is performed with the <code>dwtest</code> function from the <code>lmtest</code> package. We will conduct a two sided test that the correlation is not zero, which is not the default (the default is to test that the autocorrelation is positive).
+Exact critical values are difficult to obtain, but \(\mathsf{R}\) will calculate the <i>p-value</i> to great accuracy. It is performed with the <code>dwtest</code> function from the <code>lmtest</code> package. We will conduct a two sided test that the correlation is not zero, which is not the default (the default is to test that the autocorrelation is positive).
 </p>
 
 
@@ -1897,14 +1713,3 @@ Show that the formula given in Equation <a href="#eq-sample-correlation-formula"
 </p></div>
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2011-09-21 00:46:47 EDT</p>
-<p class="author">Author: G. Jay Kerns</p>
-<p class="creator">Org version 7.7 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
-</div>
-</body>
-</html>

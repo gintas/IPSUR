@@ -1,184 +1,12 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>Discrete Distributions</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-09-21 01:02:51 EDT"/>
-<meta name="author" content="G. Jay Kerns"/>
-<meta name="description" content="This chapter discusses discrete random variables and their probabilistic properties."/>
-<meta name="keywords" content="discrete random variable R statistics"/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet" href="css/styles.css" type="text/css"/>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-<!--/*--><![CDATA[/*><!--*/
-    MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
-        displayAlign: "center",
-        displayIndent: "2em",
+---
+layout: chapter
+title: Discrete Distributions
+previous: probability.html
+next: continuous-distributions.html
+description: This chapter discusses discrete random variables and their probabilistic properties.
+keywords: discrete random variable R statistics
+---
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
-             }
-        }
-    });
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html   "> UP </a>
- |
- <a accesskey="H" href="http://ipsur.org/index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
-<div id="content">
-<h1 class="title">Discrete Distributions</h1>
-
-
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Discrete Distributions</a>
-<ul>
-<li><a href="#sec-1-1">Discrete Random Variables</a>
-<ul>
-<li><a href="#sec-1-1-1">Probability Mass Functions</a></li>
-<li><a href="#sec-1-1-2">Mean, Variance, and Standard Deviation</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-2">The Discrete Uniform Distribution</a></li>
-<li><a href="#sec-1-3">The Binomial Distribution</a>
-<ul>
-<li><a href="#sec-1-3-1">The Binomial Model</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-4">Expectation and Moment Generating Functions</a>
-<ul>
-<li><a href="#sec-1-4-1">The Expectation Operator</a></li>
-<li><a href="#sec-1-4-2">Moment Generating Functions</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-5">The Empirical Distribution</a></li>
-<li><a href="#sec-1-6">Other Discrete Distributions</a>
-<ul>
-<li><a href="#sec-1-6-1">Dependent Bernoulli Trials</a></li>
-<li><a href="#sec-1-6-2">Waiting Time Distributions</a></li>
-<li><a href="#sec-1-6-3">Arrival Processes</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-7">Functions of Discrete Random Variables</a></li>
-<li><a href="#sec-1-8">Exercises</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Discrete Distributions</h2>
@@ -279,9 +107,9 @@ What is the PMF of \(X\)? Notice that \(X\) is zero exactly when the outcome \(T
 
 
 <p>
-There are numbers associated with PMFs. One important example is the mean \(\mu\), also known as \(\E X\) (which we will discuss later):
+There are numbers associated with PMFs. One important example is the mean \(\mu\), also known as \(\mathbb{E} X\) (which we will discuss later):
 \begin{equation}
-\mu=\E X=\sum_{x\in S}xf_{X}(x),
+\mu=\mathbb{E} X=\sum_{x\in S}xf_{X}(x),
 \end{equation}
 provided the (potentially infinite) series \(\sum|x|f_{X}(x)\) is convergent. Another important number is the variance:
 \begin{equation}
@@ -331,7 +159,7 @@ f <span style="color: #008b8b;">&lt;-</span> c(1/8, 3/8, 3/8, 1/8)
 
 
 <p>
-To calculate the mean \(\mu\), we need to multiply the corresponding values of <code>x</code> and <code>f</code> and add them. This is easily accomplished in \textsf{R} since operations on vectors are performed <i>element-wise</i> (see Section <a href="#sub-Functions-and-Expressions">Functions-and-Expressions</a>): 
+To calculate the mean \(\mu\), we need to multiply the corresponding values of <code>x</code> and <code>f</code> and add them. This is easily accomplished in \(\mathsf{R}\) since operations on vectors are performed <i>element-wise</i> (see Section <a href="#sub-Functions-and-Expressions">Functions-and-Expressions</a>): 
 </p>
 
 
@@ -466,16 +294,16 @@ The argument <code>x</code> identifies the numbers from which to randomly sample
 
 
 <p>
-Follow the sequence \textsf{Probability \(\triangleright\) Discrete Distributions \(\triangleright\) Discrete Uniform distribution \(\triangleright\) Simulate Discrete uniform variates.}&hellip;
+Follow the sequence <code>Probability</code> \(\triangleright\) <code>Discrete Distributions</code> \(\triangleright\) <code>Discrete Uniform distribution</code> \(\triangleright\) <code>Simulate Discrete uniform variates...</code>.
 </p>
 <p>
-Suppose we would like to roll a fair die 3000 times. In the <code>Number of samples</code> field we enter <code>1</code>. Next, we describe what interval of integers to be sampled. Since there are six faces numbered 1 through 6, we set <code>from = 1</code>, we set <code>to = 6</code>, and set <code>by = 1</code> (to indicate that we travel from 1 to 6 in increments of 1 unit). We will generate a list of 3000 numbers selected from among 1, 2, &hellip;, 6, and we store the results of the simulation. For the time being, we select <code>New Data set</code>. Click \textsf{OK}.
+Suppose we would like to roll a fair die 3000 times. In the <code>Number of samples</code> field we enter <code>1</code>. Next, we describe what interval of integers to be sampled. Since there are six faces numbered 1 through 6, we set <code>from = 1</code>, we set <code>to = 6</code>, and set <code>by = 1</code> (to indicate that we travel from 1 to 6 in increments of 1 unit). We will generate a list of 3000 numbers selected from among 1, 2, &hellip;, 6, and we store the results of the simulation. For the time being, we select <code>New Data set</code>. Click <code>OK</code>.
 </p>
 <p>
-Since we are defining a new data set, the \textsf{R} Commander requests a name for the data set. The default name is <code>Simset1</code>, although in principle you could name it whatever you like (according to \textsf{R}'s rules for object names). We wish to have a list that is 3000 long, so we set <code>Sample Size = 3000</code> and click \textsf{OK}.
+Since we are defining a new data set, the \(\mathsf{R}\) Commander requests a name for the data set. The default name is <code>Simset1</code>, although in principle you could name it whatever you like (according to \(\mathsf{R}\)'s rules for object names). We wish to have a list that is 3000 long, so we set <code>Sample Size = 3000</code> and click <code>OK</code>.
 </p>
 <p>
-In the \textsf{R} Console window, the \textsf{R} Commander should tell you that <code>Simset1</code> has been initialized, and it should also alert you that <code>There was 1 discrete uniform variate sample stored in Simset 1.</code>. To take a look at the rolls of the die, we click \textsf{View data set} and a window opens.  
+In the \(\mathsf{R}\) Console window, the \(\mathsf{R}\) Commander should tell you that <code>Simset1</code> has been initialized, and it should also alert you that <code>There was 1 discrete uniform variate sample stored in Simset 1.</code>. To take a look at the rolls of the die, we click <code>View data set</code> and a window opens.  
 </p>
 <p>
 The default name for the variable is <code>disunif.sim1</code>.
@@ -502,7 +330,7 @@ If the probability of success is \(p\) then the probability of failure must be \
 \begin{equation}
 f_{X}(x)=p^{x}(1-p)^{1-x},\quad x=0,1.
 \end{equation}
-It is easy to calculate \(\mu=\E X=p\) and \(\E X^{2}=p\) so that \(\sigma^{2}=p-p^{2}=p(1-p)\).
+It is easy to calculate \(\mu=\mathbb{E} X=p\) and \(\mathbb{E} X^{2}=p\) so that \(\sigma^{2}=p-p^{2}=p(1-p)\).
 </p>
 
 </div>
@@ -539,9 +367,9 @@ We next find the mean:
 = & np\,\sum_{x-1=0}^{n-1}{n-1 \choose x-1}p^{(x-1)}(1-p)^{(n-1)-(x-1)},\\
 = & np.
 \end{alignat*}
-A similar argument shows that \(\E X(X-1)=n(n-1)p^{2}\) (see Exercise <a href="#xca-binom-factorial-expectation">binom-factorial-expectation</a>). Therefore
+A similar argument shows that \(\mathbb{E} X(X-1)=n(n-1)p^{2}\) (see Exercise <a href="#xca-binom-factorial-expectation">binom-factorial-expectation</a>). Therefore
 \begin{alignat*}{1}
-\sigma^{2}= & \E X(X-1)+\E X-[\E X]^{2},\\
+\sigma^{2}= & \mathbb{E} X(X-1)+\mathbb{E} X-[\mathbb{E} X]^{2},\\
 = & n(n-1)p^{2}+np-(np)^{2},\\
 = & n^{2}p^{2}-np^{2}+np-n^{2}p^{2},\\
 = & np-np^{2}=np(1-p).
@@ -555,10 +383,10 @@ The mean number of boys is \(4(1/2)=2\) and the variance of \(X\) is \(4(1/2)(1/
 </p>
 
 <p>
-The corresponding \textsf{R} function for the PMF and CDF are <code>dbinom</code> and <code>pbinom</code>, respectively. We demonstrate their use in the following examples.  
+The corresponding \(\mathsf{R}\) function for the PMF and CDF are <code>dbinom</code> and <code>pbinom</code>, respectively. We demonstrate their use in the following examples.  
 </p>
 <p>
-We can calculate it in \textsf{R} Commander under the \textsf{Binomial Distribution} menu with the \textsf{Binomial probabilities} menu item.
+We can calculate it in \(\mathsf{R}\) Commander under the <code>Binomial Distribution</code> menu with the <code>Binomial probabilities</code> menu item.
 </p>
 
 <pre class="example">
@@ -580,7 +408,7 @@ Roll 12 dice simultaneously, and let \(X\) denote the number of 6's that appear.
 \[ 
 \Pr(7\leq X\leq9)=\sum_{x=7}^{9}{12 \choose x}(1/6)^{x}(5/6)^{12-x}.
 \]
-Again, one method to solve this problem would be to generate a probability mass table and add up the relevant rows. However, an alternative method is to notice that \(\Pr(7\leq X\leq9)=\Pr(X\leq9)-\Pr(X\leq6)=F_{X}(9)-F_{X}(6)\), so we could get the same answer by using the \textsf{Binomial tail probabilities}&hellip; menu in the \textsf{R} Commander or the following from the command line: 
+Again, one method to solve this problem would be to generate a probability mass table and add up the relevant rows. However, an alternative method is to notice that \(\Pr(7\leq X\leq9)=\Pr(X\leq9)-\Pr(X\leq6)=F_{X}(9)-F_{X}(6)\), so we could get the same answer by using the <code>Binomial tail probabilities...</code> menu in the \(\mathsf{R}\) Commander or the following from the command line: 
 </p>
 
 
@@ -722,47 +550,47 @@ PMF has two important numbers associated with it:
 \begin{equation}
 \mu=\sum_{x\in S}xf_{X}(x),\quad\sigma^{2}=\sum_{x\in S}(x-\mu)^{2}f_{X}(x).
 \end{equation}
-Intuitively, for repeated observations of \(X\) we would expect the sample mean to closely approximate \(\mu\) as the sample size increases without bound. For this reason we call \(\mu\) the <i>expected value</i> of \(X\) and we write \(\mu=\E X\), where \(\E\) is an <i>expectation operator</i>.
+Intuitively, for repeated observations of \(X\) we would expect the sample mean to closely approximate \(\mu\) as the sample size increases without bound. For this reason we call \(\mu\) the <i>expected value</i> of \(X\) and we write \(\mu=\mathbb{E} X\), where \(\mathbb{E}\) is an <i>expectation operator</i>.
 </p>
 <p>
 <div class="defn">
 More generally, given a function \(g\) we define the \emph{expected value of} \(g(X)\) by
 \begin{equation}
-\E\, g(X)=\sum_{x\in S}g(x)f_{X}(x),
+\mathbb{E}\, g(X)=\sum_{x\in S}g(x)f_{X}(x),
 \end{equation}
-provided the (potentially infinite) series \(\sum_{x}|g(x)|f(x)\) is convergent. We say that \(\E g(X)\) \emph{exists}.
+provided the (potentially infinite) series \(\sum_{x}|g(x)|f(x)\) is convergent. We say that \(\mathbb{E} g(X)\) \emph{exists}.
 </div>
 </p>
 <p>
-In this notation the variance is \(\sigma^{2}=\E(X-\mu)^{2}\) and we prove the identity
+In this notation the variance is \(\sigma^{2}=\mathbb{E}(X-\mu)^{2}\) and we prove the identity
 \begin{equation}
-\E(X-\mu)^{2}=\E X^{2}-(\E X)^{2}
+\mathbb{E}(X-\mu)^{2}=\mathbb{E} X^{2}-(\mathbb{E} X)^{2}
 \end{equation}
-in Exercise <a href="#xca-variance-shortcut">variance-shortcut</a>. Intuitively, for repeated observations of \(X\) we would expect the sample mean of the \(g(X)\) values to closely approximate \(\E\, g(X)\) as the sample size increases without bound.
+in Exercise <a href="#xca-variance-shortcut">variance-shortcut</a>. Intuitively, for repeated observations of \(X\) we would expect the sample mean of the \(g(X)\) values to closely approximate \(\mathbb{E}\, g(X)\) as the sample size increases without bound.
 </p>
 <p>
-Let us take the analogy further. If we expect \(g(X)\) to be close to \(\E g(X)\) on the average, where would we expect \(3g(X)\) to be on the average? It could only be \(3\E g(X)\). The following theorem makes this idea precise.
+Let us take the analogy further. If we expect \(g(X)\) to be close to \(\mathbb{E} g(X)\) on the average, where would we expect \(3g(X)\) to be on the average? It could only be \(3\mathbb{E} g(X)\). The following theorem makes this idea precise.
 </p>
 <p>
 <div class="prop">
 For any functions \(g\) and \(h\), any random variable \(X\), and any constant \(c\): 
 </p><ol>
-<li>\(\E\: c=c\),
+<li>\(\mathbb{E}\: c=c\),
 </li>
-<li>\(\E[c\cdot g(X)]=c\E g(X)\)
+<li>\(\mathbb{E}[c\cdot g(X)]=c\mathbb{E} g(X)\)
 </li>
-<li>\(\E[g(X)+h(X)]=\E g(X)+\E h(X)\),
+<li>\(\mathbb{E}[g(X)+h(X)]=\mathbb{E} g(X)+\mathbb{E} h(X)\),
 </li>
 </ol>
 
-<p>provided \(\E g(X)\) and \(\E h(X)\) exist.
+<p>provided \(\mathbb{E} g(X)\) and \(\mathbb{E} h(X)\) exist.
 </div>
 </p>
 <p>
 <div class="proof">
 Go directly from the definition. For example,
 \[
-\E[c\cdot g(X)]=\sum_{x\in S}c\cdot g(x)f_{X}(x)=c\cdot\sum_{x\in S}g(x)f_{X}(x)=c\E g(X).
+\mathbb{E}[c\cdot g(X)]=\sum_{x\in S}c\cdot g(x)f_{X}(x)=c\cdot\sum_{x\in S}g(x)f_{X}(x)=c\mathbb{E} g(X).
 \]
 </div>
 </p>
@@ -779,7 +607,7 @@ Go directly from the definition. For example,
 <div class="defn">
 Given a random variable \(X\), its <i>moment generating function</i> (abbreviated MGF) is defined by the formula
 \begin{equation}
-M_{X}(t)=\E\mathrm{e}^{tX}=\sum_{x\in S}\mathrm{e}^{tx}f_{X}(x),
+M_{X}(t)=\mathbb{E}\mathrm{e}^{tX}=\sum_{x\in S}\mathrm{e}^{tx}f_{X}(x),
 \end{equation}
 provided the (potentially infinite) series is convergent for all \(t\) in a neighborhood of zero (that is, for all \(-\epsilon&lt;t&lt;\epsilon\), for some \(\epsilon&gt;0\)).
 </div>
@@ -787,7 +615,7 @@ provided the (potentially infinite) series is convergent for all \(t\) in a neig
 <p>
 Note that for any MGF \(M_{X}\),
 \begin{equation}
-M_{X}(0)=\E\mathrm{e}^{0\cdot X}=\E1=1.
+M_{X}(0)=\mathbb{E}\mathrm{e}^{0\cdot X}=\mathbb{E}1=1.
 \end{equation}
 We will calculate the MGF for the two distributions introduced above.
 </p>
@@ -850,17 +678,17 @@ M'(t)=\frac{\diff}{\diff t}\left(\sum_{x\in S}\mathrm{e}^{tx}f(x)\right)=\sum_{x
 \end{equation}
 and so if we plug in zero for \(t\) we see
 \begin{equation}
-M'(0)=\sum_{x\in S}x\mathrm{e}^{0}f(x)=\sum_{x\in S}xf(x)=\mu=\E X.
+M'(0)=\sum_{x\in S}x\mathrm{e}^{0}f(x)=\sum_{x\in S}xf(x)=\mu=\mathbb{E} X.
 \end{equation}
-Similarly, \(M''(t)=\sum x^{2}\mathrm{e}^{tx}f(x)\) so that \(M''(0)=\E X^{2}\). And in general, we can see
+Similarly, \(M''(t)=\sum x^{2}\mathrm{e}^{tx}f(x)\) so that \(M''(0)=\mathbb{E} X^{2}\). And in general, we can see
 that
 \begin{equation}
-M_{X}^{(r)}(0)=\E X^{r}=\mbox{$r^{\mathrm{th}$} moment of $X$ about the origin.}
+M_{X}^{(r)}(0)=\mathbb{E} X^{r}=\mbox{$r^{\mathrm{th}$} moment of $X$ about the origin.}
 \end{equation}
 
 These are also known as <i>raw moments</i> and are sometimes denoted \(\mu_{r}'\). In addition to these are the so called <i>central moments</i> \(\mu_{r}\) defined by
 \begin{equation}
-\mu_{r}=\E(X-\mu)^{r},\quad r=1,2,\ldots
+\mu_{r}=\mathbb{E}(X-\mu)^{r},\quad r=1,2,\ldots
 \end{equation}
 
 Let \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\mbox{ with $M(t)=(q+p\mathrm{e}^{t})^{n}$}\).
@@ -875,11 +703,11 @@ M'(t)= & n(q+p\mathrm{e}^{t})^{n-1}p\mathrm{e}^{t}\left|_{t=0}\right.,\\
 And
 \begin{alignat*}{1}
 M''(0)= & n(n-1)[q+p\mathrm{e}^{t}]^{n-2}(p\mathrm{e}^{t})^{2}+n[q+p\mathrm{e}^{t}]^{n-1}p\mathrm{e}^{t}\left|_{t=0}\right.,\\
-\E X^{2}= & n(n-1)p^{2}+np.
+\mathbb{E} X^{2}= & n(n-1)p^{2}+np.
 \end{alignat*}
 Therefore
 \begin{alignat*}{1}
-\sigma^{2}= & \E X^{2}-(\E X)^{2},\\
+\sigma^{2}= & \mathbb{E} X^{2}-(\mathbb{E} X)^{2},\\
 = & n(n-1)p^{2}+np-n^{2}p^{2},\\
 = & np-np^{2}=npq.
 \end{alignat*}
@@ -887,13 +715,13 @@ See how much easier that was?
 </p>
 <p>
 <div class="rem">
-We learned in this section that \(M^{(r)}(0)=\E X^{r}\). We remember from Calculus II that certain functions \(f\) can be represented by a Taylor series expansion about a point \(a\), which takes the form
+We learned in this section that \(M^{(r)}(0)=\mathbb{E} X^{r}\). We remember from Calculus II that certain functions \(f\) can be represented by a Taylor series expansion about a point \(a\), which takes the form
 \begin{equation}
 f(x)=\sum_{r=0}^{\infty}\frac{f^{(r)}(a)}{r!}(x-a)^{r},\quad\mbox{for all $|x-a|<R$,}
 \end{equation}
 where \(R\) is called the <i>radius of convergence</i> of the series (see Appendix <a href="#sec-Sequences-and-Series">Sequences-and-Series</a>). We combine the two to say that if an MGF exists for all \(t\) in the interval \((-\epsilon,\epsilon)\), then we can write
 \begin{equation}
-M_{X}(t)=\sum_{r=0}^{\infty}\frac{\E X^{r}}{r!}t^{r},\quad\mbox{for all $|t|<\epsilon$.}
+M_{X}(t)=\sum_{r=0}^{\infty}\frac{\mathbb{E} X^{r}}{r!}t^{r},\quad\mbox{for all $|t|<\epsilon$.}
 \end{equation}
 </div>
 </p>
@@ -1058,7 +886,7 @@ sample(x, size = 7, replace = <span style="color: #228b22;">TRUE</span>)
 
 
 <p>
-We can get the empirical quantile function in \textsf{R} with <code>quantile(x, probs = p, type = 1)</code>; see Section <a href="#sub-Normal-Quantiles-QF">Normal-Quantiles-QF</a>.
+We can get the empirical quantile function in \(\mathsf{R}\) with <code>quantile(x, probs = p, type = 1)</code>; see Section <a href="#sub-Normal-Quantiles-QF">Normal-Quantiles-QF</a>.
 </p>
 <p>
 As we hinted above, the empirical distribution is significant more because of how and where it appears in more sophisticated applications. We will explore some of these in later chapters &ndash; see, for instance, Chapter <a href="#cha-resampling-methods">resampling-methods</a>.
@@ -1104,7 +932,7 @@ It is shown in Exercise <a href="#xca-hyper-mean-variance">hyper-mean-variance</
 \mu=K\frac{M}{M+N},\quad\sigma^{2}=K\frac{MN}{(M+N)^{2}}\frac{M+N-K}{M+N-1}.
 \end{equation}
 
-The associated \textsf{R} functions for the PMF and CDF are <code>dhyper(x, m, n, k)</code> and <code>phyper</code>, respectively. There are two more functions: <code>qhyper</code>, which we will discuss in Section <a href="#sub-Normal-Quantiles-QF">Normal-Quantiles-QF</a>, and <code>rhyper</code>, discussed below.
+The associated \(\mathsf{R}\) functions for the PMF and CDF are <code>dhyper(x, m, n, k)</code> and <code>phyper</code>, respectively. There are two more functions: <code>qhyper</code>, which we will discuss in Section <a href="#sub-Normal-Quantiles-QF">Normal-Quantiles-QF</a>, and <code>rhyper</code>, discussed below.
 </p>
 <p>
 Suppose in a certain shipment of 250 Pentium processors there are 17 defective processors. A quality control consultant randomly collects 5 processors for inspection to determine whether or not they are defective. Let \(X\) denote the number of defectives in the sample.
@@ -1115,7 +943,7 @@ Find the probability of exactly 3 defectives in the sample, that is, find \(\Pr(
    \[
    f_{X}(3)=\frac{{17 \choose 3}{233 \choose 2}}{{250 \choose 5}}.
    \]
-   To calculate it in \textsf{R} we just type 
+   To calculate it in \(\mathsf{R}\) we just type 
 </p>
 
 
@@ -1130,7 +958,7 @@ Find the probability of exactly 3 defectives in the sample, that is, find \(\Pr(
 
 
 <p>
-   To find it with the \textsf{R} Commander we go \textsf{Probability} \(\triangleright\) \textsf{Discrete Distributions} \(\triangleright\) \textsf{Hypergeometric distribution} \(\triangleright\) \textsf{Hypergeometric probabilities}&hellip; . We fill in the parameters \(m=17\), \(n=233\), and \(k=5\). Click \textsf{OK}, and the following table is shown in the window.
+   To find it with the \(\mathsf{R}\) Commander we go <code>Probability</code> \(\triangleright\) <code>Discrete Distributions</code> \(\triangleright\) <code>Hypergeometric distribution</code> \(\triangleright\) <code>Hypergeometric probabilities...</code>. We fill in the parameters \(m=17\), \(n=233\), and \(k=5\). Click <code>OK</code>, and the following table is shown in the window.
 </p>
 
 
@@ -1153,7 +981,7 @@ Find the probability of exactly 3 defectives in the sample, that is, find \(\Pr(
 
 <p>
    We wanted \(\Pr(X=3)\), and this is found from the table to be approximately 0.0024. The value is rounded to the fourth decimal place.
-   We know from our above discussion that the sample space should be \(x=0,1,2,3,4,5\), yet, in the table the probabilities are only displayed for \(x = 1,2,3,\) and 4. What is happening? As it turns out, the \textsf{R} Commander will only display probabilities that are 0.00005 or greater. Since \(x=5\) is not shown, it suggests that the outcome has a tiny probability. To find its exact value we use the <code>dhyper</code> function:
+   We know from our above discussion that the sample space should be \(x=0,1,2,3,4,5\), yet, in the table the probabilities are only displayed for \(x = 1,2,3,\) and 4. What is happening? As it turns out, the \(\mathsf{R}\) Commander will only display probabilities that are 0.00005 or greater. Since \(x=5\) is not shown, it suggests that the outcome has a tiny probability. To find its exact value we use the <code>dhyper</code> function:
 </p>
 
 
@@ -1169,7 +997,7 @@ Find the probability of exactly 3 defectives in the sample, that is, find \(\Pr(
 <p>
    In other words, \(\Pr(X=5)\approx0.0000007916049\), a small number indeed.
 Find the probability that there are at most 2 defectives in the sample, that is, compute \(\Pr(X\leq2)\).
-   <i>Solution:</i> Since \(\Pr(X\leq2)=\Pr(X=0,1,2)\), one way to do this would be to add the 0, 1, and 2 entries in the above table. this gives \(0.7011+0.2602+0.0362=0.9975\). Our answer should be correct up to the accuracy of 4 decimal places. However, a more precise method is provided by the \textsf{R} Commander. Under the \textsf{Hypergeometric distribution} menu we select \textsf{Hypergeometric tail probabilities}&hellip;. We fill in the parameters \(m\), \(n\), and \(k\) as before, but in the \textsf{Variable value(s)} dialog box we enter the value 2. We notice that the <code>Lower tail</code> option is checked, and we leave that alone. Click \textsf{OK}.
+   <i>Solution:</i> Since \(\Pr(X\leq2)=\Pr(X=0,1,2)\), one way to do this would be to add the 0, 1, and 2 entries in the above table. this gives \(0.7011+0.2602+0.0362=0.9975\). Our answer should be correct up to the accuracy of 4 decimal places. However, a more precise method is provided by the \(\mathsf{R}\) Commander. Under the <code>Hypergeometric distribution</code> menu we select <code>Hypergeometric tail probabilities...</code>. We fill in the parameters \(m\), \(n\), and \(k\) as before, but in the <code>Variable value(s)</code> dialog box we enter the value 2. We notice that the <code>Lower tail</code> option is checked, and we leave that alone. Click <code>OK</code>.
 </p>
 
 
@@ -1186,7 +1014,7 @@ Find the probability that there are at most 2 defectives in the sample, that is,
 <p>
    And thus \(\Pr(X\leq2)\approx 0.9975771\). We have confirmed that the above answer was correct up to four decimal places.
 Find \(\Pr(X&gt;1)\). 
-   The table did not give us the explicit probability \(\Pr(X=5)\), so we can not use the table to give us this probability. We need to use another method. Since \(\Pr(X&gt;1)=1-\Pr(X\leq1)=1-F_{X}(1)\), we can find the probability with \textsf{Hypergeometric tail probabilities}&hellip;. We enter 1 for \textsf{Variable Value(s)}, we enter the parameters as before, and in this case we choose the <code>Upper tail</code> option. This results in the following output.
+   The table did not give us the explicit probability \(\Pr(X=5)\), so we can not use the table to give us this probability. We need to use another method. Since \(\Pr(X&gt;1)=1-\Pr(X\leq1)=1-F_{X}(1)\), we can find the probability with <code>Hypergeometric tail probabilities...</code>. We enter 1 for <code>Variable Value(s)</code>, we enter the parameters as before, and in this case we choose the <code>Upper tail</code> option. This results in the following output.
 </p>
 
 
@@ -1201,12 +1029,12 @@ Find \(\Pr(X&gt;1)\).
 
 
 <p>
-   In general, the <code>Upper tail</code> option of a tail probabilities dialog computes \(\Pr(X&gt;x)\) for all given \textsf{Variable Value(s)} \(x\).
+   In general, the <code>Upper tail</code> option of a tail probabilities dialog computes \(\Pr(X &gt; x)\) for all given <code>Variable Value(s)</code> \(x\).
 Generate \(100,000\) observations of the random variable \(X\).
-   We can randomly simulate as many observations of \(X\) as we want in \textsf{R} Commander. Simply choose \textsf{Simulate hypergeometric variates}&hellip; in the \textsf{Hypergeometric distribution} dialog. 
-   In the \textsf{Number of samples} dialog, type 1. Enter the parameters as above. Under the \textsf{Store Values} section, make sure \textsf{New Data set} is selected. Click \textsf{OK}. 
-   A new dialog should open, with the default name <code>Simset1</code>.  We could change this if we like, according to the rules for \textsf{R} object names. In the sample size box, enter 100000. Click \textsf{OK}. 
-   In the Console Window, \textsf{R} Commander should issue an alert that \texttt{Simset1} has been initialized, and in a few seconds, it should also state that 100,000 hypergeometric variates were stored in <code>hyper.sim1</code>. We can view the sample by clicking the \textsf{View Data Set} button on the \textsf{R} Commander interface.
+   We can randomly simulate as many observations of \(X\) as we want in \(\mathsf{R}\) Commander. Simply choose <code>Simulate hypergeometric variates...</code> in the <code>Hypergeometric distribution</code> dialog. 
+   In the <code>Number of samples</code> dialog, type 1. Enter the parameters as above. Under the \textsf{Store Values} section, make sure <code>New Data set</code> is selected. Click <code>OK</code>. 
+   A new dialog should open, with the default name <code>Simset1</code>.  We could change this if we like, according to the rules for \(\mathsf{R}\) object names. In the sample size box, enter 100000. Click <code>OK</code>. 
+   In the Console Window, \(\mathsf{R}\) Commander should issue an alert that <code>Simset1</code> has been initialized, and in a few seconds, it should also state that 100,000 hypergeometric variates were stored in <code>hyper.sim1</code>. We can view the sample by clicking the <code>View Data Set</code> button on the \(\mathsf{R}\) Commander interface.
    We know from our formulas that \(\mu=K\cdot M/(M+N)=5*17/250=0.34\). We can check our formulas using the fact that with repeated observations of \(X\) we would expect about 0.34 defectives on the average. To see how our sample reflects the true mean, we can compute the sample mean
 </p><pre class="example">
  Rcmdr&gt; mean(Simset2$hyper.sim1, na.rm=TRUE)
@@ -1287,7 +1115,7 @@ Suppose that we conduct Bernoulli trials repeatedly, noting the successes and fa
 \begin{equation}
 f_{X}(x)=p(1-p)^{x},\quad x=0,1,2,\ldots
 \end{equation}
-(Why?) We say that \(X\) has a <i>Geometric distribution</i> and we write \(X\sim\mathsf{geom}(\mathtt{prob}=p)\). The associated \textsf{R} functions are <code>dgeom(x, prob)</code>, <code>pgeom</code>, <code>qgeom</code>, and <code>rhyper</code>, which give the PMF, CDF, quantile function, and simulate random variates, respectively.
+(Why?) We say that \(X\) has a <i>Geometric distribution</i> and we write \(X\sim\mathsf{geom}(\mathtt{prob}=p)\). The associated \(\mathsf{R}\) functions are <code>dgeom(x, prob)</code>, <code>pgeom</code>, <code>qgeom</code>, and <code>rhyper</code>, which give the PMF, CDF, quantile function, and simulate random variates, respectively.
 </p>
 <p>
 Again it is clear that \(f(x)\geq0\) and we check that \(\sum f(x)=1\) (see Equation <a href="#eq-geom-series">geom-series</a> in Appendix <a href="#sec-Sequences-and-Series">Sequences-and-Series</a>):
@@ -1303,7 +1131,7 @@ We will find in the next section that the mean and variance are
 The Pittsburgh Steelers place kicker, Jeff Reed, made 81.2% of his attempted field goals in his career up to 2006. Assuming that his successive field goal attempts are approximately Bernoulli trials, find the probability that Jeff misses at least 5 field goals before his first successful goal.
 </p>
 <p>
-<i>Solution</i>: If \(X=\) the number of missed goals until Jeff's first success, then \(X\sim\mathsf{geom}(\mathtt{prob}=0.812)\) and we want \(\Pr(X\geq5)=\Pr(X&gt;4)\). We can find this in \textsf{R} with
+<i>Solution</i>: If \(X=\) the number of missed goals until Jeff's first success, then \(X\sim\mathsf{geom}(\mathtt{prob}=0.812)\) and we want \(\Pr(X\geq5)=\Pr(X&gt;4)\). We can find this in \(\mathsf{R}\) with
 </p>
 
 
@@ -1334,7 +1162,7 @@ We may generalize the problem and consider the case where we wait for <i>more</i
 f_{X}(x)={r+x-1 \choose r-1}\, p^{r}(1-p)^{x},\quad x=0,1,2,\ldots
 \end{equation}
 
-We say that \(X\) has a <i>Negative Binomial distribution</i> and write \(X\sim\mathsf{nbinom}(\mathtt{size}=r,\,\mathtt{prob}=p)\). The associated \textsf{R} functions are <code>dnbinom(x, size, prob)</code>, <code>pnbinom</code>, <code>qnbinom</code>, and <code>rnbinom</code>, which give the PMF, CDF, quantile function, and simulate random variates, respectively.
+We say that \(X\) has a <i>Negative Binomial distribution</i> and write \(X\sim\mathsf{nbinom}(\mathtt{size}=r,\,\mathtt{prob}=p)\). The associated \(\mathsf{R}\) functions are <code>dnbinom(x, size, prob)</code>, <code>pnbinom</code>, <code>qnbinom</code>, and <code>rnbinom</code>, which give the PMF, CDF, quantile function, and simulate random variates, respectively.
 </p>
 <p>
 As usual it should be clear that \(f_{X}(x)\geq 0\) and the fact that \(\sum f_{X}(x)=1\) follows from a generalization of the geometric series by means of a Maclaurin's series expansion:
@@ -1354,7 +1182,7 @@ We flip a coin repeatedly and let \(X\) count the number of Tails until we get s
 \[
 \Pr(X=5)=f_{X}(5)={7+5-1 \choose 7-1}(1/2)^{7}(1/2)^{5}={11 \choose 6}2^{-12}
 \]
-and we can get this in \textsf{R} with
+and we can get this in \(\mathsf{R}\) with
 </p>
 
 
@@ -1389,7 +1217,7 @@ M'(t)= & p^{r}(-r)(1-q\mathrm{e}^{t})^{-r-1}(-q\mathrm{e}^{t}),\\
 = & \frac{rq\mathrm{e}^{t}}{1-q\mathrm{e}^{t}}M(t),\mbox{ and so }\\
 M'(0)= & \frac{rq}{1-q}\cdot1=\frac{rq}{p}.
 \end{alignat*}
-Thus \(\mu=rq/p\). We next find \(\E X^{2}\).
+Thus \(\mu=rq/p\). We next find \(\mathbb{E} X^{2}\).
 \begin{alignat*}{1}
 M''(0)= & \left.\frac{rq\mathrm{e}^{t}(1-q\mathrm{e}^{t})-rq\mathrm{e}^{t}(-q\mathrm{e}^{t})}{(1-q\mathrm{e}^{t})^{2}}M(t)+\frac{rq\mathrm{e}^{t}}{1-q\mathrm{e}^{t}}M'(t)\right|_{t=0},\\
 = & \frac{rqp+rq^{2}}{p^{2}}\cdot1+\frac{rq}{p}\left(\frac{rq}{p}\right),\\
@@ -1441,7 +1269,7 @@ Let \(\lambda\) be the average number of events in the time interval \([0,1]\). 
 \begin{equation}
 f_{X}(x)=\Pr(X=x)=\mathrm{e}^{-\lambda}\frac{\lambda^{x}}{x!},\quad x=0,1,2,\ldots
 \end{equation}
-We use the notation \(X\sim\mathsf{pois}(\mathtt{lambda}=\lambda)\). The associated \textsf{R} functions are <code>dpois(x, lambda)</code>, <code>ppois</code>, <code>qpois</code>, and <code>rpois</code>, which give the PMF, CDF, quantile function, and simulate random variates, respectively.
+We use the notation \(X\sim\mathsf{pois}(\mathtt{lambda}=\lambda)\). The associated \(\mathsf{R}\) functions are <code>dpois(x, lambda)</code>, <code>ppois</code>, <code>qpois</code>, and <code>rpois</code>, which give the PMF, CDF, quantile function, and simulate random variates, respectively.
 </p>
 
 <p>
@@ -1557,7 +1385,7 @@ There is not a special name for the distribution of \(Y\), it is just an example
 
 <p>
 <div class="prop">
-If \(X\) is a random variable with \(\E X=\mu\) and \(\mbox{Var}(X)=\sigma^{2}\), then the mean and variance of \(Y=mX+b\) is
+If \(X\) is a random variable with \(\mathbb{E} X=\mu\) and \(\mbox{Var}(X)=\sigma^{2}\), then the mean and variance of \(Y=mX+b\) is
 \begin{equation}
 \mu_{Y}=m\mu+b,\quad\sigma_{Y}^{2}=m^{2}\sigma^{2},\quad\sigma_{Y}=|m|\sigma.
 \end{equation}
@@ -1698,7 +1526,7 @@ diff(pbinom(c(19,15), size = 31, prob = 0.447, lower.tail = <span style="color: 
 </pre>
 
 <ul>
-<li>Give the mean of \(X\), denoted \(\E X\).
+<li>Give the mean of \(X\), denoted \(\mathbb{E} X\).
 </li>
 </ul>
 
@@ -1733,7 +1561,7 @@ E(X)
 </pre>
 
 <ul>
-<li>Find \(\E(4X+51.324)\)
+<li>Find \(\mathbb{E}(4X+51.324)\)
 </li>
 </ul>
 
@@ -1779,12 +1607,12 @@ For the following situations, decide what the distribution of \(X\) should be. I
 </p>
 <p>
 <div class="xca">
-Show that \(\E(X-\mu)^{2}=\E X^{2}-\mu^{2}\). <i>Hint</i>: expand the quantity \((X-\mu)^{2}\) and distribute the expectation over the resulting terms.
+Show that \(\mathbb{E}(X-\mu)^{2}=\mathbb{E} X^{2}-\mu^{2}\). <i>Hint</i>: expand the quantity \((X-\mu)^{2}\) and distribute the expectation over the resulting terms.
 </div>
 </p>
 <p>
 <div class="xca">
-If \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\) show that \(\E X(X-1)=n(n-1)p^{2}\).
+If \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\) show that \(\mathbb{E} X(X-1)=n(n-1)p^{2}\).
 </div>
 </p>
 <p>
@@ -1797,14 +1625,3 @@ Calculate the mean and variance of the hypergeometric distribution. Show that
 </p></div>
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2011-09-21 01:02:51 EDT</p>
-<p class="author">Author: G. Jay Kerns</p>
-<p class="creator">Org version 7.7 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
-</div>
-</body>
-</html>
