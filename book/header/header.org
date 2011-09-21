@@ -1,6 +1,0 @@
-
-[[file:index.org][Home]] | [[file:courses.org][Courses]] | [[file:links.org][Links]] | [[file:calendar.org][Calendar]]  | [[file:about.org][About]]
-
-#+BEGIN_HTML
-<link rel="Shortcut Icon" href="favicon.ico">
-#+END_HTML 
