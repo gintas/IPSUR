@@ -317,9 +317,7 @@ trees.lm
 
 
 <pre class="example">
-X11cairo 
-       2
- 
+
 Call:
 lm(formula = Volume ~ Girth + Height, data = trees)
 
@@ -549,15 +547,7 @@ The residuals are also stored with <code>trees.lm</code> and may be accessed wit
 </pre>
 
 
-
-<pre class="example">  1 
-8.3
-  1 
-8.3
-   3 
-30.4
-   3 
-30.4
+<pre class="example">
          1          2          3          4          5 
  5.4623403  5.7461484  5.3830187  0.5258848 -1.0690084
 </pre>
@@ -630,7 +620,6 @@ To get confidence intervals for the parameters we need only use <code>confint</c
 
 
 <pre class="example">
-[1] 3.882
                    2.5 %      97.5 %
 (Intercept) -75.68226247 -40.2930554
 Girth         4.16683899   5.2494820
@@ -700,8 +689,6 @@ Confidence intervals are given by
 
 
 <pre class="example">
-[1] 4.2
-[1] 5.2
         fit      lwr      upr
 1  8.264937  5.77240 10.75747
 2 21.731594 20.11110 23.35208
@@ -813,14 +800,6 @@ For the <code>trees</code> data, we can get \(R^{2}\) and \(\overline{R}^{2}\) f
 
 
 <pre class="example">
-[1] 5.8
-[1] 10.8
-[1] 5.8
-[1] 10.8
-[1] 26.9
-[1] 33.8
-[1] 26.9
-[1] 33.8
 [1] 0.94795
 </pre>
 
@@ -920,9 +899,7 @@ The Student's \(t\) tests for significance of the individual explanatory variabl
 
 
 
-<pre class="example">   value 
-254.9723
- 
+<pre class="example">
 Call:
 lm(formula = Volume ~ Girth + Height, data = trees)
 
@@ -1037,9 +1014,7 @@ summary(treesquad.lm)
 
 
 
-<pre class="example">X11cairo 
-       2
- 
+<pre class="example">
 Call:
 lm(formula = Volume ~ scale(Girth) + I(scale(Girth)^2), data = trees)
 
@@ -1104,8 +1079,6 @@ predict(treesquad.lm, newdata = new, interval = <span style="color: #8b2252;">"p
 
 
 <pre class="example">
-X11cairo 
-       2
        fit       lwr      upr
 1 11.56982  4.347426 18.79221
 2 20.30615 13.299050 27.31325
@@ -1501,9 +1474,7 @@ summary(treesfull.lm)
 
 
 
-<pre class="example">X11cairo 
-       2
- 
+<pre class="example"> 
 Call:
 lm(formula = Volume ~ Girth + I(Girth^2) + Height + I(Height^2), 
     data = trees)
@@ -1554,7 +1525,7 @@ To delete the intercept from the model we used <code>-1</code> in the model form
 
 
 <pre class="example">
- Analysis of Variance Table
+Analysis of Variance Table
 
 Model 1: Volume ~ -1 + Girth + I(Girth^2)
 Model 2: Volume ~ Girth + I(Girth^2) + Height + I(Height^2)
