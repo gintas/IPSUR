@@ -29,9 +29,9 @@ keywords:  point interval estimation confidence unbiased
 </div>
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Estimation</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-Estimation" class="outline-2">
+<h2 id="cha-Estimation"><a name="sec-1" id="sec-1"></a>Estimation</h2>
+<div class="outline-text-2" id="text-cha-Estimation">
 
 
 <p>
@@ -40,6 +40,13 @@ We will discuss two branches of estimation procedures: point estimation and inte
 <p>
 We find an estimator with the methods of Section <a href="#sec-Point-Estimation-1">Point-Estimation-1</a>. We make some assumptions about the underlying population distribution and use what we know from Chapter <a href="#cha-Sampling-Distributions">Sampling-Distributions</a> about sampling distributions both to study how the estimator will perform, and to find intervals of confidence for underlying parameters associated with the population distribution. Once we have confidence intervals we can do inference in the form of hypothesis tests in the next chapter.
 </p>
+
+</div>
+
+<div id="outline-container-sec-Point-Estimation-1" class="outline-5">
+<h5 id="sec-Point-Estimation-1"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-Point-Estimation-1">
+
 <ul>
 <li>how to look at a problem, identify a reasonable model, and estimate a parameter associated with the model
 </li>
@@ -61,12 +68,13 @@ We find an estimator with the methods of Section <a href="#sec-Point-Estimation-
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Point Estimation</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-Point-Estimation-1" class="outline-3">
+<h3 id="sec-Point-Estimation-1"><a name="sec-1-1" id="sec-1-1"></a>Point Estimation</h3>
+<div class="outline-text-3" id="text-sec-Point-Estimation-1">
 
 
 <p>
@@ -126,8 +134,8 @@ Suppose we catch \(n\) fish. Let
 \[
 X_{i}=
 \begin{cases}
-1, & \mbox{if the \mbox{i}\mbox{th} fish is a bass,}\\
-0, & \mbox{if the \mbox{i}\mbox{th} fish is a bluegill.}
+1, & \mbox{if the \(i\mathrm{th}\) fish is a bass,}\\
+0, & \mbox{if the \(i\mathrm{th}\) fish is a bluegill.}
 \end{cases}
 \]
 Since we are returning the fish to the pond once caught, we may think of this as a sampling scheme with replacement where the proportion of bass \(p\) does not change. Given that we allow the fish sufficient time to ``mix'' once returned, it is not completely unreasonable to model our fishing experiment as a sequence of Bernoulli trials, so that the \(X_{i}\)'s would be IID \(\mathsf{binom(\mathtt{size}}=1,\,\mathtt{prob}=p)\). Under those assumptions we would have
@@ -294,6 +302,13 @@ One of the most common questions in an introductory statistics class is, ``Why d
 </p>
 
 
+</div>
+
+<div id="outline-container-1-1-1" class="outline-5">
+<h5 id="sec-1-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-1-1">
+
+
 <p>
 \(\mathsf{R}\) can be used to find maximum likelihood estimators in a lot of diverse settings. We will discuss only the most basic here and will leave the rest to more sophisticated texts.
 </p>
@@ -433,12 +448,13 @@ The numerical MLEs were very close to the theoretical MLEs. We already knew that
 There is functionality in the <code>distrTest</code> package \cite{Ruckdescheldistr} to calculate theoretical MLEs; we will skip examples of these for the time being.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Confidence Intervals for Means</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-Confidence-Intervals-for-Means" class="outline-3">
+<h3 id="sec-Confidence-Intervals-for-Means"><a name="sec-1-2" id="sec-1-2"></a>Confidence Intervals for Means</h3>
+<div class="outline-text-3" id="text-sec-Confidence-Intervals-for-Means">
 
 
 <p>
@@ -698,8 +714,14 @@ and satisfy
 <p>
 Small sample, some data with \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) an \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution.  PANIC
 </p>
-<p>
-We can do Example <a href="#exa-plant-one-samp-z-int">plant-one-samp-z-int</a> with the following code.
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-5">
+<h5 id="sec-1-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-1">
+
+<p>We can do Example <a href="#exa-plant-one-samp-z-int">plant-one-samp-z-int</a> with the following code.
 </p>
 
 
@@ -739,12 +761,13 @@ plot(temp, <span style="color: #8b2252;">"Conf"</span>)
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Confidence Intervals for Differences of Means</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-Conf-Interv-for-Diff-Means" class="outline-3">
+<h3 id="sec-Conf-Interv-for-Diff-Means"><a name="sec-1-3" id="sec-1-3"></a>Confidence Intervals for Differences of Means</h3>
+<div class="outline-text-3" id="text-sec-Conf-Interv-for-Diff-Means">
 
 
 <p>
@@ -775,13 +798,13 @@ Unfortunately, most of the time the values of \(\sigma_{X}\) and \(\sigma_{Y}\) 
 \begin{equation}
 U=\frac{n-1}{\sigma^{2}}S_{X}^{2}+\frac{m-1}{\sigma^{2}}S_{Y}^{2}.
 \end{equation}
-Then by Exercise <a href="#xca-sum-indep-chisq">sum-indep-chisq</a> we know that \(U\sim\mathsf{chisq}(\mathtt{df}=n+m-2)\) and is not a large leap to believe that \(U\) is independent of \(\overline{X}-\overline{Y}\); thus
+Then by Exercise <a href="#xca-sum-indep-chisq">sum-indep-chisq</a> we know that \(U\sim\mathsf{chisq}(\mathtt{df}=n+m-2)\) and it is not a large leap to believe that \(U\) is independent of \(\overline{X}-\overline{Y}\); thus
 \begin{equation}
-T=\frac{Z}{\sqrt{\left.U\right\slash (n+m-2)}}\sim\mathsf{t}(\mathtt{df}=n+m-2).
+T = \frac{Z}{\sqrt{\left.U\right/ (n+m-2)}}\sim\mathsf{t}(\mathtt{df}=n+m-2).
 \end{equation}
 But
 \begin{align*}
-T & =\frac{\frac{\overline{X}-\overline{Y}-(\mu_{X}-\mu_{Y})}{\sigma\sqrt{\frac{1}{n}+\frac{1}{m}}}}{\sqrt{\left.\frac{n-1}{\sigma^{2}}S_{X}^{2}+\frac{m-1}{\sigma^{2}}S_{Y}^{2}\right\slash (n+m-2)}},\\
+T & =\frac{\frac{\overline{X}-\overline{Y}-(\mu_{X}-\mu_{Y})}{\sigma\sqrt{\frac{1}{n}+\frac{1}{m}}}}{\sqrt{\left.\frac{n-1}{\sigma^{2}}S_{X}^{2}+\frac{m-1}{\sigma^{2}}S_{Y}^{2}\right/ (n+m-2)}},\\
  & =\frac{\overline{X}-\overline{Y}-(\mu_{X}-\mu_{Y})}{\sqrt{\left(\frac{1}{n}+\frac{1}{m}\right)\left(\frac{(n-1)S_{X}^{2}+(m-1)S_{Y}^{2}}{n+m-2}\right)}},\\
  & \sim\mathsf{t}(\mathtt{df}=n+m-2).
 \end{align*}
@@ -811,6 +834,13 @@ r=\frac{\left(S_{X}^{2}/n+S_{Y}^{2}/m\right)^{2}}{\frac{1}{n-1}\left(S_{X}^{2}/n
 where we understand that \(r\) is rounded down to the nearest integer. The resulting interval has approximately \(100(1-\alpha)\%\) confidence.
 </p>
 
+</div>
+
+<div id="outline-container-1-3-1" class="outline-5">
+<h5 id="sec-1-3-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-1">
+
+
 <p>
 The basic function is <code>t.test</code> which has a <code>var.equal</code> argument that may be set to <code>TRUE</code> or <code>FALSE</code>. The confidence interval is shown as part of the output, although there is a lot of additional information that is not needed until Chapter
 <a href="#cha-Hypothesis-Testing">Hypothesis-Testing</a>.
@@ -819,12 +849,13 @@ The basic function is <code>t.test</code> which has a <code>var.equal</code> arg
 There is not any specific functionality to handle the \(z\)-interval for small samples, but if the samples are large then <code>t.test</code> with <code>var.equal = FALSE</code> will be essentially the same thing. The standard deviations are never (?) known in advance anyway so it does not really matter in practice. 
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Confidence Intervals for Proportions</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Confidence-Intervals-Proportions" class="outline-3">
+<h3 id="sec-Confidence-Intervals-Proportions"><a name="sec-1-4" id="sec-1-4"></a>Confidence Intervals for Proportions</h3>
+<div class="outline-text-3" id="text-sec-Confidence-Intervals-Proportions">
 
 
 <p>
@@ -866,7 +897,7 @@ OOPS&hellip;! Equation <a href="#eq-ci-p-no-good">ci-p-no-good</a> is of no use 
    \]
    satisfies \(f(p)\leq0\). But \(f\) is quadratic in \(p\) so its graph is a parabola; it has two roots, and these roots form the limits of the confidence interval. We can find them with the quadratic formula (see Exercise <a href="#xca-CI-quad-form">CI-quad-form</a>):
    \begin{equation}
-   \left.\left[\left(\hat{p}+\frac{z_{\alpha/2}^{2}}{2n}\right)\pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}+\frac{z_{\alpha/2}^{2}}{(2n)^{2}}}\right]\right\slash \left(1+\frac{z_{\alpha/2}^{2}}{n}\right)
+   \left.\left[\left(\hat{p}+\frac{z_{\alpha/2}^{2}}{2n}\right)\pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}+\frac{z_{\alpha/2}^{2}}{(2n)^{2}}}\right]\right/ \left(1+\frac{z_{\alpha/2}^{2}}{n}\right)
    \end{equation}
    This approach is called the <i>score interval</i> because it is based on the inversion of the ``Score test''. See Chapter <a href="#cha-Categorical-Data-Analysis">Categorical-Data-Analysis</a>. It is also known as the <i>Wilson interval</i>; see Agresti \cite{Agresti2002}.
 </li>
@@ -903,6 +934,13 @@ or
 or in other words, we know in advance that the true proportion is restricted to the interval \([0,1]\), so we can truncate our confidence interval to those values on either side.
 </div>
 </p>
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-5">
+<h5 id="sec-1-4-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-1">
 
 
 
@@ -968,42 +1006,58 @@ B <span style="color: #008b8b;">&lt;-</span> with(A, untable(A, Freq))
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Confidence Intervals for Variances</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-Confidence-Intervals-for-Variances" class="outline-3">
+<h3 id="sec-Confidence-Intervals-for-Variances"><a name="sec-1-5" id="sec-1-5"></a>Confidence Intervals for Variances</h3>
+<div class="outline-text-3" id="text-sec-Confidence-Intervals-for-Variances">
 
 
 <p>
 I am thinking one and two sample problems here.
 </p>
 
+</div>
+
+<div id="outline-container-1-5-1" class="outline-5">
+<h5 id="sec-1-5-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-5-1">
+
+
 <p>
 I am thinking about <code>sigma.test</code> in the <code>TeachingDemos</code> package and <code>var.test</code> in base \(\mathsf{R}\) here.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6">Fitting Distributions</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-sec-Fitting-Distributions" class="outline-3">
+<h3 id="sec-Fitting-Distributions"><a name="sec-1-6" id="sec-1-6"></a>Fitting Distributions</h3>
+<div class="outline-text-3" id="text-sec-Fitting-Distributions">
 
 
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-5">
+<h5 id="sec-1-6-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-6-1">
 
 
 <p>
 I am thinking about <code>fitdistr</code> from the <code>MASS</code> package \cite{Venables2002}.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7">Sample Size and Margin of Error</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-sec-Sample-Size-and-MOE" class="outline-3">
+<h3 id="sec-Sample-Size-and-MOE"><a name="sec-1-7" id="sec-1-7"></a>Sample Size and Margin of Error</h3>
+<div class="outline-text-3" id="text-sec-Sample-Size-and-MOE">
 
 
 <p>
@@ -1079,16 +1133,23 @@ If we do not have a good value for the estimate \(p^{\ast}\) then we may use \(p
 </div>
 </p>
 
-<p>
-I am thinking about <code>power.t.test</code>, <code>power.prop.test</code>, <code>power.anova.test</code>, and I am also thinking about <code>replicate</code>.
+
+</div>
+
+<div id="outline-container-1-7-1" class="outline-5">
+<h5 id="sec-1-7-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-7-1">
+
+<p>I am thinking about <code>power.t.test</code>, <code>power.prop.test</code>, <code>power.anova.test</code>, and I am also thinking about <code>replicate</code>.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-8" class="outline-3">
-<h3 id="sec-1-8">Other Topics</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-sec-Other-Topics" class="outline-3">
+<h3 id="sec-Other-Topics"><a name="sec-1-8" id="sec-1-8"></a>Other Topics</h3>
+<div class="outline-text-3" id="text-sec-Other-Topics">
 
 
 <p>

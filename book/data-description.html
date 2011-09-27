@@ -72,14 +72,21 @@ keywords: data R descriptive statistics summary
 </div>
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Data Description</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-Describing-Data-Distributions" class="outline-2">
+<h2 id="cha-Describing-Data-Distributions"><a name="sec-1" id="sec-1"></a>Data Description</h2>
+<div class="outline-text-2" id="text-cha-Describing-Data-Distributions">
 
 
 <p>
 In this chapter we introduce the different types of data that a statistician is likely to encounter, and in each subsection we give some examples of how to display the data of that particular type. Once we see how to display data distributions, we next introduce the basic properties of data distributions. We qualitatively explore several data sets. Once that we have intuitive properties of data sets, we next discuss how we may numerically measure and describe those properties with descriptive statistics.
 </p>
+
+</div>
+
+<div id="outline-container-sec-Types-of-Data" class="outline-5">
+<h5 id="sec-Types-of-Data"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-Types-of-Data">
+
 
 <ul>
 <li>different data types, such as quantitative versus qualitative, nominal versus ordinal, and discrete versus continuous
@@ -95,12 +102,13 @@ In this chapter we introduce the different types of data that a statistician is 
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Types of Data</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-Types-of-Data" class="outline-3">
+<h3 id="sec-Types-of-Data"><a name="sec-1-1" id="sec-1-1"></a>Types of Data</h3>
+<div class="outline-text-3" id="text-sec-Types-of-Data">
 
 
 <p>
@@ -126,9 +134,9 @@ In each subsection we look at some examples of the type in question and introduc
 
 </div>
 
-<div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">Quantitative data</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-sub-Quantitative-Data" class="outline-4">
+<h4 id="sub-Quantitative-Data"><a name="sec-1-1-1" id="sec-1-1-1"></a>Quantitative data</h4>
+<div class="outline-text-4" id="text-sub-Quantitative-Data">
 
 
 <p>
@@ -219,14 +227,21 @@ The output is telling us that <code>discoveries</code> is a <i>time series</i> (
 
 </div>
 
-<div id="outline-container-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2">Displaying Quantitative Data</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-sub-Displaying-Quantitative-Data" class="outline-4">
+<h4 id="sub-Displaying-Quantitative-Data"><a name="sec-1-1-2" id="sec-1-1-2"></a>Displaying Quantitative Data</h4>
+<div class="outline-text-4" id="text-sub-Displaying-Quantitative-Data">
 
 
 <p>
 One of the first things to do when confronted by quantitative data (or any data, for that matter) is to make some sort of visual display to gain some insight into the data's structure. There are almost as many display types from which to choose as there are data sets to plot. We describe some of the more popular alternatives. 
 </p>
+
+</div>
+
+<div id="outline-container-par-Strip-charts" class="outline-5">
+<h5 id="par-Strip-charts"><a name="sec-1-1-2-1" id="sec-1-1-2-1"></a>Strip charts\index{strip chart} (also known as Dot plots)\index{dot plot| see\{strip chart\}}</h5>
+<div class="outline-text-5" id="text-par-Strip-charts">
+
 
 <p>
 These can be used for discrete or continuous data, and usually look best when the data set is not too large. Along the horizontal axis is a numerical scale above which the data values are plotted. We can do it in \(\mathsf{R}\) with a call to the <code>stripchart</code>\index{stripchart@\texttt{stripchart}} function. There are three available methods.
@@ -268,13 +283,21 @@ The leftmost graph is a strip chart of the <code>precip</code> data. The graph s
 
 
   <div id="fig-stripcharts" class="figure">
-    <p><img src="svg/stripcharts.svg" width=500 alt="svg/stripcharts.svg" /></p>
+    <p><img src="svg/datadesc/stripcharts.svg" width=500 alt="svg/datadesc/stripcharts.svg" /></p>
     <p>Three stripcharts of three data sets.  The first graph uses the <code>overplot</code> method, the second the <code>jitter</code> method, and the third the <code>stack</code> method.</p>
   </div>
 
 <p>
 The <code>DOTplot</code>\index{DOTplot@\texttt{DOTplot}} function in the <code>UsingR</code>\index{R packages!UsingR@\texttt{UsingR}} package \cite{usingr} is another alternative.
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-2" class="outline-5">
+<h5 id="sec-1-1-2-2">Histogram\index{Histogram}</h5>
+<div class="outline-text-5" id="text-1-1-2-2">
+
 
 <p>
 These are typically used for continuous data. A histogram is constructed by first deciding on a set of classes, or bins, which partition the real line into a set of boxes into which the data values fall. Then vertical bars are drawn over the bins with height proportional to the number of observations that fell into the bin. 
@@ -324,7 +347,7 @@ par(mfrow = c(1,1)) <span style="color: #b22222;"># </span><span style="color: #
 
 
 <div id="fig-histograms" class="figure">
-  <p><img src="svg/histograms.svg" width=500 alt="svg/histograms.svg" /></p>
+  <p><img src="svg/datadesc/histograms.svg" width=500 alt="svg/datadesc/histograms.svg" /></p>
   <p>(Relative) frequency histograms of the <code>precip</code> data.</p>
 </div>
 
@@ -363,6 +386,14 @@ The leftmost graph (with <code>breaks = 10</code>) shows that the distribution i
 <p>
 The rightmost graph in Figure <a href="#fig-histograms-bins">histograms-bins</a> shows what happens when the number of bins is too large: the histogram is too grainy and hides the rounded appearance of the earlier histograms. If we were to continue increasing the number of bins we would eventually get all observed bins to have exactly one element, which is nothing more than a glorified strip chart.
 </p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-3" class="outline-5">
+<h5 id="sec-1-1-2-3">Stemplots (more to be said in Section <a href="#sec-Exploratory-Data-Analysis">Exploratory-Data-Analysis</a>)</h5>
+<div class="outline-text-5" id="text-1-1-2-3">
 
 
 <p>
@@ -410,6 +441,14 @@ The display shows a more or less balanced mound-shaped distribution, with one or
 <p>
 Notice that the \texttt{depth}s\index{depths} have been suppressed. To learn more about this option and many others, see Section <a href="#sec-Exploratory-Data-Analysis">Exploratory-Data-Analysis</a>. Unlike a histogram, the original data values may be recovered from the stemplot display &ndash; modulo the rounding &ndash; that is, starting from the top and working down we can read off the data values 1050, 1070, 1110, 1130, and so forth. 
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-4" class="outline-5">
+<h5 id="sec-1-1-2-4">Index plots</h5>
+<div class="outline-text-5" id="text-1-1-2-4">
+
 
 <p>
 Done with the <code>plot</code>\index{plot@\texttt{plot}} function. These are good for plotting data which are ordered, for example, when the data are measured over time. That is, the first observation was measured at time 1, the second at time 2, <i>etc</i>. It is a two dimensional plot, in which the index (or time) is the \(x\) variable and the measured value is the \(y\) variable. There are several plotting methods for index plots, and we mention two of them:
@@ -452,17 +491,26 @@ The plots show an overall decreasing trend to the observations, and there appear
 </div>
 
 
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-5" class="outline-5">
+<h5 id="sec-1-1-2-5">Density estimates</h5>
+<div class="outline-text-5" id="text-1-1-2-5">
+
 
 <p>
 Coming soon.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-1-3" class="outline-4">
-<h4 id="sec-1-1-3">Qualitative Data, Categorical Data, and Factors</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-sub-Qualitative-Data" class="outline-4">
+<h4 id="sub-Qualitative-Data"><a name="sec-1-1-3" id="sec-1-1-3"></a>Qualitative Data, Categorical Data, and Factors</h4>
+<div class="outline-text-4" id="text-sub-Qualitative-Data">
 
 
 <p>
@@ -529,10 +577,17 @@ The <code>str</code>\index{str@\texttt{str}} output shows that <code>state.regio
 
 </div>
 
-<div id="outline-container-1-1-4" class="outline-4">
-<h4 id="sec-1-1-4">Displaying Qualitative Data</h4>
-<div class="outline-text-4" id="text-1-1-4">
+<div id="outline-container-sub-Displaying-Qualitative-Data" class="outline-4">
+<h4 id="sub-Displaying-Qualitative-Data"><a name="sec-1-1-4" id="sec-1-1-4"></a>Displaying Qualitative Data</h4>
+<div class="outline-text-4" id="text-sub-Displaying-Qualitative-Data">
 
+
+
+</div>
+
+<div id="outline-container-par-Tables" class="outline-5">
+<h5 id="par-Tables"><a name="sec-1-1-4-1" id="sec-1-1-4-1"></a>Tables</h5>
+<div class="outline-text-5" id="text-par-Tables">
 
 
 <p>
@@ -598,6 +653,14 @@ West North Central           Mountain            Pacific
 
 
 
+</div>
+
+</div>
+
+<div id="outline-container-par-Bar-Graphs" class="outline-5">
+<h5 id="par-Bar-Graphs"><a name="sec-1-1-4-2" id="sec-1-1-4-2"></a>Bar Graphs</h5>
+<div class="outline-text-5" id="text-par-Bar-Graphs">
+
 
 <p>
 A bar graph is the analogue of a histogram for categorical data. A bar is displayed for each level of a factor, with the heights of the bars proportional to the frequencies of observations falling in the respective categories. A disadvantage of bar graphs is that the levels are ordered alphabetically (by default), which may sometimes obscure patterns in the display. 
@@ -635,6 +698,14 @@ Notice the <code>cex.names</code>\index{cex.names@\texttt{cex.names}} argument t
 </div>
 
 
+</div>
+
+</div>
+
+<div id="outline-container-par-Pareto-Diagrams" class="outline-5">
+<h5 id="par-Pareto-Diagrams"><a name="sec-1-1-4-3" id="sec-1-1-4-3"></a>Pareto Diagrams</h5>
+<div class="outline-text-5" id="text-par-Pareto-Diagrams">
+
 
 <p>
 A pareto diagram is a lot like a bar graph except the bars are rearranged such that they decrease in height going from left to right. The rearrangement is handy because it can visually reveal structure (if any) in how fast the bars decrease &ndash; this is much more difficult when the bars are jumbled. 
@@ -663,6 +734,14 @@ pareto.chart(table(state.division), ylab=<span style="color: #8b2252;">"Frequenc
 
 
 
+</div>
+
+</div>
+
+<div id="outline-container-par-Dotcharts" class="outline-5">
+<h5 id="par-Dotcharts"><a name="sec-1-1-4-4" id="sec-1-1-4-4"></a>Dot Charts</h5>
+<div class="outline-text-5" id="text-par-Dotcharts">
+
 
 <p>
 These are a lot like a bar graph that has been turned on its side with the bars replaced by dots on horizontal lines. They do not convey any more (or less) information than the associated bar graph, but the strength lies in the economy of the display. Dot charts are so compact that it is easy to graph very complicated multi-variable interactions together in one graph. See Section <a href="#sec-Comparing-Data-Sets">Comparing-Data-Sets</a>. We will give an example here using the same data as above for comparison. The graph was produced by the following code.
@@ -690,6 +769,14 @@ dotchart(as.vector(x), labels = names(x))
 See Figure <a href="#fig-dot-charts">dot-charts</a>. Compare it to Figure <a href="#fig-bar-gr-stateregion">bar-gr-stateregion</a>.
 </p>
 
+</div>
+
+</div>
+
+<div id="outline-container-par-Pie-Graphs" class="outline-5">
+<h5 id="par-Pie-Graphs"><a name="sec-1-1-4-5" id="sec-1-1-4-5"></a>Pie Graphs</h5>
+<div class="outline-text-5" id="text-par-Pie-Graphs">
+
 
 <p>
 These can be done with \(\mathsf{R}\) and the \(\mathsf{R}\) Commander, but they fallen out of favor in recent years because researchers have determined that while the human eye is good at judging linear measures, it is notoriously bad at judging relative areas (such as those displayed by a pie graph). Pie charts are consequently a very bad way of displaying information. A bar chart or dot chart is a preferable way of displaying qualitative data. See <code>?pie</code>\index{pie@\texttt{pie}} for more information.
@@ -698,12 +785,13 @@ These can be done with \(\mathsf{R}\) and the \(\mathsf{R}\) Commander, but they
 We are not going to do any examples of a pie graph and discourage their use elsewhere. 
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-1-5" class="outline-4">
-<h4 id="sec-1-1-5">Logical Data</h4>
-<div class="outline-text-4" id="text-1-1-5">
+<div id="outline-container-sub-Logical-Data" class="outline-4">
+<h4 id="sub-Logical-Data"><a name="sec-1-1-5" id="sec-1-1-5"></a>Logical Data</h4>
+<div class="outline-text-4" id="text-sub-Logical-Data">
 
 
 <p>
@@ -747,9 +835,9 @@ We can swap <code>TRUE</code> with <code>FALSE</code> with the exclamation point
 
 </div>
 
-<div id="outline-container-1-1-6" class="outline-4">
-<h4 id="sec-1-1-6">Missing Data</h4>
-<div class="outline-text-4" id="text-1-1-6">
+<div id="outline-container-sub-Missing-Data" class="outline-4">
+<h4 id="sub-Missing-Data"><a name="sec-1-1-6" id="sec-1-1-6"></a>Missing Data</h4>
+<div class="outline-text-4" id="text-sub-Missing-Data">
 
 
 <p>
@@ -814,9 +902,9 @@ The analogue of <code>is.na</code> for rectangular data sets (or data frames) is
 
 </div>
 
-<div id="outline-container-1-1-7" class="outline-4">
-<h4 id="sec-1-1-7">Other Data Types</h4>
-<div class="outline-text-4" id="text-1-1-7">
+<div id="outline-container-sub-other-data-types" class="outline-4">
+<h4 id="sub-other-data-types"><a name="sec-1-1-7" id="sec-1-1-7"></a>Other Data Types</h4>
+<div class="outline-text-4" id="text-sub-other-data-types">
 
 
 </div>
@@ -824,9 +912,9 @@ The analogue of <code>is.na</code> for rectangular data sets (or data frames) is
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Features of Data Distributions</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-features-of-data" class="outline-3">
+<h3 id="sec-features-of-data"><a name="sec-1-2" id="sec-1-2"></a>Features of Data Distributions</h3>
+<div class="outline-text-3" id="text-sec-features-of-data">
 
 
 <p>
@@ -835,9 +923,9 @@ Given that the data have been appropriately displayed, the next step is to try t
 
 </div>
 
-<div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1">Center</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-sub-Center" class="outline-4">
+<h4 id="sub-Center"><a name="sec-1-2-1" id="sec-1-2-1"></a>Center</h4>
+<div class="outline-text-4" id="text-sub-Center">
 
 
 <p>
@@ -847,9 +935,9 @@ One of the most basic features of a data set is its center. Loosely speaking, th
 
 </div>
 
-<div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2">Spread</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-sub-Spread" class="outline-4">
+<h4 id="sub-Spread"><a name="sec-1-2-2" id="sec-1-2-2"></a>Spread</h4>
+<div class="outline-text-4" id="text-sub-Spread">
 
 
 <p>
@@ -859,14 +947,21 @@ The spread of a data set is associated with its variability; data sets with a la
 
 </div>
 
-<div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3">Shape</h4>
-<div class="outline-text-4" id="text-1-2-3">
+<div id="outline-container-sub-Shape" class="outline-4">
+<h4 id="sub-Shape"><a name="sec-1-2-3" id="sec-1-2-3"></a>Shape</h4>
+<div class="outline-text-4" id="text-sub-Shape">
 
 
 <p>
 When we speak of the <i>shape</i> of a data set, we are usually referring to the shape exhibited by an associated graphical display, such as a histogram. The shape can tell us a lot about any underlying structure to the data, and can help us decide which statistical procedure we should use to analyze them.
 </p>
+
+</div>
+
+<div id="outline-container-1-2-3-1" class="outline-5">
+<h5 id="sec-1-2-3-1">Symmetry and Skewness</h5>
+<div class="outline-text-5" id="text-1-2-3-1">
+
 
 <p>
 A distribution is said to be <i>right-skewed</i> (or <i>positively skewed</i>) if the right tail seems to be stretched from the center. A <i>left-skewed</i> (or <i>negatively skewed</i>) distribution is stretched to the left side. A symmetric distribution has a graph that is balanced about its center, in the sense that half of the graph may be reflected about a central line of symmetry to match the other
@@ -875,17 +970,26 @@ half.
 <p>
 We have already encountered skewed distributions: both the discoveries data in Figure <a href="#fig-stripcharts">stripcharts</a> and the <code>precip</code> data in Figure <a href="#fig-histograms-bins">histograms-bins</a> appear right-skewed. The <code>UKDriverDeaths</code> data in Example <a href="#exa--ukdriverdeaths-first">-ukdriverdeaths-first</a> is relatively symmetric (but note the one extreme value 2654 identified at the bottom of the stemplot).
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3-2" class="outline-5">
+<h5 id="sec-1-2-3-2">Kurtosis</h5>
+<div class="outline-text-5" id="text-1-2-3-2">
+
 
 <p>
 Another component to the shape of a distribution is how ``peaked'' it is. Some distributions tend to have a flat shape with thin tails. These are called <i>platykurtic</i>, and an example of a platykurtic distribution is the uniform distribution; see Section <a href="#sec-The-Continuous-Uniform">The-Continuous-Uniform</a>. On the other end of the spectrum are distributions with a steep peak, or spike, accompanied by heavy tails; these are called <i>leptokurtic</i>. Examples of leptokurtic distributions are the Laplace distribution and the logistic distribution. See Section <a href="#sec-Other-Continuous-Distributions">Other-Continuous-Distributions</a>. In between are distributions (called <i>mesokurtic</i>) with a rounded peak and moderately sized tails. The standard example of a mesokurtic distribution is the famous bell-shaped curve, also known as the Gaussian, or normal, distribution, and the binomial distribution can be mesokurtic for specific choices of \(p\). See Sections <a href="#sec-binom-dist">binom-dist</a> and <a href="#sec-The-Normal-Distribution">The-Normal-Distribution</a>.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4">Clusters and Gaps</h4>
-<div class="outline-text-4" id="text-1-2-4">
+<div id="outline-container-sub-clusters-and-gaps" class="outline-4">
+<h4 id="sub-clusters-and-gaps"><a name="sec-1-2-4" id="sec-1-2-4"></a>Clusters and Gaps</h4>
+<div class="outline-text-4" id="text-sub-clusters-and-gaps">
 
 
 <p>
@@ -932,9 +1036,9 @@ There are definitely two clusters of data here; an upper cluster and a lower clu
 
 </div>
 
-<div id="outline-container-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5">Extreme Observations and other Unusual Features</h4>
-<div class="outline-text-4" id="text-1-2-5">
+<div id="outline-container-sub-Extreme-Observations-and" class="outline-4">
+<h4 id="sub-Extreme-Observations-and"><a name="sec-1-2-5" id="sec-1-2-5"></a>Extreme Observations and other Unusual Features</h4>
+<div class="outline-text-4" id="text-sub-Extreme-Observations-and">
 
 
 <p>
@@ -957,17 +1061,17 @@ Extreme observations fall far from the rest of the data. Such observations are t
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Descriptive Statistics</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-Descriptive-Statistics" class="outline-3">
+<h3 id="sec-Descriptive-Statistics"><a name="sec-1-3" id="sec-1-3"></a>Descriptive Statistics</h3>
+<div class="outline-text-3" id="text-sec-Descriptive-Statistics">
 
 
 
 </div>
 
-<div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1">Frequencies and Relative Frequencies</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-sub-Frequencies-and-Relative" class="outline-4">
+<h4 id="sub-Frequencies-and-Relative"><a name="sec-1-3-1" id="sec-1-3-1"></a>Frequencies and Relative Frequencies</h4>
+<div class="outline-text-4" id="text-sub-Frequencies-and-Relative">
 
 
 <p>
@@ -977,9 +1081,9 @@ These are used for categorical data. The idea is that there are a number of diff
 
 </div>
 
-<div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2">Measures of Center</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-sub-Measures-of-Center" class="outline-4">
+<h4 id="sub-Measures-of-Center"><a name="sec-1-3-2" id="sec-1-3-2"></a>Measures of Center</h4>
+<div class="outline-text-4" id="text-sub-Measures-of-Center">
 
 
 <p>
@@ -1025,6 +1129,13 @@ The <i>trimmed mean</i> is a measure designed to address the sensitivity of the 
 
 
 
+</div>
+
+<div id="outline-container-1-3-2-1" class="outline-5">
+<h5 id="sec-1-3-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-2-1">
+
+
 <ul>
 <li>You can calculate frequencies or relative frequencies with the <code>table</code> function, and relative frequencies with <code>prop.table(table())</code>. 
 </li>
@@ -1038,12 +1149,13 @@ The <i>trimmed mean</i> is a measure designed to address the sensitivity of the 
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3">Order Statistics and the Sample Quantiles</h4>
-<div class="outline-text-4" id="text-1-3-3">
+<div id="outline-container-sub-Order-Statistics-and" class="outline-4">
+<h4 id="sub-Order-Statistics-and"><a name="sec-1-3-3" id="sec-1-3-3"></a>Order Statistics and the Sample Quantiles</h4>
+<div class="outline-text-4" id="text-sub-Order-Statistics-and">
 
 
 <p>
@@ -1083,6 +1195,13 @@ Clearly, the most popular sample quantile is \(\tilde{q}_{0.50}\), also known as
 </p>
 
 
+</div>
+
+<div id="outline-container-1-3-3-1" class="outline-5">
+<h5 id="sec-1-3-3-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-3-1">
+
+
 <p>
 we can find the order statistics of a data set stored in a vector <code>x</code> with the command <code>sort(x)</code>.
 </p>
@@ -1097,13 +1216,21 @@ we can find the order statistics of a variable in the <code>Active data set</cod
 In <code>Rcmdr</code>, we can calculate the sample quantiles for a particular variable with the sequence <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Numerical Summaries...</code> We can automatically calculate the quartiles for all variables in the <code>Active data set</code> with the sequence <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Active Dataset</code>.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3-4" class="outline-4">
-<h4 id="sec-1-3-4">Measures of Spread</h4>
-<div class="outline-text-4" id="text-1-3-4">
+<div id="outline-container-sub-Measures-of-Spread" class="outline-4">
+<h4 id="sub-Measures-of-Spread"><a name="sec-1-3-4" id="sec-1-3-4"></a>Measures of Spread</h4>
+<div class="outline-text-4" id="text-sub-Measures-of-Spread">
 
+
+
+</div>
+
+<div id="outline-container-1-3-4-1" class="outline-5">
+<h5 id="sec-1-3-4-1">Sample Variance and Standard Deviation</h5>
+<div class="outline-text-5" id="text-1-3-4-1">
 
 
 <p>
@@ -1123,11 +1250,11 @@ The <i>sample standard deviation</i> is \(s=\sqrt{s^{2}}\). Intuitively, the sam
 </p>
 <p>
 <div class="fact">
-Chebychev's Rule: The proportion of observations within \(k\) standard deviations of the mean is at least \(1-1/k^{2}\), <i>i.e.</i>, at least 75\%, 89\%, and 94\% of the data are within 2, 3, and 4 standard deviations of the mean, respectively.
+Chebychev's Rule: The proportion of observations within \(k\) standard deviations of the mean is at least \(1-1/k^{2}\), <i>i.e.</i>, at least 75%, 89%, and 94% of the data are within 2, 3, and 4 standard deviations of the mean, respectively.
 </div>
 </p>
 <p>
-Note that Chebychev's Rule does not say anything about when \(k=1\), because \(1-1/1^{2}=0\), which states that at least 0\% of the observations are within one standard deviation of the mean (which is not saying much).
+Note that Chebychev's Rule does not say anything about when \(k=1\), because \(1-1/1^{2}=0\), which states that at least 0% of the observations are within one standard deviation of the mean (which is not saying much).
 </p>
 <p>
 Chebychev's Rule applies to any data distribution, <i>any</i> list of numbers, no matter where it came from or what the histogram looks like. The price for such generality is that the bounds are not very tight; if we know more about how the data are shaped then we can say more about how much of the data can fall a given distance from the mean.
@@ -1138,6 +1265,14 @@ Empirical Rule: If data follow a bell-shaped curve, then approximately 68%, 95%,
 </div>
 </p>
 
+</div>
+
+</div>
+
+<div id="outline-container-1-3-4-2" class="outline-5">
+<h5 id="sec-1-3-4-2">Interquartile Range</h5>
+<div class="outline-text-5" id="text-1-3-4-2">
+
 
 <p>
 Just as the sample mean is sensitive to extreme values, so the associated measure of spread is similarly sensitive to extremes. Further, the problem is exacerbated by the fact that the extreme distances are squared. We know that the sample quartiles are resistant to extremes, and a measure of spread associated with them is the <i>interquartile range</i> (\(IQR\)) defined by \(IQR=q_{0.75}-q_{0.25}\).
@@ -1145,10 +1280,18 @@ Just as the sample mean is sensitive to extreme values, so the associated measur
 <ul>
 <li>Good: stable, resistant to outliers, robust to nonnormality, easy to explain
 </li>
-<li>Bad: not as tractable, need to sort the data, only involves the middle 50\% of the data.
+<li>Bad: not as tractable, need to sort the data, only involves the middle 50% of the data.
 </li>
 </ul>
 
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3-4-3" class="outline-5">
+<h5 id="sec-1-3-4-3">Median Absolute Deviation</h5>
+<div class="outline-text-5" id="text-1-3-4-3">
 
 
 <p>
@@ -1165,6 +1308,14 @@ That is, the \(MAD=c\cdot\mbox{median}(|x_{1}-\tilde{x}|,\ |x_{2}-\tilde{x}|,\ld
 </ul>
 
 
+</div>
+
+</div>
+
+<div id="outline-container-1-3-4-4" class="outline-5">
+<h5 id="sec-1-3-4-4">Comparing Apples to Apples</h5>
+<div class="outline-text-5" id="text-1-3-4-4">
+
 
 <p>
 We have seen three different measures of spread which, for a given data set, will give three different answers. Which one should we use? It depends on the data set. If the data are well behaved, with an approximate bell-shaped distribution, then the sample mean and sample standard deviation are natural choices with nice mathematical properties. However, if the data have an unusual or skewed shape with several extreme values, perhaps the more resistant choices among the \(IQR\) or \(MAD\) would be more appropriate.
@@ -1172,6 +1323,14 @@ We have seen three different measures of spread which, for a given data set, wil
 <p>
 However, once we are looking at the three numbers it is important to understand that the estimators are not all measuring the same quantity, on the average. In particular, it can be shown that when the data follow an approximately bell-shaped distribution, then on the average, the sample standard deviation \(s\) and the \(MAD\) will be the approximately the same value, namely, \(\sigma\), but the \(IQR\) will be on the average 1.349 times larger than \(s\) and the \(MAD\). See <a href="#cha-Sampling-Distributions">Sampling-Distributions</a> for more details.
 </p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3-4-5" class="outline-5">
+<h5 id="sec-1-3-4-5">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-4-5">
 
 
 <p>
@@ -1181,13 +1340,21 @@ we may compute the sample range with <code>range(x)</code> and the sample varian
 we can calculate the sample standard deviation with the <code>Statistics</code> \(\triangleright\) <code>Summaries</code> \(\triangleright\) <code>Numerical Summaries...</code> combination. \(\mathsf{R}\) Commander does not calculate the \(IQR\) or \(MAD\) in any of the menu selections, by default.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3-5" class="outline-4">
-<h4 id="sec-1-3-5">Measures of Shape</h4>
-<div class="outline-text-4" id="text-1-3-5">
+<div id="outline-container-sub-Measures-of-Shape" class="outline-4">
+<h4 id="sub-Measures-of-Shape"><a name="sec-1-3-5" id="sec-1-3-5"></a>Measures of Shape</h4>
+<div class="outline-text-4" id="text-sub-Measures-of-Shape">
 
+
+
+</div>
+
+<div id="outline-container-1-3-5-1" class="outline-5">
+<h5 id="sec-1-3-5-1">Sample Skewness</h5>
+<div class="outline-text-5" id="text-1-3-5-1">
 
 
 <p>
@@ -1200,6 +1367,14 @@ The sample skewness can be any value \(-\infty&lt;g_{1}&lt;\infty\). The sign of
 <p>
 We still need to know how big is ``big'', that is, how do we judge whether an observed value of \(g_{1}\) is far enough away from zero for the data set to be considered skewed to the right or left? A good rule of thumb is that data sets with skewness larger than \(2\sqrt{6/n}\) in magnitude are substantially skewed, in the direction of the sign of \(g_{1}\). See Tabachnick &amp; Fidell \cite{Tabachnick2006} for details.
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-5-2" class="outline-5">
+<h5 id="sec-1-3-5-2">Sample Excess Kurtosis</h5>
+<div class="outline-text-5" id="text-1-3-5-2">
+
 
 <p>
 The <i>sample excess kurtosis</i>, denoted by \(g_{2}\), is given by the formula
@@ -1214,6 +1389,14 @@ As a rule of thumb, if \(|g_{2}|&gt;4\sqrt{6/n}\) then the sample excess kurtosi
 <p>
 Notice that both the sample skewness and the sample kurtosis are invariant with respect to location and scale, that is, the values of \(g_{1}\) and \(g_{2}\) do not depend on the measurement units of the data. 
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-5-3" class="outline-5">
+<h5 id="sec-1-3-5-3">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-5-3">
+
 
 <p>
 The <code>e1071</code> package \cite{Dimitriadoue1071} has the <code>skewness</code> function for the sample skewness and the <code>kurtosis</code> function for the sample excess kurtosis. Both functions have a <code>na.rm</code> argument which is <code>FALSE</code> by default.
@@ -1258,12 +1441,13 @@ so that the <code>UKDriverDeaths</code> data appear to be mesokurtic, or at leas
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Exploratory Data Analysis</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Exploratory-Data-Analysis" class="outline-3">
+<h3 id="sec-Exploratory-Data-Analysis"><a name="sec-1-4" id="sec-1-4"></a>Exploratory Data Analysis</h3>
+<div class="outline-text-3" id="text-sec-Exploratory-Data-Analysis">
 
 
 <p>
@@ -1292,6 +1476,13 @@ There are many bells and whistles associated with stemplots, and the <code>stem.
 </dl>
 
 
+
+
+</div>
+
+<div id="outline-container-1-4-1-1" class="outline-5">
+<h5 id="sec-1-4-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-1-1">
 
 
 <p>
@@ -1375,12 +1566,13 @@ HI: 67
 Here is an example of split stems, with two lines per stem. The final digit of each datum has been dropped for the display. The data appear to be left skewed with four extreme values to the left and one extreme value to the right. The sample median is approximately 37 (it turns out to be 36.6).
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2">Hinges and the Five Number Summary</h4>
-<div class="outline-text-4" id="text-1-4-2">
+<div id="outline-container-sub-hinges-and-5NS" class="outline-4">
+<h4 id="sub-hinges-and-5NS"><a name="sec-1-4-2" id="sec-1-4-2"></a>Hinges and the Five Number Summary</h4>
+<div class="outline-text-4" id="text-sub-hinges-and-5NS">
 
 
 <p>
@@ -1401,16 +1593,24 @@ Given a data set \(x_{1}\), \(x_{2}\), &hellip;, \(x_{n}\), the hinges are found
 An advantage of the \(5NS\) is that it reduces a potentially large data set to a shorter list of only five numbers, and further, these numbers give insight regarding the shape of the data distribution similar to the sample quantiles in Section <a href="#sub-Order-Statistics-and">Order-Statistics-and</a>.
 </p>
 
+</div>
+
+<div id="outline-container-1-4-2-1" class="outline-5">
+<h5 id="sec-1-4-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-2-1">
+
+
 <p>
 If the data are stored in a vector <code>x</code>, then you can compute the \(5NS\) with the <code>fivenum</code> function.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4-3" class="outline-4">
-<h4 id="sec-1-4-3">Boxplots</h4>
-<div class="outline-text-4" id="text-1-4-3">
+<div id="outline-container-sub-boxplots" class="outline-4">
+<h4 id="sub-boxplots"><a name="sec-1-4-3" id="sec-1-4-3"></a>Boxplots</h4>
+<div class="outline-text-4" id="text-sub-boxplots">
 
 
 <p>
@@ -1444,9 +1644,9 @@ Boxplots are also good because one can visually assess multiple features of the 
 
 </div>
 
-<div id="outline-container-1-4-4" class="outline-4">
-<h4 id="sec-1-4-4">Outliers</h4>
-<div class="outline-text-4" id="text-1-4-4">
+<div id="outline-container-sub-Outliers" class="outline-4">
+<h4 id="sub-Outliers"><a name="sec-1-4-4" id="sec-1-4-4"></a>Outliers</h4>
+<div class="outline-text-4" id="text-sub-Outliers">
 
 
 <p>
@@ -1458,6 +1658,13 @@ When potential outliers are present, the whiskers of the boxplot are then shorte
 <p>
 What do we do about outliers? They merit further investigation. The primary goal is to determine why the observation is outlying, if possible. If the observation is a typographical error, then it should be corrected before continuing. If the observation is from a subject that does not belong to the population of interest, then perhaps the datum should be removed. Otherwise, perhaps the value is hinting at some hidden structure to the data.
 </p>
+
+</div>
+
+<div id="outline-container-1-4-4-1" class="outline-5">
+<h5 id="sec-1-4-4-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-4-1">
+
 
 <p>
 The quickest way to visually identify outliers is with a boxplot, described above. Another way is with the <code>boxplot.stats</code> function.
@@ -1494,6 +1701,7 @@ We may change the <code>coef</code> argument to 3 (it is 1.5 by default) to iden
 
 
 </div>
+</div>
 
 </div>
 
@@ -1508,17 +1716,26 @@ It is sometimes useful to compare data sets with each other on a scale that is i
 z_{i}=\frac{x_{i}-\overline{x}}{s},\quad i=1,\,2,\,\ldots,\, n.
 \]
 
+</p>
+</div>
 
+<div id="outline-container-1-4-5-1" class="outline-5">
+<h5 id="sec-1-4-5-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-5-1">
+
+
+<p>
 The <code>scale</code> function will rescale a numeric vector (or data frame) by subtracting the sample mean from each value (column) and/or by dividing each observation by the sample standard deviation.
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Multivariate Data and Data Frames</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-multivariate-data" class="outline-3">
+<h3 id="sec-multivariate-data"><a name="sec-1-5" id="sec-1-5"></a>Multivariate Data and Data Frames</h3>
+<div class="outline-text-3" id="text-sec-multivariate-data">
 
 
 <p>
@@ -1594,9 +1811,9 @@ The above is identical to <code>A[ ,1]</code>.
 
 </div>
 
-<div id="outline-container-1-5-1" class="outline-4">
-<h4 id="sec-1-5-1">Bivariate Data</h4>
-<div class="outline-text-4" id="text-1-5-1">
+<div id="outline-container-sub-Bivariate-Data" class="outline-4">
+<h4 id="sub-Bivariate-Data"><a name="sec-1-5-1" id="sec-1-5-1"></a>Bivariate Data</h4>
+<div class="outline-text-4" id="text-sub-Bivariate-Data">
 
 
 <ul>
@@ -1687,9 +1904,9 @@ r=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sqrt{\sum_{i=1}
 
 </div>
 
-<div id="outline-container-1-5-2" class="outline-4">
-<h4 id="sec-1-5-2">Multivariate Data</h4>
-<div class="outline-text-4" id="text-1-5-2">
+<div id="outline-container-sub-Multivariate-Data" class="outline-4">
+<h4 id="sub-Multivariate-Data"><a name="sec-1-5-2" id="sec-1-5-2"></a>Multivariate Data</h4>
+<div class="outline-text-4" id="text-sub-Multivariate-Data">
 
 
 <p>
@@ -1718,9 +1935,9 @@ Multivariate Data Display
 
 </div>
 
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6">Comparing Populations</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-sec-Comparing-Data-Sets" class="outline-3">
+<h3 id="sec-Comparing-Data-Sets"><a name="sec-1-6" id="sec-1-6"></a>Comparing Populations</h3>
+<div class="outline-text-3" id="text-sec-Comparing-Data-Sets">
 
 
 <p>
@@ -1932,9 +2149,9 @@ It is clear that if \(x_{(k)}=y_{(k)}\) for all \(k=1,2,\ldots,n\), then we will
 
 </div>
 
-<div id="outline-container-1-6-3" class="outline-4">
-<h4 id="sec-1-6-3">Lattice Graphics</h4>
-<div class="outline-text-4" id="text-1-6-3">
+<div id="outline-container-sub-Lattice-Graphics" class="outline-4">
+<h4 id="sub-Lattice-Graphics"><a name="sec-1-6-3" id="sec-1-6-3"></a>Lattice Graphics</h4>
+<div class="outline-text-4" id="text-sub-Lattice-Graphics">
 
 
 <p>
@@ -1943,6 +2160,13 @@ The following types of plots are useful when there is one variable of interest a
 <p>
 It is sometimes nice to set <code>lattice.options(default.theme = "col.whitebg")</code>
 </p>
+
+
+</div>
+
+<div id="outline-container-1-6-3-1" class="outline-5">
+<h5 id="sec-1-6-3-1">Side by side boxplots</h5>
+<div class="outline-text-5" id="text-1-6-3-1">
 
 
 
@@ -1965,6 +2189,16 @@ bwplot(~weight | feed, data = chickwts)
   <p>Boxplots of <code>weight</code> by <code>feed</code> type in the <code>chickwts</code> data.</p>
 </div>
 
+</div>
+
+</div>
+
+<div id="outline-container-1-6-3-2" class="outline-5">
+<h5 id="sec-1-6-3-2">Histograms</h5>
+<div class="outline-text-5" id="text-1-6-3-2">
+
+
+
 
 
 <pre class="src src-R">histogram(~age | education, data = infert)
@@ -1983,6 +2217,16 @@ bwplot(~weight | feed, data = chickwts)
   <p>Histograms of <code>age</code> by <code>education</code> level from the <code>infert</code> data.</p>
 </div>
 
+</div>
+
+</div>
+
+<div id="outline-container-1-6-3-3" class="outline-5">
+<h5 id="sec-1-6-3-3">Scatterplots</h5>
+<div class="outline-text-5" id="text-1-6-3-3">
+
+
+
 
 
 <pre class="src src-R">xyplot(Petal.Length ~ Petal.Width | Species, data = iris)
@@ -2000,6 +2244,16 @@ bwplot(~weight | feed, data = chickwts)
   <p><img src="svg/xyplot.svg" width=500 alt="svg/xyplot.svg" /></p>
   <p>An <code>xyplot</code> of <code>Petal.Length</code> versus <code>Petal.Width</code> by <code>Species</code> in the <code>iris</code> data.</p>
 </div>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-6-3-4" class="outline-5">
+<h5 id="sec-1-6-3-4">Coplots</h5>
+<div class="outline-text-5" id="text-1-6-3-4">
+
+
 
 
 
@@ -2021,6 +2275,7 @@ bwplot(~weight | feed, data = chickwts)
 
 
 
+</div>
 </div>
 </div>
 

@@ -35,9 +35,9 @@ keywords: resampling bootstrap permutation testing
 
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Resampling Methods</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-resampling-methods" class="outline-2">
+<h2 id="cha-resampling-methods"><a name="sec-1" id="sec-1"></a>Resampling Methods</h2>
+<div class="outline-text-2" id="text-cha-resampling-methods">
 
 
 <p>
@@ -46,6 +46,13 @@ Computers have changed the face of statistics. Their quick computational speed a
 <p>
 I have seen <i>Statistical Computing with \(\mathsf{R}\)</i> by Rizzo \cite{Rizzo2008} and I recommend it to those looking for a more advanced treatment with additional topics. I believe that <i>Monte Carlo Statistical Methods</i> by Robert and Casella \cite{Robert2004} has a new edition that integrates \(\mathsf{R}\) into the narrative.
 </p>
+
+</div>
+
+<div id="outline-container-sec-Introduction-Resampling" class="outline-5">
+<h5 id="sec-Introduction-Resampling"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-Introduction-Resampling">
+
 
 <ul>
 <li>basic philosophy of resampling and why it is important
@@ -57,12 +64,13 @@ I have seen <i>Statistical Computing with \(\mathsf{R}\)</i> by Rizzo \cite{Rizz
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Introduction</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-Introduction-Resampling" class="outline-3">
+<h3 id="sec-Introduction-Resampling"><a name="sec-1-1" id="sec-1-1"></a>Introduction</h3>
+<div class="outline-text-3" id="text-sec-Introduction-Resampling">
 
 
 <dl>
@@ -99,6 +107,13 @@ Due to the special structure of the empirical CDF, to get an IID sample we just 
 </p>
 
 
+</div>
+
+<div id="outline-container-1-1-1" class="outline-5">
+<h5 id="sec-1-1-1">General bootstrap procedure.</h5>
+<div class="outline-text-5" id="text-1-1-1">
+
+
 <p>
 The above discussion leads us to the following general procedure to approximate the sampling distribution of a statistic \(S=S(x_{1},x_{2},\ldots,x_{n})\) based on an observed simple random sample \(\mathbf{x}=(x_{1},x_{2},\ldots,x_{n})\) of size \(n\): 
 </p>
@@ -115,12 +130,13 @@ The above discussion leads us to the following general procedure to approximate 
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Bootstrap Standard Errors</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-Bootstrap-Standard-Errors" class="outline-3">
+<h3 id="sec-Bootstrap-Standard-Errors"><a name="sec-1-2" id="sec-1-2"></a>Bootstrap Standard Errors</h3>
+<div class="outline-text-3" id="text-sec-Bootstrap-Standard-Errors">
 
 
 <p>
@@ -369,9 +385,9 @@ Some things to keep in mind about the bootstrap:
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Bootstrap Confidence Intervals</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-Bootstrap-Confidence-Intervals" class="outline-3">
+<h3 id="sec-Bootstrap-Confidence-Intervals"><a name="sec-1-3" id="sec-1-3"></a>Bootstrap Confidence Intervals</h3>
+<div class="outline-text-3" id="text-sec-Bootstrap-Confidence-Intervals">
 
 
 
@@ -505,9 +521,9 @@ We have seen two methods for bootstrapping confidence intervals for a statistic.
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Resampling in Hypothesis Tests</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Resampling-in-Hypothesis" class="outline-3">
+<h3 id="sec-Resampling-in-Hypothesis"><a name="sec-1-4" id="sec-1-4"></a>Resampling in Hypothesis Tests</h3>
+<div class="outline-text-3" id="text-sec-Resampling-in-Hypothesis">
 
 
 <p>
@@ -553,6 +569,13 @@ The average amounts can be found:
 with an observed difference of <code>mean(x2) - mean(x1) = 10.9</code>. As expected, the 600 mg measurements seem to have a higher average, and we might be interested in trying to decide if the average amounts are <code>significantly</code> different. The null hypothesis should be that there is no difference in the amounts, that is, the groups are more or less the same. If the null hypothesis were true, then the two groups would indeed be the same, or just one big group. In that case, the observed difference in the sample means just reflects the random assignment into the arbitrary <code>x1</code> and <code>x2</code> categories. It is now clear how we may resample, consistent with the null hypothesis.
 </p>
 
+</div>
+
+<div id="outline-container-1-4-1" class="outline-5">
+<h5 id="sec-1-4-1">Procedure:</h5>
+<div class="outline-text-5" id="text-1-4-1">
+
+
 <ol>
 <li>Randomly resample 10 scores from the combined scores of <code>x1</code> and <code>x2</code>, and assign then to the <code>x1</code> group. The rest will then be in the <code>x2</code> group. Calculate the difference in (re)sampled means, and store that value.  
 </li>
@@ -585,6 +608,7 @@ alternative hypothesis: true mu is not equal to 0
 </pre>
 
 
+</div>
 
 </div>
 

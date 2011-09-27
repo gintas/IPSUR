@@ -49,9 +49,9 @@ keywords: discrete random variable R statistics
 
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Discrete Distributions</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-Discrete-Distributions" class="outline-2">
+<h2 id="cha-Discrete-Distributions"><a name="sec-1" id="sec-1"></a>Discrete Distributions</h2>
+<div class="outline-text-2" id="text-cha-Discrete-Distributions">
 
 
 <p>
@@ -63,6 +63,13 @@ We give special attention to the empirical distribution since it plays such a fu
 <p>
 There are some comments on simulation, and we mention transformations of random variables in the discrete case. The interested reader who would like to learn more about any of the assorted discrete distributions mentioned here should take a look at <i>Univariate Discrete Distributions</i> by Johnson <i>et al</i>\cite{Johnson1993}.
 </p>
+
+
+</div>
+
+<div id="outline-container-sec-discrete-random-variables" class="outline-5">
+<h5 id="sec-discrete-random-variables"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-discrete-random-variables">
 
 
 <ul>
@@ -79,20 +86,21 @@ There are some comments on simulation, and we mention transformations of random 
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Discrete Random Variables</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-discrete-random-variables" class="outline-3">
+<h3 id="sec-discrete-random-variables"><a name="sec-1-1" id="sec-1-1"></a>Discrete Random Variables</h3>
+<div class="outline-text-3" id="text-sec-discrete-random-variables">
 
 
 
 </div>
 
-<div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">Probability Mass Functions</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-sub-probability-mass-functions" class="outline-4">
+<h4 id="sub-probability-mass-functions"><a name="sec-1-1-1" id="sec-1-1-1"></a>Probability Mass Functions</h4>
+<div class="outline-text-4" id="text-sub-probability-mass-functions">
 
 
 <p>
@@ -142,9 +150,9 @@ What is the PMF of \(X\)? Notice that \(X\) is zero exactly when the outcome \(T
 
 </div>
 
-<div id="outline-container-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2">Mean, Variance, and Standard Deviation</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-sub-mean-variance-sd" class="outline-4">
+<h4 id="sub-mean-variance-sd"><a name="sec-1-1-2" id="sec-1-1-2"></a>Mean, Variance, and Standard Deviation</h4>
+<div class="outline-text-4" id="text-sub-mean-variance-sd">
 
 
 <p>
@@ -187,6 +195,13 @@ We know that all PMFs satisfy certain properties, and a similar statement may be
 
 <p>We say that \(X\) has the distribution \(F_{X}\) and we write \(X\sim F_{X}\). In an abuse of notation we will also write \(X\sim f_{X}\) and for the named distributions the PMF or CDF will be identified by the family name instead of the defining formula.
 </p>
+
+</div>
+
+<div id="outline-container-sub-disc-rv-how-r" class="outline-5">
+<h5 id="sub-disc-rv-how-r"><a name="sec-1-1-2-1" id="sec-1-1-2-1"></a>How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-sub-disc-rv-how-r">
+
 
 <p>
 The mean and variance of a discrete random variable is easy to compute at the console. Let's return to Example <a href="#exa-disc-pmf-mean">disc-pmf-mean</a>. We will start by defining a vector <code>x</code> containing the support of \(X\), and a vector <code>f</code> to contain the values of \(f_{X}\) at the respective outcomes in <code>x</code>:
@@ -281,12 +296,13 @@ E(X); var(X); sd(X)
 
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">The Discrete Uniform Distribution</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-disc-uniform-dist" class="outline-3">
+<h3 id="sec-disc-uniform-dist"><a name="sec-1-2" id="sec-1-2"></a>The Discrete Uniform Distribution</h3>
+<div class="outline-text-3" id="text-sec-disc-uniform-dist">
 
 
 <p>
@@ -317,12 +333,34 @@ and finally,
 Roll a die and let \(X\) be the upward face showing. Then \(m=6\), \(\mu=7/2=3.5\), and \(\sigma^{2}=(6^{2}-1)/12=35/12\).
 </p>
 
-<p>
-One can choose an integer at random with the <code>sample</code> function. The general syntax to simulate a discrete uniform random variable is <code>sample(x, size, replace = TRUE)</code>.
+</div>
+
+<div id="outline-container-1-2-1" class="outline-5">
+<h5 id="sec-1-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-1">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-5">
+<h5 id="sec-1-2-2">From the console:</h5>
+<div class="outline-text-5" id="text-1-2-2">
+
+<p>One can choose an integer at random with the <code>sample</code> function. The general syntax to simulate a discrete uniform random variable is <code>sample(x, size, replace = TRUE)</code>.
 </p>
 <p>
 The argument <code>x</code> identifies the numbers from which to randomly sample. If <code>x</code> is a number, then sampling is done from 1 to <code>x</code>. The argument <code>size</code> tells how big the sample size should be, and <code>replace</code> tells whether or not numbers should be replaced in the urn after having been sampled. The default option is <code>replace = FALSE</code> but for discrete uniforms the sampled values should be replaced. Some examples follow.
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-5">
+<h5 id="sec-1-2-3">Examples</h5>
+<div class="outline-text-5" id="text-1-2-3">
+
 <ul>
 <li>To roll a fair die 3000 times, do <code>sample(6, size = 3000, replace = TRUE)</code>.
 </li>
@@ -332,6 +370,14 @@ The argument <code>x</code> identifies the numbers from which to randomly sample
 </li>
 </ul>
 
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-5">
+<h5 id="sec-1-2-4">With the \(\mathsf{R}\) Commander:</h5>
+<div class="outline-text-5" id="text-1-2-4">
 
 
 <p>
@@ -350,12 +396,13 @@ In the \(\mathsf{R}\) Console window, the \(\mathsf{R}\) Commander should tell y
 The default name for the variable is <code>disunif.sim1</code>.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">The Binomial Distribution</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-binom-dist" class="outline-3">
+<h3 id="sec-binom-dist"><a name="sec-1-3" id="sec-1-3"></a>The Binomial Distribution</h3>
+<div class="outline-text-3" id="text-sec-binom-dist">
 
 
 <p>
@@ -376,9 +423,9 @@ It is easy to calculate \(\mu=\mathbb{E} X=p\) and \(\mathbb{E} X^{2}=p\) so tha
 
 </div>
 
-<div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1">The Binomial Model</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-sub-The-Binomial-Model" class="outline-4">
+<h4 id="sub-The-Binomial-Model"><a name="sec-1-3-1" id="sec-1-3-1"></a>The Binomial Model</h4>
+<div class="outline-text-4" id="text-sub-The-Binomial-Model">
 
 
 <p>
@@ -422,6 +469,13 @@ f_{X}(2)={4 \choose 2}(1/2)^{2}(1/2)^{2}=\frac{6}{2^{4}}.
 \]
 The mean number of boys is \(4(1/2)=2\) and the variance of \(X\) is \(4(1/2)(1/2)=1\).
 </p>
+
+</div>
+
+<div id="outline-container-1-3-1-1" class="outline-5">
+<h5 id="sec-1-3-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
+
 
 <p>
 The corresponding \(\mathsf{R}\) function for the PMF and CDF are <code>dbinom</code> and <code>pbinom</code>, respectively. We demonstrate their use in the following examples.  
@@ -569,20 +623,21 @@ Random variables defined via the <code>distr</code> package may be <i>plotted</i
 
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Expectation and Moment Generating Functions</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-expectation-and-mgfs" class="outline-3">
+<h3 id="sec-expectation-and-mgfs"><a name="sec-1-4" id="sec-1-4"></a>Expectation and Moment Generating Functions</h3>
+<div class="outline-text-3" id="text-sec-expectation-and-mgfs">
 
 
 
 </div>
 
-<div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1">The Expectation Operator</h4>
-<div class="outline-text-4" id="text-1-4-1">
+<div id="outline-container-sub-expectation-operator" class="outline-4">
+<h4 id="sub-expectation-operator"><a name="sec-1-4-1" id="sec-1-4-1"></a>The Expectation Operator</h4>
+<div class="outline-text-4" id="text-sub-expectation-operator">
 
 
 <p>
@@ -639,9 +694,9 @@ Go directly from the definition. For example,
 
 </div>
 
-<div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2">Moment Generating Functions</h4>
-<div class="outline-text-4" id="text-1-4-2">
+<div id="outline-container-sub-MGFs" class="outline-4">
+<h4 id="sub-MGFs"><a name="sec-1-4-2" id="sec-1-4-2"></a>Moment Generating Functions</h4>
+<div class="outline-text-4" id="text-sub-MGFs">
 
 
 <p>
@@ -680,6 +735,13 @@ M_{X}(t)= & \sum_{x=0}^{n}\mathrm{e}^{tx}\,{n \choose x}\, p^{x}(1-p)^{n-x},\\
 
 
 
+</div>
+
+<div id="outline-container-1-4-2-1" class="outline-5">
+<h5 id="sec-1-4-2-1">Applications</h5>
+<div class="outline-text-5" id="text-1-4-2-1">
+
+
 <p>
 We will discuss three applications of moment generating functions in this book. The first is the fact that an MGF may be used to accurately identify the probability distribution that generated it, which rests on the following:
 </p>
@@ -707,6 +769,14 @@ Then \(X\sim\mathsf{binom}(\mathtt{size}=13,\,\mathtt{prob}=0.7)\).
 <p>
 An MGF is also known as a ``Laplace Transform'' and is manipulated in that context in many branches of science and engineering.
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-4-2-2" class="outline-5">
+<h5 id="sec-1-4-2-2">Why is it called a Moment Generating Function?</h5>
+<div class="outline-text-5" id="text-1-4-2-2">
+
 
 <p>
 This brings us to the second powerful application of MGFs. Many of the models we study have a simple MGF, indeed, which permits us to determine the mean, variance, and even higher moments very quickly. Let us see why. We already know that 
@@ -715,7 +785,7 @@ M(t)= & \sum_{x\in S}\mathrm{e}^{tx}f(x).
 \end{alignat*}
 Take the derivative with respect to \(t\) to get
 \begin{equation}
-M'(t)=\frac{\diff}{\diff t}\left(\sum_{x\in S}\mathrm{e}^{tx}f(x)\right)=\sum_{x\in S}\ \frac{\diff}{\diff t}\left(\mathrm{e}^{tx}f(x)\right)=\sum_{x\in S}x\mathrm{e}^{tx}f(x),
+M'(t)=\frac{\mathrm{d}}{\mathrm{d} t}\left(\sum_{x\in S}\mathrm{e}^{tx}f(x)\right)=\sum_{x\in S}\ \frac{\mathrm{d}}{\mathrm{d} t}\left(\mathrm{e}^{tx}f(x)\right)=\sum_{x\in S}x\mathrm{e}^{tx}f(x),
 \end{equation}
 and so if we plug in zero for \(t\) we see
 \begin{equation}
@@ -724,7 +794,7 @@ M'(0)=\sum_{x\in S}x\mathrm{e}^{0}f(x)=\sum_{x\in S}xf(x)=\mu=\mathbb{E} X.
 Similarly, \(M''(t)=\sum x^{2}\mathrm{e}^{tx}f(x)\) so that \(M''(0)=\mathbb{E} X^{2}\). And in general, we can see
 that
 \begin{equation}
-M_{X}^{(r)}(0)=\mathbb{E} X^{r}=\mbox{$r^{\mathrm{th}$} moment of $X$ about the origin.}
+M_{X}^{(r)}(0)=\mathbb{E} X^{r}=\mbox{\(r^{\mathrm{th}}\) moment of \(X\) about the origin.}
 \end{equation}
 
 These are also known as <i>raw moments</i> and are sometimes denoted \(\mu_{r}'\). In addition to these are the so called <i>central moments</i> \(\mu_{r}\) defined by
@@ -766,6 +836,14 @@ M_{X}(t)=\sum_{r=0}^{\infty}\frac{\mathbb{E} X^{r}}{r!}t^{r},\quad\mbox{for all 
 \end{equation}
 </div>
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-4-2-3" class="outline-5">
+<h5 id="sec-1-4-2-3">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-2-3">
+
 
 <p>
 The <code>distrEx</code> package provides an expectation operator <code>E</code> which can be used on random variables that have been defined in the ordinary <code>distr</code> sense:
@@ -813,12 +891,13 @@ There are even methods for <code>IQR</code>, <code>mad</code>, <code>skewness</c
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">The Empirical Distribution</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-empirical-distribution" class="outline-3">
+<h3 id="sec-empirical-distribution"><a name="sec-1-5" id="sec-1-5"></a>The Empirical Distribution</h3>
+<div class="outline-text-3" id="text-sec-empirical-distribution">
 
 
 <p>
@@ -848,6 +927,13 @@ s^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})^{2}.
 \end{equation}
 The <i>empirical quantile function</i> is the inverse of the ECDF. See Section <a href="#sub-Normal-Quantiles-QF">Normal-Quantiles-QF</a>.
 </p>
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-5">
+<h5 id="sec-1-5-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-5-1">
 
 
 <p>
@@ -933,12 +1019,13 @@ We can get the empirical quantile function in \(\mathsf{R}\) with <code>quantile
 As we hinted above, the empirical distribution is significant more because of how and where it appears in more sophisticated applications. We will explore some of these in later chapters &ndash; see, for instance, Chapter <a href="#cha-resampling-methods">resampling-methods</a>.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6">Other Discrete Distributions</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-sec-other-discrete-distributions" class="outline-3">
+<h3 id="sec-other-discrete-distributions"><a name="sec-1-6" id="sec-1-6"></a>Other Discrete Distributions</h3>
+<div class="outline-text-3" id="text-sec-other-discrete-distributions">
 
 
 <p>
@@ -947,10 +1034,17 @@ The binomial and discrete uniform distributions are popular, and rightly so; the
 
 </div>
 
-<div id="outline-container-1-6-1" class="outline-4">
-<h4 id="sec-1-6-1">Dependent Bernoulli Trials</h4>
-<div class="outline-text-4" id="text-1-6-1">
+<div id="outline-container-sec-non-bernoulli-trials" class="outline-4">
+<h4 id="sec-non-bernoulli-trials"><a name="sec-1-6-1" id="sec-1-6-1"></a>Dependent Bernoulli Trials</h4>
+<div class="outline-text-4" id="text-sec-non-bernoulli-trials">
 
+
+
+</div>
+
+<div id="outline-container-sub-hypergeometric-dist" class="outline-5">
+<h5 id="sub-hypergeometric-dist"><a name="sec-1-6-1-1" id="sec-1-6-1-1"></a>The Hypergeometric Distribution</h5>
+<div class="outline-text-5" id="text-sub-hypergeometric-dist">
 
 
 <p>
@@ -1073,7 +1167,7 @@ Find \(\Pr(X&gt;1)\).
    In general, the <code>Upper tail</code> option of a tail probabilities dialog computes \(\Pr(X &gt; x)\) for all given <code>Variable Value(s)</code> \(x\).
 Generate \(100,000\) observations of the random variable \(X\).
    We can randomly simulate as many observations of \(X\) as we want in \(\mathsf{R}\) Commander. Simply choose <code>Simulate hypergeometric variates...</code> in the <code>Hypergeometric distribution</code> dialog. 
-   In the <code>Number of samples</code> dialog, type 1. Enter the parameters as above. Under the \textsf{Store Values} section, make sure <code>New Data set</code> is selected. Click <code>OK</code>. 
+   In the <code>Number of samples</code> dialog, type 1. Enter the parameters as above. Under the <code>Store Values</code> section, make sure <code>New Data set</code> is selected. Click <code>OK</code>. 
    A new dialog should open, with the default name <code>Simset1</code>.  We could change this if we like, according to the rules for \(\mathsf{R}\) object names. In the sample size box, enter 100000. Click <code>OK</code>. 
    In the Console Window, \(\mathsf{R}\) Commander should issue an alert that <code>Simset1</code> has been initialized, and in a few seconds, it should also state that 100,000 hypergeometric variates were stored in <code>hyper.sim1</code>. We can view the sample by clicking the <code>View Data Set</code> button on the \(\mathsf{R}\) Commander interface.
    We know from our formulas that \(\mu=K\cdot M/(M+N)=5*17/250=0.34\). We can check our formulas using the fact that with repeated observations of \(X\) we would expect about 0.34 defectives on the average. To see how our sample reflects the true mean, we can compute the sample mean
@@ -1109,6 +1203,14 @@ Generate \(100,000\) observations of the random variable \(X\).
 
 
 
+</div>
+
+</div>
+
+<div id="outline-container-sub-Sampling-With-and" class="outline-5">
+<h5 id="sub-Sampling-With-and"><a name="sec-1-6-1-2" id="sec-1-6-1-2"></a>Sampling With and Without Replacement</h5>
+<div class="outline-text-5" id="text-sub-Sampling-With-and">
+
 
 <p>
 Suppose that we have a large urn with, say, \(M\) white balls and \(N\) black balls. We take a sample of size \(n\) from the urn, and let \(X\) count the number of white balls in the sample. If we sample
@@ -1139,17 +1241,25 @@ Suppose that we have a large urn with, say, \(M\) white balls and \(N\) black ba
 is called a <i>finite population correction</i>. For a fixed sample size \(n\), as \(M,N\to\infty\) it is clear that the correction goes to 1, that is, for infinite populations the sampling schemes are essentially the same with respect to mean and variance.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-6-2" class="outline-4">
-<h4 id="sec-1-6-2">Waiting Time Distributions</h4>
-<div class="outline-text-4" id="text-1-6-2">
+<div id="outline-container-sec-Waiting-Time-Distributions" class="outline-4">
+<h4 id="sec-Waiting-Time-Distributions"><a name="sec-1-6-2" id="sec-1-6-2"></a>Waiting Time Distributions</h4>
+<div class="outline-text-4" id="text-sec-Waiting-Time-Distributions">
 
 
 <p>
 Another important class of problems is associated with the amount of time it takes for a specified event of interest to occur. For example, we could flip a coin repeatedly until we observe Heads. We could toss a piece of paper repeatedly until we make it in the trash can.
 </p>
+
+</div>
+
+<div id="outline-container-sub-The-Geometric-Distribution" class="outline-5">
+<h5 id="sub-The-Geometric-Distribution"><a name="sec-1-6-2-1" id="sec-1-6-2-1"></a>The Geometric Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Geometric-Distribution">
+
 
 <p>
 Suppose that we conduct Bernoulli trials repeatedly, noting the successes and failures. Let \(X\) be the number of failures before a success. If \(\Pr(S)=p\) then \(X\) has PMF
@@ -1196,6 +1306,14 @@ f_{Y}(y)=p(1-p)^{y-1},\quad y=1,2,3,\ldots
 When they say ``geometric distribution'', this is what they mean. It is not hard to see that the two definitions are related. In fact, if \(X\) denotes our geometric and \(Y\) theirs, then \(Y=X+1\). Consequently, they have \(\mu_{Y}=\mu_{X}+1\) and \(\sigma_{Y}^{2}=\sigma_{X}^{2}\).
 </div>
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-sub-The-Negative-Binomial" class="outline-5">
+<h5 id="sub-The-Negative-Binomial"><a name="sec-1-6-2-2" id="sec-1-6-2-2"></a>The Negative Binomial Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Negative-Binomial">
+
 
 <p>
 We may generalize the problem and consider the case where we wait for <i>more</i> than one success. Suppose that we conduct Bernoulli trials repeatedly, noting the respective successes and failures. Let \(X\) count the number of failures before \(r\) successes. If \(\Pr(S)=p\) then \(X\) has PMF
@@ -1283,13 +1401,21 @@ It is again not hard to see that if \(X\) denotes our Negative Binomial and \(Y\
 </div>
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-6-3" class="outline-4">
-<h4 id="sec-1-6-3">Arrival Processes</h4>
-<div class="outline-text-4" id="text-1-6-3">
+<div id="outline-container-sec-Arrival-Processes" class="outline-4">
+<h4 id="sec-Arrival-Processes"><a name="sec-1-6-3" id="sec-1-6-3"></a>Arrival Processes</h4>
+<div class="outline-text-4" id="text-sec-Arrival-Processes">
 
+
+
+</div>
+
+<div id="outline-container-sub-The-Poisson-Distribution" class="outline-5">
+<h5 id="sub-The-Poisson-Distribution"><a name="sec-1-6-3-1" id="sec-1-6-3-1"></a>The Poisson Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Poisson-Distribution">
 
 
 <p>
@@ -1312,6 +1438,14 @@ f_{X}(x)=\Pr(X=x)=\mathrm{e}^{-\lambda}\frac{\lambda^{x}}{x!},\quad x=0,1,2,\ldo
 \end{equation}
 We use the notation \(X\sim\mathsf{pois}(\mathtt{lambda}=\lambda)\). The associated \(\mathsf{R}\) functions are <code>dpois(x, lambda)</code>, <code>ppois</code>, <code>qpois</code>, and <code>rpois</code>, which give the PMF, CDF, quantile function, and simulate random variates, respectively.
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-6-3-2" class="outline-5">
+<h5 id="sec-1-6-3-2">What are the reasonable conditions?</h5>
+<div class="outline-text-5" id="text-1-6-3-2">
+
 
 <p>
 Divide \([0,1]\) into subintervals of length \(1/n\). A <i>Poisson process</i>\index{Poisson process} satisfies the following conditions:
@@ -1360,12 +1494,13 @@ Suppose the car wash above is in operation from 8AM to 6PM, and we let \(Y\) be 
 
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7">Functions of Discrete Random Variables</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-sec-functions-discrete-rvs" class="outline-3">
+<h3 id="sec-functions-discrete-rvs"><a name="sec-1-7" id="sec-1-7"></a>Functions of Discrete Random Variables</h3>
+<div class="outline-text-3" id="text-sec-functions-discrete-rvs">
 
 
 <p>

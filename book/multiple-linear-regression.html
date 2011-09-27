@@ -63,9 +63,9 @@ keywords: multiple linear regression R statistics
 </div>
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Multiple Linear Regression</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-multiple-linear-regression" class="outline-2">
+<h2 id="cha-multiple-linear-regression"><a name="sec-1" id="sec-1"></a>Multiple Linear Regression</h2>
+<div class="outline-text-2" id="text-cha-multiple-linear-regression">
 
 
 <p>
@@ -77,6 +77,13 @@ The language is phrased in matrix terms &ndash; for two reasons. First, it is qu
 <p>
 Most of the results are stated without proof or with only a cursory justification. Those yearning for more should consult an advanced text in linear regression for details, such as <i>Applied Linear Regression Models</i> \cite{Neter1996} or <i>Linear Models: Least Squares and Alternatives</i> \cite{Rao1999}.
 </p>
+
+
+</div>
+
+<div id="outline-container-sec-The-MLR-Model" class="outline-5">
+<h5 id="sec-The-MLR-Model"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-The-MLR-Model">
 
 
 <ul>
@@ -95,12 +102,13 @@ Most of the results are stated without proof or with only a cursory justificatio
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">The Multiple Linear Regression Model</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-The-MLR-Model" class="outline-3">
+<h3 id="sec-The-MLR-Model"><a name="sec-1-1" id="sec-1-1"></a>The Multiple Linear Regression Model</h3>
+<div class="outline-text-3" id="text-sec-The-MLR-Model">
 
 
 <p>
@@ -253,17 +261,17 @@ Looking at the graph we see that the data points fall close to a plane in three 
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Estimation and Prediction</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-Estimation-and-Prediction-MLR" class="outline-3">
+<h3 id="sec-Estimation-and-Prediction-MLR"><a name="sec-1-2" id="sec-1-2"></a>Estimation and Prediction</h3>
+<div class="outline-text-3" id="text-sec-Estimation-and-Prediction-MLR">
 
 
 
 </div>
 
-<div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1">Parameter estimates</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-sub-mlr-parameter-estimates" class="outline-4">
+<h4 id="sub-mlr-parameter-estimates"><a name="sec-1-2-1" id="sec-1-2-1"></a>Parameter estimates</h4>
+<div class="outline-text-4" id="text-sub-mlr-parameter-estimates">
 
 
 <p>
@@ -304,6 +312,13 @@ The formula in Equation <a href="#eq-b-formula-matrix">b-formula-matrix</a> is c
 We have only found a critical value, and have not actually shown that the critical value is a minimum. We omit the details and refer the interested reader to \cite{Rao1999}.
 </div>
 </p>
+
+</div>
+
+<div id="outline-container-1-2-1-1" class="outline-5">
+<h5 id="sec-1-2-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+
 
 <p>
 We do all of the above just as we would in simple linear regression. The powerhouse is the <code>lm</code>\index{lm@\texttt{lm}} function. Everything else is based on it. We separate explanatory variables in the model formula by a plus sign.
@@ -360,12 +375,13 @@ We could see the entire model matrix \(\mathbf{X}\) with the <code>model.matrix<
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2">Point Estimates of the Regression Surface</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-sub-mlr-point-est-regsurface" class="outline-4">
+<h4 id="sub-mlr-point-est-regsurface"><a name="sec-1-2-2" id="sec-1-2-2"></a>Point Estimates of the Regression Surface</h4>
+<div class="outline-text-4" id="text-sub-mlr-point-est-regsurface">
 
 
 <p>
@@ -427,6 +443,13 @@ If we wanted to predict the average volume of black cherry trees that have <code
 
 We would use the same estimate \(\hat{Y}=35.6\) to predict the measured <code>Volume</code> of another black cherry tree &ndash; yet to be observed &ndash; that has <code>Girth = 15</code> in and is <code>Height = 77</code> ft tall.
 </p>
+
+</div>
+
+<div id="outline-container-1-2-2-1" class="outline-5">
+<h5 id="sec-1-2-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-2-1">
+
 
 <p>
 The fitted values are stored inside <code>trees.lm</code> and may be accessed with the <code>fitted</code> function. We only show the first five fitted values.
@@ -511,12 +534,13 @@ Using the <code>trees</code> data,
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3">Mean Square Error and Standard Error</h4>
-<div class="outline-text-4" id="text-1-2-3">
+<div id="outline-container-sub-mlr-mse-se" class="outline-4">
+<h4 id="sub-mlr-mse-se"><a name="sec-1-2-3" id="sec-1-2-3"></a>Mean Square Error and Standard Error</h4>
+<div class="outline-text-4" id="text-sub-mlr-mse-se">
 
 
 <p>
@@ -538,6 +562,13 @@ S^{2}=\frac{SSE}{n-(p+1)}.
 \end{equation}
 That would be a good guess. The <i>residual standard error</i> is \(S=\sqrt{S^{2}}\).
 </p>
+
+</div>
+
+<div id="outline-container-1-2-3-1" class="outline-5">
+<h5 id="sec-1-2-3-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-3-1">
+
 
 <p>
 The residuals are also stored with <code>trees.lm</code> and may be accessed with the <code>residuals</code> function. We only show the first five residuals.
@@ -583,12 +614,13 @@ treesumry$sigma
 For the <code>trees</code> data we find \(s\approx  3.882 \).
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4">Interval Estimates of the Parameters</h4>
-<div class="outline-text-4" id="text-1-2-4">
+<div id="outline-container-sub-mlr-interval-est-params" class="outline-4">
+<h4 id="sub-mlr-interval-est-params"><a name="sec-1-2-4" id="sec-1-2-4"></a>Interval Estimates of the Parameters</h4>
+<div class="outline-text-4" id="text-sub-mlr-interval-est-params">
 
 
 <p>
@@ -619,6 +651,13 @@ The degrees of freedom for the Student's \(t\) distribution
 are the same as the denominator of \(S^{2}\). 
 </p>
 
+</div>
+
+<div id="outline-container-1-2-4-1" class="outline-5">
+<h5 id="sec-1-2-4-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
+
+
 <p>
 To get confidence intervals for the parameters we need only use <code>confint</code>\index{confint@\texttt{confint}}:
 </p>
@@ -643,6 +682,7 @@ Height        0.07264863   0.6058538
 <p>
 For example, using the calculations above we say that for the regression model <code>Volume ~ Girth + Height</code> we are 95% confident that the parameter \(\beta_{1}\) lies somewhere in the interval \( [  4.2,  5.2 ] \).
 </p>
+</div>
 </div>
 
 </div>
@@ -677,6 +717,13 @@ Prediction intervals for a new observation at \(\mathbf{x}_{0}\) are given by
 \end{equation}
 The prediction intervals are wider than the confidence intervals, just as in Section <a href="#sub-slr-interval-est-regline">slr-interval-est-regline</a>.
 </p>
+
+
+</div>
+
+<div id="outline-container-1-2-5-1" class="outline-5">
+<h5 id="sec-1-2-5-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-5-1">
 
 
 <p>
@@ -755,12 +802,13 @@ Using the <code>trees</code> data,
 
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Model Utility and Inference</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-Model-Utility-and-MLR" class="outline-3">
+<h3 id="sec-Model-Utility-and-MLR"><a name="sec-1-3" id="sec-1-3"></a>Model Utility and Inference</h3>
+<div class="outline-text-3" id="text-sec-Model-Utility-and-MLR">
 
 
 
@@ -802,8 +850,14 @@ This is a problem, because as the philosopher, Occam, once said: ``causes should
 \end{equation}
 It is good practice for the statistician to weigh both \(R^{2}\) and \(\overline{R}^{2}\) during assessment of model utility. In many cases their values will be very close to each other. If their values differ substantially, or if one changes dramatically when an explanatory variable is added, then (s)he should take a closer look at the explanatory variables in the model.
 </p>
-<p>
-For the <code>trees</code> data, we can get \(R^{2}\) and \(\overline{R}^{2}\) from the <code>summary</code> output or access the values directly by name as shown (recall that we stored the <code>summary</code> object in <code>treesumry</code>).
+
+</div>
+
+<div id="outline-container-1-3-1-1" class="outline-5">
+<h5 id="sec-1-3-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
+
+<p>For the <code>trees</code> data, we can get \(R^{2}\) and \(\overline{R}^{2}\) from the <code>summary</code> output or access the values directly by name as shown (recall that we stored the <code>summary</code> object in <code>treesumry</code>).
 </p>
 
 
@@ -841,12 +895,13 @@ For the <code>trees</code> data, we can get \(R^{2}\) and \(\overline{R}^{2}\) f
 High values of \(R^{2}\) and \( \overline{R}^2 \) such as these indicate that the model fits very well, which agrees with what we saw in Figure <a href="#fig-3D-scatterplot-trees">3D-scatterplot-trees</a>.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2">Overall <i>F</i>-Test</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-sub-mlr-Overall-F-Test" class="outline-4">
+<h4 id="sub-mlr-Overall-F-Test"><a name="sec-1-3-2" id="sec-1-3-2"></a>Overall <i>F</i>-Test</h4>
+<div class="outline-text-4" id="text-sub-mlr-Overall-F-Test">
 
 
 <p>
@@ -860,6 +915,13 @@ F=\frac{SSR/p}{SSE/(n-p-1)}.
 \end{equation}
 When the regression assumptions hold and under \(H_{0}\), it can be shown that \(F\sim\mathsf{f}(\mathtt{df1}=p,\,\mathtt{df2}=n-p-1)\). We reject \(H_{0}\) when \(F\) is large, that is, when the explained variation is large relative to the unexplained variation.
 </p>
+
+</div>
+
+<div id="outline-container-1-3-2-1" class="outline-5">
+<h5 id="sec-1-3-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-2-1">
+
 
 <p>
 The overall \(F\) statistic and its associated <i>p</i>-value is listed at the bottom of the <code>summary</code> output, or we can access it directly by name; it is stored in the <code>fstatistic</code> component of the <code>summary</code> object. 
@@ -881,12 +943,13 @@ The overall \(F\) statistic and its associated <i>p</i>-value is listed at the b
 For the <code>trees</code> data, we see that \( F =  254.972337410669 \) with a <i>p</i>-value <code>&lt; 2.2e-16</code>. Consequently we reject \(H_{0}\), that is, the data provide strong evidence that not all \(\beta_{i}\)'s are zero.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3">Student's <i>t</i> Tests</h4>
-<div class="outline-text-4" id="text-1-3-3">
+<div id="outline-container-sub-mlr-Student-s-t-Tests" class="outline-4">
+<h4 id="sub-mlr-Student-s-t-Tests"><a name="sec-1-3-3" id="sec-1-3-3"></a>Student's <i>t</i> Tests</h4>
+<div class="outline-text-4" id="text-sub-mlr-Student-s-t-Tests">
 
 
 <p>
@@ -907,6 +970,13 @@ T_{i}=\frac{b_{i}-\beta_{i}}{S_{b_{i}}}
 \end{equation}
 has a Student's \(t\) distribution with \(n-(p+1)\) degrees of freedom. (Remember, we are estimating \(p+1\) parameters.) Consequently, under the null hypothesis \(H_{0}:\beta_{i}=0\) the statistic \(t_{i}=b_{i}/S_{b_{i}}\) has a \(\mathsf{t}(\mathtt{df}=n-p-1)\) distribution.
 </p>
+
+
+</div>
+
+<div id="outline-container-1-3-3-1" class="outline-5">
+<h5 id="sec-1-3-3-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-3-1">
 
 
 <p>
@@ -949,12 +1019,13 @@ We see from the <i>p-values</i> that there is a significant linear relationship 
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Polynomial Regression</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Polynomial-Regression" class="outline-3">
+<h3 id="sec-Polynomial-Regression"><a name="sec-1-4" id="sec-1-4"></a>Polynomial Regression</h3>
+<div class="outline-text-3" id="text-sec-Polynomial-Regression">
 
 
 
@@ -999,6 +1070,13 @@ The regression assumptions are the same. Almost everything indeed is the same. I
 <p>
 <b>However, there is one important difference.</b> When we introduce the squared variable in the model we inadvertently also introduce strong dependence between the terms which can cause significant numerical problems when it comes time to calculate the parameter estimates. Therefore, we should usually rescale the independent variable to have mean zero (and even variance one if we wish) <b>before</b> fitting the model. That is, we replace the \(x_{i}\)'s with \(x_{i}-\overline{x}\) (or \((x_{i}-\overline{x})/s\)) before fitting the model
 </p>
+
+</div>
+
+<div id="outline-container-1-4-1-1" class="outline-5">
+<h5 id="sec-1-4-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-1-1">
+
 
 <p>
 There are multiple ways to fit a quadratic model to the variables <code>Volume</code> and <code>Girth</code> using \(\mathsf{R}\).
@@ -1138,12 +1216,13 @@ In Example <a href="#exa-mlr-trees-poly-no-rescale">mlr-trees-poly-no-rescale</a
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Interaction</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-Interaction" class="outline-3">
+<h3 id="sec-Interaction"><a name="sec-1-5" id="sec-1-5"></a>Interaction</h3>
+<div class="outline-text-3" id="text-sec-Interaction">
 
 
 <p>
@@ -1164,6 +1243,13 @@ of an interaction term between \(x{}_{1}\) and \(x_{2}\).
 </p>
 
 
+</div>
+
+<div id="outline-container-1-5-1" class="outline-5">
+<h5 id="sec-1-5-1">What does it mean?</h5>
+<div class="outline-text-5" id="text-1-5-1">
+
+
 <p>
 Consider the mean response \(\mu(x_{1},x_{2})\) as a function of \(x_{2}\):
 \begin{equation}
@@ -1178,6 +1264,14 @@ Now think about what happens when the interaction term \(\beta_{1:2}x_{1}x_{2}\)
 \end{equation}
 In this case we see that not only the \(y\)-intercept changes when \(x_{1}\) varies, but the slope also changes in \(x_{1}\). Thus, the interaction term allows the slope of the mean response in \(x_{2}\) to increase and decrease as \(x_{1}\) varies. 
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2" class="outline-5">
+<h5 id="sec-1-5-2">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-5-2">
+
 
 <p>
 There are several ways to introduce an interaction term into the model.
@@ -1275,12 +1369,13 @@ There are two other ways to include interaction terms in model formulas. For exa
 These examples can be generalized to more than two independent variables, say three, four, or even more. We may be interested in seeing whether any pairwise interactions are significant. We do this with a model formula that looks something like <code>y ~ (x1 + x2 + x3 + x4)^2</code>.  
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6">Qualitative Explanatory Variables</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-sec-Qualitative-Explanatory-Variables" class="outline-3">
+<h3 id="sec-Qualitative-Explanatory-Variables"><a name="sec-1-6" id="sec-1-6"></a>Qualitative Explanatory Variables</h3>
+<div class="outline-text-3" id="text-sec-Qualitative-Explanatory-Variables">
 
 
 <p>
@@ -1340,6 +1435,13 @@ while trees with <code>Tall = no</code> will have the mean response
 \end{equation}
 In essence, we are fitting two regression lines: one for tall trees, and one for short trees. The regression lines have the same slope but they have different \(y\) intercepts (which are exactly \(|\beta_{2}|\) far apart).
 </p>
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-5">
+<h5 id="sec-1-6-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-6-1">
+
 
 <p>
 The important thing is to double check that the qualitative variable in question is stored as a factor. The way to check is with the <code>class</code> command. For example,
@@ -1412,6 +1514,7 @@ In general, if an explanatory variable <code>foo</code> is qualitative with \(n\
 The level <code>bar1</code> is represented by \(\mathtt{foobar2}=\cdots=\mathtt{foobarn}=0\). We just need to make sure that <code>foo</code> is stored as a factor and \(\mathsf{R}\) will take care of the rest. 
 </div>
 </p>
+</div>
 
 </div>
 
@@ -1448,9 +1551,9 @@ There are other &ndash; shorter &ndash; ways to plot regression lines by groups,
 
 </div>
 
-<div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7">Partial <i>F</i> Statistic</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-sec-Partial-F-Statistic" class="outline-3">
+<h3 id="sec-Partial-F-Statistic"><a name="sec-1-7" id="sec-1-7"></a>Partial <i>F</i> Statistic</h3>
+<div class="outline-text-3" id="text-sec-Partial-F-Statistic">
 
 
 <p>
@@ -1482,6 +1585,13 @@ F=\frac{(SSE_{r}-SSE_{f})/(p-j)}{SSE_{f}/(n-p-1)}.
 \end{equation}
 It can be shown when the regression assumptions hold under \(H_{0}\) that the partial \(F\) statistic has an \(\mathsf{f}(\mathtt{df1}=p-j,\,\mathtt{df2}=n-p-1)\) distribution. We calculate the \(p\)-value of the observed partial \(F\) statistic and reject \(H_{0}\) if the \(p\)-value is small. 
 </p>
+
+
+</div>
+
+<div id="outline-container-1-7-1" class="outline-5">
+<h5 id="sec-1-7-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-7-1">
 
 
 <p>
@@ -1594,12 +1704,13 @@ In this case, the improvement to the reduced model that is attributable to <code
 </p>
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-8" class="outline-3">
-<h3 id="sec-1-8">Residual Analysis and Diagnostic Tools</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-sec-Residual-Analysis-MLR" class="outline-3">
+<h3 id="sec-Residual-Analysis-MLR"><a name="sec-1-8" id="sec-1-8"></a>Residual Analysis and Diagnostic Tools</h3>
+<div class="outline-text-3" id="text-sec-Residual-Analysis-MLR">
 
 
 <p>
@@ -1640,9 +1751,9 @@ We encountered many, many diagnostic measures for simple linear regression in Se
 
 </div>
 
-<div id="outline-container-1-9" class="outline-3">
-<h3 id="sec-1-9">Additional Topics</h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-sec-Additional-Topics-MLR" class="outline-3">
+<h3 id="sec-Additional-Topics-MLR"><a name="sec-1-9" id="sec-1-9"></a>Additional Topics</h3>
+<div class="outline-text-3" id="text-sec-Additional-Topics-MLR">
 
 
 
@@ -1798,7 +1909,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Residual standard error: 1.865 on 197 degrees of freedom
 
 Number of iterations to convergence: 3 
-Achieved convergence tolerance: 6.554e-08
+Achieved convergence tolerance: 6.546e-08
 </pre>
 
 
@@ -1806,9 +1917,9 @@ Achieved convergence tolerance: 6.554e-08
 
 </div>
 
-<div id="outline-container-1-9-3" class="outline-4">
-<h4 id="sec-1-9-3">Multicollinearity</h4>
-<div class="outline-text-4" id="text-1-9-3">
+<div id="outline-container-sub-Multicollinearity" class="outline-4">
+<h4 id="sub-Multicollinearity"><a name="sec-1-9-3" id="sec-1-9-3"></a>Multicollinearity</h4>
+<div class="outline-text-4" id="text-sub-Multicollinearity">
 
 
 <p>

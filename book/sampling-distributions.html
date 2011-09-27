@@ -47,9 +47,9 @@ keywords: sampling distribution statistics R probability
 </div>
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Sampling Distributions</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-Sampling-Distributions" class="outline-2">
+<h2 id="cha-Sampling-Distributions"><a name="sec-1" id="sec-1"></a>Sampling Distributions</h2>
+<div class="outline-text-2" id="text-cha-Sampling-Distributions">
 
 
 <p>
@@ -71,6 +71,13 @@ We begin by introducing the notion of simple random samples and cataloguing some
 With the CLT in hand, we then investigate the sampling distributions of several other popular statistics, taking full advantage of those with a tractable form. We finish the chapter with an exploration of statistics whose sampling distributions are not quite so tractable, and to accomplish this goal we will use simulation methods that are grounded in all of our work in the previous four chapters.
 </p>
 
+</div>
+
+<div id="outline-container-sec-simple-random-samples" class="outline-5">
+<h5 id="sec-simple-random-samples"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-simple-random-samples">
+
+
 <ul>
 <li>the notion of population versus simple random sample, parameter versus statistic, and population distribution versus sampling distribution
 </li>
@@ -85,20 +92,21 @@ With the CLT in hand, we then investigate the sampling distributions of several 
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Simple Random Samples</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-simple-random-samples" class="outline-3">
+<h3 id="sec-simple-random-samples"><a name="sec-1-1" id="sec-1-1"></a>Simple Random Samples</h3>
+<div class="outline-text-3" id="text-sec-simple-random-samples">
 
 
 
 </div>
 
-<div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">Simple Random Samples</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-sub-simple-random-samples" class="outline-4">
+<h4 id="sub-simple-random-samples"><a name="sec-1-1-1" id="sec-1-1-1"></a>Simple Random Samples</h4>
+<div class="outline-text-4" id="text-sub-simple-random-samples">
 
 
 <p>
@@ -147,17 +155,17 @@ The last step is to recognize that each term in last product above is exactly \(
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Sampling from a Normal Distribution</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-sampling-from-normal-dist" class="outline-3">
+<h3 id="sec-sampling-from-normal-dist"><a name="sec-1-2" id="sec-1-2"></a>Sampling from a Normal Distribution</h3>
+<div class="outline-text-3" id="text-sec-sampling-from-normal-dist">
 
 
 
 </div>
 
-<div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1">The Distribution of the Sample Mean</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-sub-samp-mean-dist-of" class="outline-4">
+<h4 id="sub-samp-mean-dist-of"><a name="sec-1-2-1" id="sec-1-2-1"></a>The Distribution of the Sample Mean</h4>
+<div class="outline-text-4" id="text-sub-samp-mean-dist-of">
 
 
 <p>
@@ -185,9 +193,9 @@ and we recognize this last quantity as the MGF of a \(\mathsf{norm}(\mathtt{mean
 
 </div>
 
-<div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2">The Distribution of the Sample Variance</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-sub-Samp-Var-Dist" class="outline-4">
+<h4 id="sub-Samp-Var-Dist"><a name="sec-1-2-2" id="sec-1-2-2"></a>The Distribution of the Sample Variance</h4>
+<div class="outline-text-4" id="text-sub-Samp-Var-Dist">
 
 
 <p>
@@ -221,9 +229,9 @@ The proof is beyond the scope of the present book, but the theorem is simply too
 
 </div>
 
-<div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3">The Distribution of Student's \(T\) Statistic</h4>
-<div class="outline-text-4" id="text-1-2-3">
+<div id="outline-container-sub-Student-s-t-Distribution" class="outline-4">
+<h4 id="sub-Student-s-t-Distribution"><a name="sec-1-2-3" id="sec-1-2-3"></a>The Distribution of Student's \(T\) Statistic</h4>
+<div class="outline-text-4" id="text-sub-Student-s-t-Distribution">
 
 
 <p>
@@ -239,7 +247,7 @@ has a \(\mathsf{t}(\mathtt{df}=n-1)\) sampling distribution.
 <div class="proof">
 Divide the numerator and denominator by \(\sigma\) and rewrite
 \[
-T=\frac{\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}}{S/\sigma}=\frac{\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}}{\sqrt{\left.\frac{(n-1)S^{2}}{\sigma^{2}}\right\slash (n-1)}}.
+T=\frac{\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}}{S/\sigma}=\frac{\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}}{\sqrt{\left.\frac{(n-1)S^{2}}{\sigma^{2}}\right/ (n-1)}}.
 \]
 Now let 
 \[
@@ -326,9 +334,9 @@ There are a few things to note about the \(\mathtt{t}(\mathtt{df}=r)\) distribut
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">The Central Limit Theorem</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-Central-Limit-Theorem" class="outline-3">
+<h3 id="sec-Central-Limit-Theorem"><a name="sec-1-3" id="sec-1-3"></a>The Central Limit Theorem</h3>
+<div class="outline-text-3" id="text-sec-Central-Limit-Theorem">
 
 
 <p>
@@ -366,6 +374,13 @@ How large is ``sufficiently large''? It is here that the shape of the underlying
 </div>
 </p>
 
+</div>
+
+<div id="outline-container-1-3-1" class="outline-5">
+<h5 id="sec-1-3-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-1">
+
+
 <p>
 The <code>TeachingDemos</code> package \cite{Snowteachingdemos} has <code>clt.examp</code> and the <code>distrTeach</code> \cite{Ruckdescheldistr} package has <code>illustrateCLT</code>. Try the following at the command line (output omitted):
 </p>
@@ -395,12 +410,13 @@ For example, when the command <code>clt1()</code>  is issued a plot window opens
 The three separate <code>clt1</code>, <code>clt2</code>, and <code>clt3</code> functions were written so that students could compare what happens overall when the shape of the population distribution changes. It would be possible to combine all three into one big function, <code>clt</code> which covers all three cases (and more). 
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Sampling Distributions of Two-Sample Statistics</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Samp-Dist-Two-Samp" class="outline-3">
+<h3 id="sec-Samp-Dist-Two-Samp"><a name="sec-1-4" id="sec-1-4"></a>Sampling Distributions of Two-Sample Statistics</h3>
+<div class="outline-text-3" id="text-sec-Samp-Dist-Two-Samp">
 
 
 <p>
@@ -418,8 +434,8 @@ There are often two populations under consideration, and it sometimes of interes
 <div class="prop">
 Let \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n_{1}}\) be an \(SRS(n_{1})\) from a \(\mathsf{norm}(\mathtt{mean}=\mu_{X},\,\mathtt{sd}=\sigma_{X})\) distribution and let \(Y_{1}\), \(Y_{2}\), &hellip; , \(Y_{n_{2}}\) be an \(SRS(n_{2})\) from a \(\mathsf{norm}(\mathtt{mean}=\mu_{Y},\,\mathtt{sd}=\sigma_{Y})\) distribution. Suppose that \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n_{1}}\) and \(Y_{1}\), \(Y_{2}\), &hellip; , \(Y_{n_{2}}\) are independent samples. Then the quantity
 \begin{equation}
-\frac{\overline{X}-\overline{Y}-(\mu_{X}-\mu_{Y})}{\sqrt{\left.\sigma_{X}^{2}\right\slash n_{1}+\left.\sigma_{Y}^{2}\right\slash n_{2}}}\label{eq:diff-indep-sample-means}\end{equation}
-has a \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) sampling distribution. Equivalently, \(\overline{X}-\overline{Y}\) has a \(\mathsf{norm}(\mathtt{mean}=\mu_{X}-\mu_{Y},\,\mathtt{sd}=\sqrt{\left.\sigma_{X}^{2}\right\slash n_{1}+\left.\sigma_{Y}^{2}\right\slash n_{2}})\) sampling distribution.
+\frac{\overline{X}-\overline{Y}-(\mu_{X}-\mu_{Y})}{\sqrt{\left.\sigma_{X}^{2}\right/ n_{1}+\left.\sigma_{Y}^{2}\right/ n_{2}}}\label{eq:diff-indep-sample-means}\end{equation}
+has a \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) sampling distribution. Equivalently, \(\overline{X}-\overline{Y}\) has a \(\mathsf{norm}(\mathtt{mean}=\mu_{X}-\mu_{Y},\,\mathtt{sd}=\sqrt{\left.\sigma_{X}^{2}\right/ n_{1}+\left.\sigma_{Y}^{2}\right/ n_{2}})\) sampling distribution.
 </div>
 </p>
 <p>
@@ -494,11 +510,11 @@ has an \(\mathsf{f}(\mathtt{df1}=n_{1}-1,\,\mathtt{df2}=n_{2}-1)\) sampling dist
 <div class="proof">
 We know from Theorem <a href="#thm-Xbar-andS">Xbar-andS</a> that \((n_{1}-1)S_{X}^{2}/\sigma_{X}^{2}\) is distributed \(\mathsf{chisq}(\mathtt{df}=n_{1}-1)\) and \((n_{2}-1)S_{Y}^{2}/\sigma_{Y}^{2}\) is distributed \(\mathsf{chisq}(\mathtt{df}=n_{2}-1)\). Now write
 \[
-F=\frac{\sigma_{Y}^{2}S_{X}^{2}}{\sigma_{X}^{2}S_{Y}^{2}}=\frac{\left.(n_{1}-1)S_{Y}^{2}\right\slash (n_{1}-1)}{\left.(n_{2}-1)S_{Y}^{2}\right\slash (n_{2}-1)}\cdot\frac{\left.1\right\slash \sigma_{X}^{2}}{\left.1\right\slash \sigma_{Y}^{2}},
+F=\frac{\sigma_{Y}^{2}S_{X}^{2}}{\sigma_{X}^{2}S_{Y}^{2}}=\frac{\left.(n_{1}-1)S_{Y}^{2}\right/ (n_{1}-1)}{\left.(n_{2}-1)S_{Y}^{2}\right/ (n_{2}-1)}\cdot\frac{\left.1\right/ \sigma_{X}^{2}}{\left.1\right/ \sigma_{Y}^{2}},
 \]
 by multiplying and dividing the numerator with \(n_{1}-1\) and doing likewise for the denominator with \(n_{2}-1\). Now we may regroup the terms into
 \[
-F=\frac{\left.\frac{(n_{1}-1)S_{X}^{2}}{\sigma_{X}^{2}}\right\slash (n_{1}-1)}{\left.\frac{(n_{2}-1)S_{Y}^{2}}{\sigma_{Y}^{2}}\right\slash (n_{2}-1)},
+F=\frac{\left.\frac{(n_{1}-1)S_{X}^{2}}{\sigma_{X}^{2}}\right/ (n_{1}-1)}{\left.\frac{(n_{2}-1)S_{Y}^{2}}{\sigma_{Y}^{2}}\right/ (n_{2}-1)},
 \]
 and we recognize \(F\) to be the ratio of independent \(\mathsf{chisq}\) distributions, each divided by its respective numerator \(\mathtt{df}=n_{1}-1\) and denominator \(\mathtt{df}=n_{1}-1\) degrees of freedom. This is, indeed, the definition of Snedecor's \(F\) distribution. 
 </div>
@@ -517,9 +533,9 @@ has an \(\mathsf{f}(\mathtt{df1}=n_{1}-1,\,\mathtt{df2}=n_{2}-1)\) sampling dist
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Simulated Sampling Distributions</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-Simulated-Sampling-Distributions" class="outline-3">
+<h3 id="sec-Simulated-Sampling-Distributions"><a name="sec-1-5" id="sec-1-5"></a>Simulated Sampling Distributions</h3>
+<div class="outline-text-3" id="text-sec-Simulated-Sampling-Distributions">
 
 
 <p>

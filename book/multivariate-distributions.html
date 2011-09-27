@@ -44,9 +44,9 @@ keywords: multivariate distribution R probability statistics
 
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Multivariate Distributions</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-Multivariable-Distributions" class="outline-2">
+<h2 id="cha-Multivariable-Distributions"><a name="sec-1" id="sec-1"></a>Multivariate Distributions</h2>
+<div class="outline-text-2" id="text-cha-Multivariable-Distributions">
 
 
 <p>
@@ -62,6 +62,11 @@ The concept we are hinting at is the notion of <i>dependence</i> between random 
 The interested reader who would like to learn more about any of the below mentioned multivariate distributions should take a look at <i>Discrete Multivariate Distributions</i> by Johnson <i>et al</i>\cite{Johnson1997} or <i>Continuous Multivariate Distributions</i> \cite{Kotz2000} by Kotz <i>et al</i>.
 </p>
 
+</div>
+
+<div id="outline-container-sec-Joint-Probability-Distributions" class="outline-5">
+<h5 id="sec-Joint-Probability-Distributions"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-Joint-Probability-Distributions">
 
 
 <ul>
@@ -80,12 +85,13 @@ The interested reader who would like to learn more about any of the below mentio
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Joint and Marginal Probability Distributions</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-Joint-Probability-Distributions" class="outline-3">
+<h3 id="sec-Joint-Probability-Distributions"><a name="sec-1-1" id="sec-1-1"></a>Joint and Marginal Probability Distributions</h3>
+<div class="outline-text-3" id="text-sec-Joint-Probability-Distributions">
 
 
 <p>
@@ -188,11 +194,11 @@ F_{X,Y}(x,y)=\Pr(X\leq x,\, Y\leq y)=\int_{-\infty}^{x}\int_{-\infty}^{y}f_{X,Y}
 \]
 for \((x,y)\in\mathbb{R}^{2}\). If \(X\) and \(Y\) have the joint PDF \(f_{X,Y}\), then the marginal density of \(X\) may be recovered by
 \begin{equation}
-f_{X}(x)=\int_{S_{Y}}f_{X,Y}(x,y)\,\mathrm{d} y,\quad x\in S_{X}
+f_{X}(x)=\int_{S_{Y}}f_{X,Y}(x,y)\,\mathrm{d} y,\quad x \in S_{X}
 \end{equation}
 and the marginal PDF of \(Y\) may be found with
 \begin{equation}
-f_{Y}(y)=\int_{S_{X}}f_{X,Y}(x,y)\,\mathrm{d} x,\quad y\in S_{Y}.
+f_{Y}(y)=\int_{S_{X}}f_{X,Y}(x,y)\,\mathrm{d} x, \quad y \in S_{Y}.
 \end{equation}
 
 
@@ -215,6 +221,13 @@ f_{Y}(y) & = & \int_{0}^{1}\frac{6}{5}\left(x+y^{2}\right)\,\mathrm{d} x,\\
 \end{eqnarray*}
 for \(0&lt;y&lt;1\). In this example the joint support set was a rectangle \([0,1]\times[0,1]\), but it turns out that \(X\) and \(Y\) are not independent. See Section <a href="#sec-Independent-Random-Variables">Independent-Random-Variables</a>.
 </p>
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-5">
+<h5 id="sec-1-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-1-1">
+
 
 <p>
 We will show how to do Example <a href="#exa-max-sum-two-dice">max-sum-two-dice</a> using \(\mathsf{R}\); it is much simpler to do it with \(\mathsf{R}\) than without. First we set up the sample space with the <code>rolldie</code> function. Next, we add random variables \(U\) and \(V\) with the <code>addrv</code> function. We take a look at the very top of the data frame (probability space) to make sure that everything is operating according to plan.
@@ -354,12 +367,13 @@ colSums(temp)
 You should check that the answers that we have obtained exactly match the same (somewhat laborious) calculations that we completed in Example <a href="#exa-max-sum-two-dice">max-sum-two-dice</a>.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Joint and Marginal Expectation</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-Joint-and-Marginal-Expectation" class="outline-3">
+<h3 id="sec-Joint-and-Marginal-Expectation"><a name="sec-1-2" id="sec-1-2"></a>Joint and Marginal Expectation</h3>
+<div class="outline-text-3" id="text-sec-Joint-and-Marginal-Expectation">
 
 
 <p>
@@ -458,7 +472,15 @@ which is 13/50. Therefore the covariance of \((X,Y)\) is
 \mbox{Cov}(X,Y)=\frac{13}{50}-\left(\frac{3}{5}\right)\left(\frac{9}{20}\right)=-\frac{1}{100}.
 \]
 
+</p>
+</div>
 
+<div id="outline-container-1-2-1-1" class="outline-5">
+<h5 id="sec-1-2-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+
+
+<p>
 There are not any specific functions in the <code>prob</code> package designed for multivariate expectation. This is not a problem, though, because it is easy enough to do expectation the long way &ndash; with column operations. We just need to keep the definition in mind. For instance, we may compute the covariance of \((U,V)\) from Example <a href="#exa-max-sum-dice-covariance">max-sum-dice-covariance</a>.
 </p>
 
@@ -484,12 +506,13 @@ To do the continuous case we could use the computer algebra utilities of <code>Y
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Conditional Distributions</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-Conditional-Distributions" class="outline-3">
+<h3 id="sec-Conditional-Distributions"><a name="sec-1-3" id="sec-1-3"></a>Conditional Distributions</h3>
+<div class="outline-text-3" id="text-sec-Conditional-Distributions">
 
 
 <p>
@@ -565,17 +588,17 @@ where the constant of proportionality is \(\int\pi(u)\, f(x_{1},x_{2},\ldots,x_{
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Independent Random Variables</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Independent-Random-Variables" class="outline-3">
+<h3 id="sec-Independent-Random-Variables"><a name="sec-1-4" id="sec-1-4"></a>Independent Random Variables</h3>
+<div class="outline-text-3" id="text-sec-Independent-Random-Variables">
 
 
 
 </div>
 
-<div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1">Independent Random Variables</h4>
-<div class="outline-text-4" id="text-1-4-1">
+<div id="outline-container-sub-Independent-Random-Variables" class="outline-4">
+<h4 id="sub-Independent-Random-Variables"><a name="sec-1-4-1" id="sec-1-4-1"></a>Independent Random Variables</h4>
+<div class="outline-text-4" id="text-sub-Independent-Random-Variables">
 
 
 <p>
@@ -664,9 +687,9 @@ If \(X\) and \(Y\) are independent, then \(u(X)\) and \(v(Y)\) are independent f
 
 </div>
 
-<div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2">Combining Independent Random Variables</h4>
-<div class="outline-text-4" id="text-1-4-2">
+<div id="outline-container-sub-Combining-Independent-Random" class="outline-4">
+<h4 id="sub-Combining-Independent-Random"><a name="sec-1-4-2" id="sec-1-4-2"></a>Combining Independent Random Variables</h4>
+<div class="outline-text-4" id="text-sub-Combining-Independent-Random">
 
 
 <p>
@@ -733,9 +756,9 @@ But notice that the expression in the parentheses is exactly \(\left(a_{1}\mu_{1
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Exchangeable Random Variables</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-Exchangeable-Random-Variables" class="outline-3">
+<h3 id="sec-Exchangeable-Random-Variables"><a name="sec-1-5" id="sec-1-5"></a>Exchangeable Random Variables</h3>
+<div class="outline-text-3" id="text-sec-Exchangeable-Random-Variables">
 
 
 <p>
@@ -779,9 +802,9 @@ Exchangeability thus contains IID as a special case.
 
 </div>
 
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6">The Bivariate Normal Distribution</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-sec-The-Bivariate-Normal" class="outline-3">
+<h3 id="sec-The-Bivariate-Normal"><a name="sec-1-6" id="sec-1-6"></a>The Bivariate Normal Distribution</h3>
+<div class="outline-text-3" id="text-sec-The-Bivariate-Normal">
 
 
 <p>
@@ -852,6 +875,13 @@ There are a few things to note about Proposition <a href="#pro-mvnorm-cond-dist"
 Second, the conditional variance of \(Y|x\) is independent of \(x\). 
 </p>
 
+</div>
+
+<div id="outline-container-1-6-1" class="outline-5">
+<h5 id="sec-1-6-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-6-1">
+
+
 <p>
 The multivariate normal distribution is implemented in both the <code>mvtnorm</code> package \cite{Genzmvtnorm} and the <code>mnormt</code> package \cite{mnormt}. We use the <code>mvtnorm</code> package in this book simply because it is a dependency of another package used in the book. 
 </p>
@@ -905,12 +935,13 @@ persp(x, y, z, theta = -30, phi = 30, ticktype = <span style="color: #8b2252;">"
 </div>
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7">Bivariate Transformations of Random Variables</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-sec-Transformations-Multivariate" class="outline-3">
+<h3 id="sec-Transformations-Multivariate"><a name="sec-1-7" id="sec-1-7"></a>Bivariate Transformations of Random Variables</h3>
+<div class="outline-text-3" id="text-sec-Transformations-Multivariate">
 
 
 <p>
@@ -984,6 +1015,13 @@ It may not be obvious, but Equation <a href="#eq-biv-norm-hidden">biv-norm-hidde
 </div>
 </p>
 
+</div>
+
+<div id="outline-container-sub-bivariate-transf-R" class="outline-5">
+<h5 id="sub-bivariate-transf-R"><a name="sec-1-7-1" id="sec-1-7-1"></a>How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-sub-bivariate-transf-R">
+
+
 <p>
 It is possible to do the computations above in \(\mathsf{R}\) with the <code>Ryacas</code> package. The package is an interface to the open-source computer algebra system, ``Yacas''. The user installs Yacas, then employs <code>Ryacas</code> to submit commands to Yacas, after which the output is displayed in the \(\mathsf{R}\) console.
 </p>
@@ -991,12 +1029,13 @@ It is possible to do the computations above in \(\mathsf{R}\) with the <code>Rya
 There are not yet any examples of Yacas in this book, but there are online materials to help the interested reader: see <a href="http://code.google.com/p/ryacas/">here</a> to get started.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-8" class="outline-3">
-<h3 id="sec-1-8">Remarks for the Multivariate Case</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-sec-Remarks-for-the-Multivariate" class="outline-3">
+<h3 id="sec-Remarks-for-the-Multivariate"><a name="sec-1-8" id="sec-1-8"></a>Remarks for the Multivariate Case</h3>
+<div class="outline-text-3" id="text-sec-Remarks-for-the-Multivariate">
 
 
 <p>
@@ -1134,9 +1173,9 @@ and the last expression is the MGF of an \(\mathsf{mvnorm}(\mathtt{mean}=\mathbf
 
 </div>
 
-<div id="outline-container-1-9" class="outline-3">
-<h3 id="sec-1-9">The Multinomial Distribution</h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-sec-Multinomial" class="outline-3">
+<h3 id="sec-Multinomial"><a name="sec-1-9" id="sec-1-9"></a>The Multinomial Distribution</h3>
+<div class="outline-text-3" id="text-sec-Multinomial">
 
 
 <p>
@@ -1186,6 +1225,13 @@ Here are some facts about the multinomial distribution.
 <p>
 </div>
 </p>
+
+</div>
+
+<div id="outline-container-1-9-1" class="outline-5">
+<h5 id="sec-1-9-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-9-1">
+
 
 <p>
 There is support for the multinomial distribution in base \(\mathsf{R}\), namely in the <code>stats</code> package. The <code>dmultinom</code> function represents the PMF and the <code>rmultinom</code> function generates random variates.
@@ -1256,6 +1302,7 @@ print(cloud(probs ~ X1 + X2, data = S, type = c(<span style="color: #8b2252;">"p
 </div>
 
 
+</div>
 </div>
 
 </div>

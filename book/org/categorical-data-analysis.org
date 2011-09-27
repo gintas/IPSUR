@@ -5,14 +5,12 @@
 #+DESCRIPTION: This chapter deals with categorical data and the methods used to analyze them.
 #+KEYWORDS: categorical R logistic contingency table
 #+LANGUAGE:  en
-#+OPTIONS:   H:3 num:nil toc:t \n:nil @:t ::t |:t ^:{} -:t f:nil *:t <:t
+#+OPTIONS:   \n:nil @:t ::t |:t ^:{} -:t f:nil *:t <:t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:nil
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
-#+EXPORT_SELECT_TAGS: export
-#+EXPORT_EXCLUDE_TAGS: noexport
+#+LaTeX_CLASS: scrbook
 #+LINK_UP: index.html   
 #+LINK_HOME: http://ipsur.org/index.html
-#+XSLT:
 #+BABEL: :session *R* :exports results :results value raw :cache no :tangle yes
 #+INCLUDE: "prelim.R" src R :exports none :results hide
 
@@ -39,8 +37,8 @@ keywords: categorical R logistic contingency table
 * Categorical Data Analysis                                           :categ:
 :PROPERTIES:
 :tangle: R/categ.R
+:CUSTOM_ID: cha:Categorical-Data-Analysis
 :END:
-#+latex: \label{cha:Categorical-Data-Analysis}
 
 This chapter is still under substantial revision. At any time you can preview any released drafts with the development version of the =IPSUR= package which is available from \(\mathsf{R}\)-Forge:
 
@@ -49,3 +47,7 @@ install.packages("IPSUR", repos="http://R-Forge.R-project.org")
 library(IPSUR)
 read(IPSUR)
 #+end_src
+
+
+
+

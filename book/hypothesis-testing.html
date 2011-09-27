@@ -47,10 +47,17 @@ keywords: hypothesis testing statistics one two sample
 
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Hypothesis Testing</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-Hypothesis-Testing" class="outline-2">
+<h2 id="cha-Hypothesis-Testing"><a name="sec-1" id="sec-1"></a>Hypothesis Testing</h2>
+<div class="outline-text-2" id="text-cha-Hypothesis-Testing">
 
+
+
+</div>
+
+<div id="outline-container-sec-Introduction-Hypothesis" class="outline-5">
+<h5 id="sec-Introduction-Hypothesis"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-Introduction-Hypothesis">
 
 
 <ul>
@@ -65,12 +72,13 @@ keywords: hypothesis testing statistics one two sample
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Introduction</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-Introduction-Hypothesis" class="outline-3">
+<h3 id="sec-Introduction-Hypothesis"><a name="sec-1-1" id="sec-1-1"></a>Introduction</h3>
+<div class="outline-text-3" id="text-sec-Introduction-Hypothesis">
 
 
 <p>
@@ -128,9 +136,15 @@ If it were truly an ordinary, well-shuffled deck of cards, the probability of ob
 There are two very important final thoughts. First, everybody gets a cookie in the end. Second, the students invariably (and aggressively) attempt to get me to open up the deck and reveal the true nature of the cards. I never do.
 </p>
 
-<p>
-Tests for Proportions
-</p>
+</div>
+
+</div>
+
+<div id="outline-container-sec-Tests-for-Proportions" class="outline-3">
+<h3 id="sec-Tests-for-Proportions"><a name="sec-1-2" id="sec-1-2"></a>Tests for Proportions</h3>
+<div class="outline-text-3" id="text-sec-Tests-for-Proportions">
+
+
 
 <p>
 We have a machine that makes widgets. 
@@ -182,9 +196,9 @@ If the confidence interval is
 
 </div>
 
-<div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">Terminology</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">Terminology</h4>
+<div class="outline-text-4" id="text-1-2-1">
 
 
 <p>
@@ -386,6 +400,13 @@ Example.
 </p>
 
 
+</div>
+
+<div id="outline-container-1-2-1-1" class="outline-5">
+<h5 id="sec-1-2-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+
+
 <p>
 The following does the test.
 </p>
@@ -420,6 +441,14 @@ Do the following to make the plot.
 <p>
 Use Yates' continuity correction when the expected frequency of successes is less than 10. You can use it all of the time, but you will have a decrease in power. For large samples the correction does not matter. 
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-1-2" class="outline-5">
+<h5 id="sec-1-2-1-2">With the \(\mathsf{R}\) Commander</h5>
+<div class="outline-text-5" id="text-1-2-1-2">
+
 
 <p>
 If you already know the number of successes and failures, then you can use the menu <code>Statistics</code> \(\triangleright\) <code>Proportions</code> \(\triangleright\) <code>IPSUR Enter table for single sample...</code>
@@ -432,20 +461,21 @@ Once your unsummarized data is a column, then you can use the menu <code>Statist
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">One Sample Tests for Means and Variances</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-One-Sample-Tests" class="outline-3">
+<h3 id="sec-One-Sample-Tests"><a name="sec-1-3" id="sec-1-3"></a>One Sample Tests for Means and Variances</h3>
+<div class="outline-text-3" id="text-sec-One-Sample-Tests">
 
 
 
 </div>
 
-<div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1">For Means</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">For Means</h4>
+<div class="outline-text-4" id="text-1-3-1">
 
 
 <p>
@@ -494,6 +524,13 @@ Another name for a \(p\)-value is <i>tail end probability</i>. We reject \(H_{0}
 The quantity \(\sigma/\sqrt{n}\), when \(\sigma\) is known, is called the <i>standard error of the sample mean</i>. In general, if we have an estimator \(\hat{\theta}\) then \(\sigma_{\hat{\theta}}\) is called the <i>standard error</i> of \(\hat{\theta}\). We usually need to estimate \(\sigma_{\hat{\theta}}\) with \(\hat{\sigma_{\hat{\theta}}}\).
 </div>
 </p>
+
+</div>
+
+<div id="outline-container-1-3-1-1" class="outline-5">
+<h5 id="sec-1-3-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
+
 
 <p>
 I am thinking <code>z.test</code>\index{z.test@\texttt{z.test}} in <code>TeachingDemos</code>, <code>t.test</code>\index{t.test@\texttt{t.test}} in base \(\mathsf{R}\).
@@ -549,17 +586,26 @@ mean of x
 </pre>
 
 
+</div>
+
+</div>
+
+<div id="outline-container-1-3-1-2" class="outline-5">
+<h5 id="sec-1-3-1-2">With the \(\mathsf{R}\) Commander</h5>
+<div class="outline-text-5" id="text-1-3-1-2">
+
 
 <p>
 Your data should be in a single numeric column (a variable) of the Active Data Set. Use the menu <code>Statistics</code> \(\triangleright\) <code>Means</code> \(\triangleright\) <code>Single-sample t-test...</code> 
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2">Tests for a Variance</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2">Tests for a Variance</h4>
+<div class="outline-text-4" id="text-1-3-2">
 
 
 <p>
@@ -580,8 +626,14 @@ Give some data and a hypothesis.
 
 
 
-<p>
-I am thinking about <code>sigma.test</code>\index{sigma.test@\texttt{sigma.test}} in the <code>TeachingDemos</code> package.
+
+</div>
+
+<div id="outline-container-1-3-2-1" class="outline-5">
+<h5 id="sec-1-3-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-2-1">
+
+<p>I am thinking about <code>sigma.test</code>\index{sigma.test@\texttt{sigma.test}} in the <code>TeachingDemos</code> package.
 </p>
 
 
@@ -608,12 +660,13 @@ var of women$height
 
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Two-Sample Tests for Means and Variances</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-Two-Sample-Tests-for-Means" class="outline-3">
+<h3 id="sec-Two-Sample-Tests-for-Means"><a name="sec-1-4" id="sec-1-4"></a>Two-Sample Tests for Means and Variances</h3>
+<div class="outline-text-3" id="text-sec-Two-Sample-Tests-for-Means">
 
 
 <p>
@@ -634,9 +687,9 @@ T=\frac{\overline{X}-\overline{Y}}{S_{p}\sqrt{\frac{1}{n}+\frac{1}{m}}}=\frac{\o
 </p>
 </div>
 
-<div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1">Independent Samples</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1">Independent Samples</h4>
+<div class="outline-text-4" id="text-1-4-1">
 
 
 <p>
@@ -682,10 +735,17 @@ For a nonparametric alternative to the two-sample \(F\) test see Chapter <a href
 
 </div>
 
-<div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2">Paired Samples</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2">Paired Samples</h4>
+<div class="outline-text-4" id="text-1-4-2">
 
+
+
+</div>
+
+<div id="outline-container-1-4-2-1" class="outline-5">
+<h5 id="sec-1-4-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-2-1">
 
 
 
@@ -712,21 +772,29 @@ mean of the differences
 
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Other Hypothesis Tests</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Other-Hypothesis-Tests" class="outline-3">
+<h3 id="sec-Other-Hypothesis-Tests"><a name="sec-1-5" id="sec-1-5"></a>Other Hypothesis Tests</h3>
+<div class="outline-text-3" id="text-sec-Other-Hypothesis-Tests">
 
 
 
 </div>
 
-<div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1">Kolmogorov-Smirnov Goodness-of-Fit Test</h4>
-<div class="outline-text-4" id="text-1-4-1">
+<div id="outline-container-sub-Kolmogorov-Smirnov-Goodness-of-Fit-Test" class="outline-4">
+<h4 id="sub-Kolmogorov-Smirnov-Goodness-of-Fit-Test"><a name="sec-1-5-1" id="sec-1-5-1"></a>Kolmogorov-Smirnov Goodness-of-Fit Test</h4>
+<div class="outline-text-4" id="text-sub-Kolmogorov-Smirnov-Goodness-of-Fit-Test">
 
+
+
+</div>
+
+<div id="outline-container-1-5-1-1" class="outline-5">
+<h5 id="sec-1-5-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-5-1-1">
 
 
 
@@ -747,13 +815,21 @@ alternative hypothesis: two-sided
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2">Shapiro-Wilk Normality Test</h4>
-<div class="outline-text-4" id="text-1-4-2">
+<div id="outline-container-sub-Shapiro-Wilk-Normality-Test" class="outline-4">
+<h4 id="sub-Shapiro-Wilk-Normality-Test"><a name="sec-1-5-2" id="sec-1-5-2"></a>Shapiro-Wilk Normality Test</h4>
+<div class="outline-text-4" id="text-sub-Shapiro-Wilk-Normality-Test">
 
+
+
+</div>
+
+<div id="outline-container-1-5-2-1" class="outline-5">
+<h5 id="sec-1-5-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-5-2-1">
 
 
 
@@ -774,13 +850,21 @@ W = 0.9636, p-value = 0.7545
 
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Analysis of Variance</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-Analysis-of-Variance" class="outline-3">
+<h3 id="sec-Analysis-of-Variance"><a name="sec-1-6" id="sec-1-6"></a>Analysis of Variance</h3>
+<div class="outline-text-3" id="text-sec-Analysis-of-Variance">
 
+
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-5">
+<h5 id="sec-1-6-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-6-1">
 
 
 <p>
@@ -909,12 +993,13 @@ par(old.omd)
 </div>
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6">Sample Size and Power</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-sec-Sample-Size-and-Power" class="outline-3">
+<h3 id="sec-Sample-Size-and-Power"><a name="sec-1-7" id="sec-1-7"></a>Sample Size and Power</h3>
+<div class="outline-text-3" id="text-sec-Sample-Size-and-Power">
 
 
 <p>
@@ -930,6 +1015,13 @@ Here are some properties of power functions:
 </li>
 </ol>
 
+
+
+</div>
+
+<div id="outline-container-1-7-1" class="outline-5">
+<h5 id="sec-1-7-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-7-1">
 
 
 <p>
@@ -955,12 +1047,13 @@ power.examp()
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7">Exercises</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-1-8" class="outline-3">
+<h3 id="sec-1-8">Exercises</h3>
+<div class="outline-text-3" id="text-1-8">
 
 
 </div>

@@ -60,10 +60,17 @@ keywords: simple linear regression statistics R
 </div>
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Simple Linear Regression</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-simple-linear-regression" class="outline-2">
+<h2 id="cha-simple-linear-regression"><a name="sec-1" id="sec-1"></a>Simple Linear Regression</h2>
+<div class="outline-text-2" id="text-cha-simple-linear-regression">
 
+
+
+</div>
+
+<div id="outline-container-sec-Basic-Philosophy" class="outline-5">
+<h5 id="sec-Basic-Philosophy"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-Basic-Philosophy">
 
 
 <ul>
@@ -80,12 +87,13 @@ keywords: simple linear regression statistics R
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Basic Philosophy</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-Basic-Philosophy" class="outline-3">
+<h3 id="sec-Basic-Philosophy"><a name="sec-1-1" id="sec-1-1"></a>Basic Philosophy</h3>
+<div class="outline-text-3" id="text-sec-Basic-Philosophy">
 
 
 <p>
@@ -188,8 +196,6 @@ We assume both the normality of the errors \(\epsilon\) and the linearity of the
 
 
 <pre class="example">
-X11cairo 
-       2
   speed dist
 1     4    2
 2     4   10
@@ -207,7 +213,7 @@ The <code>speed</code> represents how fast the car was going (\(x\)) in miles pe
 
 
 <div id="fig-Scatter-cars" class="figure">
-  <p><img src="svg/Scatter-cars.svg" width=500 alt="svg/Scatter-cars.svg" /></p>
+  <p><img src="svg/Scatter-cars.svg" width=500 alt="svg/carscatter.svg" /></p>
   <p>Scatterplot of <code>dist</code> versus <code>speed</code> for the <code>cars</code> data.</p>
 </div>
 
@@ -238,17 +244,17 @@ There is a pronounced upward trend to the data points, and the pattern looks app
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Estimation</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-SLR-Estimation" class="outline-3">
+<h3 id="sec-SLR-Estimation"><a name="sec-1-2" id="sec-1-2"></a>Estimation</h3>
+<div class="outline-text-3" id="text-sec-SLR-Estimation">
 
 
 
 </div>
 
-<div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1">Point Estimates of the Parameters</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-sub-point-estimate-mle-slr" class="outline-4">
+<h4 id="sub-point-estimate-mle-slr"><a name="sec-1-2-1" id="sec-1-2-1"></a>Point Estimates of the Parameters</h4>
+<div class="outline-text-4" id="text-sub-point-estimate-mle-slr">
 
 
 <p>
@@ -290,7 +296,7 @@ n\beta_{0} + \beta_{1}\sum_{i = 1}^{n}x_{i} & = & \sum_{i = 1}^{n}y_{i}\\
 \end{eqnarray}
 for \( \beta_{0} \) and \( \beta_{1} \) (in Exercise <a href="#xca-find-mles-SLR">find-mles-SLR</a>) gives
 \begin{equation}
-\hat{\beta}_{1} = \frac{\sum_{i = 1}^{n}x_{i}y_{i} - \left.\left(\sum_{i = 1}^{n}x_{i}\right)\left(\sum_{i = 1}^{n}y_{i}\right)\right] n}{\sum_{i = 1}^{n}x_{i}^{2} - \left.\left(\sum_{i = 1}^{n}x_{i}\right)^{2}\right\slash n}\label{eq:regline-slope-formula}
+\hat{\beta}_{1} = \frac{\sum_{i = 1}^{n}x_{i}y_{i} - \left.\left(\sum_{i = 1}^{n}x_{i}\right)\left(\sum_{i = 1}^{n}y_{i}\right)\right] n}{\sum_{i = 1}^{n}x_{i}^{2} - \left.\left(\sum_{i = 1}^{n}x_{i}\right)^{2}\right/ n}\label{eq:regline-slope-formula}
 \end{equation}
 and
 \begin{equation}
@@ -317,6 +323,13 @@ where \(r\), \( s_{y} \), and \( s_{x} \) are the sample correlation coefficient
 </div>
 </p>
 
+</div>
+
+<div id="outline-container-1-2-1-1" class="outline-5">
+<h5 id="sec-1-2-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+
+
 
 
 <p>
@@ -340,9 +353,7 @@ The first part of the input to the <code>lm</code> function, <code>dist ~ speed<
 
 
 <pre class="example">
-X11cairo 
-       2
- (Intercept)       speed 
+(Intercept)       speed 
  -17.579095    3.932409
 </pre>
 
@@ -392,12 +403,13 @@ Using the regression line for the <code>cars</code> data:
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2">Point Estimates of the Regression Line</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-sub-slr-point-est-regline" class="outline-4">
+<h4 id="sub-slr-point-est-regline"><a name="sec-1-2-2" id="sec-1-2-2"></a>Point Estimates of the Regression Line</h4>
+<div class="outline-text-4" id="text-sub-slr-point-est-regline">
 
 
 <p>
@@ -447,6 +459,13 @@ We saw in Example <a href="#exa-regline-cars-interpret">regline-cars-interpret</
 </p>
 
 
+</div>
+
+<div id="outline-container-1-2-2-1" class="outline-5">
+<h5 id="sec-1-2-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-2-1">
+
+
 <p>
 The fitted values are automatically computed as a byproduct of the model fitting procedure and are already stored as a component of the <code>cars.lm</code> object. We may access them with the <code>fitted</code> function (we only show the first five entries):
 </p>
@@ -483,6 +502,7 @@ Predictions at \(x\) values that are not necessarily part of the original data a
 Note that there were no observed cars that traveled 6 mph or 21 mph. Also note that our estimate for a car traveling 8 mph matches the value we computed by hand in Example <a href="#exa-regline-cars-pe-8mph">regline-cars-pe-8mph</a>.
 </p>
 </div>
+</div>
 
 </div>
 
@@ -511,6 +531,13 @@ S^{2}=\frac{SSE}{n-2},
 and we estimate \(\sigma\) with the <i>standard error</i>
 \(S=\sqrt{S^{2}}\).
 </p>
+
+</div>
+
+<div id="outline-container-1-2-3-1" class="outline-5">
+<h5 id="sec-1-2-3-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-3-1">
+
 
 <p>
 The residuals for the model may be obtained with the <code>residuals</code> function; we only show the first few entries in the interest of space:
@@ -553,12 +580,13 @@ carsumry$sigma
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4">Interval Estimates of the Parameters</h4>
-<div class="outline-text-4" id="text-1-2-4">
+<div id="outline-container-sub-slr-interval-est-params" class="outline-4">
+<h4 id="sub-slr-interval-est-params"><a name="sec-1-2-4" id="sec-1-2-4"></a>Interval Estimates of the Parameters</h4>
+<div class="outline-text-4" id="text-sub-slr-interval-est-params">
 
 
 <p>
@@ -608,9 +636,17 @@ has a \(\mathsf{t}(\mathtt{df}=n-2)\) distribution and a \(100(1-\alpha)\%\) con
 b_{0}\pm\mathsf{t}_{\alpha/2}(\mathtt{df}=n-1)\, S_{b_{0}}.
 \end{equation}
 
+</p>
+</div>
+
+<div id="outline-container-1-2-4-1" class="outline-5">
+<h5 id="sec-1-2-4-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
 
 
 
+
+<p>
 Let us take a look at the output from <code>summary(cars.lm)</code>:
 </p>
 
@@ -665,12 +701,13 @@ speed         3.096964  4.767853
 With 95% confidence, the random interval \( [  3.097,  4.768 ] \) covers the parameter \(\beta_{1}\).
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5">Interval Estimates of the Regression Line</h4>
-<div class="outline-text-4" id="text-1-2-5">
+<div id="outline-container-sub-slr-interval-est-regline" class="outline-4">
+<h4 id="sub-slr-interval-est-regline"><a name="sec-1-2-5" id="sec-1-2-5"></a>Interval Estimates of the Regression Line</h4>
+<div class="outline-text-4" id="text-sub-slr-interval-est-regline">
 
 
 <p>
@@ -705,6 +742,13 @@ Of course, \(\sigma\) is unknown so we estimate it with \(S\) and a \( 100(1-\al
 \end{equation}
 We notice that the prediction interval in Equation <a href="#eq-SLR-pred-int-formula">SLR-pred-int-formula</a> is wider than the confidence interval in Equation <a href="#eq-SLR-conf-int-formula">SLR-conf-int-formula</a>, as we expected at the beginning of the section.
 </p>
+
+
+</div>
+
+<div id="outline-container-1-2-5-1" class="outline-5">
+<h5 id="sec-1-2-5-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-2-5-1">
 
 
 <p>
@@ -779,6 +823,7 @@ Using the <code>cars</code> data,
 
 
 </div>
+</div>
 
 </div>
 
@@ -821,17 +866,17 @@ Notice that the bands curve outward from the regression line as the \(x\) values
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Model Utility and Inference</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-Model-Utility-SLR" class="outline-3">
+<h3 id="sec-Model-Utility-SLR"><a name="sec-1-3" id="sec-1-3"></a>Model Utility and Inference</h3>
+<div class="outline-text-3" id="text-sec-Model-Utility-SLR">
 
 
 
 </div>
 
-<div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1">Hypothesis Tests for the Parameters</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-sub-slr-hypoth-test-params" class="outline-4">
+<h4 id="sub-slr-hypoth-test-params"><a name="sec-1-3-1" id="sec-1-3-1"></a>Hypothesis Tests for the Parameters</h4>
+<div class="outline-text-4" id="text-sub-slr-hypoth-test-params">
 
 
 <p>
@@ -851,6 +896,13 @@ has a \(\mathsf{t}(\mathtt{df}=n-2)\) distribution; therefore, when \(\beta_{1}=
 <p>
 Similarly, we may test the hypothesis \(H_{0}:\beta_{0}=0\) versus the alternative \(H_{1}:\beta_{0}\neq0\) with the statistic \(T=b_{0}/S_{b_{0}}\), where \(S_{b_{0}}\) is given in Section <a href="#sub-slr-interval-est-params">slr-interval-est-params</a>. The test is conducted the same way as for \(\beta_{1}\). 
 </p>
+
+
+</div>
+
+<div id="outline-container-1-3-1-1" class="outline-5">
+<h5 id="sec-1-3-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
 
 
 <p>
@@ -890,6 +942,7 @@ F-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12
 <p>
 In the <code>Coefficients</code> section we find the \(t\) statistics and the \(p\)-values associated with the tests that the respective parameters are zero in the fourth and fifth columns. Since the \(p\)-values are (much) less than 0.05, we conclude that there is strong evidence that the parameters \(\beta_{1}\neq0\) and \(\beta_{0}\neq0\), and as such, we say that there is a statistically significant linear relationship between <code>dist</code> and <code>speed</code>. 
 </p>
+</div>
 </div>
 
 </div>
@@ -940,6 +993,13 @@ We interpret \(r^{2}\) as the proportion of total variation that is explained by
 <p>
 Related to the simple coefficient of determination is the sample correlation coefficient, \(r\). As you can guess, the way we get \(r\) is by the formula \(|r|=\sqrt{r^{2}}\). The sign of \(r\) is equal the sign of the slope estimate \(b_{1}\). That is, if the regression line \(\hat{\mu}(x)\) has positive slope, then \(r=\sqrt{r^{2}}\). Likewise, if the slope of \(\hat{\mu}(x)\) is negative, then \(r=-\sqrt{r^{2}}\).
 </p>
+
+
+</div>
+
+<div id="outline-container-1-3-2-1" class="outline-5">
+<h5 id="sec-1-3-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-2-1">
 
 
 <p>
@@ -1006,12 +1066,13 @@ We already knew this. We saw it in the next to the last line of the <code>summar
 We choose the principal square root because the slope of the regression line is positive.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3">Overall <i>F</i> statistic</h4>
-<div class="outline-text-4" id="text-1-3-3">
+<div id="outline-container-sub-slr-overall-F-statistic" class="outline-4">
+<h4 id="sub-slr-overall-F-statistic"><a name="sec-1-3-3" id="sec-1-3-3"></a>Overall <i>F</i> statistic</h4>
+<div class="outline-text-4" id="text-sub-slr-overall-F-statistic">
 
 
 <p>
@@ -1038,6 +1099,13 @@ F=\left(\frac{b_{1}}{S_{b_{1}}}\right)^{2}.
 <p>
 So why bother to define the \(F\) statistic? Why not just square the \(t\) statistic and be done with it? The answer is that the \(F\) statistic has a more complicated interpretation and plays a more important role in the multiple linear regression model which we will study in Chapter <a href="#cha-multiple-linear-regression">multiple-linear-regression</a>. See Section <a href="#sub-mlr-Overall-F-Test">mlr-Overall-F-Test</a> for details.
 </p>
+
+</div>
+
+<div id="outline-container-1-3-3-1" class="outline-5">
+<h5 id="sec-1-3-3-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-3-1">
+
 
 <p>
 The overall \(F\) statistic and \(p\)-value are displayed in the bottom line of the <code>summary(cars.lm)</code> output. It is also shown in the final columns of <code>anova(cars.lm)</code>:
@@ -1071,12 +1139,13 @@ Note that the value of the \(F\) statistic is the same as the Student's \(t\) st
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Residual Analysis</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Residual-Analysis-SLR" class="outline-3">
+<h3 id="sec-Residual-Analysis-SLR"><a name="sec-1-4" id="sec-1-4"></a>Residual Analysis</h3>
+<div class="outline-text-3" id="text-sec-Residual-Analysis-SLR">
 
 
 <p>
@@ -1088,9 +1157,9 @@ In every case, we will begin by looking at residual plots &ndash; that is, scatt
 
 </div>
 
-<div id="outline-container-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1">Normality Assumption</h4>
-<div class="outline-text-4" id="text-1-4-1">
+<div id="outline-container-sub-Normality-Assumption" class="outline-4">
+<h4 id="sub-Normality-Assumption"><a name="sec-1-4-1" id="sec-1-4-1"></a>Normality Assumption</h4>
+<div class="outline-text-4" id="text-sub-Normality-Assumption">
 
 
 <p>
@@ -1112,6 +1181,13 @@ We can assess the normality of the residuals with graphical methods and hypothes
 
 
 
+
+
+</div>
+
+<div id="outline-container-1-4-1-1" class="outline-5">
+<h5 id="sec-1-4-1-1">Testing the Normality Assumption</h5>
+<div class="outline-text-5" id="text-1-4-1-1">
 
 
 <p>
@@ -1155,12 +1231,13 @@ W = 0.9451, p-value = 0.02153
 For these data we would reject the assumption of normality of the residuals at the \(\alpha=0.05\) significance level, but do not lose heart, because the regression model is reasonably robust to departures from the normality assumption. As long as the residual distribution is not highly skewed, then the regression estimators will perform reasonably well. Moreover, departures from constant variance and independence will sometimes affect the quantile plots and histograms, therefore it is wise to delay final decisions regarding normality until all diagnostic measures have been investigated.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2">Constant Variance Assumption</h4>
-<div class="outline-text-4" id="text-1-4-2">
+<div id="outline-container-sub-Constant-Variance-Assumption" class="outline-4">
+<h4 id="sub-Constant-Variance-Assumption"><a name="sec-1-4-2" id="sec-1-4-2"></a>Constant Variance Assumption</h4>
+<div class="outline-text-4" id="text-sub-Constant-Variance-Assumption">
 
 
 <p>
@@ -1193,6 +1270,13 @@ In this case, we plot the standardized residuals versus the fitted values. The g
 
 
 
+
+
+</div>
+
+<div id="outline-container-1-4-2-1" class="outline-5">
+<h5 id="sec-1-4-2-1">Testing the Constant Variance Assumption</h5>
+<div class="outline-text-5" id="text-1-4-2-1">
 
 
 <p>
@@ -1230,12 +1314,13 @@ BP = 3.2149, df = 1, p-value = 0.07297
 For these data we would not reject the null hypothesis at the \(\alpha=0.05\) level. There is relatively weak evidence against the assumption of constant variance. 
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4-3" class="outline-4">
-<h4 id="sec-1-4-3">Independence Assumption</h4>
-<div class="outline-text-4" id="text-1-4-3">
+<div id="outline-container-sub-Independence-Assumption" class="outline-4">
+<h4 id="sub-Independence-Assumption"><a name="sec-1-4-3" id="sec-1-4-3"></a>Independence Assumption</h4>
+<div class="outline-text-4" id="text-sub-Independence-Assumption">
 
 
 <p>
@@ -1264,6 +1349,13 @@ On the other hand, negative correlation implies positive residuals followed by n
 
 
 
+
+
+</div>
+
+<div id="outline-container-1-4-3-1" class="outline-5">
+<h5 id="sec-1-4-3-1">Testing the Independence Assumption</h5>
+<div class="outline-text-5" id="text-1-4-3-1">
 
 
 <p>
@@ -1296,6 +1388,7 @@ alternative hypothesis: true autocorrelation is not 0
 <p>
 In this case we do not reject the null hypothesis at the \(\alpha=0.05\) significance level; there is very little evidence of nonzero autocorrelation in the residuals.
 </p>
+</div>
 </div>
 
 </div>
@@ -1344,9 +1437,9 @@ We often find problems with our model that suggest that at least one of the thre
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Other Diagnostic Tools</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-Other-Diagnostic-Tools-SLR" class="outline-3">
+<h3 id="sec-Other-Diagnostic-Tools-SLR"><a name="sec-1-5" id="sec-1-5"></a>Other Diagnostic Tools</h3>
+<div class="outline-text-3" id="text-sec-Other-Diagnostic-Tools-SLR">
 
 
 <p>
@@ -1427,6 +1520,13 @@ have a \(\mathsf{t}(\mathtt{df}=n-3)\) distribution and we compare observed valu
 <p>
 The folklore in regression classes is that a test based on the statistic in Equation <a href="#eq-slr-studentized-deleted-resids">slr-studentized-deleted-resids</a> can be too liberal. A rule of thumb is if we suspect an observation to be an outlier <i>before</i> seeing the data then we say it is significantly outlying if its two-tailed \(p\)-value is less than \(\alpha\), but if we suspect an observation to be an outlier <i>after</i> seeing the data then we should only say it is significantly outlying if its two-tailed \(p\)-value is less than \(\alpha/n\). The latter rule of thumb is called the <i>Bonferroni approach</i> and can be overly conservative for large data sets. The responsible statistician should look at the data and use his/her best judgement, in every case.
 </p>
+
+
+</div>
+
+<div id="outline-container-1-5-3-1" class="outline-5">
+<h5 id="sec-1-5-3-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-5-3-1">
 
 
 <p>
@@ -1517,6 +1617,7 @@ leverage[which(leverage &gt; 4/50)]
 Here we see that observations 1, 2, and 50 have leverages bigger than double their mean value. These observations would be considered outlying with respect to their \(x\) value (although they may or may not be influential).
 </p>
 </div>
+</div>
 
 </div>
 
@@ -1524,6 +1625,13 @@ Here we see that observations 1, 2, and 50 have leverages bigger than double the
 <h4 id="sec-1-5-4">Influential Observations</h4>
 <div class="outline-text-4" id="text-1-5-4">
 
+
+
+</div>
+
+<div id="outline-container-1-5-4-1" class="outline-5">
+<h5 id="sec-1-5-4-1">\(DFBETAS\) and \(DFFITS\)</h5>
+<div class="outline-text-5" id="text-1-5-4-1">
 
 
 <p>
@@ -1587,6 +1695,14 @@ dff[1:5]
 <p>
 A rule of thumb is to flag observations whose \(DFFIT\) exceeds one in absolute value, but there are none of those in this data set.
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-4-2" class="outline-5">
+<h5 id="sec-1-5-4-2">Cook's Distance</h5>
+<div class="outline-text-5" id="text-1-5-4-2">
+
 
 <p>
 The \(DFFITS\) are good for measuring the influence on a single fitted value, but we may want to measure the influence an observation has on all of the fitted values simultaneously. The statistics used for measuring this are Cook's distances which may be calculated
@@ -1599,6 +1715,14 @@ It shows that Cook's distance depends both on the residual \(E_{i}\) and the lev
 <p>
 To assess the significance of \(D\), we compare to quantiles of an \(\mathsf{f}(\mathtt{df1}=2,\,\mathtt{df2}=n-2)\) distribution. A rule of thumb is to classify observations falling higher than the \(50^{\mathrm{th}}\) percentile as being extreme. 
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-4-3" class="outline-5">
+<h5 id="sec-1-5-4-3">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-5-4-3">
+
 
 <p>
 We can calculate the Cook's Distances with the <code>cooks.distance</code> function.
@@ -1658,6 +1782,7 @@ X11cairo
 <p>
 We see that with this data set there are no observations with extreme Cook's distance, after all.
 </p>
+</div>
 </div>
 
 </div>
@@ -1759,7 +1884,7 @@ n\beta_{0}+\beta_{1}\sum_{i=1}^{n}x_{i} & = & \sum_{i=1}^{n}y_{i}\\
 <div class="xca">
 Show that the formula given in Equation <a href="#eq-sample-correlation-formula">sample-correlation-formula</a> is equivalent to
 \[
-\hat{\beta}_{1} = \frac{\sum_{i=1}^{n}x_{i}y_{i}-\left.\left(\sum_{i=1}^{n}x_{i}\right)\left(\sum_{i=1}^{n}y_{i}\right)\right\slash n}{\sum_{i=1}^{n}x_{i}^{2}-\left.\left(\sum_{i=1}^{n}x_{i}\right)^{2}\right\slash n}.
+\hat{\beta}_{1} = \frac{\sum_{i=1}^{n}x_{i}y_{i}-\left.\left(\sum_{i=1}^{n}x_{i}\right)\left(\sum_{i=1}^{n}y_{i}\right)\right/ n}{\sum_{i=1}^{n}x_{i}^{2}-\left.\left(\sum_{i=1}^{n}x_{i}\right)^{2}\right/ n}.
 \]
 </div>
 </p></div>

@@ -49,9 +49,9 @@ keywords: continuous random variable R statistics
 </div>
 
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Continuous Distributions</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-cha-Continuous-Distributions" class="outline-2">
+<h2 id="cha-Continuous-Distributions"><a name="sec-1" id="sec-1"></a>Continuous Distributions</h2>
+<div class="outline-text-2" id="text-cha-Continuous-Distributions">
 
 
 <p>
@@ -63,6 +63,13 @@ This chapter begins with continuous random variables and the associated PDFs and
 <p>
 The interested reader who would like to learn more about any of the assorted discrete distributions mentioned below should take a look at <i>Continuous Univariate Distributions, Volumes 1</i> and <i>2</i> by Johnson <i>et al</i> \cite{Johnson1994,Johnson1995}.
 </p>
+
+
+</div>
+
+<div id="outline-container-sec-continuous-random-variables" class="outline-5">
+<h5 id="sec-continuous-random-variables"><a name="sec-1-1" id="sec-1-1"></a>What do I want them to know?</h5>
+<div class="outline-text-5" id="text-sec-continuous-random-variables">
 
 
 <ul>
@@ -83,20 +90,21 @@ The interested reader who would like to learn more about any of the assorted dis
 </ul>
 
 
+</div>
 
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Continuous Random Variables</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-continuous-random-variables" class="outline-3">
+<h3 id="sec-continuous-random-variables"><a name="sec-1-1" id="sec-1-1"></a>Continuous Random Variables</h3>
+<div class="outline-text-3" id="text-sec-continuous-random-variables">
 
 
 
 </div>
 
-<div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">Probability Density Functions</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-sub-probability-density-functions" class="outline-4">
+<h4 id="sub-probability-density-functions"><a name="sec-1-1-1" id="sec-1-1-1"></a>Probability Density Functions</h4>
+<div class="outline-text-4" id="text-sub-probability-density-functions">
 
 
 <p>
@@ -185,9 +193,9 @@ the last equality being true by the Fundamental Theorem of Calculus, part (2) (s
 
 </div>
 
-<div id="outline-container-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2">Expectation of Continuous Random Variables</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-sub-Expectation-of-Continuous" class="outline-4">
+<h4 id="sub-Expectation-of-Continuous"><a name="sec-1-1-2" id="sec-1-1-2"></a>Expectation of Continuous Random Variables</h4>
+<div class="outline-text-4" id="text-sub-Expectation-of-Continuous">
 
 
 <p>
@@ -281,6 +289,13 @@ Again we use the shortcut \(\sigma^{2}=\mathbb{E} X^{2}-\mu^{2}\):
 which closes the example with \(\sigma^{2}=3-(3/2)^{2}=3/4\).
 </p>
 
+</div>
+
+<div id="outline-container-1-1-2-1" class="outline-5">
+<h5 id="sec-1-1-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-1-2-1">
+
+
 <p>
 There exist utilities to calculate probabilities and expectations for general continuous random variables, but it is better to find a built-in model, if possible. Sometimes it is not possible. We show how to do it the long way, and the <code>distr</code>\index{R packages@\textsf{R} packages!distr@\texttt{distr}} package way.
 </p>
@@ -365,26 +380,27 @@ Compare these answers to the ones we found in Example <a href="#exa-cont-pdf3x2"
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">The Continuous Uniform Distribution</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-The-Continuous-Uniform" class="outline-3">
+<h3 id="sec-The-Continuous-Uniform"><a name="sec-1-2" id="sec-1-2"></a>The Continuous Uniform Distribution</h3>
+<div class="outline-text-3" id="text-sec-The-Continuous-Uniform">
 
 
 <p>
 A random variable \(X\) with the continuous uniform distribution on the interval \((a,b)\) has PDF
 \begin{equation}
-f_{X}(x)=\frac{1}{b-a},\quad a<x<b.
+f_{X}(x)=\frac{1}{b-a}, \quad a < x < b.
 \end{equation}
 The associated \(\mathsf{R}\) function is \(\mathsf{dunif}(\mathtt{min}=a,\,\mathtt{max}=b)\). We write \(X\sim\mathsf{unif}(\mathtt{min}=a,\,\mathtt{max}=b)\). Due to the particularly simple form of this PDF we can also write down explicitly a formula for the CDF \(F_{X}\):
 \begin{equation}
 F_{X}(t)=
 \begin{cases}
-0, & t<0,\\
-\frac{t-a}{b-a}, & a\leq t<b,\\
-1, & t\geq b.
+0, & t < 0,\\
+\frac{t-a}{b-a}, & a\leq t < b,\\
+1, & t \geq b.
 \end{cases}
 \label{eq:unif-cdf}
 \end{equation}
@@ -407,9 +423,9 @@ using the popular formula for the difference of squares. The variance is left to
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">The Normal Distribution</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-The-Normal-Distribution" class="outline-3">
+<h3 id="sec-The-Normal-Distribution"><a name="sec-1-3" id="sec-1-3"></a>The Normal Distribution</h3>
+<div class="outline-text-3" id="text-sec-The-Normal-Distribution">
 
 
 <p>
@@ -493,9 +509,9 @@ Let the random experiment consist of a person taking an IQ test, and let \(X\) b
 
 </div>
 
-<div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1">Normal Quantiles and the Quantile Function</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-sub-Normal-Quantiles-QF" class="outline-4">
+<h4 id="sub-Normal-Quantiles-QF"><a name="sec-1-3-1" id="sec-1-3-1"></a>Normal Quantiles and the Quantile Function</h4>
+<div class="outline-text-4" id="text-sub-Normal-Quantiles-QF">
 
 
 <p>
@@ -579,6 +595,13 @@ There are a few other very important special cases which we will encounter in la
 </p>
 
 
+</div>
+
+<div id="outline-container-1-3-1-1" class="outline-5">
+<h5 id="sec-1-3-1-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
+
+
 <p>
 Quantile functions are defined for all of the base distributions with the <code>q</code> prefix to the distribution name, except for the ECDF whose quantile function is exactly the \( Q_{x}(p) = \mathsf{quantile}(x, \mathtt{probs} = p, \mathtt{type} = 1) \) function. 
 </p>
@@ -625,12 +648,13 @@ qnorm(c(0.975, 0.99, 0.995))
 
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Functions of Continuous Random Variables</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-Functions-of-Continuous" class="outline-3">
+<h3 id="sec-Functions-of-Continuous"><a name="sec-1-4" id="sec-1-4"></a>Functions of Continuous Random Variables</h3>
+<div class="outline-text-3" id="text-sec-Functions-of-Continuous">
 
 
 <p>
@@ -787,6 +811,13 @@ f_{U}(u)=u^{-1/2}\frac{1}{\sqrt{2\pi}}\,\mathrm{e}^{-(\sqrt{u})^{2}/2}=(2\pi u)^
 This is what we will later call a <i>chi-square distribution with 1 degree of freedom</i>. See Section <a href="#sec-Other-Continuous-Distributions">Other-Continuous-Distributions</a>.
 </p>
 
+</div>
+
+<div id="outline-container-1-4-2-1" class="outline-5">
+<h5 id="sec-1-4-2-1">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-4-2-1">
+
+
 <p>
 The <code>distr</code> package has functionality to investigate transformations of univariate distributions. There are exact results for ordinary transformations of the standard distributions, and <code>distr</code> takes advantage of these in many cases. For instance, the <code>distr</code> package can handle the transformation in Example <a href="#exa-lin-trans-norm">lin-trans-norm</a> quite nicely:
 </p>
@@ -875,25 +906,33 @@ The answers were close, though. And the underlying randomly generated \(X\)'s we
 </p>
 </div>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Other Continuous Distributions</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-Other-Continuous-Distributions" class="outline-3">
+<h3 id="sec-Other-Continuous-Distributions"><a name="sec-1-5" id="sec-1-5"></a>Other Continuous Distributions</h3>
+<div class="outline-text-3" id="text-sec-Other-Continuous-Distributions">
 
 
 
 </div>
 
-<div id="outline-container-1-5-1" class="outline-4">
-<h4 id="sec-1-5-1">Waiting Time Distributions</h4>
-<div class="outline-text-4" id="text-1-5-1">
+<div id="outline-container-sub-Waiting-Time-Distributions" class="outline-4">
+<h4 id="sub-Waiting-Time-Distributions"><a name="sec-1-5-1" id="sec-1-5-1"></a>Waiting Time Distributions</h4>
+<div class="outline-text-4" id="text-sub-Waiting-Time-Distributions">
 
 
 <p>
 In some experiments, the random variable being measured is the time until a certain event occurs. For example, a quality control specialist may be testing a manufactured product to see how long it takes until it fails. An efficiency expert may be recording the customer traffic at a retail store to streamline scheduling of staff. 
 </p>
+
+</div>
+
+<div id="outline-container-sub-The-Exponential-Distribution" class="outline-5">
+<h5 id="sub-The-Exponential-Distribution"><a name="sec-1-5-1-1" id="sec-1-5-1-1"></a>The Exponential Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Exponential-Distribution">
+
 
 <p>
 We say that \(X\) has an <i>exponential distribution</i> and write \(X\sim\mathsf{exp}(\mathtt{rate}=\lambda)\). 
@@ -927,12 +966,13 @@ The exponential distribution is said to be <i>memoryless</i> because exponential
 See Exercise <a href="#xca-prove-the-memoryless">prove-the-memoryless</a>.
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-5-2" class="outline-4">
-<h4 id="sec-1-5-2">The Gamma Distribution</h4>
-<div class="outline-text-4" id="text-1-5-2">
+<div id="outline-container-sub-The-Gamma-Distribution" class="outline-4">
+<h4 id="sub-The-Gamma-Distribution"><a name="sec-1-5-2" id="sec-1-5-2"></a>The Gamma Distribution</h4>
+<div class="outline-text-4" id="text-sub-The-Gamma-Distribution">
 
 
 <p>
@@ -953,10 +993,17 @@ At a car wash, two customers arrive per hour on the average. We decide to measur
 
 </div>
 
-<div id="outline-container-1-5-3" class="outline-4">
-<h4 id="sec-1-5-3">The Chi square, Student's \(t\), and Snedecor's \(F\) Distributions</h4>
-<div class="outline-text-4" id="text-1-5-3">
+<div id="outline-container-sub-The-Chi-Square-t-F" class="outline-4">
+<h4 id="sub-The-Chi-Square-t-F"><a name="sec-1-5-3" id="sec-1-5-3"></a>The Chi square, Student's \(t\), and Snedecor's \(F\) Distributions</h4>
+<div class="outline-text-4" id="text-sub-The-Chi-Square-t-F">
 
+
+
+</div>
+
+<div id="outline-container-sub-The-Chi-Square" class="outline-5">
+<h5 id="sub-The-Chi-Square"><a name="sec-1-5-3-1" id="sec-1-5-3-1"></a>The Chi square Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Chi-Square">
 
 
 <p>
@@ -1010,12 +1057,13 @@ Here are some useful things to know about the chi-square distribution.
 </div>
 </p>
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-1-5-4" class="outline-4">
-<h4 id="sec-1-5-4">Student's \(t\) distribution</h4>
-<div class="outline-text-4" id="text-1-5-4">
+<div id="outline-container-sub-Student-s-t-distribution" class="outline-4">
+<h4 id="sub-Student-s-t-distribution"><a name="sec-1-5-4" id="sec-1-5-4"></a>Student's \(t\) distribution</h4>
+<div class="outline-text-4" id="text-sub-Student-s-t-distribution">
 
 
 <p>
@@ -1029,9 +1077,9 @@ is said to have <i>Student's</i> \(t\) distribution with \(r\) <i>degrees of fre
 
 </div>
 
-<div id="outline-container-1-5-5" class="outline-4">
-<h4 id="sec-1-5-5">Snedecor's \(F\) distribution</h4>
-<div class="outline-text-4" id="text-1-5-5">
+<div id="outline-container-sub-snedecor-F-distribution" class="outline-4">
+<h4 id="sub-snedecor-F-distribution"><a name="sec-1-5-5" id="sec-1-5-5"></a>Snedecor's \(F\) distribution</h4>
+<div class="outline-text-4" id="text-sub-snedecor-F-distribution">
 
 
 <p>
@@ -1059,10 +1107,17 @@ Here are some notes about the \(F\) distribution.
 
 </div>
 
-<div id="outline-container-1-5-6" class="outline-4">
-<h4 id="sec-1-5-6">Other Popular Distributions</h4>
-<div class="outline-text-4" id="text-1-5-6">
+<div id="outline-container-sub-Other-Popular-Distributions" class="outline-4">
+<h4 id="sub-Other-Popular-Distributions"><a name="sec-1-5-6" id="sec-1-5-6"></a>Other Popular Distributions</h4>
+<div class="outline-text-4" id="text-sub-Other-Popular-Distributions">
 
+
+
+</div>
+
+<div id="outline-container-sub-The-Cauchy-Distribution" class="outline-5">
+<h5 id="sub-The-Cauchy-Distribution"><a name="sec-1-5-6-1" id="sec-1-5-6-1"></a>The Cauchy Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Cauchy-Distribution">
 
 
 <p>
@@ -1075,6 +1130,14 @@ We write \(X\sim\mathsf{cauchy}(\mathtt{location}=m,\,\mathtt{scale}=\beta)\). T
 <p>
 It is easy to see that a \(\mathsf{cauchy}(\mathtt{location}=0,\,\mathtt{scale}=1)\) distribution is the same as a \(\mathsf{t}(\mathtt{df}=1)\) distribution. The \(\mathsf{cauchy}\) distribution looks like a \(\mathsf{norm}\) distribution but with very heavy tails. The mean (and variance) do not exist, that is, they are infinite. The median is represented by the \(\mathtt{location}\) parameter, and the \(\mathtt{scale}\) parameter influences the spread of the distribution about its median.
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-sub-The-Beta-Distribution" class="outline-5">
+<h5 id="sub-The-Beta-Distribution"><a name="sec-1-5-6-2" id="sec-1-5-6-2"></a>The Beta Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Beta-Distribution">
+
 
 <p>
 This is a generalization of the continuous uniform distribution.
@@ -1088,6 +1151,14 @@ We write \(X\sim\mathsf{beta}(\mathtt{shape1}=\alpha,\,\mathtt{shape2}=\beta)\).
 See Example <a href="#exa-cont-pdf3x2">cont-pdf3x2</a>. This distribution comes up a lot in Bayesian statistics because it is a good model for one's prior beliefs about a population proportion \(p\), \(0\leq p\leq1\).
 </p>
 
+</div>
+
+</div>
+
+<div id="outline-container-sub-The-Logistic-Distribution" class="outline-5">
+<h5 id="sub-The-Logistic-Distribution"><a name="sec-1-5-6-3" id="sec-1-5-6-3"></a>The Logistic Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Logistic-Distribution">
+
 
 
 
@@ -1097,6 +1168,14 @@ f_{X}(x)=\frac{1}{\sigma}\exp\left(-\frac{x-\mu}{\sigma}\right)\left[1+\exp\left
 <p>
 We write \(X\sim\mathsf{logis}(\mathtt{location}=\mu,\,\mathtt{scale}=\sigma)\). The associated \(\mathsf{R}\) function is <code>dlogis(x, location = 0, scale = 1)</code>. The logistic distribution comes up in differential equations as a model for population growth under certain assumptions. The mean is \(\mu\) and the variance is \(\pi^{2}\sigma^{2}/3\).
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-sub-The-Lognormal-Distribution" class="outline-5">
+<h5 id="sub-The-Lognormal-Distribution"><a name="sec-1-5-6-4" id="sec-1-5-6-4"></a>The Lognormal Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Lognormal-Distribution">
+
 
 <p>
 This is a distribution derived from the normal distribution (hence the name). If \(U\sim\mathtt{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\), then \( X = \mathrm{e}^{U} \) has PDF
@@ -1106,6 +1185,14 @@ f_{X}(x)=\frac{1}{\sigma x\sqrt{2\pi}}\exp\left[\frac{-(\ln x-\mu)^{2}}{2\sigma^
 We write \(X\sim\mathsf{lnorm}(\mathtt{meanlog}=\mu,\,\mathtt{sdlog}=\sigma)\). The associated \(\mathsf{R}\) function is <code>dlnorm(x, meanlog = 0, sdlog = 1)</code>. Notice that the support is concentrated on the positive \(x\) axis; the distribution is right-skewed with a heavy tail. See Example <a href="#exa-lnorm-transformation">lnorm-transformation</a>.
 </p>
 
+</div>
+
+</div>
+
+<div id="outline-container-sub-The-Weibull-Distribution" class="outline-5">
+<h5 id="sub-The-Weibull-Distribution"><a name="sec-1-5-6-5" id="sec-1-5-6-5"></a>The Weibull Distribution</h5>
+<div class="outline-text-5" id="text-sub-The-Weibull-Distribution">
+
 
 <p>
 This has PDF
@@ -1114,6 +1201,14 @@ f_{X}(x)=\frac{\alpha}{\beta}\left(\frac{x}{\beta}\right)^{\alpha-1}\exp\left(\f
 \end{equation}
 We write \(X\sim\mathsf{weibull}(\mathtt{shape}=\alpha,\,\mathtt{scale}=\beta)\). The associated \(\mathsf{R}\) function is <code>dweibull(x, shape, scale = 1)</code>. 
 </p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-6-6" class="outline-5">
+<h5 id="sec-1-5-6-6">How to do it with \(\mathsf{R}\)</h5>
+<div class="outline-text-5" id="text-1-5-6-6">
 
 
 <p>
@@ -1161,6 +1256,7 @@ For the plot we can use the function in the following form:
 
 
 
+</div>
 </div>
 </div>
 
