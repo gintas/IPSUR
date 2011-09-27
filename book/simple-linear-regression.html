@@ -176,7 +176,7 @@ We assume both the normality of the errors \(\epsilon\) and the linearity of the
 
 
 <div id="fig-philosophy" class="figure">
-  <p><img src="svg/philosophy.svg" width=500 alt="svg/philosophy.svg" /></p>
+  <p><img src="svg/slr/philosophy.svg" width=500 alt="svg/slr/philosophy.svg" /></p>
   <p>Philosophical foundations of SLR.</p>
 </div>
 
@@ -213,7 +213,7 @@ The <code>speed</code> represents how fast the car was going (\(x\)) in miles pe
 
 
 <div id="fig-Scatter-cars" class="figure">
-  <p><img src="svg/Scatter-cars.svg" width=500 alt="svg/carscatter.svg" /></p>
+  <p><img src="svg/slr/Scatter-cars.svg" width=500 alt="svg/slr/carscatter.svg" /></p>
   <p>Scatterplot of <code>dist</code> versus <code>speed</code> for the <code>cars</code> data.</p>
 </div>
 
@@ -368,7 +368,7 @@ It is good practice to visually inspect the data with the regression line added 
 
 
 <div id="fig-Scatter-cars-regline" class="figure">
-  <p><img src="svg/carline.svg" width=500 alt="svg/carline.svg" /></p>
+  <p><img src="svg/slr/carline.svg" width=500 alt="svg/slr/carline.svg" /></p>
   <p>Thre  <code>overplot</code> method in the <code>CO2</code> data.</p>
 </div>
 
@@ -437,12 +437,6 @@ Note that we actually have observed data for a car traveling 8 mph; its stopping
 
 
 <pre class="example">
-X11cairo 
-       2
-[1] 3.93
-[1] -17.58
-[1] -17.58
-[1] 3.93
   speed dist
 5     8   16
 </pre>
@@ -572,9 +566,6 @@ carsumry$sigma
 
 
 <pre class="example">
-[1] 13.88
-[1] 13.88
-[1] 15.38
 [1] 15.37959
 </pre>
 
@@ -657,7 +648,7 @@ Let us take a look at the output from <code>summary(cars.lm)</code>:
 
 
 
-<pre class="example"> 
+<pre class="example">
 Call:
 lm(formula = dist ~ speed, data = cars)
 
@@ -689,8 +680,6 @@ In the <code>Coefficients</code> section we find the parameter estimates and the
 
 
 <pre class="example">
-[1] 3.932
-[1] 0.416
                  2.5 %    97.5 %
 (Intercept) -31.167850 -3.990340
 speed         3.096964  4.767853
@@ -775,8 +764,6 @@ Next we instruct \(\mathsf{R}\) to calculate the intervals. Confidence intervals
 
 
 <pre class="example">
-[1] 3.097
-[1] 4.768
         fit       lwr      upr
 1  2.082949 -7.644150 11.81005
 2  6.015358 -2.973341 15.00406
@@ -842,7 +829,7 @@ We may plot the confidence and prediction intervals with one fell swoop using th
 
 
 <div id="fig-Scatter-cars-CIPI" class="figure">
-  <p><img src="svg/carscipi.svg" width=500 alt="svg/carscipi.svg" /></p>
+  <p><img src="svg/slr/carscipi.svg" width=500 alt="svg/slr/carscipi.svg" /></p>
   <p>A scatterplot with confidence/prediction bands for the <code>cars</code> data.</p>
 </div>
 
@@ -916,9 +903,7 @@ Let us take another look at the output from <code>summary(cars.lm)</code>:
 
 
 
-<pre class="example">X11cairo 
-       2
- 
+<pre class="example">
 Call:
 lm(formula = dist ~ speed, data = cars)
 
@@ -1169,7 +1154,7 @@ We can assess the normality of the residuals with graphical methods and hypothes
 
 
 <div id="fig-Normal-q-q-plot-cars" class="figure">
-  <p><img src="svg/Normal-q-q-plot-cars.svg" width=500 alt="svg/Normal-q-q-plot-cars.svg" /></p>
+  <p><img src="svg/slr/Normal-q-q-plot-cars.svg" width=500 alt="svg/slr/Normal-q-q-plot-cars.svg" /></p>
   <p>Normal q-q plot of the residuals for the <code>cars</code> data.</p>
 </div>
 
@@ -1217,9 +1202,7 @@ The results from \(\mathsf{R}\) are
 
 
 <pre class="example">
-X11cairo 
-       2
- 
+
 	Shapiro-Wilk normality test
 
 data:  residuals(cars.lm) 
@@ -1258,7 +1241,7 @@ In this case, we plot the standardized residuals versus the fitted values. The g
 
 
 <div id="fig-std-resids-fitted-cars" class="figure">
-  <p><img src="svg/std-resids-fitted-cars.svg" width=500 alt="svg/std-resids-fitted-cars.svg" /></p>
+  <p><img src="svg/slr/std-resids-fitted-cars.svg" width=500 alt="svg/slr/std-resids-fitted-cars.svg" /></p>
   <p>Plot of standardized residuals against the fitted values for the <code>cars</code> data.</p>
 </div>
 
@@ -1300,9 +1283,7 @@ bptest(cars.lm)
 
 
 <pre class="example">
-X11cairo 
-       2
- 
+
 	studentized Breusch-Pagan test
 
 data:  cars.lm 
@@ -1336,7 +1317,7 @@ On the other hand, negative correlation implies positive residuals followed by n
 
 
 <div id="fig-resids-fitted-cars" class="figure">
-  <p><img src="svg/resids-fitted-cars.svg" width=500 alt="svg/resids-fitted-cars.svg" /></p>
+  <p><img src="svg/slr/resids-fitted-cars.svg" width=500 alt="svg/slr/resids-fitted-cars.svg" /></p>
   <p>A plot of the residuals versus the fitted values for the <code>cars</code>
  data.</p>
 </div>
@@ -1374,9 +1355,7 @@ dwtest(cars.lm, alternative = <span style="color: #8b2252;">"two.sided"</span>)
 
 
 <pre class="example">
-X11cairo 
-       2
- 
+
 	Durbin-Watson test
 
 data:  cars.lm 
@@ -1748,7 +1727,7 @@ We can look at a plot of the Cook's distances with the command <code>plot(cars.l
 
 
 <div id="fig-Cooks-distance-cars" class="figure">
-  <p><img src="svg/Cooks-distance-cars.svg" width=500 alt="svg/Cooks-distance-cars.svg" /></p>
+  <p><img src="svg/slr/Cooks-distance-cars.svg" width=500 alt="svg/slr/Cooks-distance-cars.svg" /></p>
   <p>Cook's distances for the <code>cars</code> data.</p>
 </div>
 
@@ -1773,8 +1752,6 @@ any(cooksD &gt; F0.50)
 
 
 <pre class="example">
-X11cairo 
-       2
 [1] FALSE
 </pre>
 
@@ -1824,7 +1801,7 @@ The <code>par</code> command is used so that \(2\times 2 = 4\) plots will be sho
 
 
 <div id="fig-Diagnostic-plots-cars" class="figure">
-  <p><img src="svg/Diagnostic-plots-cars.svg" width=500 alt="svg/Diagnostic-plots-cars.svg" /></p>
+  <p><img src="svg/slr/Diagnostic-plots-cars.svg" width=500 alt="svg/slr/Diagnostic-plots-cars.svg" /></p>
   <p>Diagnostic plots for the <code>cars</code> data.</p>
 </div>
 
