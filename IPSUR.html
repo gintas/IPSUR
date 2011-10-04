@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>Introduction to Probability and Statistics Using R</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-10-02 04:44:39 EDT"/>
+<meta name="generated" content="2011-10-04 04:55:20 EDT"/>
 <meta name="author" content="G. Jay Kerns"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -524,7 +524,7 @@ There are <i>base</i> packages (which come with \(\mathsf{R}\) automatically), a
 
 
 
-<pre class="src src-R">getOption(<span style="font-style: italic;">"defaultPackages"</span>)
+<pre class="src src-R">getOption(<span style="color: #8b2252;">"defaultPackages"</span>)
 </pre>
 
 
@@ -603,7 +603,7 @@ For longer programs (called <i>scripts</i>) there is too much code to write all 
 </dd>
 <dt>Tinn \(\mathsf{R}\) / Sciviews K:\index{Tinn R@Tinn \textsf{R}}\index{Sciviews K}</dt><dd>This one is completely free and has all of the above mentioned options and more. It is simple enough to use that the user can virtually begin working with it immediately after installation. But Tinn \(\mathsf{R}\) proper is only available for Microsoft\(\circledR\) Windows operating systems. If you are on MacOS or Linux, a comparable alternative is Sci-Views - Komodo Edit.
 </dd>
-<dt>Emacs/ESS:\index{Emacs}\index{ESS}</dt><dd>Emacs is an all purpose text editor. It can do absolutely anything with respect to modifying, searching, editing, and manipulating, text. And if Emacs can't do it, then you can write a program that extends Emacs to do it. Once such extension is called <code>ESS</code>, which stands for \emph{E}macs \emph{S}peaks \emph{S}tatistics. With ESS a person can speak to \(\mathsf{R}\), do all of the tricks that the other script editors offer, and much, much, more. Please see the following for installation details, documentation, reference cards, and a whole lot more: <a href="http://ess.r-project.org">http://ess.r-project.org</a>.
+<dt>Emacs/ESS:\index{Emacs}\index{ESS}</dt><dd>Emacs is an all purpose text editor. It can do absolutely anything with respect to modifying, searching, editing, and manipulating, text. And if Emacs can't do it, then you can write a program that extends Emacs to do it. Once such extension is called <code>ESS</code>, which stands for <i>E</i>-macs <i>S</i>-peaks <i>S</i>-tatistics. With ESS a person can speak to \(\mathsf{R}\), do all of the tricks that the other script editors offer, and much, much, more. Please see the following for installation details, documentation, reference cards, and a whole lot more: <a href="http://ess.r-project.org">http://ess.r-project.org</a>.
      <i>Fair warning</i>: if you want to try Emacs and if you grew up with Microsoft\(\circledR\) Windows or Macintosh, then you are going to need to relearn everything you thought you knew about computers your whole life. (Or, since Emacs is completely customizable, you can reconfigure Emacs to behave the way you want.) I have personally experienced this transformation and I will never go back.
 </dd>
 <dt>JGR (read ``Jaguar''):\index{JGR}</dt><dd>This one has the bells and whistles of <code>RGui</code> plus it is based on Java, so it works on multiple operating systems. It has its own script editor like \(\mathsf{R}\) Editor but with additional features such as syntax highlighting and code-completion. If you do not use Microsoft\(\circledR\) Windows (or even if you do) you definitely want to check out this one. 
@@ -664,9 +664,9 @@ Below are some of the most basic operations that can be done with \(\mathsf{R}\)
 
 
 
-<pre class="src src-R">2 + 3       <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">add</span>
-4 * 5 / 6   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">multiply and divide</span>
-7^8         <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">7 to the 8th power</span>
+<pre class="src src-R">2 + 3       <span style="color: #b22222;"># </span><span style="color: #b22222;">add</span>
+4 * 5 / 6   <span style="color: #b22222;"># </span><span style="color: #b22222;">multiply and divide</span>
+7^8         <span style="color: #b22222;"># </span><span style="color: #b22222;">7 to the 8th power</span>
 </pre>
 
 
@@ -684,11 +684,11 @@ Notice the comment character <code>#</code>\index{#@\texttt{\#}}. Anything typed
 
 
 <pre class="src src-R">options(digits = 16)
-10/3                 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">see more digits</span>
-sqrt(2)              <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">square root</span>
-exp(1)               <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Euler's constant, e</span>
+10/3                 <span style="color: #b22222;"># </span><span style="color: #b22222;">see more digits</span>
+sqrt(2)              <span style="color: #b22222;"># </span><span style="color: #b22222;">square root</span>
+exp(1)               <span style="color: #b22222;"># </span><span style="color: #b22222;">Euler's constant, e</span>
 pi       
-options(digits = 7)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">back to default</span>
+options(digits = 7)  <span style="color: #b22222;"># </span><span style="color: #b22222;">back to default</span>
 </pre>
 
 
@@ -718,8 +718,8 @@ It is often convenient to assign numbers and values to variables (objects) to be
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 7*41/pi   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">don't see the calculated value</span>
-x              <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">take a look</span>
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> 7*41/pi   <span style="color: #b22222;"># </span><span style="color: #b22222;">don't see the calculated value</span>
+x              <span style="color: #b22222;"># </span><span style="color: #b22222;">take a look</span>
 </pre>
 
 
@@ -752,10 +752,10 @@ You can determine an object's type with the <code>typeof</code>\index{typeof@\te
 
 
 
-<pre class="src src-R">sqrt(-1)              <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">isn't defined</span>
-sqrt(-1+0i)           <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">is defined</span>
-sqrt(as.complex(-1))  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">same thing</span>
-(0 + 1i)^2            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">should be -1</span>
+<pre class="src src-R">sqrt(-1)              <span style="color: #b22222;"># </span><span style="color: #b22222;">isn't defined</span>
+sqrt(-1+0i)           <span style="color: #b22222;"># </span><span style="color: #b22222;">is defined</span>
+sqrt(as.complex(-1))  <span style="color: #b22222;"># </span><span style="color: #b22222;">same thing</span>
+(0 + 1i)^2            <span style="color: #b22222;"># </span><span style="color: #b22222;">should be -1</span>
 typeof((0 + 1i)^2)
 </pre>
 
@@ -798,7 +798,7 @@ All of this time we have been manipulating vectors of length 1. Now let us move 
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(74, 31, 95, 61, 76, 34, 23, 54, 96)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> c(74, 31, 95, 61, 76, 34, 23, 54, 96)
 x
 </pre>
 
@@ -912,12 +912,12 @@ A function takes arguments as input and returns an object as output. There are f
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 1:5
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> 1:5
 sum(x)
 length(x)
 min(x)
-mean(x)      <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">sample mean</span>
-sd(x)        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">sample standard deviation</span>
+mean(x)      <span style="color: #b22222;"># </span><span style="color: #b22222;">sample mean</span>
+sd(x)        <span style="color: #b22222;"># </span><span style="color: #b22222;">sample standard deviation</span>
 </pre>
 
 
@@ -1370,9 +1370,9 @@ See Figure <a href="#fig-stripcharts">stripcharts</a>, which was produced by the
 
 
 
-<pre class="src src-R">stripchart(precip, xlab=<span style="font-style: italic;">"rainfall"</span>)
-stripchart(rivers, method=<span style="font-style: italic;">"jitter"</span>, xlab=<span style="font-style: italic;">"length"</span>)
-stripchart(discoveries, method=<span style="font-style: italic;">"stack"</span>, xlab=<span style="font-style: italic;">"number"</span>)
+<pre class="src src-R">stripchart(precip, xlab=<span style="color: #8b2252;">"rainfall"</span>)
+stripchart(rivers, method=<span style="color: #8b2252;">"jitter"</span>, xlab=<span style="color: #8b2252;">"length"</span>)
+stripchart(discoveries, method=<span style="color: #8b2252;">"stack"</span>, xlab=<span style="color: #8b2252;">"number"</span>)
 </pre>
 
 
@@ -1420,8 +1420,8 @@ There are many ways to plot histograms in \(\mathsf{R}\), and one of the easiest
 
 
 
-<pre class="src src-R">hist(precip, main = <span style="font-style: italic;">""</span>)
-hist(precip, freq = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>, main = <span style="font-style: italic;">""</span>)
+<pre class="src src-R">hist(precip, main = <span style="color: #8b2252;">""</span>)
+hist(precip, freq = <span style="color: #228b22;">FALSE</span>, main = <span style="color: #8b2252;">""</span>)
 </pre>
 
 
@@ -1431,7 +1431,7 @@ Notice the argument \(\mathtt{main = ""}\) which suppresses the main title from 
 
 
 
-<pre class="src src-R">m <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> ggplot(as.data.frame(precip), aes(x = precip))
+<pre class="src src-R">m <span style="color: #008b8b;">&lt;-</span> ggplot(as.data.frame(precip), aes(x = precip))
 m + geom_histogram()
 m + geom_histogram(binwidth = 5)
 </pre>
@@ -1444,10 +1444,10 @@ m + geom_histogram(binwidth = 5)
 
 
 
-<pre class="src src-R">par(mfrow = c(1,2)) <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">2 plots: 1 row, 2 columns</span>
-hist(precip, main = <span style="font-style: italic;">""</span>)
-hist(precip, freq = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>, main = <span style="font-style: italic;">""</span>)
-par(mfrow = c(1,1)) <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">back to normal</span>
+<pre class="src src-R">par(mfrow = c(1,2)) <span style="color: #b22222;"># </span><span style="color: #b22222;">2 plots: 1 row, 2 columns</span>
+hist(precip, main = <span style="color: #8b2252;">""</span>)
+hist(precip, freq = <span style="color: #228b22;">FALSE</span>, main = <span style="color: #8b2252;">""</span>)
+par(mfrow = c(1,1)) <span style="color: #b22222;"># </span><span style="color: #b22222;">back to normal</span>
 </pre>
 
 
@@ -1469,8 +1469,8 @@ Recall that the strip chart in Figure <a href="#fig-Various-stripchart-methods">
 
 
 
-<pre class="src src-R">hist(precip, breaks = 10, main = <span style="font-style: italic;">""</span>)
-hist(precip, breaks = 200, main = <span style="font-style: italic;">""</span>)
+<pre class="src src-R">hist(precip, breaks = 10, main = <span style="color: #8b2252;">""</span>)
+hist(precip, breaks = 200, main = <span style="color: #8b2252;">""</span>)
 </pre>
 
 
@@ -1511,13 +1511,15 @@ Stemplots have two basic parts: <i>stems</i> and <i>leaves</i>. The final digit 
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(aplpack)
-stem.leaf(UKDriverDeaths, depth = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(aplpack)
+stem.leaf(UKDriverDeaths, depth = <span style="color: #228b22;">FALSE</span>)
 </pre>
 
 
 
-<pre class="example">1 | 2: represents 120
+<pre class="example">X11cairo 
+       2
+1 | 2: represents 120
  leaf unit: 10
             n: 192
    10 | 57
@@ -1558,9 +1560,9 @@ Notice that the \texttt{depth}s\index{depths} have been suppressed. To learn mor
 Done with the <code>plot</code>\index{plot@\texttt{plot}} function. These are good for plotting data which are ordered, for example, when the data are measured over time. That is, the first observation was measured at time 1, the second at time 2, <i>etc</i>. It is a two dimensional plot, in which the index (or time) is the \(x\) variable and the measured value is the \(y\) variable. There are several plotting methods for index plots, and we mention two of them:
 </p>
 <dl>
-<dt>spikes</dt><dd>draws a vertical line from the \(x\)-axis to the observation height (\texttt{type = "h"}).
+<dt>spikes</dt><dd>draws a vertical line from the \(x\)-axis to the observation height.
 </dd>
-<dt>points</dt><dd>plots a simple point at the observation height (=type = "p"=).
+<dt>points</dt><dd>plots a simple point at the observation height.
 </dd>
 </dl>
 
@@ -1572,8 +1574,8 @@ Done with the <code>plot</code>\index{plot@\texttt{plot}} function. These are go
 
 
 
-<pre class="src src-R">plot(LakeHuron, type = <span style="font-style: italic;">"h"</span>)
-plot(LakeHuron, type = <span style="font-style: italic;">"p"</span>)
+<pre class="src src-R">plot(LakeHuron, type = <span style="color: #8b2252;">"h"</span>)
+plot(LakeHuron, type = <span style="color: #8b2252;">"p"</span>)
 </pre>
 
 
@@ -1647,6 +1649,8 @@ vector gives the two letter postal abbreviations for all 50 states.
 
 
 <pre class="example">
+X11cairo 
+       2
  chr [1:50] "AL" "AK" "AZ" "AR" "CA" "CO" "CT" "DE" "FL" ...
 </pre>
 
@@ -1698,7 +1702,7 @@ One of the best ways to summarize qualitative data is with a table of the data v
 
 
 
-<pre class="src src-R">Tbl <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> table(state.division)
+<pre class="src src-R">Tbl <span style="color: #008b8b;">&lt;-</span> table(state.division)
 </pre>
 
 
@@ -1708,7 +1712,7 @@ One of the best ways to summarize qualitative data is with a table of the data v
 
 
 <pre class="example">
-state.division
+ state.division
        New England    Middle Atlantic     South Atlantic East South Central 
                  6                  3                  8                  4 
 West South Central East North Central West North Central           Mountain 
@@ -1721,7 +1725,7 @@ West South Central East North Central West North Central           Mountain
 
 
 
-<pre class="src src-R">Tbl/sum(Tbl)      <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">relative frequencies</span>
+<pre class="src src-R">Tbl/sum(Tbl)      <span style="color: #b22222;"># </span><span style="color: #b22222;">relative frequencies</span>
 </pre>
 
 
@@ -1739,7 +1743,7 @@ West South Central East North Central West North Central           Mountain
 
 
 
-<pre class="src src-R">prop.table(Tbl)   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">same thing</span>
+<pre class="src src-R">prop.table(Tbl)   <span style="color: #b22222;"># </span><span style="color: #b22222;">same thing</span>
 </pre>
 
 
@@ -1779,7 +1783,7 @@ barplot(prop.table(table(state.region)), cex.names = 0.50)
 
 
 <p>
-See Figure <a href="#fig-bar-gr-stateregion">bar-gr-stateregion</a>. The display on the left is a frequency bar graph because the \(y\) axis shows counts, while the display on the left is a relative frequency bar graph. The only difference between the two is the scale. Looking at the graph we see that the majority of the fifty states are in the South, followed by West, North Central, and finally Northeast. Over 30\% of the states are in the South.
+See Figure <a href="#fig-bar-gr-stateregion">bar-gr-stateregion</a>. The display on the left is a frequency bar graph because the \(y\) axis shows counts, while the display on the left is a relative frequency bar graph. The only difference between the two is the scale. Looking at the graph we see that the majority of the fifty states are in the South, followed by West, North Central, and finally Northeast. Over 30% of the states are in the South.
 </p>
 <p>
 Notice the <code>cex.names</code>\index{cex.names@\texttt{cex.names}} argument that we used, above. It shrinks the names on the \(x\) axis by 50% which makes them easier to read. See <code>?par</code>\index{par@\texttt{par}} for a detailed list of additional plot parameters.
@@ -1817,8 +1821,8 @@ A pareto diagram is a lot like a bar graph except the bars are rearranged such t
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(qcc)
-pareto.chart(table(state.division), ylab=<span style="font-style: italic;">"Frequency"</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(qcc)
+pareto.chart(table(state.division), ylab=<span style="color: #8b2252;">"Frequency"</span>)
 </pre>
 
 
@@ -1849,7 +1853,7 @@ These are a lot like a bar graph that has been turned on its side with the bars 
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> table(state.region)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> table(state.region)
 dotchart(as.vector(x), labels = names(x))
 </pre>
 
@@ -1899,13 +1903,15 @@ There is another type of information recognized by \(\mathsf{R}\) which does not
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 5:9
-y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> (x &lt; 7.3)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> 5:9
+y <span style="color: #008b8b;">&lt;-</span> (x &lt; 7.3)
 y
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
 [1]  TRUE  TRUE  TRUE FALSE FALSE
 </pre>
 
@@ -1946,8 +1952,8 @@ Ordinary arithmetic with <code>NA</code> values give <code>NA</code>'s (addition
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(3, 7, <span style="font-weight: bold; text-decoration: underline;">NA</span>, 4, 7)
-y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(5, <span style="font-weight: bold; text-decoration: underline;">NA</span>, 1, 2, 2)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> c(3, 7, <span style="color: #228b22;">NA</span>, 4, 7)
+y <span style="color: #008b8b;">&lt;-</span> c(5, <span style="color: #228b22;">NA</span>, 1, 2, 2)
 x + y
 </pre>
 
@@ -1964,7 +1970,7 @@ Some functions have a <code>na.rm</code> argument which when <code>TRUE</code> w
 
 
 <pre class="src src-R">sum(x)
-sum(x, na.rm = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+sum(x, na.rm = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -1981,7 +1987,7 @@ Other functions do not have a <code>na.rm</code> argument and will return <code>
 
 
 <pre class="src src-R">is.na(x)
-z <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> x[!is.na(x)]
+z <span style="color: #008b8b;">&lt;-</span> x[!is.na(x)]
 sum(z)
 </pre>
 
@@ -2015,7 +2021,7 @@ The analogue of <code>is.na</code> for rectangular data sets (or data frames) is
 
 
 <p>
-Given that the data have been appropriately displayed, the next step is to try to identify salient features represented in the graph. The acronym to remember is \emph{C}enter, \emph{U}nusual features, \emph{S}pread, and \emph{S}hape. (CUSS).
+Given that the data have been appropriately displayed, the next step is to try to identify salient features represented in the graph. The acronym to remember is <i>C</i>-enter, <i>U</i>-nusual features, <i>S</i>-pread, and <i>S</i>-hape. (CUSS).
 </p>
 
 </div>
@@ -2095,13 +2101,14 @@ Clusters or gaps are sometimes observed in quantitative data distributions. They
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(aplpack)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(aplpack)
 with(faithful, stem.leaf(eruptions))
 </pre>
 
 
 
-<pre class="example">1 | 2: represents 1.2
+<pre class="example">[1] 35
+1 | 2: represents 1.2
  leaf unit: 0.1
             n: 272
    12     s | 667777777777
@@ -2503,7 +2510,7 @@ We said earlier that the <code>discoveries</code> data looked positively skewed;
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(e1071)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(e1071)
 skewness(discoveries)
 2*sqrt(6/length(discoveries))
 </pre>
@@ -2848,9 +2855,9 @@ Suppose we have two vectors <code>x</code> and <code>y</code> and we want to mak
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 5:8
-y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> letters[3:6]
-A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(v1 = x, v2 = y)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> 5:8
+y <span style="color: #008b8b;">&lt;-</span> letters[3:6]
+A <span style="color: #008b8b;">&lt;-</span> data.frame(v1 = x, v2 = y)
 </pre>
 
 
@@ -3139,7 +3146,7 @@ I am thinking here about the <code>Statistics</code> \(\triangleright\) <code>Nu
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(lattice)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(lattice)
 xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species)
 </pre>
 
@@ -3266,7 +3273,7 @@ It is sometimes nice to set <code>lattice.options(default.theme = "col.whitebg")
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(lattice)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(lattice)
 bwplot(~weight | feed, data = chickwts)
 </pre>
 
@@ -3386,9 +3393,9 @@ Open \(\mathsf{R}\) and issue the following commands at the command line to get 
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(RcmdrPlugin.IPSUR)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(RcmdrPlugin.IPSUR)
 data(RcmdrTestDrive)
-<span style="font-weight: bold; text-decoration: underline;">attach</span>(RcmdrTestDrive)
+<span style="color: #008b8b;">attach</span>(RcmdrTestDrive)
 names(RcmdrTestDrive)
 </pre>
 
@@ -3590,12 +3597,14 @@ Consider the random experiment of dropping a Styrofoam cup onto the floor from a
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(lands = c(<span style="font-style: italic;">"down"</span>,<span style="font-style: italic;">"up"</span>,<span style="font-style: italic;">"side"</span>))
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> data.frame(lands = c(<span style="color: #8b2252;">"down"</span>,<span style="color: #8b2252;">"up"</span>,<span style="color: #8b2252;">"side"</span>))
 S
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
   lands
 1  down
 2    up
@@ -3614,7 +3623,7 @@ Consider the random experiment of tossing a coin. The outcomes are \(H\) and \(T
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(prob)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(prob)
 tosscoin(1)
 </pre>
 
@@ -3747,7 +3756,7 @@ If sampling is with replacement, then we can get any outcome 1, 2, or 3 on any d
 
 
 
-<pre class="src src-R">urnsamples(1:3, size = 2, replace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">urnsamples(1:3, size = 2, replace = <span style="color: #228b22;">TRUE</span>, ordered = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -3783,7 +3792,7 @@ Here sampling is without replacement, so we may not observe the same number twic
 
 
 
-<pre class="src src-R">urnsamples(1:3, size = 2, replace = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">urnsamples(1:3, size = 2, replace = <span style="color: #228b22;">FALSE</span>, ordered = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -3816,7 +3825,7 @@ Again, we may not observe the same outcome twice, but in this case, we will only
 
 
 
-<pre class="src src-R">urnsamples(1:3, size = 2, replace = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>) 
+<pre class="src src-R">urnsamples(1:3, size = 2, replace = <span style="color: #228b22;">FALSE</span>, ordered = <span style="color: #228b22;">FALSE</span>) 
 </pre>
 
 
@@ -3846,7 +3855,7 @@ The last possibility is perhaps the most interesting. We replace the balls after
 
 
 
-<pre class="src src-R">urnsamples(1:3, size = 2, replace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>) 
+<pre class="src src-R">urnsamples(1:3, size = 2, replace = <span style="color: #228b22;">TRUE</span>, ordered = <span style="color: #228b22;">FALSE</span>) 
 </pre>
 
 
@@ -3900,7 +3909,7 @@ Given a data frame sample/probability space <code>S</code>, we may extract rows 
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> tosscoin(2, makespace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> tosscoin(2, makespace = <span style="color: #228b22;">TRUE</span>) 
 S[1:3, ] 
 </pre>
 
@@ -3933,12 +3942,12 @@ and so forth. We may also extract rows that satisfy a logical expression using t
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> cards() 
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> cards() 
 </pre>
 
 
 
-<pre class="src src-R">subset(S, suit == <span style="font-style: italic;">"Heart"</span>) 
+<pre class="src src-R">subset(S, suit == <span style="color: #8b2252;">"Heart"</span>) 
 </pre>
 
 
@@ -3961,7 +3970,7 @@ and so forth. We may also extract rows that satisfy a logical expression using t
 
 
 
-<pre class="src src-R">subset(S, rank %<span style="font-weight: bold;">in</span>% 7:9)
+<pre class="src src-R">subset(S, rank %<span style="color: #a020f0;">in</span>% 7:9)
 </pre>
 
 
@@ -4027,9 +4036,9 @@ The function <code>%in%</code> helps to learn whether each value of one vector l
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 1:10 
-y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 8:12 
-y %<span style="font-weight: bold;">in</span>% x
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> 1:10 
+y <span style="color: #008b8b;">&lt;-</span> 8:12 
+y %<span style="color: #a020f0;">in</span>% x
 </pre>
 
 
@@ -4071,13 +4080,13 @@ Of course, one may ask why we did not try something like <code>all(y %in% x)</co
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 1:10 
-y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(3,3,7) 
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> 1:10 
+y <span style="color: #008b8b;">&lt;-</span> c(3,3,7) 
 </pre>
 
 
 
-<pre class="src src-R">all(y %<span style="font-weight: bold;">in</span>% x)
+<pre class="src src-R">all(y %<span style="color: #a020f0;">in</span>% x)
 isin(x,y) 
 </pre>
 
@@ -4094,8 +4103,8 @@ The reason for the above is of course that <code>x</code> contains the value 3, 
 
 
 
-<pre class="src src-R">isin(x, c(3,4,5), ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
-isin(x, c(3,5,4), ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
+<pre class="src src-R">isin(x, c(3,4,5), ordered = <span style="color: #228b22;">TRUE</span>) 
+isin(x, c(3,5,4), ordered = <span style="color: #228b22;">TRUE</span>) 
 </pre>
 
 
@@ -4111,8 +4120,8 @@ The connection to probability is that have a data frame sample space and we woul
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rolldie(4) 
-subset(S, isin(S, c(2,2,6), ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)) 
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> rolldie(4) 
+subset(S, isin(S, c(2,2,6), ordered = <span style="color: #228b22;">TRUE</span>)) 
 </pre>
 
 
@@ -4180,9 +4189,9 @@ Some examples follow.
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> cards() 
-A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> subset(S, suit == <span style="font-style: italic;">"Heart"</span>) 
-B <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> subset(S, rank %<span style="font-weight: bold;">in</span>% 7:9)
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> cards() 
+A <span style="color: #008b8b;">&lt;-</span> subset(S, suit == <span style="color: #8b2252;">"Heart"</span>) 
+B <span style="color: #008b8b;">&lt;-</span> subset(S, rank %<span style="color: #a020f0;">in</span>% 7:9)
 </pre>
 
 
@@ -4416,8 +4425,8 @@ The Equally Likely Model asserts that every outcome of the sample space has the 
 
 
 
-<pre class="src src-R">outcomes <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rolldie(1) 
-p <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rep(1/6, times = 6) 
+<pre class="src src-R">outcomes <span style="color: #008b8b;">&lt;-</span> rolldie(1) 
+p <span style="color: #008b8b;">&lt;-</span> rep(1/6, times = 6) 
 probspace(outcomes, probs = p) 
 </pre>
 
@@ -4481,7 +4490,7 @@ And finally, since rolling dice is such a common experiment in probability class
 
 
 
-<pre class="src src-R">rolldie(1, makespace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">rolldie(1, makespace = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -4756,9 +4765,9 @@ Consider the experiment of drawing a card from a standard deck of playing cards.
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> cards(makespace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
-A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> subset(S, suit == <span style="font-style: italic;">"Heart"</span>) 
-B <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> subset(S, rank %<span style="font-weight: bold;">in</span>% 7:9)
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> cards(makespace = <span style="color: #228b22;">TRUE</span>) 
+A <span style="color: #008b8b;">&lt;-</span> subset(S, suit == <span style="color: #8b2252;">"Heart"</span>) 
+B <span style="color: #008b8b;">&lt;-</span> subset(S, rank %<span style="color: #a020f0;">in</span>% 7:9)
 </pre>
 
 
@@ -4783,7 +4792,7 @@ Note that we can get the same answer with
 
 
 
-<pre class="src src-R">prob(S, suit == <span style="font-style: italic;">"Heart"</span>) 
+<pre class="src src-R">prob(S, suit == <span style="color: #8b2252;">"Heart"</span>) 
 </pre>
 
 
@@ -4971,10 +4980,10 @@ We will compute the number of outcomes for each of the four <code>urnsamples</co
 
 
 
-<pre class="src src-R">nsamp(n=3, k=2, replace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
-nsamp(n=3, k=2, replace = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
-nsamp(n=3, k=2, replace = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>) 
-nsamp(n=3, k=2, replace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>) 
+<pre class="src src-R">nsamp(n=3, k=2, replace = <span style="color: #228b22;">TRUE</span>, ordered = <span style="color: #228b22;">TRUE</span>) 
+nsamp(n=3, k=2, replace = <span style="color: #228b22;">FALSE</span>, ordered = <span style="color: #228b22;">TRUE</span>) 
+nsamp(n=3, k=2, replace = <span style="color: #228b22;">FALSE</span>, ordered = <span style="color: #228b22;">FALSE</span>) 
+nsamp(n=3, k=2, replace = <span style="color: #228b22;">TRUE</span>, ordered = <span style="color: #228b22;">FALSE</span>) 
 </pre>
 
 
@@ -5010,14 +5019,14 @@ There are 11 artists who each submit a portfolio containing 7 paintings for comp
 
 
 
-<pre class="src src-R">n <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(11,7,31) 
-k <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(3,4,3) 
-r <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-weight: bold; text-decoration: underline;">FALSE</span>,<span style="font-weight: bold; text-decoration: underline;">FALSE</span>,<span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
+<pre class="src src-R">n <span style="color: #008b8b;">&lt;-</span> c(11,7,31) 
+k <span style="color: #008b8b;">&lt;-</span> c(3,4,3) 
+r <span style="color: #008b8b;">&lt;-</span> c(<span style="color: #228b22;">FALSE</span>,<span style="color: #228b22;">FALSE</span>,<span style="color: #228b22;">TRUE</span>) 
 </pre>
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> nsamp(n, k, rep = r, ord = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> nsamp(n, k, rep = r, ord = <span style="color: #228b22;">TRUE</span>) 
 </pre>
 
 
@@ -5144,9 +5153,9 @@ We can make the plot in Figure <a href="#fig-birthday">birthday</a> with the fol
 
 
 
-<pre class="src src-R">g <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Vectorize(pbirthday.ipsur)
-plot(1:50, g(1:50), xlab = <span style="font-style: italic;">"Number of people in room"</span>, 
-  ylab = <span style="font-style: italic;">"Prob(at least one match)"</span> )
+<pre class="src src-R">g <span style="color: #008b8b;">&lt;-</span> Vectorize(pbirthday.ipsur)
+plot(1:50, g(1:50), xlab = <span style="color: #8b2252;">"Number of people in room"</span>, 
+  ylab = <span style="color: #8b2252;">"Prob(at least one match)"</span> )
 abline(h = 0.5)
 abline(v = 23, lty = 2)
 remove(g)
@@ -5170,13 +5179,13 @@ There is a <code>Birthday problem</code> item in the <code>Probability</code> me
 <p>
 Consider a full deck of 52 standard playing cards. Now select two cards from the deck, in succession. Let \( A = \{ \mbox{first card drawn is an Ace} \} \) and \( B = \{ \mbox{second card drawn is an Ace} \} \). Since there are four Aces in the deck, it is natural to assign \( \mathbb{P}(A) = 4/52 \). Suppose we look at the first card. What now is the probability of \(B\)? Of course, the answer depends on the value of the first card. If the first card is an Ace, then the probability that the second also is an Ace should be \( 3/51 \), but if the first card is not an Ace, then the probability that the second is an Ace should be \( 4/51 \). As notation for these two situations we write
 \[
-\mathbb{P}(B|A)=3/51,\quad\mathbb{P}(B|A^{c})=4/51.
+\mathbb{P}(B|A)=3/51,\quad \mathbb{P}(B|A^{c})=4/51.
 \]
 
 <div class="defn">
 The conditional probability of \(B\) given \(A\), denoted \(\mathbb{P}(B|A)\), is defined by
 \begin{equation}
-\mathbb{P}(B|A)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)},\quad\mbox{if }\mathbb{P}(A)>0.
+\mathbb{P}(B|A)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)},\quad \mbox{if }\mathbb{P}(A)>0.
 \end{equation}
 We will not be discussing a conditional probability of \(B\) given \(A\) when \(\mathbb{P}(A)=0\), even though this theory exists, is well developed, and forms the foundation for the study of stochastic processes
 </div>
@@ -5213,7 +5222,7 @@ Toss a six-sided die twice. The sample space consists of all ordered pairs \((i,
 <p>
 The outcomes lying in the event \(A\) are marked with the symbol ``X'', the outcomes falling in \(B\) are marked with ``O'', and the outcomes in \(A\cap B\) are those where the letters overlap. Now it is clear that \(\mathbb{P}(A)=6/36\), \(\mathbb{P}(B)=15/36\), and \(\mathbb{P}(A\cap B)=3/36\).  Finally, 
 \[
-\mathbb{P}(A|B)=\frac{3/36}{15/36}=\frac{1}{5},\quad\mathbb{P}(B|A)=\frac{3/36}{6/36}=\frac{1}{2}.
+\mathbb{P}(A|B)=\frac{3/36}{15/36}=\frac{1}{5},\quad \mathbb{P}(B|A)=\frac{3/36}{6/36}=\frac{1}{2}.
 \]
 Again, we see that given the knowledge that \(B\) occurred (the 15 outcomes in the upper right triangle), there are 3 of the 15 that fall into the set \(A\), thus the probability is \(3/15\). Similarly, given that \(A\) occurred (we are on the diagonal), there are 3 out of 6 outcomes that also fall in \(B\), thus, the probability of \(B\) given \(A\) is 1/2. 
 </p>
@@ -5231,13 +5240,15 @@ Continuing with Example <a href="#exa-Toss-a-six-sided-die-twice">Toss die twice
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(prob)
-S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rolldie(2, makespace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">assumes ELM</span>
-head(S)                            <span style="font-weight: bold; font-style: italic;">#  </span><span style="font-weight: bold; font-style: italic;">first few rows</span>
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(prob)
+S <span style="color: #008b8b;">&lt;-</span> rolldie(2, makespace = <span style="color: #228b22;">TRUE</span>)  <span style="color: #b22222;"># </span><span style="color: #b22222;">assumes ELM</span>
+head(S)                            <span style="color: #b22222;">#  </span><span style="color: #b22222;">first few rows</span>
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
   X1 X2      probs
 1  1  1 0.02777778
 2  2  1 0.02777778
@@ -5254,8 +5265,8 @@ Next we define the events
 
 
 
-<pre class="src src-R">A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> subset(S, X1 == X2)
-B <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> subset(S, X1 + X2 &gt;= 8)
+<pre class="src src-R">A <span style="color: #008b8b;">&lt;-</span> subset(S, X1 == X2)
+B <span style="color: #008b8b;">&lt;-</span> subset(S, X1 + X2 &gt;= 8)
 </pre>
 
 
@@ -5387,10 +5398,10 @@ Putting all of this together we do
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(prob)
-L <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> cards()
-M <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> urnsamples(L, size = 2)
-N <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> probspace(M)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(prob)
+L <span style="color: #008b8b;">&lt;-</span> cards()
+M <span style="color: #008b8b;">&lt;-</span> urnsamples(L, size = 2)
+N <span style="color: #008b8b;">&lt;-</span> probspace(M)
 </pre>
 
 
@@ -5400,7 +5411,7 @@ Now that we have the probability space <code>N</code> we are ready to do some pr
 
 
 
-<pre class="src src-R">prob(N, all(rank == <span style="font-style: italic;">"A"</span>))
+<pre class="src src-R">prob(N, all(rank == <span style="color: #8b2252;">"A"</span>))
 </pre>
 
 
@@ -5438,10 +5449,10 @@ It is easier for us this time because our urn is a vector instead of a <code>car
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(prob)
-L <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rep(c(<span style="font-style: italic;">"red"</span>,<span style="font-style: italic;">"green"</span>), times = c(7,3))
-M <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> urnsamples(L, size = 3, replace = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>, ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
-N <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> probspace(M)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(prob)
+L <span style="color: #008b8b;">&lt;-</span> rep(c(<span style="color: #8b2252;">"red"</span>,<span style="color: #8b2252;">"green"</span>), times = c(7,3))
+M <span style="color: #008b8b;">&lt;-</span> urnsamples(L, size = 3, replace = <span style="color: #228b22;">FALSE</span>, ordered = <span style="color: #228b22;">TRUE</span>)
+N <span style="color: #008b8b;">&lt;-</span> probspace(M)
 </pre>
 
 
@@ -5451,7 +5462,7 @@ Now let us think about how to set up the event \(\{ \mbox{all 3 balls are red}\}
 
 
 
-<pre class="src src-R">prob(N, isrep(N, <span style="font-style: italic;">"red"</span>, 3))
+<pre class="src src-R">prob(N, isrep(N, <span style="color: #8b2252;">"red"</span>, 3))
 </pre>
 
 
@@ -5466,7 +5477,7 @@ Note that this answer matches what we found in Example <a href="#exa-urn-7-red-3
 
 
 
-<pre class="src src-R">prob(N, isrep(N, <span style="font-style: italic;">"red"</span>, 2))
+<pre class="src src-R">prob(N, isrep(N, <span style="color: #8b2252;">"red"</span>, 2))
 </pre>
 
 
@@ -5481,7 +5492,7 @@ Note that the exact value is \(21/40\); we will learn a quick way to compute thi
 
 
 
-<pre class="src src-R">prob(N, isin(N, c(<span style="font-style: italic;">"red"</span>,<span style="font-style: italic;">"green"</span>,<span style="font-style: italic;">"red"</span>), ordered = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>))
+<pre class="src src-R">prob(N, isin(N, c(<span style="color: #8b2252;">"red"</span>,<span style="color: #8b2252;">"green"</span>,<span style="color: #8b2252;">"red"</span>), ordered = <span style="color: #228b22;">TRUE</span>))
 </pre>
 
 
@@ -5496,7 +5507,7 @@ Note that the exact value is \(7/20\) (do it with the Multiplication Rule). What
 
 
 
-<pre class="src src-R">prob(N, isin(N, c(<span style="font-style: italic;">"red"</span>,<span style="font-style: italic;">"green"</span>,<span style="font-style: italic;">"red"</span>)))
+<pre class="src src-R">prob(N, isin(N, c(<span style="color: #8b2252;">"red"</span>,<span style="color: #8b2252;">"green"</span>,<span style="color: #8b2252;">"red"</span>)))
 </pre>
 
 
@@ -5531,8 +5542,8 @@ We saw the <code>RcmdrTestDrive</code> data set in Chapter <a href="#sec-2">Intr
 
 
 
-<pre class="src src-R">.Table <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> xtabs( ~ smoking + gender, data = RcmdrTestDrive)
-addmargins(.Table) <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Table with Marginal Distributions</span>
+<pre class="src src-R">.Table <span style="color: #008b8b;">&lt;-</span> xtabs( ~ smoking + gender, data = RcmdrTestDrive)
+addmargins(.Table) <span style="color: #b22222;"># </span><span style="color: #b22222;">Table with Marginal Distributions</span>
 </pre>
 
 
@@ -5679,8 +5690,8 @@ Toss ten coins. What is the probability of observing at least one Head?
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> tosscoin(10, makespace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
-A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> subset(S, isrep(S, vals = <span style="font-style: italic;">"T"</span>, nrep = 10))
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> tosscoin(10, makespace = <span style="color: #228b22;">TRUE</span>)
+A <span style="color: #008b8b;">&lt;-</span> subset(S, isrep(S, vals = <span style="color: #8b2252;">"T"</span>, nrep = 10))
 1 - prob(A)
 </pre>
 
@@ -5718,7 +5729,7 @@ We may represent tossing our unbalanced coin three times with the following:
 
 
 
-<pre class="src src-R">iidspace(c(<span style="font-style: italic;">"H"</span>,<span style="font-style: italic;">"T"</span>), ntrials = 3, probs = c(0.7, 0.3)) 
+<pre class="src src-R">iidspace(c(<span style="color: #8b2252;">"H"</span>,<span style="color: #8b2252;">"T"</span>), ntrials = 3, probs = c(0.7, 0.3)) 
 </pre>
 
 
@@ -5915,9 +5926,9 @@ There are not any special functions for Bayes' Rule in the <code>prob</code> pac
 
 
 
-<pre class="src src-R">prior <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(0.6, 0.3, 0.1)
-like <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(0.003, 0.007, 0.010)
-post <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> prior * like
+<pre class="src src-R">prior <span style="color: #008b8b;">&lt;-</span> c(0.6, 0.3, 0.1)
+like <span style="color: #008b8b;">&lt;-</span> c(0.003, 0.007, 0.010)
+post <span style="color: #008b8b;">&lt;-</span> prior * like
 post / sum(post)
 </pre>
 
@@ -5939,8 +5950,8 @@ Let us incorporate the posterior probability (<code>post</code>) information fro
 
 
 
-<pre class="src src-R">newprior <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> post
-post <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> newprior * like^7
+<pre class="src src-R">newprior <span style="color: #008b8b;">&lt;-</span> post
+post <span style="color: #008b8b;">&lt;-</span> newprior * like^7
 post / sum(post)
 </pre>
 
@@ -5962,7 +5973,7 @@ Second, the reader might be wondering what the boss would get if (s)he skipped t
 
 
 
-<pre class="src src-R">fastpost <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> prior * like^8
+<pre class="src src-R">fastpost <span style="color: #008b8b;">&lt;-</span> prior * like^8
 fastpost / sum(fastpost)
 </pre>
 
@@ -6053,8 +6064,8 @@ The first method is based on the <code>transform</code> function. See <code>?tra
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rolldie(3, nsides = 4, makespace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) 
-S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> addrv(S, U = X1-X2+X3) 
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> rolldie(3, nsides = 4, makespace = <span style="color: #228b22;">TRUE</span>) 
+S <span style="color: #008b8b;">&lt;-</span> addrv(S, U = X1-X2+X3) 
 </pre>
 
 
@@ -6109,8 +6120,8 @@ Sometimes we have a function laying around that we would like to apply to some o
 
 
 
-<pre class="src src-R">S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> addrv(S, FUN = max, invars = c(<span style="font-style: italic;">"X1"</span>,<span style="font-style: italic;">"X2"</span>,<span style="font-style: italic;">"X3"</span>), name = <span style="font-style: italic;">"V"</span>) 
-S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> addrv(S, FUN = sum, invars = c(<span style="font-style: italic;">"X1"</span>,<span style="font-style: italic;">"X2"</span>,<span style="font-style: italic;">"X3"</span>), name = <span style="font-style: italic;">"W"</span>) 
+<pre class="src src-R">S <span style="color: #008b8b;">&lt;-</span> addrv(S, FUN = max, invars = c(<span style="color: #8b2252;">"X1"</span>,<span style="color: #8b2252;">"X2"</span>,<span style="color: #8b2252;">"X3"</span>), name = <span style="color: #8b2252;">"V"</span>) 
+S <span style="color: #008b8b;">&lt;-</span> addrv(S, FUN = sum, invars = c(<span style="color: #8b2252;">"X1"</span>,<span style="color: #8b2252;">"X2"</span>,<span style="color: #8b2252;">"X3"</span>), name = <span style="color: #8b2252;">"W"</span>) 
 head(S) 
 </pre>
 
@@ -6145,7 +6156,7 @@ As we can see above, often after adding a random variable \(V\) to a probability
 
 
 
-<pre class="src src-R">marginal(S, vars = <span style="font-style: italic;">"V"</span>) 
+<pre class="src src-R">marginal(S, vars = <span style="color: #8b2252;">"V"</span>) 
 </pre>
 
 
@@ -6164,7 +6175,7 @@ We could save the probability space of \(V\) in a data frame and study it furthe
 
 
 
-<pre class="src src-R">marginal(S, vars = c(<span style="font-style: italic;">"V"</span>, <span style="font-style: italic;">"W"</span>)) 
+<pre class="src src-R">marginal(S, vars = c(<span style="color: #8b2252;">"V"</span>, <span style="color: #8b2252;">"W"</span>)) 
 </pre>
 
 
@@ -6301,13 +6312,13 @@ What is the PMF of \(X\)? Notice that \(X\) is zero exactly when the outcome \(T
 </p>
 <table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="tab-pmf-flip-coin-three">
 <caption>Flipping a coin three times: the PMF.</caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">\(x\in S_{X}\)</th><th scope="col" class="left"></th><th scope="col" class="left">0</th><th scope="col" class="left">1</th><th scope="col" class="left">2</th><th scope="col" class="left">3</th><th scope="col" class="left">Total</th></tr>
+<tr><th scope="col" class="left">\(x\in S_{X}\)</th><th scope="col" class="left">0</th><th scope="col" class="left">1</th><th scope="col" class="left">2</th><th scope="col" class="left">3</th><th scope="col" class="left">Total</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">\(f_{X}(x)=\mathbb{P}(X=x)\)</td><td class="left"></td><td class="left">1/8</td><td class="left">3/8</td><td class="left">3/8</td><td class="left">1/8</td><td class="left">1</td></tr>
+<tr><td class="left">\(f_{X}(x)=\mathbb{P}(X=x)\)</td><td class="left">1/8</td><td class="left">3/8</td><td class="left">3/8</td><td class="left">1/8</td><td class="left">1</td></tr>
 </tbody>
 </table>
 
@@ -6348,7 +6359,7 @@ Note that although we say \(X\) is 3.5 on the average, we must keep in mind that
 <p>
 Related to the probability mass function \(f_{X}(x)=\mathbb{P}(X=x)\) is another important function called the <i>cumulative distribution function</i> (CDF), \(F_{X}\). It is defined by the formula
 \begin{equation}
-F_{X}(t)=\mathbb{P}(X\leq t),\quad-\infty<t<\infty.
+F_{X}(t)=\mathbb{P}(X\leq t),\quad -\infty < t < \infty.
 \end{equation}
 We know that all PMFs satisfy certain properties, and a similar statement may be made for CDFs. In particular, any CDF \(F_{X}\) satisfies
 </p><ul>
@@ -6376,8 +6387,8 @@ The mean and variance of a discrete random variable is easy to compute at the co
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(0,1,2,3)
-f <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(1/8, 3/8, 3/8, 1/8)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> c(0,1,2,3)
+f <span style="color: #008b8b;">&lt;-</span> c(1/8, 3/8, 3/8, 1/8)
 </pre>
 
 
@@ -6387,7 +6398,7 @@ To calculate the mean \(\mu\), we need to multiply the corresponding values of <
 
 
 
-<pre class="src src-R">mu <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sum(x * f)
+<pre class="src src-R">mu <span style="color: #008b8b;">&lt;-</span> sum(x * f)
 mu
 </pre>
 
@@ -6403,7 +6414,7 @@ To compute the variance \(\sigma^{2}\), we subtract the value of <code>mu</code>
 
 
 
-<pre class="src src-R">sigma2 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sum((x-mu)^2 * f)
+<pre class="src src-R">sigma2 <span style="color: #008b8b;">&lt;-</span> sum((x-mu)^2 * f)
 sigma2
 </pre>
 
@@ -6416,7 +6427,7 @@ sigma2
 
 
 
-<pre class="src src-R">sigma <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sqrt(sigma2)
+<pre class="src src-R">sigma <span style="color: #008b8b;">&lt;-</span> sqrt(sigma2)
 sigma
 </pre>
 
@@ -6432,7 +6443,7 @@ Finally, we may find the values of the CDF \(F_{X}\) on the support by accumulat
 
 
 
-<pre class="src src-R">F <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> cumsum(f)
+<pre class="src src-R">F <span style="color: #008b8b;">&lt;-</span> cumsum(f)
 F
 </pre>
 
@@ -6448,8 +6459,8 @@ As easy as this is, it is even easier to do with the <code>distrEx</code> packag
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distrEx)
-X <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> DiscreteDistribution(supp = 0:3, prob = c(1,3,3,1)/8)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(distrEx)
+X <span style="color: #008b8b;">&lt;-</span> DiscreteDistribution(supp = 0:3, prob = c(1,3,3,1)/8)
 E(X); var(X); sd(X)
 </pre>
 
@@ -6676,7 +6687,7 @@ Again, one method to solve this problem would be to generate a probability mass 
 
 
 <pre class="src src-R">pbinom(9, size=12, prob=1/6) - pbinom(6, size=12, prob=1/6)
-diff(pbinom(c(6,9), size = 12, prob = 1/6))  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">same thing</span>
+diff(pbinom(c(6,9), size = 12, prob = 1/6))  <span style="color: #b22222;"># </span><span style="color: #b22222;">same thing</span>
 </pre>
 
 
@@ -6692,13 +6703,13 @@ Toss a coin three times and let \(X\) be the number of Heads observed. We know f
 </p>
 <table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="tab-flip-coin-thrice">
 <caption>Flipping a coin three times: the PMF.</caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">\(x=\mbox{\#of Heads}\)</th><th scope="col" class="left"></th><th scope="col" class="left">0</th><th scope="col" class="left">1</th><th scope="col" class="left">2</th><th scope="col" class="left">3</th><th scope="col" class="left">Total</th></tr>
+<tr><th scope="col" class="left">\(x=\mbox{num. of Heads}\)</th><th scope="col" class="left">0</th><th scope="col" class="left">1</th><th scope="col" class="left">2</th><th scope="col" class="left">3</th><th scope="col" class="left">Total</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">\(f(x) = \mathbb{P}(X = x)\)</td><td class="left"></td><td class="left">1/8</td><td class="left">3/8</td><td class="left">3/8</td><td class="left">1/8</td><td class="left">1</td></tr>
+<tr><td class="left">\(f(x) = \mathbb{P}(X = x)\)</td><td class="left">1/8</td><td class="left">3/8</td><td class="left">3/8</td><td class="left">1/8</td><td class="left">1</td></tr>
 </tbody>
 </table>
 
@@ -6737,13 +6748,15 @@ Another way to do Example <a href="#exa-toss-coin-3-withR">Toss coin 3 with R</a
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distr)
-X <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Binom(size = 3, prob = 1/2)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(distr)
+X <span style="color: #008b8b;">&lt;-</span> Binom(size = 3, prob = 1/2)
 X
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
  Distribution Object of Class: Binom
  size: 3
  prob: 0.5
@@ -6756,8 +6769,8 @@ The analogue of the <code>dbinom</code> function for <code>X</code> is the <code
 
 
 
-<pre class="src src-R">d(X)(1)   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pmf of X evaluated at x = 1</span>
-p(X)(2)   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">cdf of X evaluated at x = 2</span>
+<pre class="src src-R">d(X)(1)   <span style="color: #b22222;"># </span><span style="color: #b22222;">pmf of X evaluated at x = 1</span>
+p(X)(2)   <span style="color: #b22222;"># </span><span style="color: #b22222;">cdf of X evaluated at x = 2</span>
 </pre>
 
 
@@ -6803,7 +6816,6 @@ Random variables defined via the <code>distr</code> package may be <i>plotted</i
 </table>
 
 
-
 </div>
 </div>
 </div>
@@ -6827,17 +6839,17 @@ Random variables defined via the <code>distr</code> package may be <i>plotted</i
 We next generalize some of the concepts from Section <a href="#sec-5-1-2">Mean-variance-sd</a>. There we saw that every
 PMF has two important numbers associated with it:
 \begin{equation}
-\mu=\sum_{x\in S}xf_{X}(x),\quad\sigma^{2}=\sum_{x\in S}(x-\mu)^{2}f_{X}(x).
+\mu=\sum_{x\in S}xf_{X}(x),\quad \sigma^{2}=\sum_{x\in S}(x-\mu)^{2}f_{X}(x).
 \end{equation}
 Intuitively, for repeated observations of \(X\) we would expect the sample mean to closely approximate \(\mu\) as the sample size increases without bound. For this reason we call \(\mu\) the <i>expected value</i> of \(X\) and we write \(\mu=\mathbb{E} X\), where \(\mathbb{E}\) is an <i>expectation operator</i>.
 </p>
 <p>
 <div class="defn">
-More generally, given a function \(g\) we define the \emph{expected value of} \(g(X)\) by
+More generally, given a function \(g\) we define the <i>expected value of</i> \(g(X)\) by
 \begin{equation}
 \mathbb{E}\, g(X)=\sum_{x\in S}g(x)f_{X}(x),
 \end{equation}
-provided the (potentially infinite) series \(\sum_{x}|g(x)|f(x)\) is convergent. We say that \(\mathbb{E} g(X)\) \emph{exists}.
+provided the (potentially infinite) series \(\sum_{x}|g(x)|f(x)\) is convergent. We say that \(\mathbb{E} g(X)\) <i>exists</i>.
 </div>
 </p>
 <p>
@@ -6902,7 +6914,7 @@ We will calculate the MGF for the two distributions introduced above.
 Find the MGF for \(X\sim\mathsf{disunif}(m)\). 
 Since \(f(x)=1/m\), the MGF takes the form
 \[
-M(t)=\sum_{x=1}^{m}\mathrm{e}^{tx}\frac{1}{m}=\frac{1}{m}(\mathrm{e}^{t}+\mathrm{e}^{2t}+\cdots+\mathrm{e}^{mt}),\quad\mbox{for any \(t\).}
+M(t)=\sum_{x=1}^{m}\mathrm{e}^{tx}\frac{1}{m}=\frac{1}{m}(\mathrm{e}^{t}+\mathrm{e}^{2t}+\cdots+\mathrm{e}^{mt}),\quad \mbox{for any \(t\).}
 \]
 
 
@@ -6913,7 +6925,7 @@ Find the MGF for \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\).
 \begin{alignat*}{1}
 M_{X}(t)= & \sum_{x=0}^{n}\mathrm{e}^{tx}\,{n \choose x}\, p^{x}(1-p)^{n-x},\\
 = & \sum_{x=0}^{n}{n \choose x}\,(p\mathrm{e}^{t})^{x}q^{n-x},\\
-= & (p\mathrm{e}^{t}+q)^{n},\quad\mbox{for any $t$.}
+= & (p\mathrm{e}^{t}+q)^{n},\quad \mbox{for any $t$.}
 \end{alignat*}
 
 
@@ -7010,11 +7022,11 @@ See how much easier that was?
 <div class="rem">
 We learned in this section that \(M^{(r)}(0)=\mathbb{E} X^{r}\). We remember from Calculus II that certain functions \(f\) can be represented by a Taylor series expansion about a point \(a\), which takes the form
 \begin{equation}
-f(x)=\sum_{r=0}^{\infty}\frac{f^{(r)}(a)}{r!}(x-a)^{r},\quad\mbox{for all $|x-a|<R$,}
+f(x)=\sum_{r=0}^{\infty}\frac{f^{(r)}(a)}{r!}(x-a)^{r},\quad \mbox{for all \(|x-a| < R\),}
 \end{equation}
 where \(R\) is called the <i>radius of convergence</i> of the series (see Appendix <a href="#sec-21-3">Sequences and Series</a>). We combine the two to say that if an MGF exists for all \(t\) in the interval \((-\epsilon,\epsilon)\), then we can write
 \begin{equation}
-M_{X}(t)=\sum_{r=0}^{\infty}\frac{\mathbb{E} X^{r}}{r!}t^{r},\quad\mbox{for all $|t|<\epsilon$.}
+M_{X}(t)=\sum_{r=0}^{\infty}\frac{\mathbb{E} X^{r}}{r!}t^{r},\quad \mbox{for all $|t|<\epsilon$.}
 \end{equation}
 </div>
 </p>
@@ -7033,14 +7045,16 @@ The <code>distrEx</code> package provides an expectation operator <code>E</code>
 
 
 
-<pre class="src src-R">X <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Binom(size = 3, prob = 0.45)
-<span style="font-weight: bold; text-decoration: underline;">library</span>(distrEx)
+<pre class="src src-R">X <span style="color: #008b8b;">&lt;-</span> Binom(size = 3, prob = 0.45)
+<span style="color: #008b8b;">library</span>(distrEx)
 E(X)
 E(3*X + 4)
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
 [1] 1.35
 [1] 8.05
 </pre>
@@ -7121,7 +7135,7 @@ The empirical distribution is not directly available as a distribution in the sa
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(4, 7, 9, 11, 12)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> c(4, 7, 9, 11, 12)
 ecdf(x)
 </pre>
 
@@ -7162,13 +7176,15 @@ The empirical PDF is not usually of particular interest in itself, but if we rea
 
 
 
-<pre class="src src-R"><span style="font-weight: bold;">epdf</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x) <span style="font-weight: bold;">function</span>(t){sum(x %<span style="font-weight: bold;">in</span>% t)/length(x)}
-x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(0,0,1)
-epdf(x)(0)       <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">should be 2/3</span>
+<pre class="src src-R"><span style="color: #0000ff;">epdf</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x) <span style="color: #a020f0;">function</span>(t){sum(x %<span style="color: #a020f0;">in</span>% t)/length(x)}
+x <span style="color: #008b8b;">&lt;-</span> c(0,0,1)
+epdf(x)(0)       <span style="color: #b22222;"># </span><span style="color: #b22222;">should be 2/3</span>
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
 [1] 0.6666667
 </pre>
 
@@ -7179,8 +7195,8 @@ To simulate from the empirical distribution supported on the vector <code>x</cod
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(0,0,1)
-sample(x, size = 7, replace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> c(0,0,1)
+sample(x, size = 7, replace = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -7241,7 +7257,7 @@ The support set for the hypergeometric distribution is a little bit tricky. It i
 <p>
 It is shown in Exercise <a href="#xca-hyper-mean-variance">Hyper-MV</a> that
 \begin{equation}
-\mu=K\frac{M}{M+N},\quad\sigma^{2}=K\frac{MN}{(M+N)^{2}}\frac{M+N-K}{M+N-1}.
+\mu=K\frac{M}{M+N},\quad \sigma^{2}=K\frac{MN}{(M+N)^{2}}\frac{M+N-K}{M+N-1}.
 \end{equation}
 
 The associated \(\mathsf{R}\) functions for the PMF and CDF are <code>dhyper(x, m, n, k)</code> and <code>phyper</code>, respectively. There are two more functions: <code>qhyper</code>, which we will discuss in Section <a href="#sec-6-3-1">Normal Quantiles</a>, and <code>rhyper</code>, discussed below.
@@ -7275,8 +7291,8 @@ Find the probability of exactly 3 defectives in the sample, that is, find \(\mat
 
 
 
-<pre class="src src-R">   A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(Pr=dhyper(0:4, m = 17, n = 233, k = 5))
-   rownames(A) <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 0:4 
+<pre class="src src-R">   A <span style="color: #008b8b;">&lt;-</span> data.frame(Pr=dhyper(0:4, m = 17, n = 233, k = 5))
+   rownames(A) <span style="color: #008b8b;">&lt;-</span> 0:4 
    A
 </pre>
 
@@ -7331,7 +7347,7 @@ Find \(\mathbb{P}(X&gt;1)\).
 
 
 
-<pre class="src src-R">   phyper(1, m = 17, n = 233, k = 5, lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
+<pre class="src src-R">   phyper(1, m = 17, n = 233, k = 5, lower.tail = <span style="color: #228b22;">FALSE</span>)
 </pre>
 
 
@@ -7464,7 +7480,7 @@ The Pittsburgh Steelers place kicker, Jeff Reed, made 81.2% of his attempted fie
 
 
 
-<pre class="src src-R">pgeom(4, prob = 0.812, lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
+<pre class="src src-R">pgeom(4, prob = 0.812, lower.tail = <span style="color: #228b22;">FALSE</span>)
 </pre>
 
 
@@ -7503,8 +7519,8 @@ We say that \(X\) has a <i>Negative Binomial distribution</i> and write \(X\sim\
 <p>
 As usual it should be clear that \(f_{X}(x)\geq 0\) and the fact that \(\sum f_{X}(x)=1\) follows from a generalization of the geometric series by means of a Maclaurin's series expansion:
 \begin{alignat}{1}
-\frac{1}{1-t}= & \sum_{k=0}^{\infty}t^{k},\quad\mbox{for $-1<t<1$},\mbox{ and}\\
-\frac{1}{(1-t)^{r}}= & \sum_{k=0}^{\infty}{r+k-1 \choose r-1}\, t^{k},\quad\mbox{for $-1<t<1$}.
+\frac{1}{1-t}= & \sum_{k=0}^{\infty}t^{k},\quad \mbox{for \(-1 < t < 1\)},\mbox{ and}\\
+\frac{1}{(1-t)^{r}}= & \sum_{k=0}^{\infty}{r+k-1 \choose r-1}\, t^{k},\quad \mbox{for \(-1 < t < 1\)}.
 \end{alignat}
 Therefore
 \begin{equation}
@@ -7537,11 +7553,11 @@ Let us next compute the MGF of \(X\sim\mathsf{nbinom}(\mathtt{size}=r,\,\mathtt{
 \begin{alignat*}{1}
 M_{X}(t)= & \sum_{x=0}^{\infty}\mathrm{e}^{tx}\ {r+x-1 \choose r-1}p^{r}q^{x}\\
 = & p^{r}\sum_{x=0}^{\infty}{r+x-1 \choose r-1}[q\mathrm{e}^{t}]^{x}\\
-= & p^{r}(1-qe^{t})^{-r},\quad\mbox{provided $|q\mathrm{e}^{t}|<1$,}
+= & p^{r}(1-qe^{t})^{-r},\quad \mbox{provided $|q\mathrm{e}^{t}|<1$,}
 \end{alignat*}
 and so
 \begin{equation}
-M_{X}(t)=\left(\frac{p}{1-q\mathrm{e}^{t}}\right)^{r},\quad\mbox{for $q\mathrm{e}^{t}<1$}.
+M_{X}(t)=\left(\frac{p}{1-q\mathrm{e}^{t}}\right)^{r},\quad \mbox{for $q\mathrm{e}^{t}<1$}.
 \end{equation}
 We see that \(q\mathrm{e}^{t}&lt;1\) when \(t&lt;-\ln(1-p)\).
 </p>
@@ -7709,16 +7725,16 @@ Let \(X\sim\mathsf{binom}(\mathtt{size}=4,\,\mathtt{prob}=1/2)\), and let \(Y=(X
 </p>
 <table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="tab-disc-transf">
 <caption>Transforming a discrete random variable.</caption>
-<colgroup><col class="left" /><col class="left" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+<colgroup><col class="left" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">x</th><th scope="col" class="left"></th><th scope="col" class="right">0</th><th scope="col" class="right">1</th><th scope="col" class="right">2</th><th scope="col" class="right">3</th><th scope="col" class="right">4</th></tr>
+<tr><th scope="col" class="left">x</th><th scope="col" class="right">0</th><th scope="col" class="right">1</th><th scope="col" class="right">2</th><th scope="col" class="right">3</th><th scope="col" class="right">4</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">\(f_{X}(x)\)</td><td class="left"></td><td class="right">1/16</td><td class="right">1/4</td><td class="right">6/16</td><td class="right">1/4</td><td class="right">1/16</td></tr>
+<tr><td class="left">\(f_{X}(x)\)</td><td class="right">1/16</td><td class="right">1/4</td><td class="right">6/16</td><td class="right">1/4</td><td class="right">1/16</td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">\(y=(x-2)^{2}\)</td><td class="left"></td><td class="right">1</td><td class="right">0</td><td class="right">1</td><td class="right">4</td><td class="right">9</td></tr>
+<tr><td class="left">\(y=(x-2)^{2}\)</td><td class="right">1</td><td class="right">0</td><td class="right">1</td><td class="right">4</td><td class="right">9</td></tr>
 </tbody>
 </table>
 
@@ -7728,13 +7744,13 @@ From this we see that \(Y\) has support \(S_{Y}=\{0,1,4,9\}\). We also see that 
 </p>
 <table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="tab-disc-transf-pmf">
 <caption>Transforming a discrete random variable, its PMF.</caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">y</th><th scope="col" class="left"></th><th scope="col" class="left">0</th><th scope="col" class="left">1</th><th scope="col" class="left">4</th><th scope="col" class="left">9</th></tr>
+<tr><th scope="col" class="left">y</th><th scope="col" class="left">0</th><th scope="col" class="left">1</th><th scope="col" class="left">4</th><th scope="col" class="left">9</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">\(f_{Y}(y)\)</td><td class="left"></td><td class="left">1/4</td><td class="left">7/16</td><td class="left">1/4</td><td class="left">1/16</td></tr>
+<tr><td class="left">\(f_{Y}(y)\)</td><td class="left">1/4</td><td class="left">7/16</td><td class="left">1/4</td><td class="left">1/16</td></tr>
 </tbody>
 </table>
 
@@ -7746,7 +7762,7 @@ There is not a special name for the distribution of \(Y\), it is just an example
 <div class="prop">
 If \(X\) is a random variable with \(\mathbb{E} X=\mu\) and \(\mbox{Var}(X)=\sigma^{2}\), then the mean and variance of \(Y=mX+b\) is
 \begin{equation}
-\mu_{Y}=m\mu+b,\quad\sigma_{Y}^{2}=m^{2}\sigma^{2},\quad\sigma_{Y}=|m|\sigma.
+\mu_{Y}=m\mu+b,\quad \sigma_{Y}^{2}=m^{2}\sigma^{2},\quad \sigma_{Y}=|m|\sigma.
 \end{equation}
 </div>
 </p>
@@ -7765,170 +7781,30 @@ If \(X\) is a random variable with \(\mathbb{E} X=\mu\) and \(\mbox{Var}(X)=\sig
 A recent national study showed that approximately 44.7% of college students have used Wikipedia as a source in at least one of their term papers. Let \(X\) equal the number of students in a random sample of size \(n=31\) who have used Wikipedia as a source. 
 </p><ul>
 <li>How is \(X\) distributed? 
-  \[
-  X\sim\mathsf{binom}(\mathtt{size}=31,\,\mathtt{prob}=0.447)
-  \]
 </li>
 <li>Sketch the probability mass function (roughly).
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distr)
-X <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Binom(size = 31, prob = 0.447)
-plot(X, to.draw.arg = <span style="font-style: italic;">"d"</span>)
-</pre>
-
-
-
-<pre class="src src-R">  &lt;&lt;binomdxca&gt;&gt;
-</pre>
-
-
-
-<pre class="src src-R">  &lt;&lt;binomdxca&gt;&gt;
-</pre>
-
-
-
-<div id="fig-binomdxca" class="figure">
-  <p><img src="svg/discdist/binomdxca.svg" width=500 alt="svg/discdist/binomdxca.svg" /></p>
-  <p>Plot of a binomial PMF.</p>
-</div>
-<ul>
 <li>Sketch the cumulative distribution function (roughly).
 </li>
-</ul>
-
-
-
-
-
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distr)
-X <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Binom(size = 31, prob = 0.447)
-plot(X, to.draw.arg = <span style="font-style: italic;">"p"</span>)
-</pre>
-
-
-
-<pre class="src src-R">  &lt;&lt;binompxca&gt;&gt;
-</pre>
-
-
-
-<pre class="src src-R">  &lt;&lt;binompxca&gt;&gt;
-</pre>
-
-
-
-<div id="fig-binompxca" class="figure">
-  <p><img src="svg/discdist/binompxca.svg" width=500 alt="svg/discdist/binompxca.svg" /></p>
-  <p>Plot of a binomial CDF.</p>
-</div>
-
-<ul>
 <li>Find the probability that \(X\) is equal to 17.
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R">dbinom(17, size = 31, prob = 0.447)
-</pre>
-
-<ul>
 <li>Find the probability that \(X\) is at most 13.
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R">pbinom(13, size = 31, prob = 0.447)
-</pre>
-
-<ul>
 <li>Find the probability that \(X\) is bigger than 11.
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R">pbinom(11, size = 31, prob = 0.447, lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
-</pre>
-
-<ul>
 <li>Find the probability that \(X\) is at least 15.
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R">pbinom(14, size = 31, prob = 0.447, lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
-</pre>
-
-<ul>
 <li>Find the probability that \(X\) is between 16 and 19, inclusive.
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R">sum(dbinom(16:19, size = 31, prob = 0.447))
-diff(pbinom(c(19,15), size = 31, prob = 0.447, lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>))
-</pre>
-
-<ul>
 <li>Give the mean of \(X\), denoted \(\mathbb{E} X\).
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distrEx)
-X <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Binom(size = 31, prob = 0.447)
-E(X)
-</pre>
-
-<ul>
 <li>Give the variance of \(X\).
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R">var(X)
-</pre>
-
-<ul>
 <li>Give the standard deviation of \(X\).
 </li>
-</ul>
-
-
-
-
-<pre class="src src-R">sd(X)
-</pre>
-
-<ul>
 <li>Find \(\mathbb{E}(4X+51.324)\)
 </li>
 </ul>
-
-
-
-
-<pre class="src src-R">E(4*X + 51.324)
-</pre>
 
 
 <p>
@@ -7978,7 +7854,7 @@ If \(X\sim\mathsf{binom}(\mathtt{size}=n,\,\mathtt{prob}=p)\) show that \(\mathb
 <div class="xca">
 Calculate the mean and variance of the hypergeometric distribution. Show that 
 \begin{equation}
-\mu=K\frac{M}{M+N},\quad\sigma^{2}=K\frac{MN}{(M+N)^{2}}\frac{M+N-K}{M+N-1}.
+\mu=K\frac{M}{M+N},\quad \sigma^{2}=K\frac{MN}{(M+N)^{2}}\frac{M+N-K}{M+N-1}.
 \end{equation}
 </div>
 </p>
@@ -8090,7 +7966,7 @@ We can say the following about continuous random variables:
 <p>
 We met the cumulative distribution function, \(F_{X}\), in Chapter <a href="#sec-5">Discrete Distributions</a>. Recall that it is defined by \(F_{X}(t)=\mathbb{P}(X\leq t)\), for \(-\infty&lt;t&lt;\infty\). While in the discrete case the CDF is unwieldy, in the continuous case the CDF has a relatively convenient form:
 \begin{equation}
-F_{X}(t)=\mathbb{P}(X\leq t)=\int_{-\infty}^{t}f_{X}(x)\:\mathrm{d} x,\quad-\infty<t<\infty.
+F_{X}(t)=\mathbb{P}(X\leq t)=\int_{-\infty}^{t}f_{X}(x)\:\mathrm{d} x,\quad -\infty < t < \infty.
 \end{equation}
 
 <div class="rem">
@@ -8147,7 +8023,7 @@ provided the integral exists (is finite) for all \(t\) in a neighborhood of \(t=
 <p>
 Let the continuous random variable \(X\) have PDF
 \[
-f_{X}(x)=3x^{2},\quad0\leq x\leq 1.
+f_{X}(x)=3x^{2},\quad 0\leq x\leq 1.
 \]
 We will see later that \(f_{X}\) belongs to the <i>Beta</i> family of distributions. It is easy to see that \(\int_{-\infty}^{\infty}f(x)\mathrm{d} x=1\).
 \begin{align*}
@@ -8231,7 +8107,7 @@ Let \(X\) have PDF \(f(x)=3x^{2}\), \(0&lt;x&lt;1\) and find \(\mathbb{P}(0.14\l
 
 
 
-<pre class="src src-R"><span style="font-weight: bold;">f</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x) 3*x^2
+<pre class="src src-R"><span style="color: #0000ff;">f</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x) 3*x^2
 integrate(f, lower = 0.14, upper = 0.71)
 </pre>
 
@@ -8251,8 +8127,8 @@ Let \(X\) have PDF \(f(x)=3/x^{4}\), \(x&gt;1\). We may integrate the function \
 
 
 
-<pre class="src src-R"><span style="font-weight: bold;">g</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x) 3/x^3
-integrate(g, lower = 1, upper = <span style="font-weight: bold; text-decoration: underline;">Inf</span>)
+<pre class="src src-R"><span style="color: #0000ff;">g</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x) 3/x^3
+integrate(g, lower = 1, upper = <span style="color: #228b22;">Inf</span>)
 </pre>
 
 
@@ -8272,9 +8148,9 @@ Let us redo Example <a href="#exa-cont-pdf3x2">Cont-pdf3x2</a> with the <code>di
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distr)
-<span style="font-weight: bold;">f</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x) 3*x^2
-X <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> AbscontDistribution(d = f, low1 = 0, up1 = 1)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(distr)
+<span style="color: #0000ff;">f</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x) 3*x^2
+X <span style="color: #008b8b;">&lt;-</span> AbscontDistribution(d = f, low1 = 0, up1 = 1)
 p(X)(0.71) - p(X)(0.14)
 </pre>
 
@@ -8289,7 +8165,7 @@ Compare this to the answer we found earlier. Now let us try expectation with the
 </p>
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distrEx)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(distrEx)
 E(X); var(X); 3/80
 </pre>
 
@@ -8357,7 +8233,7 @@ using the popular formula for the difference of squares. The variance is left to
 <p>
 We say that \(X\) has a <i>normal distribution</i> if it has PDF
 \begin{equation}
-f_{X}(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp \{ \frac{-(x-\mu)^{2}}{2\sigma^{2}} \},\quad -\infty < x < \infty.
+f_{X}(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp \left\{ \frac{-(x-\mu)^{2}}{2\sigma^{2}} \right\},\quad -\infty < x < \infty.
 \end{equation}
 We write \(X\sim\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\), and the associated \(\mathsf{R}\) function is <code>dnorm(x, mean = 0, sd = 1)</code>.
 </p>
@@ -8386,7 +8262,7 @@ M_{Z}(t) & = & \int_{-\infty}^{\infty}\mathrm{e}^{tz}\frac{1}{\sqrt{2\pi}}\mathr
 \end{eqnarray*}
 and the quantity in the parentheses is the total area under a \(\mathsf{norm}(\mathtt{mean}=-t,\,\mathtt{sd}=1)\) density, which is one. Therefore,
 \begin{equation}
-M_{Z}(t)=\mathrm{e}^{-t^{2}/2},\quad-\infty<t<\infty.
+M_{Z}(t)=\mathrm{e}^{-t^{2}/2},\quad -\infty < t < \infty.
 \end{equation}
 
 The MGF of \(X\sim\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) is then not difficult either because 
@@ -8449,7 +8325,7 @@ Assuming the IQ model of Example <a href="#exa-iq-model">IQ Model</a>, what is t
 </p>
 
 
-<pre class="src src-R"><span style="font-weight: bold;">g</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x) pnorm(x, mean = 100, sd = 15) - 0.99
+<pre class="src src-R"><span style="color: #0000ff;">g</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x) pnorm(x, mean = 100, sd = 15) - 0.99
 uniroot(g, interval = c(130, 145))
 </pre>
 
@@ -8498,7 +8374,7 @@ Here are some properties of quantile functions:
 </li>
 <li>The two limits
    \[
-   \lim_{p\to0^{+}}Q_{X}(p)\quad\mbox{and}\quad\lim_{p\to1^{-}}Q_{X}(p)
+   \lim_{p\to0^{+}}Q_{X}(p)\quad \mbox{and}\quad \lim_{p\to1^{-}}Q_{X}(p)
    \]
    always exist, but may be infinite (that is, sometimes \(\lim_{p\to0}Q(p)=-\infty\) and/or \(\lim_{p\to1}Q(p)=\infty\)).
 </li>
@@ -8513,7 +8389,7 @@ As the reader might expect, the standard normal distribution is a very special c
 </p>
 <p>
 <div class="defn">
-For \(0&lt;\alpha&lt;1\), the symbol \(z_{\alpha}\) denotes the unique solution of the equation \(\mathbb{P}(Z&gt;z_{\alpha})=\alpha\), where \(Z\sim\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\). It can be calculated in one of two equivalent ways: <code>qnorm(</code>\(1-\alpha\)=)= and <code>qnorm(</code>\(\alpha\)=, lower.tail = FALSE)=. 
+For \(0&lt;\alpha&lt;1\), the symbol \(z_{\alpha}\) denotes the unique solution of the equation \( \mathbb{P} ( Z &gt; z_{\alpha}) = \alpha\), where \(Z \sim \mathsf{norm}(\mathtt{mean} = 0,\,\mathtt{sd} = 1)\). It can be calculated in one of two equivalent ways: \(\mathtt{qnorm(} 1 - \alpha \mathtt{)} \) and \(\mathtt{qnorm(} \alpha \mathtt{, lower.tail = FALSE)} \). 
 </div>
 </p>
 <p>
@@ -8542,6 +8418,7 @@ Back to Example <a href="#exa-iq-quantile-state-problem">IQ Quantile</a>, we are
 
 <pre class="example">
 [1] 134.8952
+[1] 134.8952
 </pre>
 
 
@@ -8554,7 +8431,7 @@ Find the values \(z_{0.025}\), \(z_{0.01}\), and \(z_{0.005}\) (these will play 
 
 
 
-<pre class="src src-R">qnorm(c(0.025, 0.01, 0.005), lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
+<pre class="src src-R">qnorm(c(0.025, 0.01, 0.005), lower.tail = <span style="color: #228b22;">FALSE</span>)
 </pre>
 
 
@@ -8628,8 +8505,8 @@ f_{X}(x)=\frac{1}{\sqrt{2\pi}}\mathrm{e}^{-x^{2}/2}, \quad -\infty < x < \infty 
 \]
 we have
 \begin{eqnarray*}
-f_{Y}(y) & = & f_{X}\left(\frac{y-4}{3}\right)\cdot\left|-\frac{1}{3}\right|,\quad-\infty<y<\infty,\\
- & = & \frac{1}{3\sqrt{2\pi}}\mathrm{e}^{-(y-4)^{2}/2\cdot3^{2}},\quad-\infty<y<\infty.
+f_{Y}(y) & = & f_{X}\left(\frac{y-4}{3}\right)\cdot\left|-\frac{1}{3}\right|,\quad -\infty < y < \infty,\\
+ & = & \frac{1}{3\sqrt{2\pi}}\mathrm{e}^{-(y-4)^{2}/2\cdot3^{2}},\quad -\infty < y < \infty.
 \end{eqnarray*}
 We recognize the PDF of \(Y\) to be that of a \(\mathsf{norm}(\mathtt{mean}=4,\,\mathtt{sd}=3)\) distribution. Indeed, we may use an identical argument as the above to prove the following fact:
 </p>
@@ -8685,7 +8562,7 @@ where the next to last equality follows because the exponential function is <i>m
 \]
 Now recalling that the CDF of a \(\mathsf{unif}(\mathtt{min}=0,\,\mathtt{max}=1)\) random variable satisfies \(F(u)=u\) (see Equation <a href="#eq-unif-cdf">Uniform CDF</a>), we can say
 \[
-F_{Y}(y)=1-F_{X}(\mathrm{e}^{-y})=1-\mathrm{e}^{-y},\quad\mbox{for }y>0.
+F_{Y}(y)=1-F_{X}(\mathrm{e}^{-y})=1-\mathrm{e}^{-y},\quad \mbox{for }y>0.
 \]
 We have consequently found the formula for the CDF of \(Y\); to obtain the PDF \(f_{Y}\) we need only differentiate \(F_{Y}\):
 \[
@@ -8748,9 +8625,9 @@ The <code>distr</code> package has functionality to investigate transformations 
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distr)
-X <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Norm(mean = 0, sd = 1)
-Y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 4 - 3*X
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(distr)
+X <span style="color: #008b8b;">&lt;-</span> Norm(mean = 0, sd = 1)
+Y <span style="color: #008b8b;">&lt;-</span> 4 - 3*X
 Y
 </pre>
 
@@ -8768,7 +8645,7 @@ So <code>distr</code> ``knows'' that a linear transformation of a normal random 
 
 
 
-<pre class="src src-R">Y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> exp(X)
+<pre class="src src-R">Y <span style="color: #008b8b;">&lt;-</span> exp(X)
 Y
 </pre>
 
@@ -8789,12 +8666,12 @@ The result is an object of class <code>AbscontDistribution</code>, which is one 
 </li>
 </ol>
 
-<p>As long as the transformation is sufficiently nice, such as a linear transformation, the exponential, absolute value, <i>etc.</i>, the \texttt{d-p-q} functions are calculated analytically based on the d-p-q functions associated with \(X\). But if we try a crazy transformation then we are greeted by a warning:
+<p>As long as the transformation is sufficiently nice, such as a linear transformation, the exponential, absolute value, <i>etc.</i>, the <code>d-p-q</code> functions are calculated analytically based on the <code>d-p-q</code> functions associated with \(X\). But if we try a crazy transformation then we are greeted by a warning:
 </p>
 
 
 
-<pre class="src src-R">W <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sin(exp(X) + 27)
+<pre class="src src-R">W <span style="color: #008b8b;">&lt;-</span> sin(exp(X) + 27)
 W
 </pre>
 
@@ -8805,13 +8682,13 @@ Distribution Object of Class: AbscontDistribution
 
 
 <p>
-The warning confirms that the \texttt{d-p-q} functions are not calculated analytically, but are instead based on the randomly simulated values of \(Y\). <i>We must be careful to remember this.</i> The nature of random simulation means that we can get different answers to the same question: watch what happens when we compute \(\mathbb{P}(W\leq0.5)\) using the \(W\) above, then define \(W\) again, and compute the (supposedly) same \(\mathbb{P}(W\leq0.5)\) a few moments later.
+The warning confirms that the <code>d-p-q</code> functions are not calculated analytically, but are instead based on the randomly simulated values of \(Y\). <i>We must be careful to remember this.</i> The nature of random simulation means that we can get different answers to the same question: watch what happens when we compute \(\mathbb{P}(W\leq0.5)\) using the \(W\) above, then define \(W\) again, and compute the (supposedly) same \(\mathbb{P}(W\leq0.5)\) a few moments later.
 </p>
 
 
 
 <pre class="src src-R">p(W)(0.5)
-W <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sin(exp(X) + 27)
+W <span style="color: #008b8b;">&lt;-</span> sin(exp(X) + 27)
 p(W)(0.5)
 </pre>
 
@@ -8943,9 +8820,9 @@ The code to produce Figure <a href="#fig-chisq-dist-vary-df">chisq-dist-vary-df<
 
 
 
-<pre class="src src-R">curve(dchisq(x, df = 3), from = 0, to = 20, ylab = <span style="font-style: italic;">"y"</span>)
-ind <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(4, 5, 10, 15)
-<span style="font-weight: bold;">for</span> (i <span style="font-weight: bold;">in</span> ind) curve(dchisq(x, df = i), 0, 20, add = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">curve(dchisq(x, df = 3), from = 0, to = 20, ylab = <span style="color: #8b2252;">"y"</span>)
+ind <span style="color: #008b8b;">&lt;-</span> c(4, 5, 10, 15)
+<span style="color: #a020f0;">for</span> (i <span style="color: #a020f0;">in</span> ind) curve(dchisq(x, df = i), 0, 20, add = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -8971,7 +8848,7 @@ Here are some useful things to know about the chi-square distribution.
 </li>
 <li>The MGF of \(X\sim\mathsf{chisq}(\mathtt{df}=p)\) is
    \begin{equation}
-   M_{X}(t)=\left(1-2t\right)^{-p},\quad t<1/2.\label{eq-mgf-chisq}
+   M_{X}(t)=\left(1-2t\right)^{-p},\quad t < 1/2.\label{eq-mgf-chisq}
    \end{equation}
 </li>
 </ol>
@@ -8992,7 +8869,7 @@ Here are some useful things to know about the chi-square distribution.
 <p>
 A random variable \(X\) with PDF
 \begin{equation}
-f_{X}(x)=\frac{\Gamma\left[(r+1)/2\right]}{\sqrt{r\pi}\,\Gamma(r/2)}\left(1+\frac{x^{2}}{r}\right)^{-(r+1)/2},\quad-\infty<x<\infty
+f_{X}(x) = \frac{\Gamma\left[ (r+1)/2\right] }{\sqrt{r\pi}\,\Gamma(r/2)}\left( 1 + \frac{x^{2}}{r} \right)^{-(r+1)/2},\quad -\infty < x < \infty
 \end{equation}
 is said to have <i>Student's</i> \(t\) distribution with \(r\) <i>degrees of freedom</i>, and we write \(X\sim\mathsf{t}(\mathtt{df}=r)\). The associated \(\mathsf{R}\) functions are <code>dt</code>,=pt=, <code>qt</code>, and <code>rt</code>, which give the PDF, CDF, quantile function, and simulate random variates, respectively. See Section <a href="#sec-8-2">Sampling from Normal</a>.
 </p>
@@ -9047,7 +8924,7 @@ Here are some notes about the \(F\) distribution.
 <p>
 This is a special case of the Student's \(t\) distribution. It has PDF
 \begin{equation}
-f_{X}(x)=\frac{1}{\beta\pi}\left[1+\left(\frac{x-m}{\beta}\right)^{2}\right]^{-1},\quad-\infty<x<\infty.
+f_{X}(x) = \frac{1}{\beta\pi} \left[ 1+\left( \frac{x-m}{\beta} \right)^{2} \right]^{-1},\quad -\infty < x < \infty.
 \end{equation}
 We write \(X\sim\mathsf{cauchy}(\mathtt{location}=m,\,\mathtt{scale}=\beta)\). The associated \(\mathsf{R}\) function is <code>dcauchy(x, location = 0, scale = 1)</code>.
 </p>
@@ -9066,7 +8943,7 @@ It is easy to see that a \(\mathsf{cauchy}(\mathtt{location}=0,\,\mathtt{scale}=
 <p>
 This is a generalization of the continuous uniform distribution.
 \begin{equation}
-f_{X}(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\: x^{\alpha-1}(1-x)^{\beta-1},\quad0<x<1
+f_{X}(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\, x^{\alpha-1}(1-x)^{\beta-1},\quad 0 < x < 1.
 \end{equation}
 We write \(X\sim\mathsf{beta}(\mathtt{shape1}=\alpha,\,\mathtt{shape2}=\beta)\). The associated \(\mathsf{R}\) function is <code>dbeta(x, shape1, shape2)</code>. The mean and variance are
 \begin{equation} 
@@ -9086,7 +8963,7 @@ See Example <a href="#exa-cont-pdf3x2">Cont-pdf3x2</a>. This distribution comes 
 
 
 \begin{equation}
-f_{X}(x)=\frac{1}{\sigma}\exp\left(-\frac{x-\mu}{\sigma}\right)\left[1+\exp\left(-\frac{x-\mu}{\sigma}\right)\right]^{-2},\quad-\infty<x<\infty.
+f_{X}(x)=\frac{1}{\sigma}\exp\left(-\frac{x-\mu}{\sigma}\right)\left[1+\exp\left(-\frac{x-\mu}{\sigma}\right)\right]^{-2},\quad -\infty < x < \infty.
 \end{equation}
 <p>
 We write \(X\sim\mathsf{logis}(\mathtt{location}=\mu,\,\mathtt{scale}=\sigma)\). The associated \(\mathsf{R}\) function is <code>dlogis(x, location = 0, scale = 1)</code>. The logistic distribution comes up in differential equations as a model for population growth under certain assumptions. The mean is \(\mu\) and the variance is \(\pi^{2}\sigma^{2}/3\).
@@ -9103,7 +8980,7 @@ We write \(X\sim\mathsf{logis}(\mathtt{location}=\mu,\,\mathtt{scale}=\sigma)\).
 <p>
 This is a distribution derived from the normal distribution (hence the name). If \(U\sim\mathtt{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\), then \( X = \mathrm{e}^{U} \) has PDF
 \begin{equation}
-f_{X}(x)=\frac{1}{\sigma x\sqrt{2\pi}}\exp\left[\frac{-(\ln x-\mu)^{2}}{2\sigma^{2}}\right],\quad0<x<\infty.
+f_{X}(x)=\frac{1}{\sigma x\sqrt{2\pi}}\exp\left[\frac{-(\ln x-\mu)^{2}}{2\sigma^{2}}\right], \quad 0 < x < \infty.
 \end{equation}
 We write \(X\sim\mathsf{lnorm}(\mathtt{meanlog}=\mu,\,\mathtt{sdlog}=\sigma)\). The associated \(\mathsf{R}\) function is <code>dlnorm(x, meanlog = 0, sdlog = 1)</code>. Notice that the support is concentrated on the positive \(x\) axis; the distribution is right-skewed with a heavy tail. See Example <a href="#exa-lnorm-transformation">Lnorm-trans</a>.
 </p>
@@ -9143,12 +9020,14 @@ We load the <code>actuar</code> package and use the functions <code>mgamma</code
 </p>
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(actuar)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(actuar)
 mgamma(1:4, shape = 13, rate = 1)
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
 [1]    13   182  2730 43680
 </pre>
 
@@ -9159,7 +9038,7 @@ For the plot we can use the function in the following form:
 
 
 
-<pre class="src src-R">plot(<span style="font-weight: bold;">function</span>(x){mgfgamma(x, shape = 13, rate = 1)}, from=-0.1, to=0.1, ylab = <span style="font-style: italic;">"gamma mgf"</span>)
+<pre class="src src-R">plot(<span style="color: #a020f0;">function</span>(x){mgfgamma(x, shape = 13, rate = 1)}, from=-0.1, to=0.1, ylab = <span style="color: #8b2252;">"gamma mgf"</span>)
 </pre>
 
 
@@ -9229,30 +9108,10 @@ For the following random experiments, decide what the distribution of \(X\) shou
 If \(Z\) is \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\), find 
 </p><ol>
 <li>\(\mathbb{P}(Z&gt;2.64)\)
-
-
-
-<pre class="src src-R">   pnorm(2.64, lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
-</pre>
-
-
 </li>
 <li>\(\mathbb{P}(0\leq Z&lt;0.87)\)
-
-
-
-<pre class="src src-R">   pnorm(0.87) - 1/2
-</pre>
-
-
 </li>
 <li>\(\mathbb{P}(|Z|&gt;1.39)\) (Hint: draw a picture!)
-
-
-
-<pre class="src src-R">   2 * pnorm(-1.39)
-</pre>
-
 </li>
 </ol>
 
@@ -9325,7 +9184,7 @@ The interested reader who would like to learn more about any of the below mentio
 <p>
 Consider two discrete random variables \(X\) and \(Y\) with PMFs \(f_{X}\) and \(f_{Y}\) that are supported on the sample spaces \(S_{X}\) and \(S_{Y}\), respectively. Let \(S_{X,Y}\) denote the set of all possible observed <i>pairs</i> \((x,y)\), called the <i>joint support set</i> of \(X\) and \(Y\). Then the <i>joint probability mass function</i> of \(X\) and \(Y\) is the function \(f_{X,Y}\) defined by
 \begin{equation}
-f_{X,Y}(x,y)=\mathbb{P}(X=x,\, Y=y),\quad\mbox{for }(x,y)\in S_{X,Y}.\label{eq-joint-pmf}
+f_{X,Y}(x,y)=\mathbb{P}(X=x,\, Y=y),\quad \mbox{for }(x,y)\in S_{X,Y}.\label{eq-joint-pmf}
 \end{equation}
 Every joint PMF satisfies
 \begin{equation}
@@ -9353,7 +9212,7 @@ Given the joint PMF we may recover the marginal PMFs, but the converse is not tr
 <p>
 Associated with the joint PMF is the <i>joint cumulative distribution function</i> \(F_{X,Y}\) defined by
 \[
-F_{X,Y}(x,y)=\mathbb{P}(X\leq x,\, Y\leq y),\quad\mbox{for }(x,y)\in\mathbb{R}^{2}.
+F_{X,Y}(x,y)=\mathbb{P}(X\leq x,\, Y\leq y),\quad \mbox{for }(x,y)\in\mathbb{R}^{2}.
 \]
 The bivariate joint CDF is not quite as tractable as the univariate CDFs, but in principle we could calculate it by adding up quantities of the form in Equation <a href="#eq-joint-pmf">JPMF</a>. The joint CDF is typically not used in practice due to its inconvenient form; one can usually get by with the joint PMF alone.
 </p>
@@ -9481,7 +9340,7 @@ f_{Y}(y)=\int_{S_{X}}f_{X,Y}(x,y)\,\mathrm{d} x, \quad y \in S_{Y}.
 
 Let the joint PDF of \((X,Y)\) be given by
 \[
-f_{X,Y}(x,y)=\frac{6}{5}\left(x+y^{2}\right),\quad0<x<1,\ 0<y<1.
+f_{X,Y}(x,y)=\frac{6}{5}\left(x+y^{2}\right),\quad 0 < x < 1,\ 0 < y < 1.
 \]
 The marginal PDF of \(X\) is
 \begin{eqnarray*}
@@ -9489,13 +9348,13 @@ f_{X}(x) & = & \int_{0}^{1}\frac{6}{5}\left(x+y^{2}\right)\,\mathrm{d} y,\\
  & = & \left.\frac{6}{5}\left(xy+\frac{y^{3}}{3}\right)\right|_{y=0}^{1},\\
  & = & \frac{6}{5}\left(x+\frac{1}{3}\right),
 \end{eqnarray*}
-for \(0&lt;x&lt;1\), and the marginal PDF of \(Y\) is
+for \(0 &lt; x &lt; 1\), and the marginal PDF of \(Y\) is
 \begin{eqnarray*}
 f_{Y}(y) & = & \int_{0}^{1}\frac{6}{5}\left(x+y^{2}\right)\,\mathrm{d} x,\\
  & = & \left.\frac{6}{5}\left(\frac{x^{2}}{2}+xy^{2}\right)\right|_{x=0}^{1},\\
  & = & \frac{6}{5}\left(\frac{1}{2}+y^{2}\right),
 \end{eqnarray*}
-for \(0&lt;y&lt;1\). In this example the joint support set was a rectangle \([0,1]\times[0,1]\), but it turns out that \(X\) and \(Y\) are not independent. See Section <a href="#sec-7-4">Independent Random Variables</a>.
+for \(0 &lt; y &lt; 1\). In this example the joint support set was a rectangle \([0,1]\times[0,1]\), but it turns out that \(X\) and \(Y\) are not independent. See Section <a href="#sec-7-4">Independent Random Variables</a>.
 </p>
 
 </div>
@@ -9513,15 +9372,17 @@ We will show how to do Example <a href="#exa-max-sum-two-dice">Max-sum two dice<
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(prob)  
-S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rolldie(2, makespace = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
-S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> addrv(S, FUN = max, invars = c(<span style="font-style: italic;">"X1"</span>,<span style="font-style: italic;">"X2"</span>), name = <span style="font-style: italic;">"U"</span>)
-S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> addrv(S, FUN = sum, invars = c(<span style="font-style: italic;">"X1"</span>,<span style="font-style: italic;">"X2"</span>), name = <span style="font-style: italic;">"V"</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(prob)  
+S <span style="color: #008b8b;">&lt;-</span> rolldie(2, makespace = <span style="color: #228b22;">TRUE</span>)
+S <span style="color: #008b8b;">&lt;-</span> addrv(S, FUN = max, invars = c(<span style="color: #8b2252;">"X1"</span>,<span style="color: #8b2252;">"X2"</span>), name = <span style="color: #8b2252;">"U"</span>)
+S <span style="color: #008b8b;">&lt;-</span> addrv(S, FUN = sum, invars = c(<span style="color: #8b2252;">"X1"</span>,<span style="color: #8b2252;">"X2"</span>), name = <span style="color: #8b2252;">"V"</span>)
 head(S)
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
   X1 X2 U V      probs
 1  1  1 1 2 0.02777778
 2  2  1 2 3 0.02777778
@@ -9538,7 +9399,7 @@ Yes, the \(U\) and \(V\) columns have been added to the data frame and have been
 
 
 
-<pre class="src src-R">UV <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> marginal(S, vars = c(<span style="font-style: italic;">"U"</span>, <span style="font-style: italic;">"V"</span>))
+<pre class="src src-R">UV <span style="color: #008b8b;">&lt;-</span> marginal(S, vars = c(<span style="color: #8b2252;">"U"</span>, <span style="color: #8b2252;">"V"</span>))
 head(UV)
 </pre>
 
@@ -9582,8 +9443,8 @@ Compare these values to the ones shown in Table <a href="#tab-max-sum-joint-pmf"
 
 
 
-<pre class="src src-R">marginal(UV, vars = <span style="font-style: italic;">"U"</span>)
-head(marginal(UV, vars = <span style="font-style: italic;">"V"</span>))
+<pre class="src src-R">marginal(UV, vars = <span style="color: #8b2252;">"U"</span>)
+head(marginal(UV, vars = <span style="color: #8b2252;">"V"</span>))
 </pre>
 
 
@@ -9611,7 +9472,7 @@ Another way to do the same thing is with the <code>rowSums</code> and <code>colS
 
 
 
-<pre class="src src-R">temp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> xtabs(probs ~ U + V, data = UV)
+<pre class="src src-R">temp <span style="color: #008b8b;">&lt;-</span> xtabs(probs ~ U + V, data = UV)
 rowSums(temp)
 colSums(temp)
 </pre>
@@ -9750,9 +9611,9 @@ There are not any specific functions in the <code>prob</code> package designed f
 
 
 
-<pre class="src src-R">Eu <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sum(S$U*S$probs)
-Ev <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sum(S$V*S$probs)
-Euv <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sum(S$U*S$V*S$probs)
+<pre class="src src-R">Eu <span style="color: #008b8b;">&lt;-</span> sum(S$U*S$probs)
+Ev <span style="color: #008b8b;">&lt;-</span> sum(S$V*S$probs)
+Euv <span style="color: #008b8b;">&lt;-</span> sum(S$U*S$V*S$probs)
 Euv - Eu * Ev
 </pre>
 
@@ -9815,7 +9676,7 @@ Compare the above expression to Equation <a href="#eq-bayes-rule">BR</a>.
 <p>
 Suppose the parameter \(\theta\) is the \(\mathbb{P}(\mbox{Heads})\) for a biased coin. It could be any value from 0 to 1. Perhaps we have some prior information about this coin, for example, maybe we have seen this coin before and we have reason to believe that it shows Heads less than half of the time. Suppose that we represent our beliefs about \(\theta\) with a \(\mathsf{beta}(\mathtt{shape1}=1,\,\mathtt{shape2}=3)\) prior distribution, that is, we assume 
 \[
-\theta\sim\pi(\theta)=3(1-\theta)^{2},\quad0<\theta<1.
+\theta\sim\pi(\theta)=3(1-\theta)^{2},\quad 0 < \theta < 1.
 \]
 To learn more about \(\theta\), we will do what is natural: flip the coin. We will observe a random variable \(X\) which takes the value \(1\) if the coin shows Heads, and 0 if the coin shows Tails. Under these circumstances, \(X\) will have a Bernoulli distribution, and in particular, \(X|\theta\sim\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=\theta)\):
 \[ 
@@ -9825,7 +9686,7 @@ Based on the observation \(X=x\), we will update the prior distribution to the p
 \begin{eqnarray*}
 \pi(\theta|x) & \propto & \pi(\theta)\, f(x|\theta),\\
  & = & \theta^{x}(1-\theta)^{1-x}\cdot3(1-\theta)^{2},\\
- & = & 3\,\theta^{x}(1-\theta)^{3-x},\quad0<\theta<1,
+ & = & 3\,\theta^{x}(1-\theta)^{3-x},\quad 0 < \theta < 1,
 \end{eqnarray*}
 where the constant of proportionality is given by
 \[
@@ -9872,15 +9733,15 @@ We recall from Chapter <a href="#sec-4">Probability</a> that the events \(A\) an
 \end{equation}
 If it happens that
 \begin{equation}
-\mathbb{P}(X=x,Y=y)=\mathbb{P}(X=x)\mathbb{P}(Y=y),\quad\mbox{for every }x\in S_{X},\ y\in S_{Y},
+\mathbb{P}(X=x,Y=y)=\mathbb{P}(X=x)\mathbb{P}(Y=y),\quad \mbox{for every }x\in S_{X},\ y\in S_{Y},
 \end{equation}
 then we say that \(X\) and \(Y\) are <i>independent random variables</i>. Otherwise, we say that \(X\) and \(Y\) are <i>dependent</i>. Using the PMF notation from above, we see that independent discrete random variables satisfy
 \begin{equation}
-f_{X,Y}(x,y)=f_{X}(x)f_{Y}(y)\quad\mbox{for every }x\in S_{X},\ y\in S_{Y}.
+f_{X,Y}(x,y)=f_{X}(x)f_{Y}(y)\quad \mbox{for every }x\in S_{X},\ y\in S_{Y}.
 \end{equation}
 Continuing the reasoning, given two continuous random variables \(X\) and \(Y\) with joint PDF \(f_{X,Y}\) and respective marginal PDFs \(f_{X}\) and \(f_{Y}\) that are supported on the sets \(S_{X}\) and \(S_{Y}\), if it happens that
 \begin{equation}
-f_{X,Y}(x,y)=f_{X}(x)f_{Y}(y)\quad\mbox{for every }x\in S_{X},\ y\in S_{Y},
+f_{X,Y}(x,y)=f_{X}(x)f_{Y}(y)\quad \mbox{for every }x\in S_{X},\ y\in S_{Y},
 \end{equation}
 then we say that \(X\) and \(Y\) are independent.
 </p>
@@ -9996,7 +9857,7 @@ Even when we cannot use the MGF trick to identify the exact distribution of a li
 <div class="prop">
 Let \(X_{1}\) and \(X_{2}\) be independent with respective population means \(\mu_{1}\) and \(\mu_{2}\) and population standard deviations \(\sigma_{1}\) and \(\sigma_{2}\). For given constants \(a_{1}\) and \(a_{2}\), define \(Y=a_{1}X_{1}+a_{2}X_{2}\). Then the mean and standard deviation of \(Y\) are given by the formulas
 \begin{equation}
-\mu_{Y}=a_{1}\mu_{1}+a_{2}\mu_{2},\quad\sigma_{Y}=\left(a_{1}^{2}\sigma_{1}^{2}+a_{2}^{2}\sigma_{2}^{2}\right)^{1/2}.
+\mu_{Y}=a_{1}\mu_{1}+a_{2}\mu_{2},\quad \sigma_{Y}=\left(a_{1}^{2}\sigma_{1}^{2}+a_{2}^{2}\sigma_{2}^{2}\right)^{1/2}.
 \end{equation}
 </div>
 </p>
@@ -10015,7 +9876,7 @@ Using linearity of expectation the \(\mathbb{E}\) distributes through the sum. N
 \mathbb{E} Y^{2} & = & a_{1}^{2}(\sigma_{1}^{2}+\mu_{1}^{2})+a_{2}^{2}(\sigma_{2}^{2}+\mu_{2}^{2})+2a_{1}a_{2}\mu_{1}\mu_{2},\\
  & = & a_{1}^{2}\sigma_{1}^{2}+a_{2}^{2}\sigma_{2}^{2}+\left(a_{1}^{2}\mu_{1}^{2}+a_{2}^{2}\mu_{2}^{2}+2a_{1}a_{2}\mu_{1}\mu_{2}\right).
 \end{eqnarray*}
-But notice that the expression in the parentheses is exactly \(\left(a_{1}\mu_{1}+a_{2}\mu_{2}\right)^{2}=\left(\mathbb{E} Y\right)^{2}\), so the proof is complete.. 
+But notice that the expression in the parentheses is exactly \(\left(a_{1}\mu_{1}+a_{2}\mu_{2}\right)^{2}=\left(\mathbb{E} Y\right)^{2}\), so the proof is complete.
 </div>
 </p>
 </div>
@@ -10031,7 +9892,7 @@ But notice that the expression in the parentheses is exactly \(\left(a_{1}\mu_{1
 <p>
 Two random variables \(X\) and \(Y\) are said to be <i>exchangeable</i> if their joint CDF is a symmetric function of its arguments:
 \begin{equation}
-F_{X,Y}(x,y)=F_{X,Y}(y,x),\quad\mbox{for all }(x,y)\in\mathbb{R}^{2}.
+F_{X,Y}(x,y)=F_{X,Y}(y,x),\quad \mbox{for all }(x,y)\in\mathbb{R}^{2}.
 \end{equation} 
 When the joint density \(f\) exists, we may equivalently say that \(X\) and \(Y\) are exchangeable if \(f(x,y)=f(y,x)\) for all \((x,y)\).
 </p>
@@ -10082,7 +9943,7 @@ f_{X,Y}(x,y)=\frac{1}{2\pi\,\sigma_{X}\sigma_{Y}\sqrt{1-\rho^{2}}}\exp\left\{ -\
 \end{multline}
 for \((x,y)\in\mathbb{R}^{2}\). We write \((X,Y)\sim\mathsf{mvnorm}(\mathtt{mean}=\upmu,\,\mathtt{sigma}=\Sigma)\), where
 \begin{equation}
-\upmu=(\mu_{X},\,\mu_{Y})^{T},\quad\sum=\left(
+\upmu=(\mu_{X},\,\mu_{Y})^{T},\quad \sum=\left(
 \begin{array}{cc}
 \sigma_{X}^{2} & \rho\sigma_{X}\sigma_{Y}\\
 \rho\sigma_{X}\sigma_{Y} & \sigma_{Y}^{2}
@@ -10169,11 +10030,11 @@ curve3d(f(x,y), from = c(-3,-3), to = c(3,3), theta = -30, phi = 30)
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(mvtnorm)
-x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> seq(from = -3, to = 3, length.out = 30)
-<span style="font-weight: bold;">f</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x,y) dmvnorm(cbind(x,y), mean = c(0,0), sigma = diag(2))
-z <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> outer(x, y, FUN = f)
-persp(x, y, z, theta = -30, phi = 30, ticktype = <span style="font-style: italic;">"detailed"</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(mvtnorm)
+x <span style="color: #008b8b;">&lt;-</span> y <span style="color: #008b8b;">&lt;-</span> seq(from = -3, to = 3, length.out = 30)
+<span style="color: #0000ff;">f</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x,y) dmvnorm(cbind(x,y), mean = c(0,0), sigma = diag(2))
+z <span style="color: #008b8b;">&lt;-</span> outer(x, y, FUN = f)
+persp(x, y, z, theta = -30, phi = 30, ticktype = <span style="color: #8b2252;">"detailed"</span>)
 </pre>
 
 
@@ -10183,11 +10044,11 @@ We chose the standard bivariate normal, \(\mathsf{mvnorm}(\mathtt{mean}=\mathbf{
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(mvtnorm)
-x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> seq(from = -3, to = 3, length.out = 30)
-<span style="font-weight: bold;">f</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x,y) dmvnorm(cbind(x,y), mean = c(0,0), sigma = diag(2))
-z <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> outer(x, y, FUN = f)
-persp(x, y, z, theta = -30, phi = 30, ticktype = <span style="font-style: italic;">"detailed"</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(mvtnorm)
+x <span style="color: #008b8b;">&lt;-</span> y <span style="color: #008b8b;">&lt;-</span> seq(from = -3, to = 3, length.out = 30)
+<span style="color: #0000ff;">f</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x,y) dmvnorm(cbind(x,y), mean = c(0,0), sigma = diag(2))
+z <span style="color: #008b8b;">&lt;-</span> outer(x, y, FUN = f)
+persp(x, y, z, theta = -30, phi = 30, ticktype = <span style="color: #8b2252;">"detailed"</span>)
 </pre>
 
 
@@ -10214,7 +10075,7 @@ persp(x, y, z, theta = -30, phi = 30, ticktype = <span style="font-style: italic
 <p>
 We studied in Section <a href="#sec-6-4">Functions of Continuous RVs</a> how to find the PDF of \(Y=g(X)\) given the PDF of \(X\). But now we have two random variables \(X\) and Y, with joint PDF \(f_{X,Y}\), and we would like to consider the joint PDF of two new random variables
 \begin{equation}
-U=g(X,Y)\quad\mbox{and}\quad V=h(X,Y),
+U=g(X,Y)\quad \mbox{and}\quad V=h(X,Y),
 \end{equation}
 where \(g\) and \(h\) are two given functions, typically ``nice'' in the sense of Appendix <a href="#sec-21-6">Multivariable Calculus</a>. 
 </p>
@@ -10270,11 +10131,11 @@ in which case the Jacobian of the inverse transformation is
 \]
 As \((x,y)\) traverses \(\mathbb{R}^{2}\), so too does \((u,v)\). Since the joint PDF of \((X,Y)\) is
 \[
-f_{X,Y}(x,y)=\frac{1}{2\pi}\exp\left\{ -\frac{1}{2}\left(x^{2}+y^{2}\right)\right\} ,\quad(x,y)\in\mathbb{R}^{2},
+f_{X,Y}(x,y)=\frac{1}{2\pi}\exp\left\{ -\frac{1}{2}\left(x^{2}+y^{2}\right)\right\} ,\quad (x,y)\in\mathbb{R}^{2},
 \]
 we get that the joint PDF of \((U,V)\) is
 \begin{equation}
-f_{U,V}(u,v)=\frac{1}{2\pi}\exp\left\{ -\frac{1}{2}\left[\left(-3u+2v\right)^{2}+\left(\frac{5u-3v}{2}\right)^{2}\right]\right\} \cdot\frac{1}{2},\quad(u,v)\in\mathbb{R}^{2}.\label{eq-biv-norm-hidden}
+f_{U,V}(u,v)=\frac{1}{2\pi}\exp\left\{ -\frac{1}{2}\left[\left(-3u+2v\right)^{2}+\left(\frac{5u-3v}{2}\right)^{2}\right]\right\} \cdot\frac{1}{2},\quad (u,v)\in\mathbb{R}^{2}.\label{eq-biv-norm-hidden}
 \end{equation}
 
 <div class="rem">
@@ -10308,7 +10169,7 @@ There are not yet any examples of Yacas in this book, but there are online mater
 <p>
 There is nothing spooky about \(n\geq3\) random variables. We just have a whole bunch of them: \(X_{1}\), \(X_{2}\),&hellip;, \(X_{n}\), which we can shorten to \(\mathbf{X}=(X_{1},X_{2},\ldots,X_{n})^{\mathrm{T}}\) to make the formulas prettier (now may be a good time to check out Appendix <a href="#sec-21-5">Linear Algebra</a>). For \(\mathbf{X}\) supported on the set \(S_{\mathbf{X}}\), the joint PDF \(f_{\mathbf{X}}\) (if it exists) satisfies
 \begin{equation}
-f_{\mathbf{X}}(\mathbf{x})>0,\quad\mbox{for }\mathbf{x}\in S_{\mathbf{X}},
+f_{\mathbf{X}}(\mathbf{x})>0,\quad \mbox{for }\mathbf{x}\in S_{\mathbf{X}},
 \end{equation}
 and
 \begin{equation}
@@ -10346,7 +10207,7 @@ for any reordering \(\mathbf{x^{\ast}}\) of the elements of \(\mathbf{x}=(x_{1},
 <div class="prop">
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be independent with respective population means \(\mu_{1}\), \(\mu_{2}\), &hellip;, \(\mu_{n}\) and standard deviations \(\sigma_{1}\), \(\sigma_{2}\), &hellip;, \(\sigma_{n}\). For given constants \(a_{1}\), \(a_{2}\), &hellip;,\(a_{n}\) define \(Y=\sum_{i=1}^{n}a_{i}X_{i}\). Then the mean and standard deviation of \(Y\) are given by the formulas
 \begin{equation}
-\mu_{Y}=\sum_{i=1}^{n}a_{i}\mu_{i},\quad\sigma_{Y}=\left(\sum_{i=1}^{n}a_{i}^{2}\sigma_{i}^{2}\right)^{1/2}.
+\mu_{Y}=\sum_{i=1}^{n}a_{i}\mu_{i},\quad \sigma_{Y}=\left(\sum_{i=1}^{n}a_{i}^{2}\sigma_{i}^{2}\right)^{1/2}.
 \end{equation}
 </div>
 </p>
@@ -10508,17 +10369,19 @@ There is support for the multinomial distribution in base \(\mathsf{R}\), namely
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(combinat)
-tmp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> t(xsimplex(3, 6))
-p <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> apply(tmp, MARGIN = 1, FUN = dmultinom, prob = c(36,27,37))
-<span style="font-weight: bold; text-decoration: underline;">library</span>(prob)
-S <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> probspace(tmp, probs = p)
-ProbTable <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> xtabs(probs ~ X1 + X2, data = S)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(combinat)
+tmp <span style="color: #008b8b;">&lt;-</span> t(xsimplex(3, 6))
+p <span style="color: #008b8b;">&lt;-</span> apply(tmp, MARGIN = 1, FUN = dmultinom, prob = c(36,27,37))
+<span style="color: #008b8b;">library</span>(prob)
+S <span style="color: #008b8b;">&lt;-</span> probspace(tmp, probs = p)
+ProbTable <span style="color: #008b8b;">&lt;-</span> xtabs(probs ~ X1 + X2, data = S)
 round(ProbTable, 3)
 </pre>
 
 
-<pre class="example">
+
+<pre class="example">X11cairo 
+       2
    X2
 X1      0     1     2     3     4     5     6
   0 0.003 0.011 0.020 0.020 0.011 0.003 0.000
@@ -10550,8 +10413,8 @@ scatterplot3d(A, type = "h", lwd = 3, box = FALSE)
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(lattice)
-print(cloud(probs ~ X1 + X2, data = S, type = c(<span style="font-style: italic;">"p"</span>,<span style="font-style: italic;">"h"</span>), lwd = 2, 
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(lattice)
+print(cloud(probs ~ X1 + X2, data = S, type = c(<span style="color: #8b2252;">"p"</span>,<span style="color: #8b2252;">"h"</span>), lwd = 2, 
             pch = 16, cex = 1.5), screen = list(z = 15, x = -70))
 </pre>
 
@@ -10738,7 +10601,7 @@ and we recognize this last quantity as the MGF of a \(\mathsf{norm}(\mathtt{mean
 <div class="thm">
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) be a \(SRS(n)\) from a \(\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\) distribution, and let
 \begin{equation}
-\overline{X}=\sum_{i=1}^{n}X_{i}\quad\mbox{and}\quad S^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^{2}.
+\overline{X}=\sum_{i=1}^{n}X_{i}\quad \mbox{and}\quad S^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^{2}.
 \end{equation}
 Then
 </p><ol>
@@ -10787,7 +10650,7 @@ T=\frac{\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}}{S/\sigma}=\frac{\frac{\overlin
 \]
 Now let 
 \[
-Z=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}\quad\mbox{and}\quad V=\frac{(n-1)S^{2}}{\sigma^{2}},
+Z=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}\quad \mbox{and}\quad V=\frac{(n-1)S^{2}}{\sigma^{2}},
 \]
 so that
 \begin{equation}
@@ -10802,7 +10665,7 @@ We know from Section <a href="#sec-8-2-1">Distribution of Xbar</a> that \(Z\sim\
 <p>
 This distribution was first published by W. S. Gosset (1900) under the pseudonym Student, and the distribution has consequently come to be known as Student's \(t\) distribution. The PDF of \(T\) can be derived explicitly using the techniques of Section <a href="#sec-6-4">Functions of Continuous Random Variables</a>; it takes the form 
 \begin{equation}
-f_{X}(x)=\frac{\Gamma[(r+1)/2]}{\sqrt{r\pi}\ \Gamma(r/2)}\left(1+\frac{x^{2}}{r}\right)^{-(r+1)/2},\quad-\infty<x<\infty.
+f_{X}(x)=\frac{\Gamma[(r+1)/2]}{\sqrt{r\pi}\ \Gamma(r/2)}\left(1+\frac{x^{2}}{r}\right)^{-(r+1)/2},\quad -\infty < x < \infty.
 \end{equation}
 Any random variable \(X\) with the preceding PDF is said to have Student's \(t\) distribution with \(r\) <i>degrees of freedom</i>, and we write \(X\sim\mathsf{t}(\mathtt{df}=r)\). The shape of the PDF is similar to the normal, but the tails are considerably heavier. See Figure <a href="#fig-Student-s-t-dist-vary-df">Student's-t-dist-vary-df</a>. As with the normal distribution, there are four functions in \(\mathsf{R}\) associated with the \(t\) distribution, namely <code>dt</code>, <code>pt</code>,=qt=, and <code>rt</code>, which compute the PDF, CDF, quantile function, and generate random variates, respectively.
 </p>
@@ -10813,9 +10676,9 @@ The code to produce Figure <a href="#fig-Student-s-t-dist-vary-df">Student's-t-d
 
 
 
-<pre class="src src-R">curve(dt(x, df = 30), from = -3, to = 3, lwd = 3, ylab = <span style="font-style: italic;">"y"</span>)
-ind <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(1, 2, 3, 5, 10)
-<span style="font-weight: bold;">for</span> (i <span style="font-weight: bold;">in</span> ind) curve(dt(x, df = i), -3, 3, add = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">curve(dt(x, df = 30), from = -3, to = 3, lwd = 3, ylab = <span style="color: #8b2252;">"y"</span>)
+ind <span style="color: #008b8b;">&lt;-</span> c(1, 2, 3, 5, 10)
+<span style="color: #a020f0;">for</span> (i <span style="color: #a020f0;">in</span> ind) curve(dt(x, df = i), -3, 3, add = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -10838,11 +10701,13 @@ Find \(\mathsf{t}{}_{0.01}(\mathtt{df}=23)\) with the quantile function.
 
 
 
-<pre class="src src-R">qt(0.01, df = 23, lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
+<pre class="src src-R">qt(0.01, df = 23, lower.tail = <span style="color: #228b22;">FALSE</span>)
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
 [1] 2.499867
 </pre>
 
@@ -10920,7 +10785,7 @@ The <code>TeachingDemos</code> package \cite{Snowteachingdemos} has <code>clt.ex
 </p>
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(TeachingDemos)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(TeachingDemos)
 example(clt.examp)
 </pre>
 
@@ -10929,7 +10794,7 @@ and
 </p>
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(distrTeach)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(distrTeach)
 example(illustrateCLT)
 </pre>
 
@@ -11003,7 +10868,7 @@ has a \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) sampling distribution, 
 <div class="prop">
 Let \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n_{1}}\) be an \(SRS(n_{1})\) from a \(\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=p_{1})\) distribution and let \(Y_{1}\), \(Y_{2}\), &hellip;, \(Y_{n_{2}}\) be an \(SRS(n_{2})\) from a \(\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=p_{2})\) distribution. Suppose that \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n_{1}}\) and \(Y_{1}\), \(Y_{2}\), &hellip; , \(Y_{n_{2}}\) are independent samples. Define 
 \begin{equation}
-\hat{p}_{1}=\frac{1}{n_{1}}\sum_{i=1}^{n_{1}}X_{i}\quad\mbox{and}\quad\hat{p}_{2}=\frac{1}{n_{2}}\sum_{j=1}^{n_{2}}Y_{j}.
+\hat{p}_{1}=\frac{1}{n_{1}}\sum_{i=1}^{n_{1}}X_{i}\quad \mbox{and}\quad \hat{p}_{2}=\frac{1}{n_{2}}\sum_{j=1}^{n_{2}}Y_{j}.
 \end{equation}
 Then the sampling distribution of
 \begin{equation}
@@ -11089,7 +10954,7 @@ As it turns out, we do not need to know the exact analytical form of the samplin
 
 
 
-<pre class="src src-R">iqrs <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> replicate(100, IQR(rnorm(100)))
+<pre class="src src-R">iqrs <span style="color: #008b8b;">&lt;-</span> replicate(100, IQR(rnorm(100)))
 </pre>
 
 
@@ -11098,7 +10963,7 @@ We can look at the mean of the simulated values
 </p>
 
 
-<pre class="src src-R">mean(iqrs)    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">close to 1</span>
+<pre class="src src-R">mean(iqrs)    <span style="color: #b22222;"># </span><span style="color: #b22222;">close to 1</span>
 </pre>
 
 
@@ -11153,7 +11018,7 @@ Now let's take a look at a plot of the simulated values
 
 
 
-<pre class="src src-R">mads <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> replicate(100, mad(rnorm(100)))
+<pre class="src src-R">mads <span style="color: #008b8b;">&lt;-</span> replicate(100, mad(rnorm(100)))
 </pre>
 
 
@@ -11163,11 +11028,13 @@ We can look at the mean of the simulated values
 
 
 
-<pre class="src src-R">mean(mads)    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">close to 1.349</span>
+<pre class="src src-R">mean(mads)    <span style="color: #b22222;"># </span><span style="color: #b22222;">close to 1.349</span>
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
 [1] 1.002645
 </pre>
 
@@ -11222,7 +11089,7 @@ Now let's take a look at a plot of the simulated values
 
 <p>
 <div class="xca">
-Suppose that we observe a random sample \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n}\) of size \( SRS( n =  SRC_R{n[k]} ) \) from a \( \mathsf{norm}(\mathtt{mean}= SRC_R{mu[k]}) \) distribution. 
+Suppose that we observe a random sample \(X_{1}\), \(X_{2}\), &hellip; , \(X_{n}\) of size SRS( n =  \(SRC_R{n[1]}\) ) from a \( \mathsf{norm}(\mathtt{mean}= SRC_R{mu[1]} ) \) distribution. 
 </p><ol>
 <li>What is the mean of \(\overline{X}\)?
 </li>
@@ -11386,9 +11253,9 @@ A graph of \(L\) for values of \(\sum x_{i}=3,\ 4\), and 5 when \(n=7\) is shown
 
 
 
-<pre class="src src-R">curve(x^5*(1-x)^2, 0, 1, xlab = <span style="font-style: italic;">"p"</span>, ylab = <span style="font-style: italic;">"L(p)"</span>)
-curve(x^4*(1-x)^3, 0, 1, add = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
-curve(x^3*(1-x)^4, 0, 1, add = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">curve(x^5*(1-x)^2, 0, 1, xlab = <span style="color: #8b2252;">"p"</span>, ylab = <span style="color: #8b2252;">"L(p)"</span>)
+curve(x^4*(1-x)^3, 0, 1, add = <span style="color: #228b22;">TRUE</span>)
+curve(x^3*(1-x)^4, 0, 1, add = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -11450,7 +11317,7 @@ X_{1},\, X_{2},\,\ldots,X_{n}\mbox{ which are IID \( f(x| \theta ) \).}
 <div class="defn">
 Given the observed data \(x_{1}\), \(x_{2}\), &hellip;, \(x_{n}\), the <i>likelihood function</i> \(L\) is defined by 
 \[ 
-L(\theta)=\prod_{i=1}^{n}f(x_{i}|\theta),\quad\theta\in\Theta.
+L(\theta)=\prod_{i=1}^{n}f(x_{i}|\theta),\quad \theta\in\Theta.
 \]
 </div>
 </p>
@@ -11553,13 +11420,15 @@ Notice that the likelihood is just a product of \(\mathsf{binom}(\mathtt{size}=1
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> mtcars$am
-<span style="font-weight: bold;">L</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(p,x) prod(dbinom(x, size = 1, prob = p))
-optimize(L, interval = c(0,1), x = x, maximum = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> mtcars$am
+<span style="color: #0000ff;">L</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(p,x) prod(dbinom(x, size = 1, prob = p))
+optimize(L, interval = c(0,1), x = x, maximum = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
  $maximum
 [1] 0.4062458
 
@@ -11584,14 +11453,16 @@ It is done in \(\mathsf{R}\) with
 
 
 
-<pre class="src src-R"><span style="font-weight: bold;">minuslogL</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(p,x){
-                -sum(dbinom(x, size = 1, prob = p, log = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>))
+<pre class="src src-R"><span style="color: #0000ff;">minuslogL</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(p,x){
+                -sum(dbinom(x, size = 1, prob = p, log = <span style="color: #228b22;">TRUE</span>))
              }
 optimize(minuslogL, interval = c(0,1), x = x)
 </pre>
 
 
 <pre class="example">
+[1] 0.406
+[1] 0
  $minimum
 [1] 0.4062525
 
@@ -11613,8 +11484,8 @@ For multiparameter problems we may use a similar approach by way of the <code>ml
 
 
 
-<pre class="src src-R"><span style="font-weight: bold;">minuslogL</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(mu, sigma2){
-  -sum(dnorm(x, mean = mu, sd = sqrt(sigma2), log = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>))
+<pre class="src src-R"><span style="color: #0000ff;">minuslogL</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(mu, sigma2){
+  -sum(dnorm(x, mean = mu, sd = sqrt(sigma2), log = <span style="color: #228b22;">TRUE</span>))
 }
 </pre>
 
@@ -11625,9 +11496,9 @@ Note that we omitted the data as an argument to the log-likelihood function; the
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> PlantGrowth$weight
-<span style="font-weight: bold; text-decoration: underline;">library</span>(stats4)
-MaxLikeEst <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> mle(minuslogL, start = list(mu = 5, sigma2 = 0.5))
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> PlantGrowth$weight
+<span style="color: #008b8b;">library</span>(stats4)
+MaxLikeEst <span style="color: #008b8b;">&lt;-</span> mle(minuslogL, start = list(mu = 5, sigma2 = 0.5))
 summary(MaxLikeEst)
 </pre>
 
@@ -11739,7 +11610,7 @@ See Figure <a href="#fig-ci-examp">ci-examp</a>, which is a graphical display of
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(TeachingDemos)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(TeachingDemos)
 ci.examp()
 </pre>
 
@@ -11760,21 +11631,12 @@ Under the above framework, we can reason that an ``interval'' with a <i>larger</
 </p>
 <p>
 <div class="rem">
-For a fixed confidence coefficient \(1-\alpha\),
-\begin{equation}
-\mbox{if }n\mbox{ increases, then the confidence interval gets \emph{SHORTER}.}
-\end{equation}
-</div>
+For a fixed confidence coefficient \(1-\alpha\), if \(n\) increases, then the confidence interval gets <i>SHORTER</i>.
 </p>
 <p>
-<div class="rem">
-For a fixed sample size \(n\),
-\begin{equation}
-\mbox{if }1-\alpha\mbox{ increases, then the confidence interval gets \emph{WIDER}.}
-\end{equation}
+For a fixed sample size \(n\), if \(1-\alpha\) increases, then the confidence interval gets <i>WIDER</i>.
 </div>
 </p>
-
 <p>
 <b>Results from an Experiment on Plant Growth.</b> The <code>PlantGrowth</code> data frame gives the results of an experiment to measure plant yield (as measured by the weight of the plant). We would like to a 95% confidence interval for the mean weight of the plants. Suppose that we know from prior research that the true population standard deviation of the plant weights is \(0.7\) g.
 </p>
@@ -11785,13 +11647,15 @@ The parameter of interest is \(\mu\), which represents the true mean weight of t
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(aplpack)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(aplpack)
 with(PlantGrowth, stem.leaf(weight))
 </pre>
 
 
 
-<pre class="example">1 | 2: represents 1.2
+<pre class="example">X11cairo 
+       2
+1 | 2: represents 1.2
  leaf unit: 0.1
             n: 30
    1     f | 5
@@ -11819,7 +11683,7 @@ We know the population standard deviation \(\sigma=0.70\) from prior research. W
 
 
 
-<pre class="src src-R">dim(PlantGrowth)   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">sample size is first entry</span>
+<pre class="src src-R">dim(PlantGrowth)   <span style="color: #b22222;"># </span><span style="color: #b22222;">sample size is first entry</span>
 </pre>
 
 
@@ -11905,7 +11769,7 @@ where \(S\) is the sample standard deviation.
 </div>
 </p>
 <p>
-The author learned of a handy acronym from AP Statistics Exam graders that summarizes the important parts of confidence interval estimation, which is PANIC: \emph{P}arameter, \emph{A}ssumptions, \emph{N}ame, \emph{I}nterval, and \emph{C}onclusion.
+The author learned of a handy acronym from AP Statistics Exam graders that summarizes the important parts of confidence interval estimation, which is PANIC: <i>P</i>-arameter, <i>A</i>-ssumptions, <i>N</i>-ame, <i>I</i>-nterval, and <i>C</i>-onclusion.
 </p><dl>
 <dt>Parameter:</dt><dd>identify the parameter of interest with the proper symbols. Write down what the parameter means in the context of the problem.
 </dd>
@@ -11924,11 +11788,11 @@ The author learned of a handy acronym from AP Statistics Exam graders that summa
 <div class="rem">
 All of the above intervals for \(\mu\) were two-sided, but there are also one-sided intervals for \(\mu\). They look like
 \begin{equation}
-\left[\overline{X}-z_{\alpha}\frac{\sigma}{\sqrt{n}},\ \infty\right)\quad\mbox{or}\quad\left(-\infty,\ \overline{X}+z_{\alpha}\frac{\sigma}{\sqrt{n}}\right]
+\left[\overline{X}-z_{\alpha}\frac{\sigma}{\sqrt{n}},\ \infty\right)\quad \mbox{or}\quad \left(-\infty,\ \overline{X}+z_{\alpha}\frac{\sigma}{\sqrt{n}}\right]
 \end{equation}
 and satisfy
 \begin{equation}
-\mathbb{P}\left(\overline{X}-z_{\alpha}\frac{\sigma}{\sqrt{n}}\leq\mu\right)=1-\alpha\quad\mbox{and}\quad\mathbb{P}\left(\overline{X}+z_{\alpha}\frac{\sigma}{\sqrt{n}}\geq\mu\right)=1-\alpha.
+\mathbb{P}\left(\overline{X}-z_{\alpha}\frac{\sigma}{\sqrt{n}}\leq\mu\right)=1-\alpha\quad \mbox{and}\quad \mathbb{P}\left(\overline{X}+z_{\alpha}\frac{\sigma}{\sqrt{n}}\geq\mu\right)=1-\alpha.
 \end{equation}
 </div>
 </p>
@@ -11949,8 +11813,8 @@ Small sample, some data with \(X_{1}\), \(X_{2}\), &hellip;, \(X_{n}\) an \(SRS(
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(TeachingDemos)
-temp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> with(PlantGrowth, z.test(weight, stdev = 0.7))
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(TeachingDemos)
+temp <span style="color: #008b8b;">&lt;-</span> with(PlantGrowth, z.test(weight, stdev = 0.7))
 temp
 </pre>
 
@@ -11977,8 +11841,8 @@ The confidence interval bounds are shown in the sixth line down of the output (p
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(IPSUR)
-plot(temp, <span style="font-style: italic;">"Conf"</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(IPSUR)
+plot(temp, <span style="color: #8b2252;">"Conf"</span>)
 </pre>
 
 
@@ -12166,8 +12030,8 @@ or in other words, we know in advance that the true proportion is restricted to 
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(Hmisc)
-binconf(x = 7, n = 25, method = <span style="font-style: italic;">"asymptotic"</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(Hmisc)
+binconf(x = 7, n = 25, method = <span style="color: #8b2252;">"asymptotic"</span>)
 </pre>
 
 
@@ -12180,7 +12044,7 @@ binconf(x = 7, n = 25, method = <span style="font-style: italic;">"asymptotic"</
 
 
 
-<pre class="src src-R">binconf(x = 7, n = 25, method = <span style="font-style: italic;">"wilson"</span>)
+<pre class="src src-R">binconf(x = 7, n = 25, method = <span style="color: #8b2252;">"wilson"</span>)
 </pre>
 
 
@@ -12197,13 +12061,13 @@ The default value of the <code>method</code> argument is <code>wilson</code>.  A
 
 
 
-<pre class="src src-R">tab <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> xtabs(~gender, data = RcmdrTestDrive)
-prop.test(rbind(tab), conf.level = 0.95, correct = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
+<pre class="src src-R">tab <span style="color: #008b8b;">&lt;-</span> xtabs(~gender, data = RcmdrTestDrive)
+prop.test(rbind(tab), conf.level = 0.95, correct = <span style="color: #228b22;">FALSE</span>)
 </pre>
 
 
 
-<pre class="example">
+<pre class="example"> 
 	1-sample proportions test without continuity correction
 
 data:  rbind(tab), null probability 0.5 
@@ -12218,9 +12082,9 @@ sample estimates:
 
 
 
-<pre class="src src-R">A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.data.frame(Titanic)
-<span style="font-weight: bold; text-decoration: underline;">library</span>(reshape)
-B <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> with(A, untable(A, Freq))
+<pre class="src src-R">A <span style="color: #008b8b;">&lt;-</span> as.data.frame(Titanic)
+<span style="color: #008b8b;">library</span>(reshape)
+B <span style="color: #008b8b;">&lt;-</span> with(A, untable(A, Freq))
 </pre>
 
 
@@ -12639,7 +12503,7 @@ Our only remaining task is to find the value of the test statistic and see where
 
 
 
-<pre class="src src-R">A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.data.frame(UCBAdmissions)
+<pre class="src src-R">A <span style="color: #008b8b;">&lt;-</span> as.data.frame(UCBAdmissions)
 head(A)
 xtabs(Freq ~ Admit, data = A)
 </pre>
@@ -12665,7 +12529,7 @@ Now we calculate the value of the test statistic.
 
 
 
-<pre class="src src-R">phat <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 1755/(1755 + 2771)
+<pre class="src src-R">phat <span style="color: #008b8b;">&lt;-</span> 1755/(1755 + 2771)
 (phat - 0.4)/sqrt(0.4 * 0.6/(1755 + 2771)) 
 </pre>
 
@@ -12762,8 +12626,8 @@ The following does the test.
 
 
 
-<pre class="src src-R">prop.test(1755, 1755 + 2771, p = 0.4, alternative = <span style="font-style: italic;">"less"</span>, 
-          conf.level = 0.99, correct = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
+<pre class="src src-R">prop.test(1755, 1755 + 2771, p = 0.4, alternative = <span style="color: #8b2252;">"less"</span>, 
+          conf.level = 0.99, correct = <span style="color: #228b22;">FALSE</span>)
 </pre>
 
 
@@ -12886,8 +12750,8 @@ I am thinking <code>z.test</code>\index{z.test@\texttt{z.test}} in <code>Teachin
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rnorm(37, mean = 2, sd = 3)
-<span style="font-weight: bold; text-decoration: underline;">library</span>(TeachingDemos)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> rnorm(37, mean = 2, sd = 3)
+<span style="color: #008b8b;">library</span>(TeachingDemos)
 z.test(x, mu = 1, sd = 3, conf.level = 0.90)
 </pre>
 
@@ -12914,8 +12778,8 @@ The <code>RcmdrPlugin.IPSUR</code> package does not have a menu for <code>z.test
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rnorm(13, mean = 2, sd = 3)
-t.test(x, mu = 0, conf.level = 0.90, alternative = <span style="font-style: italic;">"greater"</span>)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> rnorm(13, mean = 2, sd = 3)
+t.test(x, mu = 0, conf.level = 0.90, alternative = <span style="color: #8b2252;">"greater"</span>)
 </pre>
 
 
@@ -12985,7 +12849,7 @@ Give some data and a hypothesis.
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(TeachingDemos)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(TeachingDemos)
 sigma.test(women$height, sigma = 8)
 </pre>
 
@@ -13098,7 +12962,7 @@ For a nonparametric alternative to the two-sample \(F\) test see Chapter <a href
 
 
 
-<pre class="src src-R">t.test(extra ~ group, data = sleep, paired = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">t.test(extra ~ group, data = sleep, paired = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -13147,7 +13011,7 @@ mean of the differences
 
 
 
-<pre class="src src-R">ks.test(randu$x, <span style="font-style: italic;">"punif"</span>)
+<pre class="src src-R">ks.test(randu$x, <span style="color: #8b2252;">"punif"</span>)
 </pre>
 
 
@@ -13278,7 +13142,7 @@ and
 </p>
 
 
-<pre class="src src-R">temp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(weight ~ feed, data = chickwts)
+<pre class="src src-R">temp <span style="color: #008b8b;">&lt;-</span> lm(weight ~ feed, data = chickwts)
 </pre>
 
 <p>
@@ -13291,7 +13155,7 @@ and
 
 
 <pre class="example">
-Analysis of Variance Table
+ Analysis of Variance Table
 
 Response: weight
           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
@@ -13320,10 +13184,10 @@ Plot for the intuition of between versus within group variation.
 </div>
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(HH)
-old.omd <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> par(omd = c(.05,.88, .05,1))
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(HH)
+old.omd <span style="color: #008b8b;">&lt;-</span> par(omd = c(.05,.88, .05,1))
 F.setup(df1 = 5, df2 = 30)
-F.curve(df1 = 5, df2 = 30, col=<span style="font-style: italic;">'blue'</span>)
+F.curve(df1 = 5, df2 = 30, col=<span style="color: #8b2252;">'blue'</span>)
 F.observed(3, df1 = 5, df2 = 30)
 par(old.omd)
 </pre>
@@ -13352,7 +13216,7 @@ par(old.omd)
 <p>
 The power function of a test for a parameter \(\theta\) is
 \[
-\beta(\theta)=\mathbb{P}_{\theta}(\mbox{Reject }H_{0}),\quad-\infty<\theta<\infty.
+\beta(\theta)=\mathbb{P}_{\theta}(\mbox{Reject }H_{0}),\quad -\infty < \theta < \infty.
 \]
 Here are some properties of power functions:
 </p><ol>
@@ -13377,7 +13241,7 @@ I am thinking about <code>replicate</code>\index{replicate@\texttt{replicate}} h
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(TeachingDemos)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(TeachingDemos)
 power.examp()
 </pre>
 
@@ -13539,6 +13403,8 @@ We assume both the normality of the errors \(\epsilon\) and the linearity of the
 
 
 <pre class="example">
+X11cairo 
+       2
   speed dist
 1     4    2
 2     4   10
@@ -13681,12 +13547,12 @@ Here we go. \(\mathsf{R}\) will calculate the linear regression line with the <c
 
 
 
-<pre class="src src-R">cars.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(dist ~ speed, data = cars)
+<pre class="src src-R">cars.lm <span style="color: #008b8b;">&lt;-</span> lm(dist ~ speed, data = cars)
 </pre>
 
 
 <p>
-The first part of the input to the <code>lm</code> function, <code>dist ~ speed</code>, is a <i>model formula</i>, read as ``\texttt{dist} is described (or modeled) by \texttt{speed}''. The <code>data = cars</code> argument tells \(\mathsf{R}\) where to look for the variables quoted in the model formula. The output object <code>cars.lm</code> contains a multitude of information. Let's first take a look at the coefficients of the fitted regression line, which are extracted by the <code>coef</code> function (alternatively, we could just type <code>cars.lm</code> to see the same thing):
+The first part of the input to the <code>lm</code> function, <code>dist ~ speed</code>, is a <i>model formula</i>, read like this: <code>dist</code> is described (or modeled) by <code>speed</code>. The <code>data = cars</code> argument tells \(\mathsf{R}\) where to look for the variables quoted in the model formula. The output object <code>cars.lm</code> contains a multitude of information. Let's first take a look at the coefficients of the fitted regression line, which are extracted by the <code>coef</code> function (alternatively, we could just type <code>cars.lm</code> to see the same thing):
 </p>
 
 
@@ -13696,7 +13562,9 @@ The first part of the input to the <code>lm</code> function, <code>dist ~ speed<
 
 
 <pre class="example">
-(Intercept)       speed 
+X11cairo 
+       2
+ (Intercept)       speed 
  -17.579095    3.932409
 </pre>
 
@@ -13780,6 +13648,12 @@ Note that we actually have observed data for a car traveling 8 mph; its stopping
 
 
 <pre class="example">
+X11cairo 
+       2
+[1] 3.93
+[1] -17.58
+[1] -17.58
+[1] 3.93
   speed dist
 5     8   16
 </pre>
@@ -13902,12 +13776,15 @@ The estimate \(S\) for \(\sigma\) is called the <code>Residual standard error</c
 
 
 
-<pre class="src src-R">carsumry <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> summary(cars.lm)
+<pre class="src src-R">carsumry <span style="color: #008b8b;">&lt;-</span> summary(cars.lm)
 carsumry$sigma
 </pre>
 
 
 <pre class="example">
+[1] 13.88
+[1] 13.88
+[1] 15.38
 [1] 15.37959
 </pre>
 
@@ -13990,7 +13867,7 @@ Let us take a look at the output from <code>summary(cars.lm)</code>:
 
 
 
-<pre class="example">
+<pre class="example"> 
 Call:
 lm(formula = dist ~ speed, data = cars)
 
@@ -14022,6 +13899,8 @@ In the <code>Coefficients</code> section we find the parameter estimates and the
 
 
 <pre class="example">
+[1] 3.932
+[1] 0.416
                  2.5 %    97.5 %
 (Intercept) -31.167850 -3.990340
 speed         3.096964  4.767853
@@ -14048,7 +13927,7 @@ We have seen how to estimate the coefficients of regression line with both point
 But how good is our estimate \(\hat{\mu}(15)\)? How much confidence do we have in <i>this</i> estimate? Furthermore, suppose we were going to observe another value of \(Y\) at \(x=15\). What could we say?
 </p>
 <p>
-Intuitively, it should be easier to get bounds on the mean (average) value of \(Y\) at \(x_{0}\) &ndash; called a <i>confidence interval for the mean value of</i> \(Y\) <i>at</i> \(x_{0}\) &ndash; than it is to get bounds on a future observation of \(Y\) (called a \emph{prediction interval for \(Y\) at \(x_{0}\)}). As we shall see, the intuition serves us well and confidence intervals are shorter for the mean value, longer for the individual value.
+Intuitively, it should be easier to get bounds on the mean (average) value of \(Y\) at \(x_{0}\) &ndash; called a <i>confidence interval for the mean value of</i> \(Y\) <i>at</i> \(x_{0}\) &ndash; than it is to get bounds on a future observation of \(Y\) (called a <i>prediction interval for</i> \(Y\) <i>at</i> \(x_{0}\)). As we shall see, the intuition serves us well and confidence intervals are shorter for the mean value, longer for the individual value.
 </p>
 <p>
 Our point estimate of \(\mu(x_{0})\) is of course \(\hat{Y}=\hat{Y}(x_{0})\), so for a confidence interval we will need to know \(\hat{Y}\)'s sampling distribution. It turns out (see Section ) that \(\hat{Y}=\hat{\mu}(x_{0})\) is distributed
@@ -14090,7 +13969,7 @@ We will find confidence and prediction intervals for the stopping distance of a 
 
 
 
-<pre class="src src-R">new <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(speed = c(5, 6, 21))
+<pre class="src src-R">new <span style="color: #008b8b;">&lt;-</span> data.frame(speed = c(5, 6, 21))
 </pre>
 
 
@@ -14100,11 +13979,13 @@ Next we instruct \(\mathsf{R}\) to calculate the intervals. Confidence intervals
 
 
 
-<pre class="src src-R">predict(cars.lm, newdata = new, interval = <span style="font-style: italic;">"confidence"</span>)
+<pre class="src src-R">predict(cars.lm, newdata = new, interval = <span style="color: #8b2252;">"confidence"</span>)
 </pre>
 
 
 <pre class="example">
+[1] 3.097
+[1] 4.768
         fit       lwr      upr
 1  2.082949 -7.644150 11.81005
 2  6.015358 -2.973341 15.00406
@@ -14120,7 +14001,7 @@ Prediction intervals are given by
 
 
 
-<pre class="src src-R">predict(cars.lm, newdata = new, interval = <span style="font-style: italic;">"prediction"</span>)
+<pre class="src src-R">predict(cars.lm, newdata = new, interval = <span style="color: #8b2252;">"prediction"</span>)
 </pre>
 
 
@@ -14175,7 +14056,7 @@ We may plot the confidence and prediction intervals with one fell swoop using th
 </div>
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(HH)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(HH)
 ci.plot(cars.lm)
 </pre>
 
@@ -14243,7 +14124,9 @@ Let us take another look at the output from <code>summary(cars.lm)</code>:
 
 
 
-<pre class="example">
+<pre class="example">X11cairo 
+       2
+ 
 Call:
 lm(formula = dist ~ speed, data = cars)
 
@@ -14541,7 +14424,9 @@ The results from \(\mathsf{R}\) are
 
 
 <pre class="example">
-
+X11cairo 
+       2
+ 
 	Shapiro-Wilk normality test
 
 data:  residuals(cars.lm) 
@@ -14616,13 +14501,15 @@ We do it in \(\mathsf{R}\) with the <code>bptest</code> function from the <code>
 </p>
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(lmtest)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(lmtest)
 bptest(cars.lm)
 </pre>
 
 
 <pre class="example">
-
+X11cairo 
+       2
+ 
 	studentized Breusch-Pagan test
 
 data:  cars.lm 
@@ -14688,13 +14575,15 @@ Exact critical values are difficult to obtain, but \(\mathsf{R}\) will calculate
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(lmtest)
-dwtest(cars.lm, alternative = <span style="font-style: italic;">"two.sided"</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(lmtest)
+dwtest(cars.lm, alternative = <span style="color: #8b2252;">"two.sided"</span>)
 </pre>
 
 
 <pre class="example">
-
+X11cairo 
+       2
+ 
 	Durbin-Watson test
 
 data:  cars.lm 
@@ -14852,7 +14741,7 @@ We can calculate the standardized residuals with the <code>rstandard</code> func
 
 
 
-<pre class="src src-R">sres <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rstandard(cars.lm)
+<pre class="src src-R">sres <span style="color: #008b8b;">&lt;-</span> rstandard(cars.lm)
 sres[1:5]
 </pre>
 
@@ -14885,7 +14774,7 @@ In this case, we see that observations 23, 35, and 49 are potential outliers wit
 
 
 
-<pre class="src src-R">sdelres <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rstudent(cars.lm)
+<pre class="src src-R">sdelres <span style="color: #008b8b;">&lt;-</span> rstudent(cars.lm)
 sdelres[1:5]
 </pre>
 
@@ -14902,7 +14791,7 @@ We should compare these values with critical values from a \(\mathsf{t}(\mathtt{
 
 
 
-<pre class="src src-R">t0.005 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> qt(0.005, df = 47, lower.tail = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
+<pre class="src src-R">t0.005 <span style="color: #008b8b;">&lt;-</span> qt(0.005, df = 47, lower.tail = <span style="color: #228b22;">FALSE</span>)
 sdelres[which(abs(sdelres) &gt; t0.005)]
 </pre>
 
@@ -14919,7 +14808,7 @@ This means that observations 23 and 49 have a large studentized deleted residual
 
 
 
-<pre class="src src-R">leverage <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> hatvalues(cars.lm)
+<pre class="src src-R">leverage <span style="color: #008b8b;">&lt;-</span> hatvalues(cars.lm)
 leverage[which(leverage &gt; 4/50)]
 </pre>
 
@@ -14969,7 +14858,7 @@ We can calculate the \(DFBETAS\) with the <code>dfbetas</code> function (some ou
 
 
 
-<pre class="src src-R">dfb <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> dfbetas(cars.lm)
+<pre class="src src-R">dfb <span style="color: #008b8b;">&lt;-</span> dfbetas(cars.lm)
 head(dfb)
 </pre>
 
@@ -14998,7 +14887,7 @@ The value represents the number of standard deviations of \(\hat{Y_{i}}\) that t
 
 
 
-<pre class="src src-R">dff <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> dffits(cars.lm)
+<pre class="src src-R">dff <span style="color: #008b8b;">&lt;-</span> dffits(cars.lm)
 dff[1:5]
 </pre>
 
@@ -15047,7 +14936,7 @@ We can calculate the Cook's Distances with the <code>cooks.distance</code> funct
 
 
 
-<pre class="src src-R">cooksD <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> cooks.distance(cars.lm)
+<pre class="src src-R">cooksD <span style="color: #008b8b;">&lt;-</span> cooks.distance(cars.lm)
 cooksD[1:4]
 </pre>
 
@@ -15084,12 +14973,14 @@ Observations with the largest Cook's D values are labeled, hence we see that obs
 
 
 
-<pre class="src src-R">F0.50 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> qf(0.5, df1 = 2, df2 = 48)
+<pre class="src src-R">F0.50 <span style="color: #008b8b;">&lt;-</span> qf(0.5, df1 = 2, df2 = 48)
 any(cooksD &gt; F0.50)
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
 [1] FALSE
 </pre>
 
@@ -15158,8 +15049,8 @@ We can identify the observations with the <code>identify</code> command; it allo
 
 
 
-<pre class="src src-R">plot(cars.lm, which = 5)   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">std'd resids vs lev plot</span>
-identify(leverage, sres, n = 4)   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">identify 4 points</span>
+<pre class="src src-R">plot(cars.lm, which = 5)          <span style="color: #b22222;"># </span><span style="color: #b22222;">std'd resids vs lev plot</span>
+identify(leverage, sres, n = 4)   <span style="color: #b22222;"># </span><span style="color: #b22222;">identify 4 points</span>
 </pre>
 
 
@@ -15258,7 +15149,7 @@ y_{2}\\
 \vdots\\
 y_{n}
 \end{bmatrix},
-\quad\mbox{and}\quad\mathbf{X}_{\mathrm{n}\times(\mathrm{p}+1)}=
+\quad \mbox{and}\quad \mathbf{X}_{\mathrm{n}\times(\mathrm{p}+1)}=
 \begin{bmatrix}1 & x_{11} & x_{21} & \cdots & x_{p1}\\
 1 & x_{12} & x_{22} & \cdots & x_{p2}\\
 \vdots & \vdots & \vdots & \ddots & \vdots\\
@@ -15311,6 +15202,8 @@ The data are in the <code>datasets</code> package and are already on the search 
 
 
 <pre class="example">
+X11cairo 
+       2
   Girth Height Volume
 1   8.3     70   10.3
 2   8.6     65   10.3
@@ -15327,7 +15220,7 @@ Let us take a look at a visual display of the data. For multiple variables, inst
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(lattice)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(lattice)
 splom(trees)
 </pre>
 
@@ -15373,11 +15266,11 @@ Another way to do it is with the <code>scatterplot3d</code> function in the <cod
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(scatterplot3d)
-s3d <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> with(trees, scatterplot3d(Girth, Height, Volume, 
-                                 pch = 16, highlight.3d = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>, 
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(scatterplot3d)
+s3d <span style="color: #008b8b;">&lt;-</span> with(trees, scatterplot3d(Girth, Height, Volume, 
+                                 pch = 16, highlight.3d = <span style="color: #228b22;">TRUE</span>, 
                                  angle = 60))
-fit <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(Volume ~ Girth + Height, data = trees)
+fit <span style="color: #008b8b;">&lt;-</span> lm(Volume ~ Girth + Height, data = trees)
 </pre>
 
 
@@ -15464,13 +15357,15 @@ We do all of the above just as we would in simple linear regression. The powerho
 
 
 
-<pre class="src src-R">trees.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(Volume ~ Girth + Height, data = trees)
+<pre class="src src-R">trees.lm <span style="color: #008b8b;">&lt;-</span> lm(Volume ~ Girth + Height, data = trees)
 trees.lm
 </pre>
 
 
 <pre class="example">
-
+X11cairo 
+       2
+ 
 Call:
 lm(formula = Volume ~ Girth + Height, data = trees)
 
@@ -15612,7 +15507,7 @@ The only difference from SLR is in the way we tell \(\mathsf{R}\) the values of 
 
 
 
-<pre class="src src-R">new <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5), Height = c(69, 74, 87))
+<pre class="src src-R">new <span style="color: #008b8b;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5), Height = c(69, 74, 87))
 </pre>
 
 
@@ -15716,7 +15611,15 @@ The residuals are also stored with <code>trees.lm</code> and may be accessed wit
 </pre>
 
 
-<pre class="example">
+
+<pre class="example">  1 
+8.3
+  1 
+8.3
+   3 
+30.4
+   3 
+30.4
          1          2          3          4          5 
  5.4623403  5.7461484  5.3830187  0.5258848 -1.0690084
 </pre>
@@ -15728,7 +15631,7 @@ The <code>summary</code> function output (shown later) lists the <code>Residual 
 
 
 
-<pre class="src src-R">treesumry <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> summary(trees.lm)
+<pre class="src src-R">treesumry <span style="color: #008b8b;">&lt;-</span> summary(trees.lm)
 treesumry$sigma
 </pre>
 
@@ -15797,6 +15700,7 @@ To get confidence intervals for the parameters we need only use <code>confint</c
 
 
 <pre class="example">
+[1] 3.882
                    2.5 %      97.5 %
 (Intercept) -75.68226247 -40.2930554
 Girth         4.16683899   5.2494820
@@ -15858,7 +15762,7 @@ The syntax is identical to that used in SLR, with the proviso that we need to sp
 
 
 
-<pre class="src src-R">new <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5), Height = c(69, 74, 87))
+<pre class="src src-R">new <span style="color: #008b8b;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5), Height = c(69, 74, 87))
 </pre>
 
 
@@ -15868,11 +15772,13 @@ Confidence intervals are given by
 
 
 
-<pre class="src src-R">predict(trees.lm, newdata = new, interval = <span style="font-style: italic;">"confidence"</span>)
+<pre class="src src-R">predict(trees.lm, newdata = new, interval = <span style="color: #8b2252;">"confidence"</span>)
 </pre>
 
 
 <pre class="example">
+[1] 4.2
+[1] 5.2
         fit      lwr      upr
 1  8.264937  5.77240 10.75747
 2 21.731594 20.11110 23.35208
@@ -15888,7 +15794,7 @@ Prediction intervals are given by
 
 
 
-<pre class="src src-R">predict(trees.lm, newdata = new, interval = <span style="font-style: italic;">"prediction"</span>)
+<pre class="src src-R">predict(trees.lm, newdata = new, interval = <span style="color: #8b2252;">"prediction"</span>)
 </pre>
 
 
@@ -15991,6 +15897,14 @@ It is good practice for the statistician to weigh both \(R^{2}\) and \(\overline
 
 
 <pre class="example">
+[1] 5.8
+[1] 10.8
+[1] 5.8
+[1] 10.8
+[1] 26.9
+[1] 33.8
+[1] 26.9
+[1] 33.8
 [1] 0.94795
 </pre>
 
@@ -16105,7 +16019,9 @@ The Student's \(t\) tests for significance of the individual explanatory variabl
 
 
 
-<pre class="example">
+<pre class="example">   value 
+254.9723
+ 
 Call:
 lm(formula = Volume ~ Girth + Height, data = trees)
 
@@ -16222,13 +16138,15 @@ We will fit the quadratic model to the <code>trees</code> data and display the r
 
 
 
-<pre class="src src-R">treesquad.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(Volume ~ scale(Girth) + I(scale(Girth)^2),                    data = trees)
+<pre class="src src-R">treesquad.lm <span style="color: #008b8b;">&lt;-</span> lm(Volume ~ scale(Girth) + I(scale(Girth)^2),                    data = trees)
 summary(treesquad.lm)
 </pre>
 
 
 
-<pre class="example">
+<pre class="example">X11cairo 
+       2
+ 
 Call:
 lm(formula = Volume ~ scale(Girth) + I(scale(Girth)^2), data = trees)
 
@@ -16256,7 +16174,7 @@ We see that the \(F\) statistic indicates the overall model including <code>Girt
 
 
 
-<pre class="src src-R">a <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> ggplot(trees, aes(scale(Girth), Volume))
+<pre class="src src-R">a <span style="color: #008b8b;">&lt;-</span> ggplot(trees, aes(scale(Girth), Volume))
 a + stat_smooth(method = lm, formula = y ~ poly(x, 2)) + geom_point()
 </pre>
 
@@ -16287,12 +16205,14 @@ We do estimation/prediction the same way that we did in Section <a href="#sec-12
 
 
 
-<pre class="src src-R">new <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5))
-predict(treesquad.lm, newdata = new, interval = <span style="font-style: italic;">"prediction"</span>)
+<pre class="src src-R">new <span style="color: #008b8b;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5))
+predict(treesquad.lm, newdata = new, interval = <span style="color: #8b2252;">"prediction"</span>)
 </pre>
 
 
 <pre class="example">
+X11cairo 
+       2
        fit       lwr      upr
 1 11.56982  4.347426 18.79221
 2 20.30615 13.299050 27.31325
@@ -16402,7 +16322,7 @@ For the <code>trees</code> data, we fit the model with the interaction using met
 
 
 
-<pre class="src src-R">treesint.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(Volume ~ Girth + Height + Girth:Height, data = trees)
+<pre class="src src-R">treesint.lm <span style="color: #008b8b;">&lt;-</span> lm(Volume ~ Girth + Height + Girth:Height, data = trees)
 summary(treesint.lm)
 </pre>
 
@@ -16456,8 +16376,8 @@ Girth:Height  0.08463628   0.1846725
 
 
 
-<pre class="src src-R">new <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5), Height = c(69, 74, 87))
-predict(treesint.lm, newdata = new, interval = <span style="font-style: italic;">"prediction"</span>)
+<pre class="src src-R">new <span style="color: #008b8b;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5), Height = c(69, 74, 87))
+predict(treesint.lm, newdata = new, interval = <span style="color: #8b2252;">"prediction"</span>)
 </pre>
 
 
@@ -16507,8 +16427,8 @@ We can construct <code>Tall</code> very quickly in \(\mathsf{R}\) with the <code
 
 
 
-<pre class="src src-R">trees$Tall <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> cut(trees$Height, breaks = c(-<span style="font-weight: bold; text-decoration: underline;">Inf</span>, 76, <span style="font-weight: bold; text-decoration: underline;">Inf</span>), 
-                  labels = c(<span style="font-style: italic;">"no"</span>,<span style="font-style: italic;">"yes"</span>))
+<pre class="src src-R">trees$Tall <span style="color: #008b8b;">&lt;-</span> cut(trees$Height, breaks = c(-<span style="color: #228b22;">Inf</span>, 76, <span style="color: #228b22;">Inf</span>), 
+                  labels = c(<span style="color: #8b2252;">"no"</span>,<span style="color: #8b2252;">"yes"</span>))
 trees$Tall[1:5]
 </pre>
 
@@ -16575,7 +16495,7 @@ If the qualitative variable is not yet stored as a factor then we may convert it
 
 
 
-<pre class="src src-R">treesdummy.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(Volume ~ Girth + Tall, data = trees)
+<pre class="src src-R">treesdummy.lm <span style="color: #008b8b;">&lt;-</span> lm(Volume ~ Girth + Tall, data = trees)
 summary(treesdummy.lm)
 </pre>
 
@@ -16652,7 +16572,7 @@ We can see a plot of the two regression lines with the following mouthful of cod
 </div>
 
 <p>
-It may look intimidating but there is reason to the madness. First we <code>split</code> the <code>trees</code> data into two pieces, with groups determined by the <code>Tall</code> variable. Next we add the \texttt{Fit}ted values to each piece via <code>predict</code>. Then we set up a <code>plot</code> for the variables <code>Volume</code> versus <code>Girth</code>, but we do not plot anything yet (<code>type = n</code>) because we want to use different symbols for the two groups. Next we add <code>points</code> to the plot for the <code>Tall = yes</code> trees and use an open circle for a plot character (<code>pch = 1</code>), followed by <code>points</code> for the <code>Tall = no</code> trees with a triangle character (<code>pch = 2</code>). Finally, we add regression <code>lines</code> to the plot, one for each group.
+It may look intimidating but there is reason to the madness. First we <code>split</code> the <code>trees</code> data into two pieces, with groups determined by the <code>Tall</code> variable. Next we add the fitted values to each piece via <code>predict</code>. Then we set up a <code>plot</code> for the variables <code>Volume</code> versus <code>Girth</code>, but we do not plot anything yet (<code>type = n</code>) because we want to use different symbols for the two groups. Next we add <code>points</code> to the plot for the <code>Tall = yes</code> trees and use an open circle for a plot character (<code>pch = 1</code>), followed by <code>points</code> for the <code>Tall = no</code> trees with a triangle character (<code>pch = 2</code>). Finally, we add regression <code>lines</code> to the plot, one for each group.
 </p>
 <p>
 There are other &ndash; shorter &ndash; ways to plot regression lines by groups, namely the <code>scatterplot</code> function in the <code>car</code> \cite{car} package and the <code>xyplot</code> function in the <code>lattice</code> package. We elected to introduce the reader to the above approach since many advanced plots in \(\mathsf{R}\) are done in a similar, consecutive fashion.
@@ -16714,14 +16634,16 @@ For the <code>trees</code> data, let us fit a polynomial regression model and fo
 
 
 
-<pre class="src src-R">treesfull.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(Volume ~ Girth + I(Girth^2) + Height + 
+<pre class="src src-R">treesfull.lm <span style="color: #008b8b;">&lt;-</span> lm(Volume ~ Girth + I(Girth^2) + Height + 
                    I(Height^2), data = trees)
 summary(treesfull.lm)
 </pre>
 
 
 
-<pre class="example"> 
+<pre class="example">X11cairo 
+       2
+ 
 Call:
 lm(formula = Volume ~ Girth + I(Girth^2) + Height + I(Height^2), 
     data = trees)
@@ -16757,7 +16679,7 @@ We fit the reduced model with <code>lm</code> and store the results:
 
 
 
-<pre class="src src-R">treesreduced.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(Volume ~ -1 + Girth + I(Girth^2), data = trees)
+<pre class="src src-R">treesreduced.lm <span style="color: #008b8b;">&lt;-</span> lm(Volume ~ -1 + Girth + I(Girth^2), data = trees)
 </pre>
 
 
@@ -16772,7 +16694,7 @@ To delete the intercept from the model we used <code>-1</code> in the model form
 
 
 <pre class="example">
-Analysis of Variance Table
+ Analysis of Variance Table
 
 Model 1: Volume ~ -1 + Girth + I(Girth^2)
 Model 2: Volume ~ Girth + I(Girth^2) + Height + I(Height^2)
@@ -16790,7 +16712,7 @@ We see from the output that the complete model is highly significant compared to
 
 
 
-<pre class="src src-R">treesreduced2.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(Volume ~ Girth + I(Girth^2) + Height, 
+<pre class="src src-R">treesreduced2.lm <span style="color: #008b8b;">&lt;-</span> lm(Volume ~ Girth + I(Girth^2) + Height, 
                        data = trees)
 anova(treesreduced2.lm, treesfull.lm)
 </pre>
@@ -16875,7 +16797,7 @@ We encountered many, many diagnostic measures for simple linear regression in Se
 <p>
 We spent the entire chapter talking about the <code>trees</code> data, and all of our models looked like <code>Volume ~ Girth + Height</code> or a variant of this model. But let us think again: we know from elementary school that the volume of a rectangle is \(V=lwh\) and the volume of a cylinder (which is closer to what a black cherry tree looks like) is
 \begin{equation}
-V=\pi r^{2}h\quad\mbox{or}\quad V=4\pi dh,
+V=\pi r^{2}h\quad \mbox{or}\quad V=4\pi dh,
 \end{equation}
 where \(r\) and \(d\) represent the radius and diameter of the tree, respectively. With this in mind, it would seem that a more appropriate model for \(\mu\) might be
 \begin{equation}
@@ -16893,7 +16815,7 @@ and this new model \(\mu^{\ast}\) is linear in the parameters \(\beta_{0}^{\ast}
 
 
 
-<pre class="src src-R">treesNonlin.lm <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lm(log(Volume) ~ log(Girth) + log(Height), 
+<pre class="src src-R">treesNonlin.lm <span style="color: #008b8b;">&lt;-</span> lm(log(Volume) ~ log(Girth) + log(Height), 
                      data = trees)
 summary(treesNonlin.lm)
 </pre>
@@ -16949,8 +16871,8 @@ log(Height) 2.0104387829 4.645475188
 
 
 
-<pre class="src src-R">new <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5), Height = c(69, 74, 87))
-exp(predict(treesNonlin.lm, newdata = new, interval = <span style="font-style: italic;">"confidence"</span>))
+<pre class="src src-R">new <span style="color: #008b8b;">&lt;-</span> data.frame(Girth = c(9.1, 11.6, 12.5), Height = c(69, 74, 87))
+exp(predict(treesNonlin.lm, newdata = new, interval = <span style="color: #8b2252;">"confidence"</span>))
 </pre>
 
 
@@ -16990,15 +16912,15 @@ It turns out that John Fox has posted an Appendix to his book \cite{Fox2002} whi
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">fake data </span>
+<pre class="src src-R"><span style="color: #b22222;"># </span><span style="color: #b22222;">fake data </span>
 set.seed(1) 
-x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> seq(from = 0, to = 1000, length.out = 200) 
-y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 1 + 2*(sin((2*pi*x/360) - 3))^2 + rnorm(200, sd = 2)
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">plot(x, y)</span>
-acc.nls <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> nls(y ~ a + b*(sin((2*pi*x/360) - c))^2, 
+x <span style="color: #008b8b;">&lt;-</span> seq(from = 0, to = 1000, length.out = 200) 
+y <span style="color: #008b8b;">&lt;-</span> 1 + 2*(sin((2*pi*x/360) - 3))^2 + rnorm(200, sd = 2)
+<span style="color: #b22222;"># </span><span style="color: #b22222;">plot(x, y)</span>
+acc.nls <span style="color: #008b8b;">&lt;-</span> nls(y ~ a + b*(sin((2*pi*x/360) - c))^2, 
                start = list(a = 0.9, b = 2.3, c = 2.9))
 summary(acc.nls)
-<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">plot(x, fitted(acc.nls))</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">plot(x, fitted(acc.nls))</span>
 </pre>
 
 
@@ -17213,9 +17135,9 @@ We will take a random sample of size \(n=25\) from the population. Then we will 
 
 
 
-<pre class="src src-R">srs <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rnorm(25, mean = 3)
-resamps <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> replicate(1000, sample(srs, 25, <span style="font-weight: bold; text-decoration: underline;">TRUE</span>), simplify = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
-xbarstar <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sapply(resamps, mean, simplify = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">srs <span style="color: #008b8b;">&lt;-</span> rnorm(25, mean = 3)
+resamps <span style="color: #008b8b;">&lt;-</span> replicate(1000, sample(srs, 25, <span style="color: #228b22;">TRUE</span>), simplify = <span style="color: #228b22;">FALSE</span>)
+xbarstar <span style="color: #008b8b;">&lt;-</span> sapply(resamps, mean, simplify = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -17225,8 +17147,8 @@ A histogram of the 1000 values of \(\overline{x}\) is shown in Figure <a href="#
 
 
 
-<pre class="src src-R">hist(xbarstar, breaks = 40, prob = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
-curve(dnorm(x, 3, 0.2), add = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">overlay true normal density</span>
+<pre class="src src-R">hist(xbarstar, breaks = 40, prob = <span style="color: #228b22;">TRUE</span>)
+curve(dnorm(x, 3, 0.2), add = <span style="color: #228b22;">TRUE</span>) <span style="color: #b22222;"># </span><span style="color: #b22222;">overlay true normal density</span>
 </pre>
 
 
@@ -17253,6 +17175,8 @@ mean(xbarstar) - mean(srs)
 
 
 <pre class="example">
+null device 
+          1
 [1] 3.05643
 [1] 3.05766
 [1] -0.001229869
@@ -17296,8 +17220,8 @@ We only took an original sample of size \(n=25\), and resampling more and more w
 
 
 
-<pre class="src src-R">resamps <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> replicate(1000, sample(rivers, 141, <span style="font-weight: bold; text-decoration: underline;">TRUE</span>), simplify = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
-medstar <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sapply(resamps, median, simplify = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">resamps <span style="color: #008b8b;">&lt;-</span> replicate(1000, sample(rivers, 141, <span style="color: #228b22;">TRUE</span>), simplify = <span style="color: #228b22;">FALSE</span>)
+medstar <span style="color: #008b8b;">&lt;-</span> sapply(resamps, median, simplify = <span style="color: #228b22;">TRUE</span>)
 sd(medstar)
 </pre>
 
@@ -17310,7 +17234,7 @@ sd(medstar)
 
 
 
-<pre class="src src-R">hist(medstar, breaks = 40, prob = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">hist(medstar, breaks = 40, prob = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -17330,7 +17254,7 @@ The graph is shown in Figure <a href="#fig-Bootstrapping-se-median">Bootstrappin
 
 
 
-<pre class="src src-R">hist(medstar, breaks = 40, prob = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">hist(medstar, breaks = 40, prob = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -17342,6 +17266,8 @@ mean(medstar) - median(rivers)
 
 
 <pre class="example">
+null device 
+          1
 [1] 425
 [1] 426.47
 [1] 1.47
@@ -17366,8 +17292,8 @@ For the standard error of the mean (Example <a href="#exa-Bootstrap-se-mean">exa
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(boot)
-<span style="font-weight: bold;">mean_fun</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x, indices) mean(x[indices])
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(boot)
+<span style="color: #0000ff;">mean_fun</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x, indices) mean(x[indices])
 boot(data = srs, statistic = mean_fun, R = 1000)
 </pre>
 
@@ -17393,7 +17319,7 @@ For the standard error of the median (Example <a href="#exa-Bootstrap-se-median"
 
 
 
-<pre class="src src-R"><span style="font-weight: bold;">median_fun</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x, indices) median(x[indices])
+<pre class="src src-R"><span style="color: #0000ff;">median_fun</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x, indices) median(x[indices])
 boot(data = rivers, statistic = median_fun, R = 1000)
 </pre>
 
@@ -17466,8 +17392,8 @@ This is incredibly easy to accomplish with the bootstrap. We need only to take a
 
 
 
-<pre class="src src-R">btsamps <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> replicate(2000, sample(stack.loss, 21, <span style="font-weight: bold; text-decoration: underline;">TRUE</span>), simplify = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)
-thetast <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> sapply(btsamps, median, simplify = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">btsamps <span style="color: #008b8b;">&lt;-</span> replicate(2000, sample(stack.loss, 21, <span style="color: #228b22;">TRUE</span>), simplify = <span style="color: #228b22;">FALSE</span>)
+thetast <span style="color: #008b8b;">&lt;-</span> sapply(btsamps, median, simplify = <span style="color: #228b22;">TRUE</span>)
 mean(thetast)
 median(stack.loss)
 quantile(thetast, c(0.025, 0.975))
@@ -17489,10 +17415,10 @@ quantile(thetast, c(0.025, 0.975))
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(boot)
-<span style="font-weight: bold;">med_fun</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(x, ind) median(x[ind])
-med_boot <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> boot(stack.loss, med_fun, R = 2000)
-boot.ci(med_boot, type = c(<span style="font-style: italic;">"perc"</span>, <span style="font-style: italic;">"norm"</span>, <span style="font-style: italic;">"bca"</span>))
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(boot)
+<span style="color: #0000ff;">med_fun</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x, ind) median(x[ind])
+med_boot <span style="color: #008b8b;">&lt;-</span> boot(stack.loss, med_fun, R = 2000)
+boot.ci(med_boot, type = c(<span style="color: #8b2252;">"perc"</span>, <span style="color: #8b2252;">"norm"</span>, <span style="color: #8b2252;">"bca"</span>))
 </pre>
 
 
@@ -17643,7 +17569,7 @@ In calculating the permutation test <i>p-value</i>, the formula is essentially t
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(coin)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(coin)
 oneway_test(len ~ supp, data = ToothGrowth)
 </pre>
 
@@ -17674,7 +17600,7 @@ We know from Chapter <a href="#sec-10">Hypothesis Testing</a> to use the two-sam
 
 
 <pre class="src src-R">t.test(len ~ supp, data = ToothGrowth, 
-       alt = <span style="font-style: italic;">"greater"</span>, var.equal = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+       alt = <span style="color: #8b2252;">"greater"</span>, var.equal = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -17756,8 +17682,8 @@ This chapter is still under substantial revision. At any time you can preview an
 
 
 
-<pre class="src src-R">install.packages(<span style="font-style: italic;">"IPSUR"</span>, repos=<span style="font-style: italic;">"http://R-Forge.R-project.org"</span>)
-<span style="font-weight: bold; text-decoration: underline;">library</span>(IPSUR)
+<pre class="src src-R">install.packages(<span style="color: #8b2252;">"IPSUR"</span>, repos=<span style="color: #8b2252;">"http://R-Forge.R-project.org"</span>)
+<span style="color: #008b8b;">library</span>(IPSUR)
 read(IPSUR)
 </pre>
 
@@ -17777,8 +17703,8 @@ This chapter is still under substantial revision. At any time you can preview an
 
 
 
-<pre class="src src-R">install.packages(<span style="font-style: italic;">"IPSUR"</span>, repos=<span style="font-style: italic;">"http://R-Forge.R-project.org"</span>)
-<span style="font-weight: bold; text-decoration: underline;">library</span>(IPSUR)
+<pre class="src src-R">install.packages(<span style="color: #8b2252;">"IPSUR"</span>, repos=<span style="color: #8b2252;">"http://R-Forge.R-project.org"</span>)
+<span style="color: #008b8b;">library</span>(IPSUR)
 read(IPSUR)
 </pre>
 
@@ -17798,8 +17724,8 @@ This chapter is still under substantial revision. At any time you can preview an
 
 
 
-<pre class="src src-R">install.packages(<span style="font-style: italic;">"IPSUR"</span>, repos=<span style="font-style: italic;">"http://R-Forge.R-project.org"</span>)
-<span style="font-weight: bold; text-decoration: underline;">library</span>(IPSUR)
+<pre class="src src-R">install.packages(<span style="color: #8b2252;">"IPSUR"</span>, repos=<span style="color: #8b2252;">"http://R-Forge.R-project.org"</span>)
+<span style="color: #008b8b;">library</span>(IPSUR)
 read(IPSUR)
 </pre>
 
@@ -17827,7 +17753,9 @@ If you ever write the \(\mathsf{R}\) help mailing list with a question, then you
 
 
 
-<pre class="example">R version 2.13.1 (2011-07-08)
+<pre class="example">[1] 0.03
+[1] 0.061
+ R version 2.13.1 (2011-07-08)
 Platform: i686-pc-linux-gnu (32-bit)
 
 locale:
@@ -18265,7 +18193,7 @@ See the ``Vectors and Assignment'' section of <i>An Introduction to</i> \(\maths
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(3, 5, 9)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> c(3, 5, 9)
 </pre>
 
 
@@ -18276,7 +18204,7 @@ Vectors are atomic in the sense that if you try to mix and match elements of dif
 
 
 
-<pre class="src src-R">y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(3, <span style="font-style: italic;">"5"</span>, <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">y <span style="color: #008b8b;">&lt;-</span> c(3, <span style="color: #8b2252;">"5"</span>, <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -18316,7 +18244,7 @@ Notice the order of the matrix entries, which shows how the matrix is populated 
 
 
 
-<pre class="src src-R">matrix(letters[1:6], nrow = 2, ncol = 3, byrow = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+<pre class="src src-R">matrix(letters[1:6], nrow = 2, ncol = 3, byrow = <span style="color: #228b22;">TRUE</span>)
 </pre>
 
 
@@ -18333,7 +18261,7 @@ We can test whether a given object is a matrix with <code>is.matrix</code> and c
 
 
 
-<pre class="src src-R">matrix(c(1,<span style="font-style: italic;">"2"</span>,<span style="font-weight: bold; text-decoration: underline;">NA</span>, <span style="font-weight: bold; text-decoration: underline;">FALSE</span>), nrow = 2, ncol = 3)
+<pre class="src src-R">matrix(c(1,<span style="color: #8b2252;">"2"</span>,<span style="color: #228b22;">NA</span>, <span style="color: #228b22;">FALSE</span>), nrow = 2, ncol = 3)
 </pre>
 
 
@@ -18353,8 +18281,8 @@ The standard arithmetic operations work element-wise with matrices.
 
 
 
-<pre class="src src-R">A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> matrix(1:6, 2, 3)
-B <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> matrix(2:7, 2, 3)
+<pre class="src src-R">A <span style="color: #008b8b;">&lt;-</span> matrix(1:6, 2, 3)
+B <span style="color: #008b8b;">&lt;-</span> matrix(2:7, 2, 3)
 A + B
 A * B
 </pre>
@@ -18376,8 +18304,8 @@ If you want the standard definition of matrix multiplication then use the <code>
 
 
 
-<pre class="src src-R">try(A * B)     <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">an error</span>
-A %*% t(B)     <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">this is alright</span>
+<pre class="src src-R">try(A * B)     <span style="color: #b22222;"># </span><span style="color: #b22222;">an error</span>
+A %*% t(B)     <span style="color: #b22222;"># </span><span style="color: #b22222;">this is alright</span>
 </pre>
 
 
@@ -18397,7 +18325,7 @@ To get the ordinary matrix inverse use the <code>solve</code> function:
 
 
 
-<pre class="src src-R">solve(A %*% t(B))     <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">input matrix must be square</span>
+<pre class="src src-R">solve(A %*% t(B))     <span style="color: #b22222;"># </span><span style="color: #b22222;">input matrix must be square</span>
 </pre>
 
 
@@ -18453,10 +18381,10 @@ A data frame is a rectangular array of information with a special status in \(\m
 
 
 
-<pre class="src src-R">x <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(1.3, 5.2, 6)
-y <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> letters[1:3]
-z <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-weight: bold; text-decoration: underline;">TRUE</span>, <span style="font-weight: bold; text-decoration: underline;">FALSE</span>, <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
-A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.frame(x, y, z)
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> c(1.3, 5.2, 6)
+y <span style="color: #008b8b;">&lt;-</span> letters[1:3]
+z <span style="color: #008b8b;">&lt;-</span> c(<span style="color: #228b22;">TRUE</span>, <span style="color: #228b22;">FALSE</span>, <span style="color: #228b22;">TRUE</span>)
+A <span style="color: #008b8b;">&lt;-</span> data.frame(x, y, z)
 A
 </pre>
 
@@ -18475,7 +18403,7 @@ Notice the <code>names</code> on the columns of <code>A</code>. We can change th
 
 
 
-<pre class="src src-R">names(A) <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-style: italic;">"Fred"</span>,<span style="font-style: italic;">"Mary"</span>,<span style="font-style: italic;">"Sue"</span>)
+<pre class="src src-R">names(A) <span style="color: #008b8b;">&lt;-</span> c(<span style="color: #8b2252;">"Fred"</span>,<span style="color: #8b2252;">"Mary"</span>,<span style="color: #8b2252;">"Sue"</span>)
 A
 </pre>
 
@@ -18520,7 +18448,7 @@ First, we coerce the table to a data frame with:
 
 
 
-<pre class="src src-R">A <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.data.frame(Titanic)
+<pre class="src src-R">A <span style="color: #008b8b;">&lt;-</span> as.data.frame(Titanic)
 head(A)
 </pre>
 
@@ -18545,8 +18473,8 @@ The form of <code>A</code> is often sufficient for our purposes, but more often 
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(reshape)
-B <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> with(A, untable(A, Freq))
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(reshape)
+B <span style="color: #008b8b;">&lt;-</span> with(A, untable(A, Freq))
 head(B)
 </pre>
 
@@ -18576,8 +18504,8 @@ The only fly in the ointment is the lingering <code>Freq</code> column which has
 
 
 
-<pre class="src src-R">C <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> B[, -5]
-rownames(C) <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> 1:dim(C)[1]
+<pre class="src src-R">C <span style="color: #008b8b;">&lt;-</span> B[, -5]
+rownames(C) <span style="color: #008b8b;">&lt;-</span> 1:dim(C)[1]
 head(C)
 </pre>
 
@@ -18614,10 +18542,10 @@ There are at least two ways to do it.
 
 
 
-<pre class="src src-R">  tab <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> matrix(1:6, nrow = 2, ncol = 3)
-  rownames(tab) <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-style: italic;">'first'</span>, <span style="font-style: italic;">'second'</span>)
-  colnames(tab) <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-style: italic;">'A'</span>, <span style="font-style: italic;">'B'</span>, <span style="font-style: italic;">'C'</span>)
-  tab  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Counts</span>
+<pre class="src src-R">  tab <span style="color: #008b8b;">&lt;-</span> matrix(1:6, nrow = 2, ncol = 3)
+  rownames(tab) <span style="color: #008b8b;">&lt;-</span> c(<span style="color: #8b2252;">'first'</span>, <span style="color: #8b2252;">'second'</span>)
+  colnames(tab) <span style="color: #008b8b;">&lt;-</span> c(<span style="color: #8b2252;">'A'</span>, <span style="color: #8b2252;">'B'</span>, <span style="color: #8b2252;">'C'</span>)
+  tab  <span style="color: #b22222;"># </span><span style="color: #b22222;">Counts</span>
 </pre>
 
 
@@ -18639,11 +18567,11 @@ second 2 4 6
 
 
 
-<pre class="src src-R">  p <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-style: italic;">"milk"</span>,<span style="font-style: italic;">"tea"</span>)
-  g <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-style: italic;">"milk"</span>,<span style="font-style: italic;">"tea"</span>)
-  catgs <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> expand.grid(poured = p, guessed = g)
-  cnts <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(3, 1, 1, 3)
-  D <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> cbind(catgs, count = cnts)
+<pre class="src src-R">  p <span style="color: #008b8b;">&lt;-</span> c(<span style="color: #8b2252;">"milk"</span>,<span style="color: #8b2252;">"tea"</span>)
+  g <span style="color: #008b8b;">&lt;-</span> c(<span style="color: #8b2252;">"milk"</span>,<span style="color: #8b2252;">"tea"</span>)
+  catgs <span style="color: #008b8b;">&lt;-</span> expand.grid(poured = p, guessed = g)
+  cnts <span style="color: #008b8b;">&lt;-</span> c(3, 1, 1, 3)
+  D <span style="color: #008b8b;">&lt;-</span> cbind(catgs, count = cnts)
   xtabs(count ~ poured + guessed, data = D)
 </pre>
 
@@ -18735,8 +18663,8 @@ As an example, suppose the data are stored in the SPSS file <code>foo.sav</code>
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(foreign)
-read.spss(<span style="font-style: italic;">"foo.sav"</span>)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(foreign)
+read.spss(<span style="color: #8b2252;">"foo.sav"</span>)
 </pre>
 
 
@@ -18820,7 +18748,7 @@ For example, we may sort all of the rows of the <code>Puromycin</code> data (in 
 
 
 
-<pre class="src src-R">Tmp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Puromycin[order(Puromycin$conc), ]
+<pre class="src src-R">Tmp <span style="color: #008b8b;">&lt;-</span> Puromycin[order(Puromycin$conc), ]
 head(Tmp)
 </pre>
 
@@ -18862,7 +18790,7 @@ If we would like to sort a numeric variable in descending order then we put a mi
 
 
 
-<pre class="src src-R">Tmp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> with(Puromycin, Puromycin[order(-conc), ])
+<pre class="src src-R">Tmp <span style="color: #008b8b;">&lt;-</span> with(Puromycin, Puromycin[order(-conc), ])
 head(Tmp)
 </pre>
 
@@ -18884,7 +18812,7 @@ If we would like to sort by a character (or factor) in decreasing order then we 
 
 
 
-<pre class="src src-R">Tmp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> with(Puromycin, Puromycin[order(-xtfrm(state)), ])
+<pre class="src src-R">Tmp <span style="color: #008b8b;">&lt;-</span> with(Puromycin, Puromycin[order(-xtfrm(state)), ])
 head(Tmp)
 </pre>
 
@@ -18983,7 +18911,7 @@ Given subsets \(A\) and \(B\), we may manipulate them in an algebraic fashion. T
 <tbody>
 <tr><td class="left">Union</td><td class="left">\(A\cup B\)</td><td class="left">in \(A\) or \(B\) or both</td><td class="left"><code>union(A, B)</code></td></tr>
 <tr><td class="left">Intersection</td><td class="left">\(A\cap B\)</td><td class="left">in both \(A\) and \(B\)</td><td class="left"><code>intersect(A, B)</code></td></tr>
-<tr><td class="left">Difference</td><td class="left">\(A\textbackslash B\)</td><td class="left">in \(A\) but not in \(B\)</td><td class="left"><code>setdiff(A, B)</code></td></tr>
+<tr><td class="left">Difference</td><td class="left">\(A\backslash B\)</td><td class="left">in \(A\) but not in \(B\)</td><td class="left"><code>setdiff(A, B)</code></td></tr>
 <tr><td class="left">Complement</td><td class="left">\(A^{c}\)</td><td class="left">in \(S\) but not in \(A\)</td><td class="left"><code>setdiff(S, A)</code></td></tr>
 </tbody>
 </table>
@@ -19014,7 +18942,7 @@ Given subsets \(A\) and \(B\), we may manipulate them in an algebraic fashion. T
 </li>
 <li>The Associative Property: 
    \begin{equation}
-   (A\cup B)\cup C=A\cup(B\cup C),\quad(A\cap B)\cap C=A\cap(B\cap C)
+   (A\cup B)\cup C=A\cup(B\cup C),\quad (A\cap B)\cap C=A\cap(B\cap C)
    \end{equation}
 </li>
 <li>The Distributive Property: 
@@ -19024,11 +18952,11 @@ Given subsets \(A\) and \(B\), we may manipulate them in an algebraic fashion. T
 </li>
 <li>DeMorgan's Laws
    \begin{equation}
-   (A\cup B)^{c}=A^{c}\cap B^{c}\quad\mbox{and}\quad(A\cap B)^{c}=A^{c}\cup B^{c},
+   (A\cup B)^{c}=A^{c}\cap B^{c}\quad \mbox{and}\quad (A\cap B)^{c}=A^{c}\cup B^{c},
    \end{equation}
    or more generally,
    \begin{equation}
-   \left(\bigcup_{\alpha}A_{\alpha}\right)^{c}=\bigcap_{\alpha}A_{\alpha}^{c},\quad\mbox{and}\quad\left(\bigcap_{\alpha}A_{\alpha}\right)^{c}=\bigcup_{\alpha}A_{\alpha}^{c}
+   \left(\bigcup_{\alpha}A_{\alpha}\right)^{c}=\bigcap_{\alpha}A_{\alpha}^{c},\quad \mbox{and}\quad \left(\bigcap_{\alpha}A_{\alpha}\right)^{c}=\bigcup_{\alpha}A_{\alpha}^{c}
    \end{equation}
 </li>
 </ol>
@@ -19383,7 +19311,7 @@ In both of the above the series on the left is convergent if the series on the r
 
 
 \begin{equation}
-\sum_{k=0}^{\infty} x^{k} = \frac{1}{1 - x},\quad|x| < 1.\label{eq-geom-series}
+\sum_{k=0}^{\infty} x^{k} = \frac{1}{1 - x},\quad |x| < 1.\label{eq-geom-series}
 \end{equation}
 
 </div>
@@ -19402,13 +19330,13 @@ In both of the above the series on the left is convergent if the series on the r
 <p>
 Other Series
 \begin{equation}
-\sum_{k=0}^{\infty}{m+k-1 \choose m-1}x^{k}=\frac{1}{(1-x)^{m}},\quad|x|<1.\label{eq-negbin-series}
+\sum_{k=0}^{\infty}{m+k-1 \choose m-1}x^{k}=\frac{1}{(1-x)^{m}},\quad |x|<1.\label{eq-negbin-series}
 \end{equation}
 \begin{equation}
--\sum_{k=1}^{\infty}\frac{x^{n}}{n}=\ln(1-x),\quad|x|<1.\label{eq-log-series}
+-\sum_{k=1}^{\infty}\frac{x^{n}}{n}=\ln(1-x),\quad |x| < 1.\label{eq-log-series}
 \end{equation}
 \begin{equation}
-\sum_{k=0}^{\infty}{n \choose k}x^{k}=(1+x)^{n},\quad|x|<1.\label{eq-binom-series-infinite}
+\sum_{k=0}^{\infty}{n \choose k}x^{k}=(1+x)^{n},\quad |x| < 1.\label{eq-binom-series-infinite}
 \end{equation}
 
 </p></div>
@@ -19424,7 +19352,7 @@ Other Series
 <p>
 If the function \(f\) has a <i>power series</i> representation at the point \(a\) with radius of convergence \(R&gt;0\), that is, if
 \begin{equation}
-f(x)=\sum_{k=0}^{\infty}c_{k}(x-a)^{k},\quad|x-a|<R,
+f(x)=\sum_{k=0}^{\infty}c_{k}(x-a)^{k},\quad |x - a| < R,
 \end{equation}
 for some constants \(\left(c_{k}\right)_{k=0}^{\infty}\), then \(c_{k}\) must be
 \begin{equation}
@@ -19432,10 +19360,10 @@ c_{k}=\frac{f^{(k)}(a)}{k!},\quad k=0,1,2,\ldots
 \end{equation}
 Furthermore, the function \(f\) is differentiable on the open interval \((a-R,\, a+R)\) with
 \begin{equation}
-f'(x)=\sum_{k=1}^{\infty}kc_{k}(x-a)^{k-1},\quad|x-a|<R,
+f'(x)=\sum_{k=1}^{\infty}kc_{k}(x-a)^{k-1},\quad |x-a| < R,
 \end{equation}
 \begin{equation}
-\int f(x)\,\mathrm{d} x=C+\sum_{k=0}^{\infty}c_{k}\frac{(x-a)^{k+1}}{k+1},\quad|x-a|<R,
+\int f(x)\,\mathrm{d} x=C+\sum_{k=0}^{\infty}c_{k}\frac{(x-a)^{k+1}}{k+1},\quad |x-a| < R,
 \end{equation}
 in which case both of the above series have radius of convergence \(R\).
 </p>
@@ -19452,7 +19380,7 @@ in which case both of the above series have radius of convergence \(R\).
 <p>
 The <i>Gamma function</i> \(\Gamma\) will be defined in this book according to the formula
 \begin{equation}
-\Gamma(\alpha)=\int_{0}^{\infty}x^{\alpha-1}\mathrm{e}^{-x}\:\mathrm{d} x,\quad\mbox{for }\alpha > 0.
+\Gamma(\alpha)=\int_{0}^{\infty}x^{\alpha-1}\mathrm{e}^{-x}\:\mathrm{d} x,\quad \mbox{for }\alpha > 0.
 \end{equation}
 
 <div class="fact">
@@ -19523,7 +19451,7 @@ The <i>inverse</i> of a square matrix \(\mathbf{A}_{\mathrm{n}\times\mathrm{n}}\
 The inverse of the \(2\times2\) matrix
 \begin{equation}
 \mathbf{A}=\begin{bmatrix}a & b\\
-c & d\end{bmatrix}\quad\mbox{is}\quad\mathbf{A}^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d & -b\\
+c & d\end{bmatrix}\quad \mbox{is}\quad \mathbf{A}^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d & -b\\
 -c & a\end{bmatrix},
 \end{equation}
 provided \(ad-bc\neq0\).
@@ -19548,7 +19476,7 @@ where \(\mathbf{M}_{ij}\) is the submatrix formed by deleting the \(i^{\mathrm{t
 The determinant of the \(2\times2\) matrix
 \begin{equation}
 \mathbf{A}=\begin{bmatrix}a & b\\
-c & d\end{bmatrix}\quad\mbox{is}\quad|\mathbf{A}|=ad-bc.
+c & d\end{bmatrix}\quad \mbox{is} \quad |\mathbf{A}|=ad-bc.
 \end{equation}
 </div>
 </p>
@@ -19594,7 +19522,7 @@ and
 \end{equation}
 provided these limits exist. The <i>second-order partial derivatives</i> of \(f\) are defined by
 \begin{equation}
-\frac{\partial^{2}f}{\partial x^{2}}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right),\quad\frac{\partial^{2}f}{\partial y^{2}}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}\right),\quad\frac{\partial^{2}f}{\partial x\partial y}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right),\quad\frac{\partial^{2}f}{\partial y\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right).
+\frac{\partial^{2}f}{\partial x^{2}}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right),\quad \frac{\partial^{2}f}{\partial y^{2}}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}\right),\quad \frac{\partial^{2}f}{\partial x\partial y}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right),\quad \frac{\partial^{2}f}{\partial y\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right).
 \end{equation}
 In many cases (and for all cases in this book) it is true that
 \begin{equation}
@@ -19877,8 +19805,8 @@ Here are the basic steps to typeset a statistical report with OO.o.
 
 
 
-<pre class="src src-R">   <span style="font-weight: bold; text-decoration: underline;">library</span>(odfWeave)
-   odfWeave(file = <span style="font-style: italic;">"infile.odt"</span>, dest = <span style="font-style: italic;">"outfile.odt"</span>)
+<pre class="src src-R">   <span style="color: #008b8b;">library</span>(odfWeave)
+   odfWeave(file = <span style="color: #8b2252;">"infile.odt"</span>, dest = <span style="color: #8b2252;">"outfile.odt"</span>)
 </pre>
 
 <ol>
@@ -19953,7 +19881,7 @@ The Hmisc package
 
 
 
-<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(Hmisc)
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(Hmisc)
 summary(cbind(Sepal.Length, Sepal.Width) ~ Species, data = iris)
 </pre>
 
@@ -20329,7 +20257,7 @@ Detective Pyork E. Pig
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2011-10-02 04:44:39 EDT</p>
+<p class="date">Date: 2011-10-04 04:55:20 EDT</p>
 <p class="author">Author: G. Jay Kerns</p>
 <p class="creator">Org version 7.7 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
