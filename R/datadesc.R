@@ -1,4 +1,7 @@
 
+# Chapter: Data Description
+# All code released under GPL Version 3
+
 str(precip)
 
 precip[1:4]
@@ -38,12 +41,11 @@ hist(precip, freq = FALSE, main = "")
 
 m <- ggplot(as.data.frame(precip), aes(x = precip))
 m + geom_histogram()
-m + geom_histogram(binwidth = 5)
+m + geom_histogram(aes(y = ..density..))
 
-library(ggplot2)
 m <- ggplot(as.data.frame(precip), aes(x = precip))
 a <- m + geom_histogram()
-b <- m + geom_histogram(binwidth = 5)
+b <- m + geom_histogram(aes(y = ..density..))
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(2, 1)))
 vplayout <- function(x, y)
@@ -52,29 +54,47 @@ print(a, vp = vplayout(1, 1))
 print(b, vp = vplayout(2, 1))
 
 postscript(file="ps/datadesc/histograms.ps")
-  library(ggplot2)
   m <- ggplot(as.data.frame(precip), aes(x = precip))
   a <- m + geom_histogram()
-  b <- m + geom_histogram(binwidth = 5)
+  b <- m + geom_histogram(aes(y = ..density..))
   grid.newpage()
   pushViewport(viewport(layout = grid.layout(2, 1)))
   vplayout <- function(x, y)
   viewport(layout.pos.row = x, layout.pos.col = y)
   print(a, vp = vplayout(1, 1))
-  print(b, vp = vplayout(2, 1))
+  print(b, vp = vplayout(2, 1))m <- ggplot(as.data.frame(precip), aes(x = precip))
+  a1 <- m + geom_histogram(binwidth = 1)
+  a2 <- m + geom_histogram(binwidth = 5)
+  a3 <- m + geom_histogram(binwidth = 20)
+  grid.newpage()
+  pushViewport(viewport(layout = grid.layout(3, 1)))
+  vplayout <- function(x, y)
+  viewport(layout.pos.row = x, layout.pos.col = y)
+  print(a1, vp = vplayout(1, 1))
+  print(a2, vp = vplayout(2, 1))
+  print(a3, vp = vplayout(3, 1))print(histogram(~age | education, data = infert))
 dev.off()
 
 svg(file="svg/datadesc/histograms.svg")
-  library(ggplot2)
   m <- ggplot(as.data.frame(precip), aes(x = precip))
   a <- m + geom_histogram()
-  b <- m + geom_histogram(binwidth = 5)
+  b <- m + geom_histogram(aes(y = ..density..))
   grid.newpage()
   pushViewport(viewport(layout = grid.layout(2, 1)))
   vplayout <- function(x, y)
   viewport(layout.pos.row = x, layout.pos.col = y)
   print(a, vp = vplayout(1, 1))
-  print(b, vp = vplayout(2, 1))
+  print(b, vp = vplayout(2, 1))m <- ggplot(as.data.frame(precip), aes(x = precip))
+  a1 <- m + geom_histogram(binwidth = 1)
+  a2 <- m + geom_histogram(binwidth = 5)
+  a3 <- m + geom_histogram(binwidth = 20)
+  grid.newpage()
+  pushViewport(viewport(layout = grid.layout(3, 1)))
+  vplayout <- function(x, y)
+  viewport(layout.pos.row = x, layout.pos.col = y)
+  print(a1, vp = vplayout(1, 1))
+  print(a2, vp = vplayout(2, 1))
+  print(a3, vp = vplayout(3, 1))print(histogram(~age | education, data = infert))
 dev.off()
 
 par(mfrow = c(1,2)) # 2 plots: 1 row, 2 columns
@@ -82,52 +102,98 @@ hist(precip, main = "")
 hist(precip, freq = FALSE, main = "")
 par(mfrow = c(1,1)) # back to normal
 
-hist(precip, breaks = 10, main = "")
-hist(precip, breaks = 200, main = "")
+qplot(precip, geom = "histogram", binwidth = 1)
+qplot(precip, geom = "histogram", binwidth = 5)
+qplot(precip, geom = "histogram", binwidth = 20)
+m <- ggplot(as.data.frame(precip), aes(x = precip))
+m + geom_histogram(binwidth = 1)
+m + geom_histogram(binwidth = 5)
+m + geom_histogram(binwidth = 20)
 
-par(mfrow = c(1,2)) # 2 plots: 1 row, 2 columns
-hist(precip, breaks = 10, main = "")
-hist(precip, breaks = 200, main = "")
-par(mfrow = c(1,1)) # back to normal
+m <- ggplot(as.data.frame(precip), aes(x = precip))
+a1 <- m + geom_histogram(binwidth = 1)
+a2 <- m + geom_histogram(binwidth = 5)
+a3 <- m + geom_histogram(binwidth = 20)
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(3, 1)))
+vplayout <- function(x, y)
+viewport(layout.pos.row = x, layout.pos.col = y)
+print(a1, vp = vplayout(1, 1))
+print(a2, vp = vplayout(2, 1))
+print(a3, vp = vplayout(3, 1))
 
 postscript(file="ps/datadesc/histograms-bins.ps")
-  par(mfrow = c(1,2)) # 2 plots: 1 row, 2 columns
-  hist(precip, breaks = 10, main = "")
-  hist(precip, breaks = 200, main = "")
-  par(mfrow = c(1,1)) # back to normal
+  m <- ggplot(as.data.frame(precip), aes(x = precip))
+  a1 <- m + geom_histogram(binwidth = 1)
+  a2 <- m + geom_histogram(binwidth = 5)
+  a3 <- m + geom_histogram(binwidth = 20)
+  grid.newpage()
+  pushViewport(viewport(layout = grid.layout(3, 1)))
+  vplayout <- function(x, y)
+  viewport(layout.pos.row = x, layout.pos.col = y)
+  print(a1, vp = vplayout(1, 1))
+  print(a2, vp = vplayout(2, 1))
+  print(a3, vp = vplayout(3, 1))
 dev.off()
 
 svg(file="svg/datadesc/histograms-bins.svg")
-  par(mfrow = c(1,2)) # 2 plots: 1 row, 2 columns
-  hist(precip, breaks = 10, main = "")
-  hist(precip, breaks = 200, main = "")
-  par(mfrow = c(1,1)) # back to normal
+  m <- ggplot(as.data.frame(precip), aes(x = precip))
+  a1 <- m + geom_histogram(binwidth = 1)
+  a2 <- m + geom_histogram(binwidth = 5)
+  a3 <- m + geom_histogram(binwidth = 20)
+  grid.newpage()
+  pushViewport(viewport(layout = grid.layout(3, 1)))
+  vplayout <- function(x, y)
+  viewport(layout.pos.row = x, layout.pos.col = y)
+  print(a1, vp = vplayout(1, 1))
+  print(a2, vp = vplayout(2, 1))
+  print(a3, vp = vplayout(3, 1))
 dev.off()
 
-library(aplpack)
 stem.leaf(UKDriverDeaths, depth = FALSE)
 
-plot(LakeHuron, type = "h")
+plot(LakeHuron)
 plot(LakeHuron, type = "p")
+plot(LakeHuron, type = "h")
 
-par(mfrow = c(2,1)) # 2 plots: 2 rows, 1 column
-plot(LakeHuron, type = "h")
+huron <- data.frame(year = time(LakeHuron), level = as.vector(LakeHuron))
+h <- ggplot(huron, aes(x=year)) 
+h + geom_path(aes(y = level))
+h + geom_point(aes(y = level))
+h + geom_ribbon(aes(ymin = 576, ymax = level))
+
+library(lattice)
+xyplot(level ~ year, data = huron, type = "l")
+xyplot(level ~ year, data = huron, type = "p")
+
+par(mfrow = c(3,1))
+plot(LakeHuron)
 plot(LakeHuron, type = "p")
-par(mfrow = c(1,1)) # back to normal
+plot(LakeHuron, type = "h")
+par(mfrow = c(1,1))
 
 postscript(file="ps/datadesc/indpl-lakehuron.ps")
-  par(mfrow = c(2,1)) # 2 plots: 2 rows, 1 column
-  plot(LakeHuron, type = "h")
+  par(mfrow = c(3,1))
+  plot(LakeHuron)
   plot(LakeHuron, type = "p")
-  par(mfrow = c(1,1)) # back to normal
+  plot(LakeHuron, type = "h")
+  par(mfrow = c(1,1))
 dev.off()
 
 svg(file="svg/datadesc/indpl-lakehuron.svg")
-  par(mfrow = c(2,1)) # 2 plots: 2 rows, 1 column
-  plot(LakeHuron, type = "h")
+  par(mfrow = c(3,1))
+  plot(LakeHuron)
   plot(LakeHuron, type = "p")
-  par(mfrow = c(1,1)) # back to normal
+  plot(LakeHuron, type = "h")
+  par(mfrow = c(1,1))
 dev.off()
+
+# The Old Faithful geyser data
+     d <- density(faithful$eruptions, bw = "sj")
+     d
+     plot(d)
+hist(precip, freq = FALSE)
+lines(density(precip))
 
 str(state.abb)
 
@@ -164,16 +230,13 @@ svg(file="svg/datadesc/bar-gr-stateregion.svg")
   par(mfrow = c(1,1)) # back to normal
 dev.off()
 
-library(qcc)
 pareto.chart(table(state.division), ylab="Frequency")
 
 postscript(file="ps/datadesc/Pareto-chart.ps")
-  library(qcc)
   pareto.chart(table(state.division), ylab="Frequency")
 dev.off()
 
 svg(file="svg/datadesc/Pareto-chart.svg")
-  library(qcc)
   pareto.chart(table(state.division), ylab="Frequency")
 dev.off()
 
@@ -207,10 +270,8 @@ is.na(x)
 z <- x[!is.na(x)]
 sum(z)
 
-library(aplpack)
 with(faithful, stem.leaf(eruptions))
 
-library(e1071)
 skewness(discoveries)
 2*sqrt(6/length(discoveries))
 
@@ -234,52 +295,41 @@ A[1, ]
 A[ , 2]
 
 names(A)
-A$v1
+A['v1']
 
-library(lattice)
 xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species)
 
-library(lattice)
 print(xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species))
 
 postscript(file="ps/datadesc/xyplot-group.ps")
-  library(lattice)
   print(xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species))
 dev.off()
 
 svg(file="svg/datadesc/xyplot-group.svg")
-  library(lattice)
   print(xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species))
 dev.off()
 
-library(lattice)
 bwplot(~weight | feed, data = chickwts)
 
-library(lattice)
 print(bwplot(~weight | feed, data = chickwts))
 
 postscript(file="ps/datadesc/bwplot.ps")
-  library(lattice)
   print(bwplot(~weight | feed, data = chickwts))
 dev.off()
 
 svg(file="svg/datadesc/bwplot.svg")
-  library(lattice)
   print(bwplot(~weight | feed, data = chickwts))
 dev.off()
 
 histogram(~age | education, data = infert)
 
-library(lattice)
 print(histogram(~age | education, data = infert))
 
 postscript(file="ps/datadesc/histograms-lattice.ps")
-  library(lattice)
   print(histogram(~age | education, data = infert))
 dev.off()
 
 svg(file="svg/datadesc/histograms-lattice.svg")
-  library(lattice)
   print(histogram(~age | education, data = infert))
 dev.off()
 
@@ -288,11 +338,11 @@ xyplot(Petal.Length ~ Petal.Width | Species, data = iris)
 print(xyplot(Petal.Length ~ Petal.Width | Species, data = iris))
 
 postscript(file="ps/datadesc/xyplot.ps")
-  print(xyplot(Petal.Length ~ Petal.Width | Species, data = iris))
+  print(xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species))print(xyplot(Petal.Length ~ Petal.Width | Species, data = iris))
 dev.off()
 
 svg(file="svg/datadesc/xyplot.svg")
-  print(xyplot(Petal.Length ~ Petal.Width | Species, data = iris))
+  print(xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species))print(xyplot(Petal.Length ~ Petal.Width | Species, data = iris))
 dev.off()
 
 coplot(conc ~ uptake | Type * Treatment, data = CO2)
@@ -307,7 +357,30 @@ svg(file="svg/datadesc/coplot.svg")
   print(coplot(conc ~ uptake | Type * Treatment, data = CO2))
 dev.off()
 
-library(RcmdrPlugin.IPSUR)
+library(ggplot2)
+a <- qplot(state.division, geom = "bar")
+a + opts(axis.text.x = theme_text(angle = -90, hjust = 0))
+
+hist(precip, freq = FALSE)
+lines(density(precip))
+qplot(precip, geom = "density")
+m <- ggplot(as.data.frame(precip), aes(x = precip))
+m + geom_histogram()
+m + geom_histogram(aes(y = ..density..)) + geom_density()
+
+library("RcmdrPlugin.IPSUR")
 data(RcmdrTestDrive)
 attach(RcmdrTestDrive)
 names(RcmdrTestDrive)
+
+require(graphics)
+mosaicplot(HairEyeColor)
+x <- apply(HairEyeColor, c(1, 2), sum)
+x
+mosaicplot(x, main = "Relation between hair and eye color")
+y <- apply(HairEyeColor, c(1, 3), sum)
+y
+mosaicplot(y, main = "Relation between hair color and sex")
+z <- apply(HairEyeColor, c(2, 3), sum)
+z
+mosaicplot(z, main = "Relation between eye color and sex")

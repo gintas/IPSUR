@@ -1,27 +1,25 @@
 
+# Chapter: Multiple Linear Regression
+# All code released under GPL Version 3
+
 head(trees)
 
-library(lattice)
 splom(trees)
 
 postscript(file="ps/mlr/splom-trees.ps")
-  library(lattice)
   splom(trees)
 dev.off()
 
 svg(file="svg/mlr/splom-trees.svg")
-  library(lattice)
   splom(trees)
 dev.off()
 
-library(scatterplot3d)
 s3d <- with(trees, scatterplot3d(Girth, Height, Volume, 
                                  pch = 16, highlight.3d = TRUE, 
                                  angle = 60))
 fit <- lm(Volume ~ Girth + Height, data = trees)
 
 postscript(file="ps/mlr/3D-scatterplot-trees.ps")
-  library(scatterplot3d)
   s3d <- with(trees, scatterplot3d(Girth, Height, Volume, 
                                    pch = 16, highlight.3d = TRUE, 
                                    angle = 60))
@@ -29,7 +27,6 @@ postscript(file="ps/mlr/3D-scatterplot-trees.ps")
 dev.off()
 
 svg(file="svg/mlr/3D-scatterplot-trees.svg")
-  library(scatterplot3d)
   s3d <- with(trees, scatterplot3d(Girth, Height, Volume, 
                                    pch = 16, highlight.3d = TRUE, 
                                    angle = 60))

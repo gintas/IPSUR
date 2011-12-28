@@ -1,4 +1,7 @@
 
+# Chapter: Discrete Distributions
+# All code released under GPL Version 3
+
 x <- c(0,1,2,3)
 f <- c(1/8, 3/8, 3/8, 1/8)
 
@@ -14,7 +17,6 @@ sigma
 F <- cumsum(f)
 F
 
-library(distrEx)
 X <- DiscreteDistribution(supp = 0:3, prob = c(1,3,3,1)/8)
 E(X); var(X); sd(X)
 
@@ -47,7 +49,6 @@ svg(file="svg/discdist/binom-cdf-base.svg")
   points(0:3, pbinom(-1:2, size = 3, prob = 0.5), pch = 1, cex = 1.2)
 dev.off()
 
-library(distr)
 X <- Binom(size = 3, prob = 1/2)
 X
 
@@ -65,7 +66,6 @@ svg(file="svg/discdist/binom-plot-distr.svg")
 dev.off()
 
 X <- Binom(size = 3, prob = 0.45)
-library(distrEx)
 E(X)
 E(3*X + 4)
 
@@ -111,56 +111,3 @@ pgeom(4, prob = 0.812, lower.tail = FALSE)
 dnbinom(5, size = 7, prob = 0.5)
 
 diff(ppois(c(47, 50), lambda = 50))
-
-library(distr)
-X <- Binom(size = 31, prob = 0.447)
-plot(X, to.draw.arg = "d")
-
-postscript(file="ps/discdist/binomdxca.ps")
-  library(distr)
-  X <- Binom(size = 31, prob = 0.447)
-  plot(X, to.draw.arg = "d")
-dev.off()
-
-svg(file="svg/discdist/binomdxca.svg")
-  library(distr)
-  X <- Binom(size = 31, prob = 0.447)
-  plot(X, to.draw.arg = "d")
-dev.off()
-
-library(distr)
-X <- Binom(size = 31, prob = 0.447)
-plot(X, to.draw.arg = "p")
-
-postscript(file="ps/discdist/binompxca.ps")
-  library(distr)
-  X <- Binom(size = 31, prob = 0.447)
-  plot(X, to.draw.arg = "p")
-dev.off()
-
-svg(file="svg/discdist/binompxca.svg")
-  library(distr)
-  X <- Binom(size = 31, prob = 0.447)
-  plot(X, to.draw.arg = "p")
-dev.off()
-
-dbinom(17, size = 31, prob = 0.447)
-
-pbinom(13, size = 31, prob = 0.447)
-
-pbinom(11, size = 31, prob = 0.447, lower.tail = FALSE)
-
-pbinom(14, size = 31, prob = 0.447, lower.tail = FALSE)
-
-sum(dbinom(16:19, size = 31, prob = 0.447))
-diff(pbinom(c(19,15), size = 31, prob = 0.447, lower.tail = FALSE))
-
-library(distrEx)
-X <- Binom(size = 31, prob = 0.447)
-E(X)
-
-var(X)
-
-sd(X)
-
-E(4*X + 51.324)

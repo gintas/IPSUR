@@ -1,4 +1,7 @@
 
+# Chapter: Hypothesis Testing
+# All code released under GPL Version 3
+
 dhyper(0, m = 26, n = 26, k = 5)
 
 -qnorm(0.99)
@@ -18,13 +21,11 @@ prop.test(1755, 1755 + 2771, p = 0.4, alternative = "less",
           conf.level = 0.99, correct = FALSE)
 
 x <- rnorm(37, mean = 2, sd = 3)
-library(TeachingDemos)
 z.test(x, mu = 1, sd = 3, conf.level = 0.90)
 
 x <- rnorm(13, mean = 2, sd = 3)
 t.test(x, mu = 0, conf.level = 0.90, alternative = "greater")
 
-library(TeachingDemos)
 sigma.test(women$height, sigma = 8)
 
 t.test(extra ~ group, data = sleep, paired = TRUE)
@@ -73,7 +74,6 @@ svg(file="svg/hypoth/Between-versus-within.svg")
   rug(y1)
 dev.off()
 
-library(HH)
 old.omd <- par(omd = c(.05,.88, .05,1))
 F.setup(df1 = 5, df2 = 30)
 F.curve(df1 = 5, df2 = 30, col='blue')
@@ -81,7 +81,6 @@ F.observed(3, df1 = 5, df2 = 30)
 par(old.omd)
 
 postscript(file="ps/hypoth/Some-F-plots-HH.ps")
-  library(HH)
   old.omd <- par(omd = c(.05,.88, .05,1))
   F.setup(df1 = 5, df2 = 30)
   F.curve(df1 = 5, df2 = 30, col='blue')
@@ -90,7 +89,6 @@ postscript(file="ps/hypoth/Some-F-plots-HH.ps")
 dev.off()
 
 svg(file="svg/hypoth/Some-F-plots-HH.svg")
-  library(HH)
   old.omd <- par(omd = c(.05,.88, .05,1))
   F.setup(df1 = 5, df2 = 30)
   F.curve(df1 = 5, df2 = 30, col='blue')
@@ -98,15 +96,12 @@ svg(file="svg/hypoth/Some-F-plots-HH.svg")
   par(old.omd)
 dev.off()
 
-library(TeachingDemos)
 power.examp()
 
 postscript(file="ps/hypoth/power-examp.ps")
-  library(TeachingDemos)
   power.examp()
 dev.off()
 
 svg(file="svg/hypoth/power-examp.svg")
-  library(TeachingDemos)
   power.examp()
 dev.off()

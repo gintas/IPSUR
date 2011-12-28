@@ -1,4 +1,7 @@
 
+# Chapter: Data Description
+# All code released under GPL Version 3
+
 heights = rep(0, 16)
 for (j in 7:15) heights[j] <- dhyper(3, m = 7, n = j - 7, k = 4)
 plot(6:15, heights[6:15], pch = 16, cex = 1.5, xlab = "number of fish in pond", ylab = "Likelihood")
@@ -108,26 +111,21 @@ minuslogL <- function(mu, sigma2){
 }
 
 x <- PlantGrowth$weight
-library(stats4)
 MaxLikeEst <- mle(minuslogL, start = list(mu = 5, sigma2 = 0.5))
 summary(MaxLikeEst)
 
 mean(x); var(x)*29/30; sd(x)/sqrt(30)
 
-library(TeachingDemos)
 ci.examp()
 
 postscript(file="ps/estimate/ci-examp.ps")
-  library(TeachingDemos)
   ci.examp()
 dev.off()
 
 svg(file="svg/estimate/ci-examp.svg")
-  library(TeachingDemos)
   ci.examp()
 dev.off()
 
-library(aplpack)
 with(PlantGrowth, stem.leaf(weight))
 
 dim(PlantGrowth)   # sample size is first entry
@@ -136,26 +134,19 @@ with(PlantGrowth, mean(weight))
 
 qnorm(0.975)
 
-library(TeachingDemos)
-
-library(TeachingDemos)
 temp <- with(PlantGrowth, z.test(weight, stdev = 0.7))
 temp
 
-library(IPSUR)
 plot(temp, "Conf")
 
-library(Hmisc)
 binconf(x = 7, n = 25, method = "asymptotic")
 
 binconf(x = 7, n = 25, method = "wilson")
 
-library(RcmdrPlugin.IPSUR)
 data(RcmdrTestDrive)
 
 tab <- xtabs(~gender, data = RcmdrTestDrive)
 prop.test(rbind(tab), conf.level = 0.95, correct = FALSE)
 
 A <- as.data.frame(Titanic)
-library(reshape)
 B <- with(A, untable(A, Freq))

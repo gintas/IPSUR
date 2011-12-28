@@ -1,4 +1,7 @@
 
+# Chapter: Sampling Distributions
+# All code released under GPL Version 3
+
 curve(dt(x, df = 30), from = -3, to = 3, lwd = 3, ylab = "y")
 ind <- c(1, 2, 3, 5, 10)
 for (i in ind) curve(dt(x, df = i), -3, 3, add = TRUE)
@@ -17,10 +20,8 @@ dev.off()
 
 qt(0.01, df = 23, lower.tail = FALSE)
 
-library(TeachingDemos)
 example(clt.examp)
 
-library(distrTeach)
 example(illustrateCLT)
 
 iqrs <- replicate(100, IQR(rnorm(100)))
